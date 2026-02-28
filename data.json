@@ -1,0 +1,65 @@
+{
+  "projects": [
+    {
+      "id": 1772312387968,
+      "name": "Ai company",
+      "desc": "Ai",
+      "type": "daily",
+      "due": "2026-03-15",
+      "priority": "high",
+      "color": "#2563EB",
+      "icon": "📌",
+      "progress": 0,
+      "tasks": [],
+      "notes": "",
+      "created": 1772312387968,
+      "reminder": {
+        "enabled": true,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    }
+  ],
+  "activity": [
+    {
+      "msg": "Stage set to <strong>Idea</strong> on \"Ai company\"",
+      "color": "#2563EB",
+      "time": 1772312399217
+    },
+    {
+      "msg": "Stage set to <strong>Done</strong> on \"Ai company\"",
+      "color": "#2563EB",
+      "time": 1772312398498
+    },
+    {
+      "msg": "Stage set to <strong>Review</strong> on \"Ai company\"",
+      "color": "#2563EB",
+      "time": 1772312397988
+    },
+    {
+      "msg": "Stage set to <strong>In Progress</strong> on \"Ai company\"",
+      "color": "#2563EB",
+      "time": 1772312397268
+    },
+    {
+      "msg": "Stage set to <strong>Planning</strong> on \"Ai company\"",
+      "color": "#2563EB",
+      "time": 1772312396413
+    },
+    {
+      "msg": "Created project <strong>\"Ai company\"</strong>",
+      "color": "#2563EB",
+      "time": 1772312387968
+    },
+    {
+      "msg": "Deleted project <strong>\"Ai companu\"</strong>",
+      "color": "#DC2626",
+      "time": 1772312372683
+    },
+    {
+      "msg": "Created project <strong>\"Ai companu\"</strong>",
+      "color": "#2563EB",
+      "time": 1772312365003
+    }
+  ]
+}
