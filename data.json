@@ -1,6 +1,25 @@
 {
   "projects": [
     {
+      "id": 1772361692835,
+      "name": "Current Website Update",
+      "desc": "Update the www.astroman.ge",
+      "type": "weekly",
+      "due": "2026-03-15",
+      "priority": "med",
+      "color": "#DC2626",
+      "icon": "📌",
+      "progress": 0,
+      "tasks": [],
+      "notes": "",
+      "created": 1772361692835,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
       "id": 1772361505078,
       "name": "Inventory Company",
       "desc": "Fully automatic company about importing different inventory from china and turkety",
@@ -221,6 +240,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Created project <strong>\"Current Website Update\"</strong>",
+      "color": "#DC2626",
+      "time": 1772361692836
+    },
     {
       "msg": "Added task <strong>\"deploy\"</strong> to \"Inventory Company\"",
       "color": "#E11D48",
@@ -465,11 +489,6 @@
       "msg": "Progress updated to <strong>15%</strong> on \"Ai company\"",
       "color": "#2563EB",
       "time": 1772356448157
-    },
-    {
-      "msg": "Deleted project <strong>\"test\"</strong>",
-      "color": "#DC2626",
-      "time": 1772356361782
     }
   ]
 }
