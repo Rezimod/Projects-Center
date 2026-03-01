@@ -38,6 +38,10 @@
         {
           "name": "website",
           "done": false
+        },
+        {
+          "name": "First ad",
+          "done": false
         }
       ],
       "notes": "",
@@ -50,6 +54,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"First ad\"</strong> to \"Ai company\"",
+      "color": "#2563EB",
+      "time": 1772356882872
+    },
     {
       "msg": "Added task <strong>\"website\"</strong> to \"Ai company\"",
       "color": "#2563EB",
