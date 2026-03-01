@@ -18,6 +18,10 @@
         {
           "name": "build admin and dashboard page",
           "done": false
+        },
+        {
+          "name": "make it perfect.",
+          "done": false
         }
       ],
       "notes": "",
@@ -105,6 +109,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"make it perfect.\"</strong> to \"Astroman Loyal Club\"",
+      "color": "#D97706",
+      "time": 1772361057681
+    },
     {
       "msg": "Added task <strong>\"build admin and dashboard page\"</strong> to \"Astroman Loyal Club\"",
       "color": "#D97706",
