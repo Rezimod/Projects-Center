@@ -38,6 +38,10 @@
         {
           "name": "create 1 month visuals",
           "done": false
+        },
+        {
+          "name": "plan posts and ads",
+          "done": false
         }
       ],
       "notes": "",
@@ -213,6 +217,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"plan posts and ads\"</strong> to \"Inventory Company\"",
+      "color": "#E11D48",
+      "time": 1772361575904
+    },
     {
       "msg": "Added task <strong>\"create 1 month visuals\"</strong> to \"Inventory Company\"",
       "color": "#E11D48",
@@ -457,11 +466,6 @@
       "msg": "Stage set to <strong>Done</strong> on \"Ai company\"",
       "color": "#2563EB",
       "time": 1772312398498
-    },
-    {
-      "msg": "Stage set to <strong>Review</strong> on \"Ai company\"",
-      "color": "#2563EB",
-      "time": 1772312397988
     }
   ]
 }
