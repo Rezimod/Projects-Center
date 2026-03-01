@@ -303,36 +303,80 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font
 .mob-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);backdrop-filter:blur(2px);z-index:290;opacity:0;transition:opacity .3s;pointer-events:none;}
 .mob-backdrop.show{opacity:1;pointer-events:all;}
 
+/* Prevent 300ms tap delay everywhere */
+*{-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+input[type="range"]{touch-action:none;}
+
 @media(max-width:768px){
   .app{grid-template-columns:1fr;}
-  .sidebar{position:fixed;left:0;top:0;bottom:0;width:270px;transform:translateX(-100%);z-index:300;transition:transform .3s cubic-bezier(0.4,0,0.2,1);}
-  .sidebar.mob-open{transform:translateX(0);box-shadow:6px 0 24px rgba(0,0,0,0.35);}
+  .sidebar{position:fixed;left:0;top:0;bottom:0;width:280px;transform:translateX(-100%);z-index:300;transition:transform .3s cubic-bezier(0.4,0,0.2,1);}
+  .sidebar.mob-open{transform:translateX(0);box-shadow:6px 0 32px rgba(0,0,0,0.45);}
   .mob-backdrop{display:block;}
   .mob-burger{display:flex;}
-  .topbar{padding:0 16px;gap:8px;}
-  .topbar-crumb{max-width:120px;}
-  .content{padding:16px;}
-  .dash-hero{padding:20px;}
-  .dash-greeting{font-size:20px;}
+  .topbar{padding:0 14px;gap:8px;height:52px;}
+  .topbar-crumb{max-width:130px;}
+  .content{padding:14px;}
+
+  /* Dashboard */
+  .dash-hero{padding:18px;}
+  .dash-greeting{font-size:19px;}
+  .dash-sub{font-size:12px;}
   .dash-kpis{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .kpi{padding:13px 14px;}
   .kpi-value{font-size:22px;}
+
+  /* Cards */
   .project-cards{grid-template-columns:1fr;}
-  .detail-top{flex-wrap:wrap;}
-  .detail-actions{margin-left:0;width:100%;}
+
+  /* Detail */
+  .detail-top{flex-wrap:wrap;gap:12px;}
+  .detail-actions{margin-left:0;width:100%;justify-content:flex-start;}
   .detail-kpis{grid-template-columns:repeat(2,1fr);}
   .detail-grid{grid-template-columns:1fr;}
-  .modal{width:calc(100vw - 20px);max-height:88vh;border-radius:16px;}
-  .overlay{align-items:flex-end;padding-bottom:10px;}
-  .overlay.open .modal{transform:scale(1) translateY(0);}
-  .modal{transform:scale(1) translateY(40px);}
+  .detail-header{padding:18px;}
+  .detail-title{font-size:20px;}
+
+  /* Progress slider — bigger thumb for touch */
+  .prog-slider{height:6px;}
+  .prog-slider::-webkit-slider-thumb{width:28px;height:28px;}
+
+  /* Tasks — always show delete on touch */
+  .task-del{opacity:1;}
+  .task-check{width:24px;height:24px;min-width:24px;}
+
+  /* Prevent textarea resize handle on mobile */
+  .fta{resize:none;}
+
+  /* iOS: prevent zoom on input focus (requires font-size ≥ 16px) */
+  .fi,.fta,.fsel,.task-add-inp,.pct-inp,.notes-ta{font-size:16px;}
+
+  /* Modal — bottom sheet */
+  .modal{width:100vw;max-height:90vh;border-radius:20px 20px 0 0;margin:0;}
+  .overlay{align-items:flex-end;padding-bottom:0;}
+  .overlay.open .modal{transform:translateY(0);}
+  .modal{transform:translateY(100%);}
+
+  /* Forms */
   .f2col{grid-template-columns:1fr;}
-  .toast-wrap{bottom:16px;right:12px;left:12px;}
+
+  /* Toasts */
+  .toast-wrap{bottom:20px;right:12px;left:12px;}
   .toast{min-width:unset;}
+
+  /* Buttons — bigger tap area */
+  .btn{padding:10px 16px;}
+  .btn-sm{padding:9px 13px;}
+  .btn-icon{width:40px;height:40px;}
+
+  /* Sidebar footer */
+  .sidebar-foot{padding:16px 12px 20px;}
+  .theme-toggle,.setup-btn{padding:12px 10px;}
 }
 @media(max-width:420px){
   .dash-kpis{grid-template-columns:repeat(2,1fr);}
   .detail-kpis{grid-template-columns:repeat(2,1fr);}
   .type-chips{flex-wrap:wrap;}
+  .detail-actions .btn{font-size:12px;}
 }
 </style>
 </head>
