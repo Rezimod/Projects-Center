@@ -9,11 +9,11 @@
       "priority": "high",
       "color": "#D97706",
       "icon": "💪",
-      "progress": 0,
+      "progress": 17,
       "tasks": [
         {
           "name": "Create website",
-          "done": false
+          "done": true
         },
         {
           "name": "build admin and dashboard page",
@@ -33,10 +33,6 @@
         },
         {
           "name": "Create deployment marketing plan",
-          "done": false
-        },
-        {
-          "name": "deploy",
           "done": false
         }
       ],
@@ -126,9 +122,9 @@
   ],
   "activity": [
     {
-      "msg": "Added task <strong>\"deploy\"</strong> to \"Astroman Loyal Club\"",
+      "msg": "Completed task <strong>\"Create website\"</strong>",
       "color": "#D97706",
-      "time": 1772361307549
+      "time": 1772361309583
     },
     {
       "msg": "Added task <strong>\"Create deployment marketing plan\"</strong> to \"Astroman Loyal Club\"",
