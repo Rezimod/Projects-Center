@@ -1,6 +1,25 @@
 {
   "projects": [
     {
+      "id": 1772362170631,
+      "name": "Content For Week",
+      "desc": "Create visuals, product displays and sales for every week",
+      "type": "weekly",
+      "due": "2026-03-30",
+      "priority": "high",
+      "color": "#111111",
+      "icon": "📌",
+      "progress": 0,
+      "tasks": [],
+      "notes": "",
+      "created": 1772362170631,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
       "id": 1772361692835,
       "name": "Current Website Update",
       "desc": "Update the www.astroman.ge",
@@ -249,6 +268,11 @@
   ],
   "activity": [
     {
+      "msg": "Created project <strong>\"Content For Week\"</strong>",
+      "color": "#111111",
+      "time": 1772362170632
+    },
+    {
       "msg": "Updated project <strong>\"Current Website Update\"</strong>",
       "color": "#7C3AED",
       "time": 1772362119628
@@ -492,11 +516,6 @@
       "msg": "Deleted project <strong>\"test\"</strong>",
       "color": "#DC2626",
       "time": 1772356783112
-    },
-    {
-      "msg": "Created project <strong>\"test\"</strong>",
-      "color": "#2563EB",
-      "time": 1772356761741
     }
   ]
 }
