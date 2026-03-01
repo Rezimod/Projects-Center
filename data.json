@@ -128,7 +128,7 @@
       "priority": "high",
       "color": "#D97706",
       "icon": "💪",
-      "progress": 33,
+      "progress": 29,
       "tasks": [
         {
           "name": "Create website",
@@ -152,6 +152,10 @@
         },
         {
           "name": "Create deployment marketing plan",
+          "done": false
+        },
+        {
+          "name": "admin page setup",
           "done": false
         }
       ],
@@ -240,6 +244,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"admin page setup\"</strong> to \"Astroman Loyal Club\"",
+      "color": "#D97706",
+      "time": 1772361777656
+    },
     {
       "msg": "Created project <strong>\"Current Website Update\"</strong>",
       "color": "#DC2626",
@@ -484,11 +493,6 @@
       "msg": "Progress updated to <strong>4%</strong> on \"Ai company\"",
       "color": "#2563EB",
       "time": 1772356449422
-    },
-    {
-      "msg": "Progress updated to <strong>15%</strong> on \"Ai company\"",
-      "color": "#2563EB",
-      "time": 1772356448157
     }
   ]
 }
