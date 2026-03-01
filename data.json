@@ -1,6 +1,25 @@
 {
   "projects": [
     {
+      "id": 1772361505078,
+      "name": "Inventory Company",
+      "desc": "Fully automatic company about importing different inventory from china and turkety",
+      "type": "daily",
+      "due": "2026-03-20",
+      "priority": "med",
+      "color": "#E11D48",
+      "icon": "📌",
+      "progress": 0,
+      "tasks": [],
+      "notes": "",
+      "created": 1772361505078,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
       "id": 1772361382049,
       "name": "Night Skywatcher",
       "desc": "Sky watching app for astroman",
@@ -165,6 +184,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Created project <strong>\"Inventory Company\"</strong>",
+      "color": "#E11D48",
+      "time": 1772361505079
+    },
     {
       "msg": "Completed task <strong>\"test everything\"</strong>",
       "color": "#D97706",
