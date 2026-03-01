@@ -30,6 +30,10 @@
         {
           "name": "first moth marketing plan",
           "done": false
+        },
+        {
+          "name": "create automation for this plan",
+          "done": false
         }
       ],
       "notes": "",
@@ -205,6 +209,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"create automation for this plan\"</strong> to \"Inventory Company\"",
+      "color": "#E11D48",
+      "time": 1772361538050
+    },
     {
       "msg": "Added task <strong>\"first moth marketing plan\"</strong> to \"Inventory Company\"",
       "color": "#E11D48",
@@ -449,11 +458,6 @@
       "msg": "Stage set to <strong>In Progress</strong> on \"Ai company\"",
       "color": "#2563EB",
       "time": 1772312397268
-    },
-    {
-      "msg": "Stage set to <strong>Planning</strong> on \"Ai company\"",
-      "color": "#2563EB",
-      "time": 1772312396413
     }
   ]
 }
