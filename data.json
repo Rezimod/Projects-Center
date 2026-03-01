@@ -42,6 +42,10 @@
         {
           "name": "First ad",
           "done": false
+        },
+        {
+          "name": "First Client",
+          "done": false
         }
       ],
       "notes": "",
@@ -54,6 +58,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"First Client\"</strong> to \"Ai company\"",
+      "color": "#2563EB",
+      "time": 1772356886944
+    },
     {
       "msg": "Added task <strong>\"First ad\"</strong> to \"Ai company\"",
       "color": "#2563EB",
