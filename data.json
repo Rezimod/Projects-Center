@@ -18,6 +18,10 @@
         {
           "name": "logo",
           "done": false
+        },
+        {
+          "name": "soc medias",
+          "done": false
         }
       ],
       "notes": "",
@@ -30,6 +34,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"soc medias\"</strong> to \"Ai company\"",
+      "color": "#2563EB",
+      "time": 1772356809036
+    },
     {
       "msg": "Added task <strong>\"logo\"</strong> to \"Ai company\"",
       "color": "#2563EB",
