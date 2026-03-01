@@ -10,7 +10,12 @@
       "color": "#D97706",
       "icon": "📌",
       "progress": 0,
-      "tasks": [],
+      "tasks": [
+        {
+          "name": "cretate website",
+          "done": false
+        }
+      ],
       "notes": "",
       "created": 1772361382049,
       "reminder": {
@@ -140,6 +145,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"cretate website\"</strong> to \"Night Skywatcher\"",
+      "color": "#D97706",
+      "time": 1772361392374
+    },
     {
       "msg": "Created project <strong>\"Night Skywatcher\"</strong>",
       "color": "#D97706",
