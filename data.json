@@ -76,7 +76,7 @@
           "done": false
         },
         {
-          "name": "left cart notification",
+          "name": "ask claude how to improve system of the web",
           "done": false
         }
       ],
@@ -318,9 +318,9 @@
   ],
   "activity": [
     {
-      "msg": "Added task <strong>\"left cart notification\"</strong> to \"Current Website Update\"",
+      "msg": "Added task <strong>\"ask claude how to improve system of the web\"</strong> to \"Current Website Update\"",
       "color": "#7C3AED",
-      "time": 1772404846127
+      "time": 1772404858715
     },
     {
       "msg": "Added task <strong>\"make product page more convertable\"</strong> to \"Current Website Update\"",
