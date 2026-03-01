@@ -18,6 +18,10 @@
         {
           "name": "add different features",
           "done": false
+        },
+        {
+          "name": "test everything",
+          "done": false
         }
       ],
       "notes": "",
@@ -149,6 +153,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"test everything\"</strong> to \"Night Skywatcher\"",
+      "color": "#D97706",
+      "time": 1772361406842
+    },
     {
       "msg": "Added task <strong>\"add different features\"</strong> to \"Night Skywatcher\"",
       "color": "#D97706",
