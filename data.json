@@ -71,12 +71,17 @@
       "created": 1772312387968,
       "reminder": {
         "enabled": true,
-        "timing": "oneday",
+        "timing": "oneweek",
         "lastSent": null
       }
     }
   ],
   "activity": [
+    {
+      "msg": "Updated project <strong>\"Ai company\"</strong>",
+      "color": "#2563EB",
+      "time": 1772357050214
+    },
     {
       "msg": "Created project <strong>\"Auto Content Creator\"</strong>",
       "color": "#16A34A",
