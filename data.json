@@ -128,7 +128,7 @@
       "priority": "high",
       "color": "#D97706",
       "icon": "💪",
-      "progress": 29,
+      "progress": 25,
       "tasks": [
         {
           "name": "Create website",
@@ -156,6 +156,10 @@
         },
         {
           "name": "admin page setup",
+          "done": false
+        },
+        {
+          "name": "add forgot password option",
           "done": false
         }
       ],
@@ -244,6 +248,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"add forgot password option\"</strong> to \"Astroman Loyal Club\"",
+      "color": "#D97706",
+      "time": 1772361784181
+    },
     {
       "msg": "Added task <strong>\"admin page setup\"</strong> to \"Astroman Loyal Club\"",
       "color": "#D97706",
@@ -488,11 +497,6 @@
       "msg": "Progress updated to <strong>0%</strong> on \"Ai company\"",
       "color": "#2563EB",
       "time": 1772356450027
-    },
-    {
-      "msg": "Progress updated to <strong>4%</strong> on \"Ai company\"",
-      "color": "#2563EB",
-      "time": 1772356449422
     }
   ]
 }
