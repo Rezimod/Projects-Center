@@ -133,9 +133,14 @@ body{font-family:var(--font);font-size:14px;background:var(--bg);color:var(--tex
 
 /* ── Dashboard ── */
 .dash-top{margin-bottom:22px;}
-.dash-greeting{font-family:var(--serif);font-size:26px;color:var(--text);line-height:1.25;margin-bottom:4px;}
-.dash-greeting strong{font-family:var(--font);font-style:normal;font-weight:900;}
-.dash-sub{font-size:13px;color:var(--text2);}
+.dash-greeting{line-height:1.15;margin-bottom:6px;}
+.dash-line1{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--text2);letter-spacing:.2px;display:block;margin-bottom:2px;}
+.dash-line2{font-family:var(--font);font-weight:900;font-size:34px;color:var(--text);letter-spacing:-1.5px;display:block;line-height:1.1;}
+.dash-sub{font-size:13px;color:var(--text3);}
+.sync-banner{background:var(--amber-lt);border:1px solid rgba(217,119,6,0.25);border-radius:var(--r-lg);padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.sync-banner-text{flex:1;font-size:13px;color:var(--amber);}
+.sync-banner-text strong{font-weight:700;display:block;margin-bottom:2px;}
+.sync-banner-text span{font-size:12px;opacity:.85;}
 .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
 .kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px 18px;box-shadow:var(--shadow);}
 .kpi-label{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:7px;}
@@ -477,8 +482,8 @@ body{font-family:var(--font);font-size:14px;background:var(--bg);color:var(--tex
       </div>
       <div class="field">
         <div class="fl">Repository (owner/repo-name)</div>
-        <input class="fi" id="s-gh-repo" placeholder="Morningbriefrezi/Projects-Center"/>
-        <div class="fi-hint">Your data is stored in <code>data.json</code> inside this repo. Set it to <strong>Morningbriefrezi/Projects-Center</strong></div>
+        <input class="fi" id="s-gh-repo" placeholder="Morningbriefrezi/Projects-Center" value="Morningbriefrezi/Projects-Center"/>
+        <div class="fi-hint">Already filled in — just add your token above and click Save & Connect</div>
       </div>
       <div class="setup-divider"></div>
       <div class="setup-sect-hd">
@@ -699,10 +704,15 @@ async function pullFromGitHub() {
   }
 }
 
-// Auto-pull when app comes back into focus (e.g. switching from Mac to phone)
+// Auto-pull when app comes back into focus (switching from Mac to phone)
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden && isGHConfigured()) pullFromGitHub();
 });
+
+// Poll every 30s so changes appear without manual refresh
+setInterval(() => {
+  if (!document.hidden && isGHConfigured()) pullFromGitHub();
+}, 30000);
 
 // Save: localStorage immediately, GitHub debounced 700ms
 function save() {
@@ -782,10 +792,10 @@ function checkRemindersOnLoad() {
 //  SETUP MODAL
 // ══════════════════════════════════════════════════════════
 function openSetup() {
-  document.getElementById('s-gh-token').value = ghToken() || '';
-  document.getElementById('s-gh-repo').value  = ghRepo()  || '';
-  document.getElementById('s-tg-token').value = tgToken() || '';
-  document.getElementById('s-tg-chatid').value = tgChat() || '';
+  document.getElementById('s-gh-token').value  = ghToken() || '';
+  document.getElementById('s-gh-repo').value   = ghRepo()  || 'Morningbriefrezi/Projects-Center';
+  document.getElementById('s-tg-token').value  = tgToken() || '';
+  document.getElementById('s-tg-chatid').value = tgChat()  || '';
   document.getElementById('setupOverlay').classList.add('open');
 }
 function closeSetup() { document.getElementById('setupOverlay').classList.remove('open'); }
@@ -958,11 +968,24 @@ function renderDashboard() {
   const avgPct=total>0?Math.round(D.reduce((s,p)=>s+p.progress,0)/total):0;
   const dayStr=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
   const recent=D.slice(0,6);
+  const syncBanner = !isGHConfigured() ? `
+    <div class="sync-banner">
+      <span style="font-size:22px">🔗</span>
+      <div class="sync-banner-text">
+        <strong>Sync not set up</strong>
+        <span>Open Settings & Sync → enter your GitHub token → data will appear on all devices.</span>
+      </div>
+      <button class="btn btn-sm" style="background:var(--amber);color:white;border:none;flex-shrink:0" onclick="openSetup()">Set up →</button>
+    </div>` : '';
   return `<div class="au">
     <div class="dash-top">
-      <div class="dash-greeting"><em>Today We Make</em> <strong>Something Special.</strong></div>
+      <div class="dash-greeting">
+        <span class="dash-line1">Today We Make</span>
+        <span class="dash-line2">Something Special.</span>
+      </div>
       <div class="dash-sub">${dayStr} · ${total} project${total!==1?'s':''} tracked</div>
     </div>
+    ${syncBanner}
     <div class="kpi-row">
       <div class="kpi au au1"><div class="kpi-label">Total</div><div class="kpi-val" style="color:var(--blue)">${total}</div><div class="kpi-sub">All time</div></div>
       <div class="kpi au au2"><div class="kpi-label">Done</div><div class="kpi-val" style="color:var(--green)">${done}</div><div class="kpi-sub">${total>0?Math.round(done/total*100):0}% rate</div></div>
