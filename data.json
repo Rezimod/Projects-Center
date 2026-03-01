@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#D97706",
       "icon": "💪",
-      "progress": 17,
+      "progress": 33,
       "tasks": [
         {
           "name": "Create website",
@@ -17,7 +17,7 @@
         },
         {
           "name": "build admin and dashboard page",
-          "done": false
+          "done": true
         },
         {
           "name": "make it perfect.",
@@ -121,6 +121,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Completed task <strong>\"build admin and dashboard page\"</strong>",
+      "color": "#D97706",
+      "time": 1772361311189
+    },
     {
       "msg": "Completed task <strong>\"Create website\"</strong>",
       "color": "#D97706",
