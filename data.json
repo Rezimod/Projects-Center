@@ -34,6 +34,10 @@
         {
           "name": "Create deployment marketing plan",
           "done": false
+        },
+        {
+          "name": "deploy",
+          "done": false
         }
       ],
       "notes": "",
@@ -121,6 +125,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"deploy\"</strong> to \"Astroman Loyal Club\"",
+      "color": "#D97706",
+      "time": 1772361307549
+    },
     {
       "msg": "Added task <strong>\"Create deployment marketing plan\"</strong> to \"Astroman Loyal Club\"",
       "color": "#D97706",
