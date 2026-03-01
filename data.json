@@ -14,6 +14,10 @@
         {
           "name": "cretate website",
           "done": false
+        },
+        {
+          "name": "add different features",
+          "done": false
         }
       ],
       "notes": "",
@@ -145,6 +149,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"add different features\"</strong> to \"Night Skywatcher\"",
+      "color": "#D97706",
+      "time": 1772361402961
+    },
     {
       "msg": "Added task <strong>\"cretate website\"</strong> to \"Night Skywatcher\"",
       "color": "#D97706",
