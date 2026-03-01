@@ -10,7 +10,12 @@
       "color": "#2563EB",
       "icon": "📌",
       "progress": 0,
-      "tasks": [],
+      "tasks": [
+        {
+          "name": "name",
+          "done": false
+        }
+      ],
       "notes": "",
       "created": 1772312387968,
       "reminder": {
@@ -21,6 +26,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"name\"</strong> to \"Ai company\"",
+      "color": "#2563EB",
+      "time": 1772356796145
+    },
     {
       "msg": "Deleted project <strong>\"test\"</strong>",
       "color": "#DC2626",
