@@ -14,6 +14,10 @@
         {
           "name": "name",
           "done": false
+        },
+        {
+          "name": "logo",
+          "done": false
         }
       ],
       "notes": "",
@@ -26,6 +30,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"logo\"</strong> to \"Ai company\"",
+      "color": "#2563EB",
+      "time": 1772356803389
+    },
     {
       "msg": "Added task <strong>\"name\"</strong> to \"Ai company\"",
       "color": "#2563EB",
