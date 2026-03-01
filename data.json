@@ -30,6 +30,10 @@
         {
           "name": "check if everything works",
           "done": false
+        },
+        {
+          "name": "Create deployment marketing plan",
+          "done": false
         }
       ],
       "notes": "",
@@ -117,6 +121,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"Create deployment marketing plan\"</strong> to \"Astroman Loyal Club\"",
+      "color": "#D97706",
+      "time": 1772361302801
+    },
     {
       "msg": "Added task <strong>\"check if everything works\"</strong> to \"Astroman Loyal Club\"",
       "color": "#D97706",
