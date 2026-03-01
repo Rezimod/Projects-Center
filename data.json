@@ -74,6 +74,10 @@
         {
           "name": "make product page more convertable",
           "done": false
+        },
+        {
+          "name": "left cart notification",
+          "done": false
         }
       ],
       "notes": "",
@@ -313,6 +317,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"left cart notification\"</strong> to \"Current Website Update\"",
+      "color": "#7C3AED",
+      "time": 1772404846127
+    },
     {
       "msg": "Added task <strong>\"make product page more convertable\"</strong> to \"Current Website Update\"",
       "color": "#7C3AED",
@@ -557,11 +566,6 @@
       "msg": "Created project <strong>\"Auto Content Creator\"</strong>",
       "color": "#16A34A",
       "time": 1772357035349
-    },
-    {
-      "msg": "Completed task <strong>\"marketing plan\"</strong>",
-      "color": "#2563EB",
-      "time": 1772356918372
     }
   ]
 }
