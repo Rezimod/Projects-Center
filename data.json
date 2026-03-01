@@ -1,6 +1,25 @@
 {
   "projects": [
     {
+      "id": 1772357035349,
+      "name": "Auto Content Creator",
+      "desc": "",
+      "type": "weekly",
+      "due": "2026-03-15",
+      "priority": "med",
+      "color": "#16A34A",
+      "icon": "📌",
+      "progress": 0,
+      "tasks": [],
+      "notes": "",
+      "created": 1772357035349,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
       "id": 1772312387968,
       "name": "Ai company",
       "desc": "Ai",
@@ -58,6 +77,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Created project <strong>\"Auto Content Creator\"</strong>",
+      "color": "#16A34A",
+      "time": 1772357035349
+    },
     {
       "msg": "Completed task <strong>\"marketing plan\"</strong>",
       "color": "#2563EB",
