@@ -34,6 +34,10 @@
         {
           "name": "Ads manager &business suite",
           "done": false
+        },
+        {
+          "name": "website",
+          "done": false
         }
       ],
       "notes": "",
@@ -46,6 +50,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"website\"</strong> to \"Ai company\"",
+      "color": "#2563EB",
+      "time": 1772356875390
+    },
     {
       "msg": "Added task <strong>\"Ads manager &business suite\"</strong> to \"Ai company\"",
       "color": "#2563EB",
