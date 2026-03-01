@@ -9,7 +9,7 @@
       "priority": "med",
       "color": "#D97706",
       "icon": "📌",
-      "progress": 33,
+      "progress": 50,
       "tasks": [
         {
           "name": "cretate website",
@@ -21,7 +21,7 @@
         },
         {
           "name": "test everything",
-          "done": false
+          "done": true
         },
         {
           "name": "integrate with my website",
@@ -165,6 +165,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Completed task <strong>\"test everything\"</strong>",
+      "color": "#D97706",
+      "time": 1772361435299
+    },
     {
       "msg": "Completed task <strong>\"add different features\"</strong>",
       "color": "#D97706",
