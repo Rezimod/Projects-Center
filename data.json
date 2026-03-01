@@ -96,7 +96,7 @@
       "due": "2026-03-20",
       "priority": "med",
       "color": "#2563EB",
-      "icon": "📌",
+      "icon": "⚒️",
       "progress": 0,
       "tasks": [
         {
@@ -321,6 +321,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Updated project <strong>\"Inventory Company\"</strong>",
+      "color": "#2563EB",
+      "time": 1772406664879
+    },
     {
       "msg": "Updated project <strong>\"Current Website Update\"</strong>",
       "color": "#2563EB",
@@ -565,11 +570,6 @@
       "msg": "Added task <strong>\"add different features\"</strong> to \"Night Skywatcher\"",
       "color": "#D97706",
       "time": 1772361402961
-    },
-    {
-      "msg": "Added task <strong>\"cretate website\"</strong> to \"Night Skywatcher\"",
-      "color": "#D97706",
-      "time": 1772361392374
     }
   ]
 }
