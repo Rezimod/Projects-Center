@@ -10,7 +10,12 @@
       "color": "#111111",
       "icon": "📌",
       "progress": 0,
-      "tasks": [],
+      "tasks": [
+        {
+          "name": "5 telescope designs",
+          "done": false
+        }
+      ],
       "notes": "",
       "created": 1772362170631,
       "reminder": {
@@ -268,6 +273,11 @@
   ],
   "activity": [
     {
+      "msg": "Added task <strong>\"5 telescope designs\"</strong> to \"Content For Week\"",
+      "color": "#111111",
+      "time": 1772404752810
+    },
+    {
       "msg": "Created project <strong>\"Content For Week\"</strong>",
       "color": "#111111",
       "time": 1772362170632
@@ -511,11 +521,6 @@
       "msg": "Added task <strong>\"name\"</strong> to \"Ai company\"",
       "color": "#2563EB",
       "time": 1772356796145
-    },
-    {
-      "msg": "Deleted project <strong>\"test\"</strong>",
-      "color": "#DC2626",
-      "time": 1772356783112
     }
   ]
 }
