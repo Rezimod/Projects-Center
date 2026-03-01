@@ -34,6 +34,10 @@
         {
           "name": "create automation for this plan",
           "done": false
+        },
+        {
+          "name": "create 1 month visuals",
+          "done": false
         }
       ],
       "notes": "",
@@ -209,6 +213,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"create 1 month visuals\"</strong> to \"Inventory Company\"",
+      "color": "#E11D48",
+      "time": 1772361553530
+    },
     {
       "msg": "Added task <strong>\"create automation for this plan\"</strong> to \"Inventory Company\"",
       "color": "#E11D48",
@@ -453,11 +462,6 @@
       "msg": "Stage set to <strong>Review</strong> on \"Ai company\"",
       "color": "#2563EB",
       "time": 1772312397988
-    },
-    {
-      "msg": "Stage set to <strong>In Progress</strong> on \"Ai company\"",
-      "color": "#2563EB",
-      "time": 1772312397268
     }
   ]
 }
