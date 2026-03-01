@@ -251,7 +251,7 @@
       "type": "weekly",
       "due": "2026-03-15",
       "priority": "med",
-      "color": "#16A34A",
+      "color": "#2563EB",
       "icon": "📌",
       "progress": 0,
       "tasks": [],
@@ -321,6 +321,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Updated project <strong>\"Auto Content Creator\"</strong>",
+      "color": "#2563EB",
+      "time": 1772406605001
+    },
     {
       "msg": "Updated project <strong>\"Astroman Loyal Club\"</strong>",
       "color": "#2563EB",
@@ -565,11 +570,6 @@
       "msg": "Completed task <strong>\"build admin and dashboard page\"</strong>",
       "color": "#D97706",
       "time": 1772361311189
-    },
-    {
-      "msg": "Completed task <strong>\"Create website\"</strong>",
-      "color": "#D97706",
-      "time": 1772361309583
     }
   ]
 }
