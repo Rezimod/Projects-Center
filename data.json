@@ -271,7 +271,7 @@
       "due": "2026-03-15",
       "priority": "high",
       "color": "#2563EB",
-      "icon": "📌",
+      "icon": "🦿",
       "progress": 44,
       "tasks": [
         {
@@ -321,6 +321,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Updated project <strong>\"Advance AI\"</strong>",
+      "color": "#2563EB",
+      "time": 1772406744330
+    },
     {
       "msg": "Updated project <strong>\"Auto Content Creator\"</strong>",
       "color": "#2563EB",
@@ -565,11 +570,6 @@
       "msg": "Added task <strong>\"create marketing plan for deployment\"</strong> to \"Night Skywatcher\"",
       "color": "#D97706",
       "time": 1772361420680
-    },
-    {
-      "msg": "Added task <strong>\"integrate with my website\"</strong> to \"Night Skywatcher\"",
-      "color": "#D97706",
-      "time": 1772361413930
     }
   ]
 }
