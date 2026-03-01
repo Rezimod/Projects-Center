@@ -30,6 +30,10 @@
         {
           "name": "create marketing plan for deployment",
           "done": false
+        },
+        {
+          "name": "deplloy",
+          "done": false
         }
       ],
       "notes": "",
@@ -161,6 +165,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"deplloy\"</strong> to \"Night Skywatcher\"",
+      "color": "#D97706",
+      "time": 1772361427486
+    },
     {
       "msg": "Added task <strong>\"create marketing plan for deployment\"</strong> to \"Night Skywatcher\"",
       "color": "#D97706",
