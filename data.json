@@ -42,6 +42,10 @@
         {
           "name": "plan posts and ads",
           "done": false
+        },
+        {
+          "name": "deploy",
+          "done": false
         }
       ],
       "notes": "",
@@ -217,6 +221,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"deploy\"</strong> to \"Inventory Company\"",
+      "color": "#E11D48",
+      "time": 1772361586941
+    },
     {
       "msg": "Deleted task <strong>\"deplou\"</strong> from \"Inventory Company\"",
       "color": "#DC2626",
@@ -461,11 +470,6 @@
       "msg": "Deleted project <strong>\"test\"</strong>",
       "color": "#DC2626",
       "time": 1772356361782
-    },
-    {
-      "msg": "Created project <strong>\"test\"</strong>",
-      "color": "#2563EB",
-      "time": 1772356293994
     }
   ]
 }
