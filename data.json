@@ -66,6 +66,10 @@
         {
           "name": "add skywatcher page",
           "done": false
+        },
+        {
+          "name": "add one more buit in ai",
+          "done": false
         }
       ],
       "notes": "",
@@ -305,6 +309,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"add one more buit in ai\"</strong> to \"Current Website Update\"",
+      "color": "#7C3AED",
+      "time": 1772404827317
+    },
     {
       "msg": "Added task <strong>\"add skywatcher page\"</strong> to \"Current Website Update\"",
       "color": "#7C3AED",
@@ -549,11 +558,6 @@
       "msg": "Completed task <strong>\"business plan\"</strong>",
       "color": "#2563EB",
       "time": 1772356915885
-    },
-    {
-      "msg": "Added task <strong>\"First Client\"</strong> to \"Ai company\"",
-      "color": "#2563EB",
-      "time": 1772356886944
     }
   ]
 }
