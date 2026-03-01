@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 0,
+      "progress": 11,
       "tasks": [
         {
           "name": "name",
@@ -25,7 +25,7 @@
         },
         {
           "name": "business plan",
-          "done": false
+          "done": true
         },
         {
           "name": "marketing plan",
@@ -58,6 +58,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Completed task <strong>\"business plan\"</strong>",
+      "color": "#2563EB",
+      "time": 1772356915885
+    },
     {
       "msg": "Added task <strong>\"First Client\"</strong> to \"Ai company\"",
       "color": "#2563EB",
