@@ -22,6 +22,10 @@
         {
           "name": "Social pages",
           "done": false
+        },
+        {
+          "name": "business suite and ads manager",
+          "done": false
         }
       ],
       "notes": "",
@@ -197,6 +201,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"business suite and ads manager\"</strong> to \"Inventory Company\"",
+      "color": "#E11D48",
+      "time": 1772361524910
+    },
     {
       "msg": "Added task <strong>\"Social pages\"</strong> to \"Inventory Company\"",
       "color": "#E11D48",
@@ -441,11 +450,6 @@
       "msg": "Created project <strong>\"Ai company\"</strong>",
       "color": "#2563EB",
       "time": 1772312387968
-    },
-    {
-      "msg": "Deleted project <strong>\"Ai companu\"</strong>",
-      "color": "#DC2626",
-      "time": 1772312372683
     }
   ]
 }
