@@ -10,7 +10,12 @@
       "color": "#E11D48",
       "icon": "📌",
       "progress": 0,
-      "tasks": [],
+      "tasks": [
+        {
+          "name": "name",
+          "done": false
+        }
+      ],
       "notes": "",
       "created": 1772361505078,
       "reminder": {
@@ -184,6 +189,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"name\"</strong> to \"Inventory Company\"",
+      "color": "#E11D48",
+      "time": 1772361508330
+    },
     {
       "msg": "Created project <strong>\"Inventory Company\"</strong>",
       "color": "#E11D48",
