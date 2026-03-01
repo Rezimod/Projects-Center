@@ -26,6 +26,10 @@
         {
           "name": "integrate with my website",
           "done": false
+        },
+        {
+          "name": "create marketing plan for deployment",
+          "done": false
         }
       ],
       "notes": "",
@@ -157,6 +161,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"create marketing plan for deployment\"</strong> to \"Night Skywatcher\"",
+      "color": "#D97706",
+      "time": 1772361420680
+    },
     {
       "msg": "Added task <strong>\"integrate with my website\"</strong> to \"Night Skywatcher\"",
       "color": "#D97706",
