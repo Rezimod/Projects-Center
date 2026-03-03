@@ -36,7 +36,7 @@
       "id": 1772485066018,
       "name": "Ticket ai",
       "desc": "",
-      "type": "daily",
+      "type": "weekly",
       "due": "",
       "priority": "med",
       "color": "#2563EB",
@@ -377,6 +377,11 @@
   ],
   "activity": [
     {
+      "msg": "Updated project <strong>\"Ticket ai\"</strong>",
+      "color": "#2563EB",
+      "time": 1772545681356
+    },
+    {
       "msg": "Progress updated to <strong>0%</strong> on \"Daily\"",
       "color": "#2563EB",
       "time": 1772545205509
@@ -620,11 +625,6 @@
       "msg": "Added task <strong>\"deploy\"</strong> to \"Inventory Company\"",
       "color": "#E11D48",
       "time": 1772361586941
-    },
-    {
-      "msg": "Deleted task <strong>\"deplou\"</strong> from \"Inventory Company\"",
-      "color": "#DC2626",
-      "time": 1772361584173
     }
   ]
 }
