@@ -655,6 +655,11 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
         <input class="fi" id="s-tg-chatid" placeholder="123456789"/>
         <div class="fi-hint">Message <a href="https://t.me/userinfobot" target="_blank">@userinfobot</a> to find your ID</div>
       </div>
+      <div class="field">
+        <div class="fl">Daily Digest Time (Tbilisi)</div>
+        <input class="fi" id="s-digest-time" type="time" value="16:00"/>
+        <div class="fi-hint">A summary of all active tasks is sent at this time every day when the app is open.</div>
+      </div>
       <button class="btn btn-ghost" onclick="testTelegramSetup()" style="width:100%;justify-content:center">🔔 Test Notification</button>
     </div>
     <div class="modal-foot">
@@ -968,15 +973,20 @@ function sendDailyDigest() {
   localStorage.setItem(digestKey, '1');
 }
 
+let _digestTimer = null;
 function scheduleDailyDigest() {
+  if (_digestTimer) { clearTimeout(_digestTimer); _digestTimer = null; }
+  const [h, m] = (localStorage.getItem('digest_time') || '16:00').split(':').map(Number);
   const now  = new Date();
   const next = new Date(now);
-  next.setHours(16, 0, 0, 0);
-  if (next <= now) next.setDate(next.getDate() + 1);   // already past 16:00 — schedule tomorrow
+  next.setHours(h, m, 0, 0);
+  if (next <= now) next.setDate(next.getDate() + 1);
   const msUntil = next - now;
-  setTimeout(() => {
+  _digestTimer = setTimeout(() => {
     sendDailyDigest();
-    setInterval(sendDailyDigest, 24 * 60 * 60 * 1000); // repeat daily
+    // re-schedule for next day using same logic
+    _digestTimer = null;
+    scheduleDailyDigest();
   }, msUntil);
 }
 scheduleDailyDigest();
@@ -985,10 +995,11 @@ scheduleDailyDigest();
 //  SETUP MODAL
 // ══════════════════════════════════════════════════════════
 function openSetup() {
-  document.getElementById('s-gh-token').value  = ghToken() || '';
-  document.getElementById('s-gh-repo').value   = ghRepo()  || 'Morningbriefrezi/Projects-Center';
-  document.getElementById('s-tg-token').value  = tgToken() || '';
-  document.getElementById('s-tg-chatid').value = tgChat()  || '';
+  document.getElementById('s-gh-token').value    = ghToken() || '';
+  document.getElementById('s-gh-repo').value     = ghRepo()  || 'Morningbriefrezi/Projects-Center';
+  document.getElementById('s-tg-token').value    = tgToken() || '';
+  document.getElementById('s-tg-chatid').value   = tgChat()  || '';
+  document.getElementById('s-digest-time').value = localStorage.getItem('digest_time') || '16:00';
   document.getElementById('setupOverlay').classList.add('open');
 }
 function closeSetup() { document.getElementById('setupOverlay').classList.remove('open'); }
@@ -998,12 +1009,15 @@ async function saveSetup() {
   const gr = document.getElementById('s-gh-repo').value.trim().replace(/^https?:\/\/github\.com\//, '');
   const tt = document.getElementById('s-tg-token').value.trim();
   const tc = document.getElementById('s-tg-chatid').value.trim();
+  const dt = document.getElementById('s-digest-time').value || '16:00';
   if (gt) localStorage.setItem('gh_token', gt);
   if (gr) localStorage.setItem('gh_repo', gr);
   if (tt) localStorage.setItem('tg_token', tt);
   if (tc) localStorage.setItem('tg_chat_id', tc);
+  localStorage.setItem('digest_time', dt);
   closeSetup();
   toast('Settings saved ✓', '#16A34A');
+  scheduleDailyDigest(); // reschedule with new time
   if (gt && gr) {
     setSyncStatus('', 'Connecting…');
     const data = await ghLoad();
