@@ -377,6 +377,11 @@
   ],
   "activity": [
     {
+      "msg": "Updated project <strong>\"Daily\"</strong>",
+      "color": "#2563EB",
+      "time": 1772546766180
+    },
+    {
       "msg": "Updated project <strong>\"Inventory Company\"</strong>",
       "color": "#2563EB",
       "time": 1772545686663
@@ -620,11 +625,6 @@
       "msg": "Added task <strong>\"admin page setup\"</strong> to \"Astroman Loyal Club\"",
       "color": "#D97706",
       "time": 1772361777656
-    },
-    {
-      "msg": "Created project <strong>\"Current Website Update\"</strong>",
-      "color": "#DC2626",
-      "time": 1772361692836
     }
   ]
 }
