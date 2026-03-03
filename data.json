@@ -18,6 +18,10 @@
         {
           "name": "3 video ideas",
           "done": false
+        },
+        {
+          "name": "televizoris chabareba",
+          "done": false
         }
       ],
       "notes": "",
@@ -373,6 +377,11 @@
   ],
   "activity": [
     {
+      "msg": "Added task <strong>\"televizoris chabareba\"</strong> to \"Daily\"",
+      "color": "#2563EB",
+      "time": 1772542658031
+    },
+    {
       "msg": "Added task <strong>\"3 video ideas\"</strong> to \"Daily\"",
       "color": "#2563EB",
       "time": 1772542594734
@@ -616,11 +625,6 @@
       "msg": "Added task <strong>\"create 1 month visuals\"</strong> to \"Inventory Company\"",
       "color": "#E11D48",
       "time": 1772361553530
-    },
-    {
-      "msg": "Added task <strong>\"create automation for this plan\"</strong> to \"Inventory Company\"",
-      "color": "#E11D48",
-      "time": 1772361538050
     }
   ]
 }
