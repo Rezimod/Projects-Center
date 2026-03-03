@@ -14,6 +14,10 @@
         {
           "name": "street interview 2, what comes first about astroman",
           "done": false
+        },
+        {
+          "name": "3 video ideas",
+          "done": false
         }
       ],
       "notes": "",
@@ -369,6 +373,11 @@
   ],
   "activity": [
     {
+      "msg": "Added task <strong>\"3 video ideas\"</strong> to \"Daily\"",
+      "color": "#2563EB",
+      "time": 1772542594734
+    },
+    {
       "msg": "Deleted task <strong>\"street interview 2\"</strong> from \"Daily\"",
       "color": "#DC2626",
       "time": 1772542498929
@@ -612,11 +621,6 @@
       "msg": "Added task <strong>\"create automation for this plan\"</strong> to \"Inventory Company\"",
       "color": "#E11D48",
       "time": 1772361538050
-    },
-    {
-      "msg": "Added task <strong>\"first moth marketing plan\"</strong> to \"Inventory Company\"",
-      "color": "#E11D48",
-      "time": 1772361532740
     }
   ]
 }
