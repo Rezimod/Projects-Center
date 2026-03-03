@@ -143,7 +143,7 @@
       "id": 1772361505078,
       "name": "Inventory Company",
       "desc": "Fully automatic company about importing different inventory from china and turkety",
-      "type": "daily",
+      "type": "weekly",
       "due": "2026-03-20",
       "priority": "med",
       "color": "#2563EB",
@@ -376,6 +376,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Updated project <strong>\"Inventory Company\"</strong>",
+      "color": "#2563EB",
+      "time": 1772545686663
+    },
     {
       "msg": "Updated project <strong>\"Ticket ai\"</strong>",
       "color": "#2563EB",
@@ -620,11 +625,6 @@
       "msg": "Created project <strong>\"Current Website Update\"</strong>",
       "color": "#DC2626",
       "time": 1772361692836
-    },
-    {
-      "msg": "Added task <strong>\"deploy\"</strong> to \"Inventory Company\"",
-      "color": "#E11D48",
-      "time": 1772361586941
     }
   ]
 }
