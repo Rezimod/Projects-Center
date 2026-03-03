@@ -10,7 +10,12 @@
       "color": "#2563EB",
       "icon": "🎯",
       "progress": 0,
-      "tasks": [],
+      "tasks": [
+        {
+          "name": "street interview 2",
+          "done": false
+        }
+      ],
       "notes": "",
       "created": 1772542366810,
       "reminder": {
@@ -364,6 +369,11 @@
   ],
   "activity": [
     {
+      "msg": "Added task <strong>\"street interview 2\"</strong> to \"Daily\"",
+      "color": "#2563EB",
+      "time": 1772542475891
+    },
+    {
       "msg": "Created project <strong>\"Daily\"</strong>",
       "color": "#2563EB",
       "time": 1772542366811
@@ -607,11 +617,6 @@
       "msg": "Added task <strong>\"Social pages\"</strong> to \"Inventory Company\"",
       "color": "#E11D48",
       "time": 1772361515324
-    },
-    {
-      "msg": "Added task <strong>\"logo\"</strong> to \"Inventory Company\"",
-      "color": "#E11D48",
-      "time": 1772361510791
     }
   ]
 }
