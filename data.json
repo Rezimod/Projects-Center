@@ -6,7 +6,7 @@
       "desc": "daily activities",
       "type": "daily",
       "due": "",
-      "priority": "med",
+      "priority": "none",
       "color": "#2563EB",
       "icon": "🎯",
       "progress": 0,
@@ -385,6 +385,11 @@
   ],
   "activity": [
     {
+      "msg": "Priority set to <strong>none</strong> on \"Daily\"",
+      "color": "#2563EB",
+      "time": 1772647594468
+    },
+    {
       "msg": "Priority set to <strong>med</strong> on \"Daily\"",
       "color": "#2563EB",
       "time": 1772647588359
@@ -628,11 +633,6 @@
       "msg": "Added task <strong>\"add skywatcher page\"</strong> to \"Current Website Update\"",
       "color": "#7C3AED",
       "time": 1772404815697
-    },
-    {
-      "msg": "Added task <strong>\"add clubs page\"</strong> to \"Current Website Update\"",
-      "color": "#7C3AED",
-      "time": 1772404809779
     }
   ]
 }
