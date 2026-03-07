@@ -314,6 +314,10 @@
         {
           "name": "different agents",
           "done": false
+        },
+        {
+          "name": "test",
+          "done": false
         }
       ],
       "notes": "",
@@ -382,6 +386,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"test\"</strong> to \"Auto Content Creator\"",
+      "color": "#2563EB",
+      "time": 1772920268037
+    },
     {
       "msg": "Added task <strong>\"different agents\"</strong> to \"Auto Content Creator\"",
       "color": "#2563EB",
@@ -626,11 +635,6 @@
       "msg": "Updated project <strong>\"Auto Content Creator\"</strong>",
       "color": "#2563EB",
       "time": 1772406605001
-    },
-    {
-      "msg": "Updated project <strong>\"Astroman Loyal Club\"</strong>",
-      "color": "#2563EB",
-      "time": 1772406599672
     }
   ]
 }
