@@ -322,6 +322,10 @@
         {
           "name": "deplou",
           "done": false
+        },
+        {
+          "name": "make piels",
+          "done": false
         }
       ],
       "notes": "",
@@ -390,6 +394,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"make piels\"</strong> to \"Auto Content Creator\"",
+      "color": "#2563EB",
+      "time": 1772920277098
+    },
     {
       "msg": "Added task <strong>\"deplou\"</strong> to \"Auto Content Creator\"",
       "color": "#2563EB",
@@ -634,11 +643,6 @@
       "msg": "Updated project <strong>\"Current Website Update\"</strong>",
       "color": "#2563EB",
       "time": 1772406647927
-    },
-    {
-      "msg": "Updated project <strong>\"Content For Week\"</strong>",
-      "color": "#2563EB",
-      "time": 1772406618836
     }
   ]
 }
