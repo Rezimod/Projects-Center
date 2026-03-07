@@ -305,7 +305,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "✏️",
-      "progress": 17,
+      "progress": 33,
       "tasks": [
         {
           "name": "ai agents base build",
@@ -313,7 +313,7 @@
         },
         {
           "name": "different agents",
-          "done": false
+          "done": true
         },
         {
           "name": "test",
@@ -398,6 +398,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Completed task <strong>\"different agents\"</strong>",
+      "color": "#2563EB",
+      "time": 1772920282688
+    },
     {
       "msg": "Completed task <strong>\"ai agents base build\"</strong>",
       "color": "#2563EB",
@@ -642,11 +647,6 @@
       "msg": "Updated project <strong>\"Auto Content Creator\"</strong>",
       "color": "#2563EB",
       "time": 1772406729001
-    },
-    {
-      "msg": "Updated project <strong>\"Night Skywatcher\"</strong>",
-      "color": "#2563EB",
-      "time": 1772406711592
     }
   ]
 }
