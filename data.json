@@ -305,7 +305,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "✏️",
-      "progress": 33,
+      "progress": 50,
       "tasks": [
         {
           "name": "ai agents base build",
@@ -317,7 +317,7 @@
         },
         {
           "name": "test",
-          "done": false
+          "done": true
         },
         {
           "name": "deplou",
@@ -398,6 +398,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Completed task <strong>\"test\"</strong>",
+      "color": "#2563EB",
+      "time": 1772920286377
+    },
     {
       "msg": "Completed task <strong>\"different agents\"</strong>",
       "color": "#2563EB",
@@ -642,11 +647,6 @@
       "msg": "Updated project <strong>\"Advance AI\"</strong>",
       "color": "#2563EB",
       "time": 1772406744330
-    },
-    {
-      "msg": "Updated project <strong>\"Auto Content Creator\"</strong>",
-      "color": "#2563EB",
-      "time": 1772406729001
     }
   ]
 }
