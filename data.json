@@ -305,11 +305,11 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "✏️",
-      "progress": 0,
+      "progress": 17,
       "tasks": [
         {
           "name": "ai agents base build",
-          "done": false
+          "done": true
         },
         {
           "name": "different agents",
@@ -398,6 +398,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Completed task <strong>\"ai agents base build\"</strong>",
+      "color": "#2563EB",
+      "time": 1772920281614
+    },
     {
       "msg": "Added task <strong>\"real use\"</strong> to \"Auto Content Creator\"",
       "color": "#2563EB",
@@ -642,11 +647,6 @@
       "msg": "Updated project <strong>\"Night Skywatcher\"</strong>",
       "color": "#2563EB",
       "time": 1772406711592
-    },
-    {
-      "msg": "Updated project <strong>\"Inventory Company\"</strong>",
-      "color": "#2563EB",
-      "time": 1772406664879
     }
   ]
 }
