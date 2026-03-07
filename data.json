@@ -306,7 +306,12 @@
       "color": "#2563EB",
       "icon": "✏️",
       "progress": 0,
-      "tasks": [],
+      "tasks": [
+        {
+          "name": "ai agents base build",
+          "done": false
+        }
+      ],
       "notes": "",
       "created": 1772357035349,
       "reminder": {
@@ -373,6 +378,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Added task <strong>\"ai agents base build\"</strong> to \"Auto Content Creator\"",
+      "color": "#2563EB",
+      "time": 1772920253976
+    },
     {
       "msg": "Completed task <strong>\"street interview 2, what comes first about astroman\"</strong>",
       "color": "#2563EB",
@@ -617,11 +627,6 @@
       "msg": "Updated project <strong>\"Night Skywatcher\"</strong>",
       "color": "#2563EB",
       "time": 1772406594964
-    },
-    {
-      "msg": "Updated project <strong>\"Inventory Company\"</strong>",
-      "color": "#2563EB",
-      "time": 1772406590341
     }
   ]
 }
