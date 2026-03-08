@@ -249,7 +249,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "💪",
-      "progress": 22,
+      "progress": 33,
       "tasks": [
         {
           "name": "Create website",
@@ -265,7 +265,7 @@
         },
         {
           "name": "Manual Upload feature to add",
-          "done": false
+          "done": true
         },
         {
           "name": "check if everything works",
@@ -398,6 +398,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Completed task <strong>\"Manual Upload feature to add\"</strong>",
+      "color": "#2563EB",
+      "time": 1772973585767
+    },
     {
       "msg": "Completed task <strong>\"test\"</strong>",
       "color": "#2563EB",
@@ -642,11 +647,6 @@
       "msg": "Created project <strong>\"Ticket ai\"</strong>",
       "color": "#2563EB",
       "time": 1772485066019
-    },
-    {
-      "msg": "Updated project <strong>\"Advance AI\"</strong>",
-      "color": "#2563EB",
-      "time": 1772406744330
     }
   ]
 }
