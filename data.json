@@ -253,7 +253,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "💪",
-      "progress": 33,
+      "progress": 44,
       "tasks": [
         {
           "name": "Create website",
@@ -285,7 +285,7 @@
         },
         {
           "name": "add forgot password option",
-          "done": false
+          "done": true
         },
         {
           "name": "check matematics and new registration.",
@@ -402,6 +402,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Completed task <strong>\"add forgot password option\"</strong>",
+      "color": "#2563EB",
+      "time": 1773056870643
+    },
     {
       "msg": "Added task <strong>\"make finance app for astroman\"</strong> to \"Daily\"",
       "color": "#2563EB",
@@ -646,11 +651,6 @@
       "msg": "Deleted task <strong>\"ტელესკოპოს რენდომ ჩვენება\"</strong> from \"Night Skywatcher\"",
       "color": "#DC2626",
       "time": 1772485207161
-    },
-    {
-      "msg": "Added task <strong>\"ტელესკოპოს რენდომ ჩვენება\"</strong> to \"Night Skywatcher\"",
-      "color": "#2563EB",
-      "time": 1772485201642
     }
   ]
 }
