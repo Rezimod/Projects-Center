@@ -257,7 +257,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "💪",
-      "progress": 44,
+      "progress": 56,
       "tasks": [
         {
           "name": "Create website",
@@ -293,7 +293,7 @@
         },
         {
           "name": "check matematics and new registration.",
-          "done": false
+          "done": true
         }
       ],
       "notes": "",
@@ -406,6 +406,11 @@
     }
   ],
   "activity": [
+    {
+      "msg": "Completed task <strong>\"check matematics and new registration.\"</strong>",
+      "color": "#2563EB",
+      "time": 1773079007230
+    },
     {
       "msg": "Completed task <strong>\"ტელესკოპის რენდომ ჩვენება\"</strong>",
       "color": "#2563EB",
@@ -650,11 +655,6 @@
       "msg": "Created project <strong>\"Daily\"</strong>",
       "color": "#2563EB",
       "time": 1772542366811
-    },
-    {
-      "msg": "Added task <strong>\"ტელესკოპის რენდომ ჩვენება\"</strong> to \"Night Skywatcher\"",
-      "color": "#2563EB",
-      "time": 1772485231111
     }
   ]
 }
