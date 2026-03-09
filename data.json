@@ -18,6 +18,10 @@
         {
           "name": "app idea, name, etc",
           "done": false
+        },
+        {
+          "name": "people to meet",
+          "done": false
         }
       ],
       "notes": "",
@@ -435,6 +439,11 @@
   ],
   "activity": [
     {
+      "msg": "Added task <strong>\"people to meet\"</strong> to \"Weekend Coding Event\"",
+      "color": "#2563EB",
+      "time": 1773086921859
+    },
+    {
       "msg": "Added task <strong>\"app idea, name, etc\"</strong> to \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1773086915210
@@ -678,11 +687,6 @@
       "msg": "Added task <strong>\"3 video ideas\"</strong> to \"Daily\"",
       "color": "#2563EB",
       "time": 1772542594734
-    },
-    {
-      "msg": "Deleted task <strong>\"street interview 2\"</strong> from \"Daily\"",
-      "color": "#DC2626",
-      "time": 1772542498929
     }
   ]
 }
