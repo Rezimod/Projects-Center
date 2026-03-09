@@ -439,6 +439,16 @@
   ],
   "activity": [
     {
+      "msg": "Unchecked task <strong>\"make finance app for astroman\"</strong>",
+      "color": "#2563EB",
+      "time": 1773091133390
+    },
+    {
+      "msg": "Completed task <strong>\"make finance app for astroman\"</strong>",
+      "color": "#2563EB",
+      "time": 1773091124221
+    },
+    {
       "msg": "Completed task <strong>\"მაისურების დამზადება 20ც, 5ც დარიგება\"</strong>",
       "color": "#2563EB",
       "time": 1773091123334
@@ -677,16 +687,6 @@
       "msg": "Progress updated to <strong>9%</strong> on \"Daily\"",
       "color": "#2563EB",
       "time": 1772545202367
-    },
-    {
-      "msg": "Updated project <strong>\"Daily\"</strong>",
-      "color": "#2563EB",
-      "time": 1772545178354
-    },
-    {
-      "msg": "Added task <strong>\"televizoris chabareba\"</strong> to \"Daily\"",
-      "color": "#2563EB",
-      "time": 1772542658031
     }
   ]
 }
