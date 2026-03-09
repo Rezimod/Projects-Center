@@ -9,7 +9,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "🎯",
-      "progress": 67,
+      "progress": 78,
       "tasks": [
         {
           "name": "street interview 2, what comes first about astroman",
@@ -45,7 +45,7 @@
         },
         {
           "name": "jason new order",
-          "done": false
+          "done": true
         }
       ],
       "notes": "",
@@ -407,6 +407,11 @@
   ],
   "activity": [
     {
+      "msg": "Completed task <strong>\"jason new order\"</strong>",
+      "color": "#2563EB",
+      "time": 1773068950871
+    },
+    {
       "msg": "Added task <strong>\"jason new order\"</strong> to \"Daily\"",
       "color": "#2563EB",
       "time": 1773060042136
@@ -650,11 +655,6 @@
       "msg": "Deleted task <strong>\"ტელესკოპის რენდომ\"</strong> from \"Night Skywatcher\"",
       "color": "#DC2626",
       "time": 1772485222303
-    },
-    {
-      "msg": "Added task <strong>\"ტელესკოპის რენდომ\"</strong> to \"Night Skywatcher\"",
-      "color": "#2563EB",
-      "time": 1772485219395
     }
   ]
 }
