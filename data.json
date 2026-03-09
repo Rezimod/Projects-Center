@@ -41,7 +41,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "🎯",
-      "progress": 78,
+      "progress": 89,
       "tasks": [
         {
           "name": "street interview 2, what comes first about astroman",
@@ -61,7 +61,7 @@
         },
         {
           "name": "მაისურების დამზადება 20ც, 5ც დარიგება",
-          "done": false
+          "done": true
         },
         {
           "name": "optimo last import update",
@@ -439,6 +439,11 @@
   ],
   "activity": [
     {
+      "msg": "Completed task <strong>\"მაისურების დამზადება 20ც, 5ც დარიგება\"</strong>",
+      "color": "#2563EB",
+      "time": 1773091123334
+    },
+    {
       "msg": "Added task <strong>\"people to meet\"</strong> to \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1773086921859
@@ -682,11 +687,6 @@
       "msg": "Added task <strong>\"televizoris chabareba\"</strong> to \"Daily\"",
       "color": "#2563EB",
       "time": 1772542658031
-    },
-    {
-      "msg": "Added task <strong>\"3 video ideas\"</strong> to \"Daily\"",
-      "color": "#2563EB",
-      "time": 1772542594734
     }
   ]
 }
