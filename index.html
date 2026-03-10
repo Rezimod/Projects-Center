@@ -466,6 +466,40 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 .toast.show{transform:translateY(0) scale(1);opacity:1;}
 .toast-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 
+/* ── Station Header ── */
+.station-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px;padding-bottom:18px;border-bottom:2px solid var(--border);}
+.station-left{}
+.station-eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--blue);text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.station-eyebrow::before{content:'';display:inline-block;width:18px;height:1.5px;background:var(--blue);flex-shrink:0;}
+.station-date{font-size:26px;font-weight:900;letter-spacing:-0.8px;color:var(--text);line-height:1.1;}
+.station-right{text-align:right;padding-bottom:2px;}
+.station-sub{font-family:var(--mono);font-size:10px;color:var(--text3);line-height:1.9;}
+.station-sub strong{color:var(--text2);}
+html[data-theme="light"] .station-header{border-bottom-color:#E8EBF8;}
+html[data-theme="light"] .station-eyebrow{color:#2563EB;}
+html[data-theme="light"] .station-date{color:#0C0D1A;}
+
+/* ── Focus Timer ── */
+.focus-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;}
+.focus-card-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);}
+.focus-modes{display:flex;gap:5px;padding:14px 18px 0;}
+.focus-mode-btn{flex:1;padding:6px 8px;border-radius:6px;border:1px solid var(--border);background:none;font-family:var(--font);font-size:11px;font-weight:600;color:var(--text3);cursor:pointer;transition:all .15s;text-align:center;}
+.focus-mode-btn.active{background:var(--blue);color:white;border-color:var(--blue);}
+.focus-mode-btn:hover:not(.active){background:var(--bg2);color:var(--text);}
+.focus-body{padding:16px 18px 18px;text-align:center;}
+.focus-time-display{font-family:var(--mono);font-size:50px;font-weight:700;letter-spacing:-2px;color:var(--text);line-height:1;margin-bottom:4px;}
+.focus-phase{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;color:var(--text3);text-transform:uppercase;margin-bottom:14px;}
+.focus-bar{height:3px;background:var(--bg2);border-radius:3px;overflow:hidden;margin-bottom:16px;}
+.focus-bar-fill{height:100%;border-radius:3px;transition:width 1s linear;}
+.focus-btns{display:flex;gap:8px;justify-content:center;margin-bottom:10px;}
+.focus-sessions{font-family:var(--mono);font-size:10px;color:var(--text3);}
+.focus-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--border2);margin:0 2px;transition:background .2s;vertical-align:middle;}
+.focus-dot.done{background:var(--blue);}
+
+/* ── Sidebar logo clickable ── */
+.logo-area{cursor:pointer;}
+.logo-area:hover .logo-name{opacity:.85;}
+
 /* ── Animations ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 .au{animation:fadeUp .28s ease both;}
@@ -510,6 +544,9 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
   .toast{min-width:unset;}
   .btn{padding:10px 15px;}
   .btn-sm{padding:9px 12px;}
+  .station-header{flex-direction:column;align-items:flex-start;gap:8px;}
+  .station-right{text-align:left;}
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
 }
 @media(max-width:420px){
   .kpi-row{grid-template-columns:repeat(2,1fr);}
@@ -672,7 +709,7 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 <!-- ══ APP ══ -->
 <div class="app">
   <aside class="sidebar" id="sidebar">
-    <div class="logo-area">
+    <div class="logo-area" onclick="goView('dashboard')" title="Go to Dashboard">
       <div class="logo-row">
         <div class="logo-mark">
           <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1166,6 +1203,107 @@ function filterProjects(p,v){
 }
 
 // ══════════════════════════════════════════════════════════
+//  FOCUS TIMER
+// ══════════════════════════════════════════════════════════
+let _focusMode = 'focus';
+const _focusDurations = { focus: 25*60, short: 5*60, long: 15*60 };
+let _focusRemaining = _focusDurations.focus;
+let _focusRunning = false;
+let _focusIntervalId = null;
+let _focusSessions = 0;
+let _focusTotal = _focusDurations.focus;
+
+function focusSetMode(mode) {
+  _focusMode = mode;
+  _focusTotal = _focusDurations[mode];
+  _focusRemaining = _focusTotal;
+  _focusRunning = false;
+  clearInterval(_focusIntervalId);
+  _renderFocusTimer();
+}
+function focusToggle() {
+  if (_focusRunning) {
+    clearInterval(_focusIntervalId);
+    _focusRunning = false;
+  } else {
+    _focusRunning = true;
+    _focusIntervalId = setInterval(() => {
+      if (_focusRemaining <= 0) {
+        clearInterval(_focusIntervalId);
+        _focusRunning = false;
+        if (_focusMode === 'focus') _focusSessions++;
+        toast(_focusMode === 'focus' ? 'Focus session done! Take a break.' : 'Break over — back to work.', '#16A34A');
+        _renderFocusTimer();
+        return;
+      }
+      _focusRemaining--;
+      _renderFocusTimer();
+    }, 1000);
+  }
+  _renderFocusTimer();
+}
+function focusReset() {
+  clearInterval(_focusIntervalId);
+  _focusRunning = false;
+  _focusRemaining = _focusTotal;
+  _renderFocusTimer();
+}
+function _renderFocusTimer() {
+  const m = String(Math.floor(_focusRemaining / 60)).padStart(2, '0');
+  const s = String(_focusRemaining % 60).padStart(2, '0');
+  const pct = Math.round((1 - _focusRemaining / _focusTotal) * 100);
+  const colors = { focus: 'var(--blue)', short: 'var(--green)', long: 'var(--purple)' };
+  const phases = { focus: 'FOCUS SESSION', short: 'SHORT BREAK', long: 'LONG BREAK' };
+  const col = colors[_focusMode];
+  document.querySelectorAll('.focus-mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === _focusMode));
+  const timeEl = document.getElementById('focus-time');
+  const barEl  = document.getElementById('focus-bar-fill');
+  const btnEl  = document.getElementById('focus-toggle-btn');
+  const sessEl = document.getElementById('focus-sessions');
+  const phEl   = document.getElementById('focus-phase');
+  const metaEl = document.getElementById('focus-card-meta');
+  if (timeEl) timeEl.textContent = `${m}:${s}`;
+  if (barEl)  { barEl.style.width = pct + '%'; barEl.style.background = col; }
+  if (btnEl)  btnEl.textContent = _focusRunning ? '⏸ Pause' : '▶ Start';
+  if (phEl)   phEl.textContent = phases[_focusMode];
+  if (metaEl) metaEl.textContent = `Pomodoro · ${_focusSessions} session${_focusSessions !== 1 ? 's' : ''} done`;
+  if (sessEl) {
+    const dots = Array.from({length:4},(_,i)=>`<span class="focus-dot ${i < _focusSessions % 4 ? 'done' : ''}"></span>`).join('');
+    sessEl.innerHTML = `Session ${_focusSessions + 1} &nbsp;${dots}`;
+  }
+}
+function renderFocusCardHTML() {
+  const m = String(Math.floor(_focusRemaining / 60)).padStart(2, '0');
+  const s = String(_focusRemaining % 60).padStart(2, '0');
+  const pct = Math.round((1 - _focusRemaining / _focusTotal) * 100);
+  const colors = { focus: 'var(--blue)', short: 'var(--green)', long: 'var(--purple)' };
+  const phases = { focus: 'FOCUS SESSION', short: 'SHORT BREAK', long: 'LONG BREAK' };
+  const col = colors[_focusMode];
+  const dots = Array.from({length:4},(_,i)=>`<span class="focus-dot ${i < _focusSessions % 4 ? 'done' : ''}"></span>`).join('');
+  return `<div class="focus-card au">
+    <div class="focus-card-head">
+      <div class="card-title">Focus Timer</div>
+      <div class="card-meta" id="focus-card-meta">Pomodoro · ${_focusSessions} session${_focusSessions!==1?'s':''} done</div>
+    </div>
+    <div class="focus-modes">
+      <button class="focus-mode-btn ${_focusMode==='focus'?'active':''}" data-mode="focus" onclick="focusSetMode('focus')">Focus 25m</button>
+      <button class="focus-mode-btn ${_focusMode==='short'?'active':''}" data-mode="short" onclick="focusSetMode('short')">Short 5m</button>
+      <button class="focus-mode-btn ${_focusMode==='long'?'active':''}" data-mode="long" onclick="focusSetMode('long')">Long 15m</button>
+    </div>
+    <div class="focus-body">
+      <div class="focus-time-display" id="focus-time">${m}:${s}</div>
+      <div class="focus-phase" id="focus-phase">${phases[_focusMode]}</div>
+      <div class="focus-bar"><div class="focus-bar-fill" id="focus-bar-fill" style="width:${pct}%;background:${col}"></div></div>
+      <div class="focus-btns">
+        <button class="btn btn-primary" id="focus-toggle-btn" onclick="focusToggle()">${_focusRunning?'⏸ Pause':'▶ Start'}</button>
+        <button class="btn btn-ghost" onclick="focusReset()">↺ Reset</button>
+      </div>
+      <div class="focus-sessions" id="focus-sessions">Session ${_focusSessions+1} &nbsp;${dots}</div>
+    </div>
+  </div>`;
+}
+
+// ══════════════════════════════════════════════════════════
 //  DASHBOARD
 // ══════════════════════════════════════════════════════════
 function renderDashboard() {
@@ -1174,7 +1312,7 @@ function renderDashboard() {
   const overdue=D.filter(p=>p.due&&new Date(p.due)<new Date()&&p.progress<100).length;
   const avgPct=total>0?Math.round(D.reduce((s,p)=>s+p.progress,0)/total):0;
   const dayStr=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
-  const recent=D.slice(0,6);
+  const recent=D.filter(p=>p.progress<100).slice(0,6);
   const syncBanner = !isGHConfigured() ? `
     <div class="sync-banner">
       <span style="font-size:22px">🔗</span>
@@ -1185,12 +1323,15 @@ function renderDashboard() {
       <button class="btn btn-sm" style="background:var(--amber);color:white;border:none;flex-shrink:0" onclick="openSetup()">Set up →</button>
     </div>` : '';
   return `<div class="au">
-    <div class="dash-top">
-      <div class="dash-greeting">
-        <span class="dash-line1">Today We Make</span>
-        <span class="dash-line2">Something Special.</span>
+    <div class="station-header au">
+      <div class="station-left">
+        <div class="station-eyebrow">Projects Center</div>
+        <div class="station-date">${dayStr}</div>
       </div>
-      <div class="dash-sub">${dayStr} · ${total} project${total!==1?'s':''} tracked</div>
+      <div class="station-right">
+        <div class="station-sub"><strong>${total}</strong> tracked &nbsp;·&nbsp; <strong>${active}</strong> active</div>
+        <div class="station-sub"><strong>${done}</strong> completed &nbsp;·&nbsp; avg <strong>${avgPct}%</strong></div>
+      </div>
     </div>
     ${syncBanner}
     <div class="kpi-row">
@@ -1200,12 +1341,19 @@ function renderDashboard() {
       <div class="kpi au au4"><div class="kpi-label">Overdue</div><div class="kpi-val" style="color:${overdue>0?'var(--red)':'var(--green)'}">${overdue}</div><div class="kpi-sub">${overdue>0?'⚠ Attention':'✓ On track'}</div></div>
     </div>
     ${recent.length > 0 ? `
-    <div class="section-hd au"><div class="section-hd-title">Recent Projects</div><button class="btn btn-ghost btn-sm" onclick="goView('all')">View all →</button></div>
+    <div class="section-hd au"><div class="section-hd-title">Active Projects</div><button class="btn btn-ghost btn-sm" onclick="goView('all')">View all →</button></div>
     <div class="pcards">${recent.map((p,i)=>`<div class="au" style="animation-delay:${i*.05}s">${pcardHTML(p)}</div>`).join('')}</div>` :
     `<div class="empty"><div class="empty-ill">🚀</div><div class="empty-title">Ready to start?</div><div class="empty-desc">Create your first project and start tracking progress.</div><button class="btn btn-primary" onclick="openAdd()">+ Create First Project</button></div>`}
-    ${activityLog.length > 0 ? `
-    <div class="section-hd au" style="margin-top:26px"><div class="section-hd-title">Recent Activity</div></div>
-    <div class="card au">${activityLog.slice(0,8).map(a=>`<div class="activity-item"><div class="activity-dot" style="background:${a.color}"></div><div class="activity-txt">${a.msg}</div><div class="activity-time">${relTime(a.time)}</div></div>`).join('')}</div>` : ''}
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;align-items:start">
+      ${activityLog.length > 0 ? `<div>
+        <div class="section-hd au"><div class="section-hd-title">Recent Activity</div></div>
+        <div class="card au">${activityLog.slice(0,6).map(a=>`<div class="activity-item"><div class="activity-dot" style="background:${a.color}"></div><div class="activity-txt">${a.msg}</div><div class="activity-time">${relTime(a.time)}</div></div>`).join('')}</div>
+      </div>` : '<div></div>'}
+      <div>
+        <div class="section-hd au"><div class="section-hd-title">Focus Timer</div></div>
+        ${renderFocusCardHTML()}
+      </div>
+    </div>
   </div>`;
 }
 
