@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 20,
+      "progress": 40,
       "tasks": [
         {
           "name": "create a plan",
@@ -21,7 +21,7 @@
         },
         {
           "name": "people to meet",
-          "done": false
+          "done": true
         },
         {
           "name": "learn the plan",
@@ -391,6 +391,11 @@
   ],
   "activity": [
     {
+      "msg": "Completed task <strong>\"people to meet\"</strong>",
+      "color": "#2563EB",
+      "time": 1773476910064
+    },
+    {
       "msg": "Completed task <strong>\"create a plan\"</strong>",
       "color": "#2563EB",
       "time": 1773476907514
@@ -634,11 +639,6 @@
       "msg": "Progress updated to <strong>48%</strong> on \"Current Website Update\"",
       "color": "#2563EB",
       "time": 1772570280708
-    },
-    {
-      "msg": "Added task <strong>\"ხათუნას გამოწერები\"</strong> to \"Daily\"",
-      "color": "#2563EB",
-      "time": 1772549969232
     }
   ]
 }
