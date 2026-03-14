@@ -9,11 +9,11 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 0,
+      "progress": 20,
       "tasks": [
         {
           "name": "create a plan",
-          "done": false
+          "done": true
         },
         {
           "name": "app idea, name, etc",
@@ -391,6 +391,11 @@
   ],
   "activity": [
     {
+      "msg": "Completed task <strong>\"create a plan\"</strong>",
+      "color": "#2563EB",
+      "time": 1773476907514
+    },
+    {
       "msg": "Added task <strong>\"has to be a problem solving\"</strong> to \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1773476904316
@@ -634,11 +639,6 @@
       "msg": "Added task <strong>\"ხათუნას გამოწერები\"</strong> to \"Daily\"",
       "color": "#2563EB",
       "time": 1772549969232
-    },
-    {
-      "msg": "Updated project <strong>\"Daily\"</strong>",
-      "color": "#2563EB",
-      "time": 1772546766180
     }
   ]
 }
