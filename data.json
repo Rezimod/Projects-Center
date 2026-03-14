@@ -26,6 +26,10 @@
         {
           "name": "learn the plan",
           "done": false
+        },
+        {
+          "name": "has to be a problem solving",
+          "done": false
         }
       ],
       "notes": "",
@@ -387,6 +391,11 @@
   ],
   "activity": [
     {
+      "msg": "Added task <strong>\"has to be a problem solving\"</strong> to \"Weekend Coding Event\"",
+      "color": "#2563EB",
+      "time": 1773476904316
+    },
+    {
       "msg": "Deleted project <strong>\"Inventory Company\"</strong>",
       "color": "#DC2626",
       "time": 1773142935402
@@ -630,11 +639,6 @@
       "msg": "Updated project <strong>\"Daily\"</strong>",
       "color": "#2563EB",
       "time": 1772546766180
-    },
-    {
-      "msg": "Updated project <strong>\"Inventory Company\"</strong>",
-      "color": "#2563EB",
-      "time": 1772545686663
     }
   ]
 }
