@@ -57,7 +57,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "🎯",
-      "progress": 78,
+      "progress": 70,
       "tasks": [
         {
           "name": "street interview 2, what comes first about astroman",
@@ -94,6 +94,10 @@
         {
           "name": "jason new order",
           "done": true
+        },
+        {
+          "name": "extrar Ge finalize",
+          "done": false
         }
       ],
       "notes": "",
@@ -399,6 +403,11 @@
   ],
   "activity": [
     {
+      "msg": "Added task <strong>\"extrar Ge finalize\"</strong> to \"Daily\"",
+      "color": "#2563EB",
+      "time": 1773667969594
+    },
+    {
       "msg": "Completed task <strong>\"done\"</strong>",
       "color": "#2563EB",
       "time": 1773664495045
@@ -642,11 +651,6 @@
       "msg": "Priority set to <strong>high</strong> on \"Daily\"",
       "color": "#2563EB",
       "time": 1772647587707
-    },
-    {
-      "msg": "Priority set to <strong>med</strong> on \"Daily\"",
-      "color": "#2563EB",
-      "time": 1772647586469
     }
   ]
 }
