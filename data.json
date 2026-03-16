@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 86,
+      "progress": 100,
       "tasks": [
         {
           "name": "create a plan",
@@ -37,7 +37,7 @@
         },
         {
           "name": "done",
-          "done": false
+          "done": true
         }
       ],
       "notes": "I am building Proof of Observation — Strava for astronomy on Solana\nfor telescope owners at Georgia's first astronomy store\nthat solves no way to verify, reward, or share real stargazing\nby gamified sky missions with camera proof, satellite-verified conditions (FarmHawk), offline mesh submission (Pollinet), and NFT achievement minting — built from Scriptonia-generated specs",
@@ -399,6 +399,11 @@
   ],
   "activity": [
     {
+      "msg": "Completed task <strong>\"done\"</strong>",
+      "color": "#2563EB",
+      "time": 1773664495045
+    },
+    {
       "msg": "Added task <strong>\"done\"</strong> to \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1773664493578
@@ -642,11 +647,6 @@
       "msg": "Priority set to <strong>med</strong> on \"Daily\"",
       "color": "#2563EB",
       "time": 1772647586469
-    },
-    {
-      "msg": "Added task <strong>\"მაისურების დამზადება 20ც, 5ც დარიგება\"</strong> to \"Daily\"",
-      "color": "#2563EB",
-      "time": 1772646588029
     }
   ]
 }
