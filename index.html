@@ -500,6 +500,50 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
 .logo-area{cursor:pointer;}
 .logo-area:hover .logo-name{opacity:.85;}
 
+/* ── Nav active accent border ── */
+.nav-item.active{border-left:2px solid #60A5FA;padding-left:7px;}
+
+/* ── Todo Task UI ── */
+.todo-inp{flex:1;min-height:44px;padding:10px 12px;border:1px solid var(--border2);border-radius:var(--r-sm);background:var(--bg2);color:var(--text);font-family:var(--font);font-size:14px;outline:none;}
+.todo-inp:focus{border-color:var(--blue);}
+.todo-input-row{display:flex;gap:8px;margin-bottom:14px;}
+.todo-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);}
+.todo-item:last-child{border-bottom:none;}
+.todo-ck{width:18px;height:18px;border-radius:5px;border:2px solid var(--border2);flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.todo-ck.done{background:var(--green);border-color:var(--green);}
+.todo-ck.done::after{content:'✓';color:white;font-size:10px;font-weight:700;}
+.todo-nm{flex:1;font-size:14px;color:var(--text);line-height:1.4;}
+.todo-nm.done{text-decoration:line-through;color:var(--text3);}
+.todo-del{background:none;border:none;color:var(--text3);cursor:pointer;font-size:12px;padding:4px 7px;border-radius:4px;opacity:0;transition:opacity .12s;min-width:28px;min-height:28px;}
+.todo-item:hover .todo-del,.todo-item:focus-within .todo-del{opacity:1;}
+.todo-empty{padding:28px;text-align:center;color:var(--text3);font-size:13px;}
+.todo-qs-label{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px;}
+.todo-qs-inp{width:100%;padding:10px 12px;border:1px solid var(--border2);border-radius:var(--r-sm);background:var(--bg2);color:var(--text);font-family:var(--font);font-size:14px;resize:none;min-height:64px;outline:none;margin-bottom:8px;display:block;}
+.todo-qs-inp:focus{border-color:var(--blue);}
+@media(max-width:768px){.todo-del{opacity:1;}}
+
+/* ── Dashboard daily-task bar ── */
+.dash-dtbar-wrap{margin-bottom:20px;}
+.dash-dtbar-hd{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--text3);margin-bottom:6px;}
+.dash-dtbar{height:5px;border-radius:5px;background:var(--bg3);overflow:hidden;}
+.dash-dtbar-fill{height:100%;border-radius:5px;background:var(--green);transition:width .5s ease;}
+
+/* ── Sync chip (topbar) ── */
+.sync-chip{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;background:var(--bg2);border:1px solid var(--border);font-family:var(--mono);font-size:10px;color:var(--text3);cursor:pointer;white-space:nowrap;transition:all .15s;flex-shrink:0;}
+.sync-chip:hover{background:var(--bg3);}
+.sync-chip.ok{color:#16A34A;border-color:rgba(22,163,74,.3);background:rgba(22,163,74,.07);}
+.sync-chip.err{color:var(--red);border-color:rgba(220,38,38,.3);background:rgba(220,38,38,.07);}
+.sc-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;}
+@media(max-width:768px){.sync-chip-label{display:none;}}
+
+/* ── Digest settings checkboxes ── */
+.digest-chk-row{display:flex;align-items:center;gap:10px;padding:8px 0;}
+.digest-chk-row input[type="checkbox"]{width:16px;height:16px;cursor:pointer;flex-shrink:0;}
+.digest-chk-row label{font-size:13px;color:var(--text);cursor:pointer;}
+/* Setup modal scroll */
+#setupOverlay .modal-body{overflow-y:auto;max-height:calc(100vh - 160px);}
+#setupOverlay .fi,#setupOverlay .fsel{min-height:44px;}
+
 /* ── Animations ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 .au{animation:fadeUp .28s ease both;}
@@ -617,14 +661,20 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
           <span class="toggle-text">Send reminders to Telegram</span>
         </label>
       </div>
-      <div class="field" id="reminder-timing-wrap" style="display:none">
-        <div class="fl">Remind me</div>
-        <select class="fsel" id="f-reminder-timing">
-          <option value="today">On the due day</option>
-          <option value="oneday" selected>1 day before</option>
-          <option value="threedays">3 days before</option>
-          <option value="oneweek">1 week before</option>
-        </select>
+      <div id="reminder-timing-wrap" style="display:none">
+        <div class="field">
+          <div class="fl">Due-date alert</div>
+          <select class="fsel" id="f-reminder-timing">
+            <option value="today">On the due day</option>
+            <option value="oneday" selected>1 day before</option>
+            <option value="threedays">3 days before</option>
+            <option value="oneweek">1 week before</option>
+          </select>
+        </div>
+        <div class="field">
+          <div class="fl">Daily notify time (Tbilisi)</div>
+          <input class="fi" id="f-notify-time" type="time" value="16:00"/>
+        </div>
       </div>
     </div>
     <div class="modal-foot">
@@ -674,6 +724,13 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
         <input class="fi" id="s-gh-repo" placeholder="Morningbriefrezi/Projects-Center" value="Morningbriefrezi/Projects-Center"/>
         <div class="fi-hint">Already filled in — just add your token above and click Save & Connect</div>
       </div>
+      <div class="field" style="padding:4px 0">
+        <label class="toggle-label">
+          <input type="checkbox" id="s-auto-pull" checked>
+          <div class="toggle-ui"></div>
+          <span class="toggle-text">Pull from GitHub on every page open</span>
+        </label>
+      </div>
       <div class="setup-divider"></div>
       <div class="setup-sect-hd">
         <div class="setup-sect-icon" style="background:#E0F2FE">✈️</div>
@@ -689,7 +746,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
       </div>
       <div class="field">
         <div class="fl">Your Chat ID</div>
-        <input class="fi" id="s-tg-chatid" placeholder="123456789"/>
+        <input class="fi" id="s-tg-chatid" placeholder="123456789" inputmode="numeric"/>
         <div class="fi-hint">Message <a href="https://t.me/userinfobot" target="_blank">@userinfobot</a> to find your ID</div>
       </div>
       <div class="field">
@@ -697,7 +754,30 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
         <input class="fi" id="s-digest-time" type="time" value="16:00"/>
         <div class="fi-hint">A summary of all active tasks is sent at this time every day when the app is open.</div>
       </div>
-      <button class="btn btn-ghost" onclick="testTelegramSetup()" style="width:100%;justify-content:center">🔔 Test Notification</button>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-ghost" onclick="testTelegramSetup()" style="flex:1;justify-content:center">🔔 Test Notification</button>
+        <button class="btn btn-ghost" onclick="sendDigestNow()" style="flex:1;justify-content:center">📨 Send Digest Now</button>
+      </div>
+      <div class="setup-divider"></div>
+      <div class="setup-sect-hd">
+        <div class="setup-sect-icon" style="background:#F0FDF4">📊</div>
+        <div>
+          <div class="setup-sect-title">Task Summary in Digest</div>
+          <div class="setup-sect-sub">What to include in the daily digest message</div>
+        </div>
+      </div>
+      <div class="digest-chk-row">
+        <input type="checkbox" id="s-dig-daily" checked>
+        <label for="s-dig-daily">Include Daily Tasks</label>
+      </div>
+      <div class="digest-chk-row">
+        <input type="checkbox" id="s-dig-weekly" checked>
+        <label for="s-dig-weekly">Include Weekly Tasks</label>
+      </div>
+      <div class="digest-chk-row">
+        <input type="checkbox" id="s-dig-overdue" checked>
+        <label for="s-dig-overdue">Include Overdue Projects</label>
+      </div>
     </div>
     <div class="modal-foot">
       <button class="btn btn-ghost" onclick="closeSetup()">Close</button>
@@ -748,6 +828,11 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
         <button class="nav-item" id="nav-done" onclick="goView('done')"><div class="ni">✅</div><span style="flex:1">Completed</span><span class="nb" id="nb-done">0</span></button>
         <button class="nav-item" id="nav-overdue" onclick="goView('overdue')"><div class="ni">⚠️</div><span style="flex:1">Overdue</span><span class="nb" id="nb-overdue">0</span></button>
       </div>
+      <div class="sb-section">
+        <div class="sb-label">To-Do</div>
+        <button class="nav-item" id="nav-todo-daily" onclick="goView('todo-daily')"><div class="ni">✅</div><span style="flex:1">Daily Tasks</span><span class="nb" id="nb-todo-daily">0</span></button>
+        <button class="nav-item" id="nav-todo-weekly" onclick="goView('todo-weekly')"><div class="ni">📋</div><span style="flex:1">Weekly Tasks</span><span class="nb" id="nb-todo-weekly">0</span></button>
+      </div>
     </div>
 
     <div class="sb-foot">
@@ -778,6 +863,10 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
       <div class="topbar-div"></div>
       <div class="topbar-crumb" id="tb-crumb">Overview</div>
       <div class="topbar-space"></div>
+      <button class="sync-chip" id="topbar-sync-chip" onclick="pullFromGitHub()">
+        <span class="sc-dot"></span>
+        <span class="sync-chip-label" id="topbar-sync-label">Not connected</span>
+      </button>
       <div id="tb-actions"></div>
       <button class="btn btn-primary btn-sm" onclick="openAdd()">+ New</button>
     </div>
@@ -801,6 +890,156 @@ let activityLog = JSON.parse(localStorage.getItem('pc_activity') || '[]');
 let _dataSha = null;
 let _saveTimer = null;
 let _isSaving = false;
+let dailyTasks = [];
+let weeklyTasks = [];
+
+// ── ISO week helper ──
+function isoWeek(d = new Date()) {
+  const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  date.setUTCDate(date.getUTCDate() + 4 - (date.getUTCDay() || 7));
+  const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+  return Math.ceil(((date - yearStart) / 86400000 + 1) / 7);
+}
+function getWeekLabel() {
+  const now = new Date(), dow = now.getDay() || 7;
+  const mon = new Date(now); mon.setDate(now.getDate() - dow + 1);
+  const sun = new Date(mon); sun.setDate(mon.getDate() + 6);
+  const fmt = d => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  return `Week ${isoWeek(now)} · ${fmt(mon)}–${fmt(sun)}`;
+}
+
+// ── Daily tasks init (reset checked tasks at midnight) ──
+function initDailyTasks() {
+  const stored = JSON.parse(localStorage.getItem('dailyTasks') || '[]');
+  const storedDate = localStorage.getItem('dailyTasksDate') || '';
+  const today = new Date().toISOString().split('T')[0];
+  if (storedDate !== today) {
+    dailyTasks = stored.filter(t => !t.done).map(t => ({ ...t, date: today }));
+    localStorage.setItem('dailyTasksDate', today);
+    localStorage.setItem('dailyTasks', JSON.stringify(dailyTasks));
+  } else {
+    dailyTasks = stored;
+  }
+}
+// ── Weekly tasks init (reset checked tasks on new ISO week) ──
+function initWeeklyTasks() {
+  const stored = JSON.parse(localStorage.getItem('weeklyTasks') || '[]');
+  const storedWeek = parseInt(localStorage.getItem('weeklyTasksWeek') || '0');
+  const storedYear = parseInt(localStorage.getItem('weeklyTasksYear') || '0');
+  const now = new Date(), curWeek = isoWeek(now), curYear = now.getFullYear();
+  if (storedWeek !== curWeek || storedYear !== curYear) {
+    weeklyTasks = stored.filter(t => !t.done).map(t => ({ ...t, weekNum: curWeek, year: curYear }));
+    localStorage.setItem('weeklyTasksWeek', String(curWeek));
+    localStorage.setItem('weeklyTasksYear', String(curYear));
+    localStorage.setItem('weeklyTasks', JSON.stringify(weeklyTasks));
+  } else {
+    weeklyTasks = stored;
+  }
+}
+function saveDailyTasks()  { localStorage.setItem('dailyTasks', JSON.stringify(dailyTasks)); updateSidebar(); }
+function saveWeeklyTasks() { localStorage.setItem('weeklyTasks', JSON.stringify(weeklyTasks)); updateSidebar(); }
+
+// ── Daily task CRUD ──
+function addDailyTask() {
+  const inp = document.getElementById('daily-task-inp');
+  const text = inp?.value.trim(); if (!text) return;
+  dailyTasks.push({ id: Date.now(), text, done: false, date: new Date().toISOString().split('T')[0] });
+  saveDailyTasks(); inp.value = ''; renderContent();
+}
+function toggleDailyTask(id) {
+  const t = dailyTasks.find(x => x.id === id); if (t) { t.done = !t.done; saveDailyTasks(); }
+  renderContent();
+}
+function delDailyTask(id) { dailyTasks = dailyTasks.filter(x => x.id !== id); saveDailyTasks(); renderContent(); }
+
+// ── Weekly task CRUD ──
+function addWeeklyTask() {
+  const inp = document.getElementById('weekly-task-inp');
+  const text = inp?.value.trim(); if (!text) return;
+  const now = new Date();
+  weeklyTasks.push({ id: Date.now(), text, done: false, weekNum: isoWeek(now), year: now.getFullYear() });
+  saveWeeklyTasks(); inp.value = ''; renderContent();
+}
+function toggleWeeklyTask(id) {
+  const t = weeklyTasks.find(x => x.id === id); if (t) { t.done = !t.done; saveWeeklyTasks(); }
+  renderContent();
+}
+function delWeeklyTask(id) { weeklyTasks = weeklyTasks.filter(x => x.id !== id); saveWeeklyTasks(); renderContent(); }
+
+// ── Quick Telegram send ──
+function sendQuickTelegram() {
+  const inp = document.getElementById('tg-quick-inp');
+  const text = inp?.value.trim();
+  if (!text) { toast('Enter a message first', '#DC2626'); return; }
+  sendTelegram(`📝 ${text}`);
+  inp.value = '';
+  toast('Sent to Telegram!', '#16A34A');
+}
+
+// ── Render Daily Tasks view ──
+function renderDailyTasks() {
+  const done = dailyTasks.filter(t => t.done).length, total = dailyTasks.length;
+  const pct = total > 0 ? Math.round(done / total * 100) : 0;
+  const taskList = total === 0
+    ? `<div class="todo-empty">No tasks yet — add one above.</div>`
+    : dailyTasks.map(t => `<div class="todo-item">
+        <div class="todo-ck ${t.done ? 'done' : ''}" onclick="toggleDailyTask(${t.id})"></div>
+        <span class="todo-nm ${t.done ? 'done' : ''}">${t.text}</span>
+        <button class="todo-del" onclick="delDailyTask(${t.id})">✕</button>
+      </div>`).join('');
+  return `<div class="au">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+      <div>
+        <div style="font-weight:900;font-size:22px;letter-spacing:-.5px;color:var(--text)">Daily Tasks</div>
+        <div style="font-family:var(--mono);font-size:11px;color:var(--text3);margin-top:3px">${new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})} · resets at midnight</div>
+      </div>
+      ${total > 0 ? `<div style="font-family:var(--mono);font-size:13px;color:var(--text3)">${done}/${total} done</div>` : ''}
+    </div>
+    ${total > 0 ? `<div class="dash-dtbar-wrap"><div class="dash-dtbar"><div class="dash-dtbar-fill" style="width:${pct}%"></div></div></div>` : ''}
+    <div class="card" style="padding:18px">
+      <div class="todo-input-row">
+        <input class="todo-inp" id="daily-task-inp" placeholder="Add a task, press Enter…" onkeydown="if(event.key==='Enter')addDailyTask()">
+        <button class="btn btn-primary btn-sm" onclick="addDailyTask()">Add</button>
+      </div>
+      <div>${taskList}</div>
+    </div>
+    ${tgToken() ? `<div class="card" style="padding:18px;margin-top:16px">
+      <div class="todo-qs-label">Quick Send to Telegram</div>
+      <textarea class="todo-qs-inp" id="tg-quick-inp" placeholder="Send a quick note to yourself…"></textarea>
+      <button class="btn btn-ghost btn-sm" onclick="sendQuickTelegram()">📨 Send</button>
+    </div>` : ''}
+  </div>`;
+}
+
+// ── Render Weekly Tasks view ──
+function renderWeeklyTasks() {
+  const done = weeklyTasks.filter(t => t.done).length, total = weeklyTasks.length;
+  const pct = total > 0 ? Math.round(done / total * 100) : 0;
+  const taskList = total === 0
+    ? `<div class="todo-empty">No tasks this week — add one above.</div>`
+    : weeklyTasks.map(t => `<div class="todo-item">
+        <div class="todo-ck ${t.done ? 'done' : ''}" onclick="toggleWeeklyTask(${t.id})"></div>
+        <span class="todo-nm ${t.done ? 'done' : ''}">${t.text}</span>
+        <button class="todo-del" onclick="delWeeklyTask(${t.id})">✕</button>
+      </div>`).join('');
+  return `<div class="au">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+      <div>
+        <div style="font-weight:900;font-size:22px;letter-spacing:-.5px;color:var(--text)">Weekly Tasks</div>
+        <div style="font-family:var(--mono);font-size:11px;color:var(--text3);margin-top:3px">${getWeekLabel()} · resets Monday</div>
+      </div>
+      ${total > 0 ? `<div style="font-family:var(--mono);font-size:13px;color:var(--text3)">${done}/${total} done</div>` : ''}
+    </div>
+    ${total > 0 ? `<div class="dash-dtbar-wrap"><div class="dash-dtbar"><div class="dash-dtbar-fill" style="width:${pct}%"></div></div></div>` : ''}
+    <div class="card" style="padding:18px">
+      <div class="todo-input-row">
+        <input class="todo-inp" id="weekly-task-inp" placeholder="Add a weekly task, press Enter…" onkeydown="if(event.key==='Enter')addWeeklyTask()">
+        <button class="btn btn-primary btn-sm" onclick="addWeeklyTask()">Add</button>
+      </div>
+      <div>${taskList}</div>
+    </div>
+  </div>`;
+}
 
 document.documentElement.setAttribute('data-theme', theme);
 updateThemeUI();
@@ -873,9 +1112,10 @@ async function ghSave(data, _retry = false) {
 function setSyncStatus(type, msg) {
   const btn = document.getElementById('sync-status');
   const lbl = document.getElementById('sync-label');
-  if (!btn || !lbl) return;
-  lbl.textContent = msg;
-  btn.className = 'sb-sync' + (type ? ' ' + type : '');
+  if (btn && lbl) { lbl.textContent = msg; btn.className = 'sb-sync' + (type ? ' ' + type : ''); }
+  const chip = document.getElementById('topbar-sync-chip');
+  const chipLbl = document.getElementById('topbar-sync-label');
+  if (chip && chipLbl) { chipLbl.textContent = msg; chip.className = 'sync-chip' + (type ? ' ' + type : ''); }
 }
 
 // Manual pull — call when user clicks sync button or on tab focus
@@ -923,18 +1163,24 @@ function logActivity(msg, color = '#2563EB') {
 
 // ── Init ──
 async function initApp() {
+  initDailyTasks();
+  initWeeklyTasks();
   if (isGHConfigured()) {
-    setSyncStatus('', 'Loading…');
-    const data = await ghLoad();
-    if (data && data.projects) {
-      D = data.projects;
-      activityLog = data.activity || activityLog;
-      localStorage.setItem('pc_v3', JSON.stringify(D));
-      const t = new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
-      setSyncStatus('ok', `Synced · ${t}`);
-    } else if (data !== null) {
-      // File doesn't exist in repo yet — push local data up
-      await ghSave({ projects: D, activity: activityLog });
+    if (localStorage.getItem('autoPullOnOpen') !== '0') {
+      setSyncStatus('', 'Loading…');
+      const data = await ghLoad();
+      if (data && data.projects) {
+        D = data.projects;
+        activityLog = data.activity || activityLog;
+        localStorage.setItem('pc_v3', JSON.stringify(D));
+        const t = new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
+        setSyncStatus('ok', `Synced · ${t}`);
+      } else if (data !== null) {
+        // File doesn't exist in repo yet — push local data up
+        await ghSave({ projects: D, activity: activityLog });
+      }
+    } else {
+      setSyncStatus('ok', 'Connected (manual)');
     }
   } else {
     setSyncStatus('', 'Not connected');
@@ -982,32 +1228,53 @@ function checkRemindersOnLoad() {
   localStorage.setItem('r_sent', JSON.stringify(sent));
 }
 
-// ── 16:00 daily digest (browser-side, fires when app is open) ────────────────
+// ── Daily digest (browser-side, fires when app is open) ──────────────────────
 function sendDailyDigest() {
   if (!tgToken() || !tgChat()) return;
   const digestKey = 'digest_' + new Date().toDateString();
-  if (localStorage.getItem(digestKey)) return;          // already sent today
+  if (localStorage.getItem(digestKey)) return;
+  _buildAndSendDigest();
+  localStorage.setItem(digestKey, '1');
+}
+function sendDigestNow() {
+  if (!tgToken() || !tgChat()) { toast('Configure Telegram in Settings first', '#DC2626'); return; }
+  _buildAndSendDigest();
+  toast('Digest sent!', '#16A34A');
+}
+function _buildAndSendDigest() {
+  const settings = JSON.parse(localStorage.getItem('telegramDigestSettings') || '{}');
+  const inclDaily   = settings.includeDailyTasks  !== false;
+  const inclWeekly  = settings.includeWeeklyTasks !== false;
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+  const parts = [`📋 <b>Daily Digest — ${dateStr}</b>`];
+
+  if (inclDaily && dailyTasks.length > 0) {
+    const done = dailyTasks.filter(t => t.done).length;
+    const undone = dailyTasks.filter(t => !t.done);
+    parts.push(`\n✅ <b>Daily Tasks</b> (${done}/${dailyTasks.length} done)` +
+      (undone.length > 0 ? '\n' + undone.map(t => `  • ${t.text}`).join('\n') : '\n  All done! 🎉'));
+  }
+  if (inclWeekly && weeklyTasks.length > 0) {
+    const done = weeklyTasks.filter(t => t.done).length;
+    const undone = weeklyTasks.filter(t => !t.done);
+    parts.push(`\n📅 <b>Weekly Tasks</b> (${done}/${weeklyTasks.length} done)` +
+      (undone.length > 0 ? '\n' + undone.map(t => `  • ${t.text}`).join('\n') : '\n  All done! 🎉'));
+  }
 
   const active = D.filter(p => p.progress < 100);
-  const now = new Date();
-  let msg;
   if (active.length > 0) {
-    const lines = active.map(p => {
-      const bar    = Math.round(p.progress / 10);
+    const lines = active.slice(0, 8).map(p => {
+      const bar = Math.round(p.progress / 10);
       const filled = '█'.repeat(bar) + '░'.repeat(10 - bar);
-      const dueStr = p.due
-        ? ` · due ${new Date(p.due).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`
-        : '';
+      const dueStr = p.due ? ` · due ${new Date(p.due).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}` : '';
       return `📌 <b>${p.name}</b>${dueStr}\n   [${filled}] ${p.progress}%`;
     });
-    msg = `📋 <b>Daily Digest — ${now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</b>\n` +
-          `<i>${active.length} active project${active.length !== 1 ? 's' : ''}</i>\n\n` +
-          lines.join('\n\n');
+    parts.push(`\n🗂 <i>${active.length} active project${active.length !== 1 ? 's' : ''}</i>\n\n` + lines.join('\n\n'));
   } else {
-    msg = '✅ <b>All projects complete!</b>\nNo active tasks today. Great work!';
+    parts.push('\n✅ <b>All projects complete!</b> Great work!');
   }
-  sendTelegram(msg);
-  localStorage.setItem(digestKey, '1');
+  sendTelegram(parts.join('\n'));
 }
 
 let _digestTimer = null;
@@ -1033,10 +1300,15 @@ scheduleDailyDigest();
 // ══════════════════════════════════════════════════════════
 function openSetup() {
   document.getElementById('s-gh-token').value    = ghToken() || '';
-  document.getElementById('s-gh-repo').value     = ghRepo()  || 'Morningbriefrezi/Projects-Center';
+  document.getElementById('s-gh-repo').value     = ghRepo()  || 'Rezimod/Projects-Center';
   document.getElementById('s-tg-token').value    = tgToken() || '';
   document.getElementById('s-tg-chatid').value   = tgChat()  || '';
   document.getElementById('s-digest-time').value = localStorage.getItem('digest_time') || '16:00';
+  document.getElementById('s-auto-pull').checked = localStorage.getItem('autoPullOnOpen') !== '0';
+  const ds = JSON.parse(localStorage.getItem('telegramDigestSettings') || '{}');
+  document.getElementById('s-dig-daily').checked   = ds.includeDailyTasks  !== false;
+  document.getElementById('s-dig-weekly').checked  = ds.includeWeeklyTasks !== false;
+  document.getElementById('s-dig-overdue').checked = ds.includeOverdue     !== false;
   document.getElementById('setupOverlay').classList.add('open');
 }
 function closeSetup() { document.getElementById('setupOverlay').classList.remove('open'); }
@@ -1052,6 +1324,12 @@ async function saveSetup() {
   if (tt) localStorage.setItem('tg_token', tt);
   if (tc) localStorage.setItem('tg_chat_id', tc);
   localStorage.setItem('digest_time', dt);
+  localStorage.setItem('autoPullOnOpen', document.getElementById('s-auto-pull').checked ? '1' : '0');
+  localStorage.setItem('telegramDigestSettings', JSON.stringify({
+    includeDailyTasks:  document.getElementById('s-dig-daily').checked,
+    includeWeeklyTasks: document.getElementById('s-dig-weekly').checked,
+    includeOverdue:     document.getElementById('s-dig-overdue').checked
+  }));
   closeSetup();
   toast('Settings saved ✓', '#16A34A');
   scheduleDailyDigest(); // reschedule with new time
@@ -1153,6 +1431,11 @@ function updateSidebar() {
   nbOver.textContent = over;
   nbOver.className = over > 0 ? 'nb hot' : 'nb';
 
+  const dailyUndone = dailyTasks.filter(t => !t.done).length;
+  const weeklyUndone = weeklyTasks.filter(t => !t.done).length;
+  document.getElementById('nb-todo-daily').textContent = dailyUndone || '';
+  document.getElementById('nb-todo-weekly').textContent = weeklyUndone || '';
+
   const list = document.getElementById('sb-project-list');
   list.innerHTML = D.map(p => `
     <button class="pli ${activeProject===p.id?'active':''}" onclick="goProject(${p.id})">
@@ -1162,7 +1445,7 @@ function updateSidebar() {
     </button>`).join('') || `<div style="padding:7px 9px;font-size:12px;color:var(--sb-t3)">No projects yet.</div>`;
 
   document.querySelectorAll('.nav-item[id^="nav-"]').forEach(n=>n.classList.remove('active'));
-  const m = {dashboard:'nav-dashboard',all:'nav-all',daily:'nav-daily',weekly:'nav-weekly',monthly:'nav-monthly',done:'nav-done',overdue:'nav-overdue'};
+  const m = {dashboard:'nav-dashboard',all:'nav-all',daily:'nav-daily',weekly:'nav-weekly',monthly:'nav-monthly',done:'nav-done',overdue:'nav-overdue','todo-daily':'nav-todo-daily','todo-weekly':'nav-todo-weekly'};
   if(view in m) document.getElementById(m[view])?.classList.add('active');
 }
 
@@ -1179,6 +1462,10 @@ function renderContent() {
   acts.innerHTML = '';
   if (view === 'dashboard') {
     tb.textContent='Dashboard'; crumb.textContent='Overview'; el.innerHTML=renderDashboard();
+  } else if (view === 'todo-daily') {
+    tb.textContent='Daily Tasks'; crumb.textContent='Today\'s checklist'; el.innerHTML=renderDailyTasks();
+  } else if (view === 'todo-weekly') {
+    tb.textContent='Weekly Tasks'; crumb.textContent=getWeekLabel(); el.innerHTML=renderWeeklyTasks();
   } else if (view === 'project' && activeProject) {
     const p = D.find(x=>x.id===activeProject);
     if (!p) { goView('dashboard'); return; }
@@ -1322,6 +1609,9 @@ function renderDashboard() {
       </div>
       <button class="btn btn-sm" style="background:var(--amber);color:white;border:none;flex-shrink:0" onclick="openSetup()">Set up →</button>
     </div>` : '';
+  const dDone=dailyTasks.filter(t=>t.done).length, dTotal=dailyTasks.length;
+  const dPct=dTotal>0?Math.round(dDone/dTotal*100):0;
+  const taskBar=dTotal>0?`<div class="dash-dtbar-wrap"><div class="dash-dtbar-hd"><span>✅ Today's Tasks</span><span><a href="#" onclick="event.preventDefault();goView('todo-daily')" style="color:var(--blue);text-decoration:none">${dDone}/${dTotal} done · ${dPct}%</a></span></div><div class="dash-dtbar"><div class="dash-dtbar-fill" style="width:${dPct}%"></div></div></div>`:'';
   return `<div class="au">
     <div class="station-header au">
       <div class="station-left">
@@ -1333,6 +1623,7 @@ function renderDashboard() {
         <div class="station-sub"><strong>${done}</strong> completed &nbsp;·&nbsp; avg <strong>${avgPct}%</strong></div>
       </div>
     </div>
+    ${taskBar}
     ${syncBanner}
     <div class="kpi-row">
       <div class="kpi au au1"><div class="kpi-label">Total</div><div class="kpi-val" style="color:var(--blue)">${total}</div><div class="kpi-sub">All time</div></div>
