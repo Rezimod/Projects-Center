@@ -393,6 +393,7 @@ display:grid;place-items:center;position:relative;flex-shrink:0;box-shadow:inset
 .pbar{height:4px;background:var(--bg2);border-radius:4px;overflow:hidden;margin-bottom:13px;}
 .pbar-fill{height:100%;border-radius:4px;transition:width .6s cubic-bezier(0.4,0,0.2,1);}
 .pcard-foot{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.pcard-meta-grid{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 .foot-pill{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--text3);font-family:var(--mono);}
 .foot-dot{width:5px;height:5px;border-radius:50%;}
 .due-chip{display:inline-flex;align-items:center;gap:3px;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:20px;}
@@ -427,6 +428,9 @@ display:grid;place-items:center;position:relative;flex-shrink:0;box-shadow:inset
 .pct-sym{font-family:var(--mono);font-size:11px;color:var(--text3);padding-right:8px;}
 
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.detail-section{scroll-margin-top:84px;}
+.detail-summary-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;}
+.mobile-page-head{display:none;}
 
 /* ── Task list ── */
 .task-item{display:flex;align-items:center;gap:10px;padding:10px 18px;border-bottom:1px solid var(--border);transition:background .1s;}
@@ -643,19 +647,60 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .sidebar.mob-open{transform:translateX(0);box-shadow:8px 0 32px rgba(0,0,0,0.4);}
   .mob-backdrop{display:block;}
   .mob-burger{display:flex;}
-  .topbar{padding:8px 14px;gap:8px;min-height:50px;height:auto;flex-wrap:wrap;}
-  .topbar-crumb{max-width:130px;}
-  .topbar-search{order:10;flex:1 1 100%;min-width:0;height:40px;}
-  .content{padding:14px;}
+  .topbar{position:sticky;top:0;z-index:40;padding:10px 12px 12px;gap:8px;min-height:50px;height:auto;flex-wrap:wrap;backdrop-filter:blur(14px);}
+  .topbar-title{font-size:15px;}
+  .topbar-div{display:none;}
+  .topbar-crumb{order:2;flex:1 1 auto;max-width:none;font-size:12px;}
+  .topbar-space{display:none;}
+  .topbar-search{order:10;flex:1 1 calc(100% - 112px);min-width:0;height:42px;border-radius:16px;}
+  #tb-actions{order:11;display:none;}
+  .topbar > .btn.btn-primary.btn-sm{order:9;padding:11px 14px;min-width:96px;justify-content:center;}
+  .content{padding:12px 12px 26px;}
   .kpi-row{grid-template-columns:repeat(2,1fr);gap:10px;}
   .mission-grid,.orbit-grid,.planner-grid{grid-template-columns:1fr;}
+  .mission-grid,.orbit-grid,.planner-grid,.insights-grid{gap:12px;}
+  .mission-card,.orbit-card,.planner-card,.card,.detail-hd{border-radius:18px;}
+  .station-header{margin-bottom:16px;padding-bottom:14px;}
+  .station-date{font-size:30px;line-height:1.08;}
+  .station-sub{font-size:10px;line-height:1.8;}
   .kpi{padding:13px 14px;}
   .kpi-val{font-size:22px;}
   .pcards{grid-template-columns:1fr;}
+  .pcard{padding:16px 16px 14px;border-radius:18px;}
+  .pcard-top{margin-bottom:12px;}
+  .pcard-icon{width:44px;height:44px;font-size:20px;border-radius:12px;}
+  .pcard-name{font-size:21px;line-height:1.1;margin-bottom:6px;}
+  .pcard-desc{font-size:14px;line-height:1.55;-webkit-line-clamp:3;margin-bottom:16px;}
+  .prog-hd{margin-bottom:7px;}
+  .prog-hd-label{font-size:10px;letter-spacing:1.3px;}
+  .prog-hd-pct{font-size:13px;}
+  .pbar{height:7px;border-radius:999px;margin-bottom:14px;}
+  .pcard-foot{display:grid;grid-template-columns:1fr auto;gap:10px 8px;align-items:center;}
+  .pcard-meta-grid{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .foot-pill,.due-chip{font-size:11px;padding-top:4px;padding-bottom:4px;}
+  .pcard-foot > span[style*="margin-left:auto"]{margin-left:0 !important;justify-self:end;font-size:10px !important;}
   .detail-top{flex-wrap:wrap;}
+  .detail-hd{padding:18px 16px;}
+  .detail-icon{width:54px;height:54px;border-radius:14px;font-size:24px;}
+  .detail-title{font-size:27px;line-height:1.08;}
+  .detail-desc{font-size:14px;line-height:1.6;}
   .detail-chips{margin-left:0;width:100%;}
+  .detail-kpis{gap:8px;}
   .detail-kpis{grid-template-columns:repeat(2,1fr);}
   .detail-grid{grid-template-columns:1fr;}
+  .detail-grid .card{overflow:hidden;}
+  .detail-grid .card-head{padding:14px 16px;flex-wrap:wrap;gap:6px;}
+  .detail-grid .card-title{font-size:14px;}
+  .detail-grid .card-meta{font-size:10px;}
+  .detail-grid .notes-ta{min-height:180px;padding:16px;}
+  .detail-grid .stage-opts{padding:10px 12px;}
+  .task-item{align-items:flex-start;padding:12px 16px;gap:12px;}
+  .task-check{margin-top:2px;}
+  .task-name{font-size:14px;line-height:1.5;}
+  .task-add-row{padding:12px 16px;gap:8px;flex-wrap:wrap;}
+  .task-add-inp{min-height:42px;padding:0 2px;font-size:15px;}
+  .slider-row{flex-wrap:wrap;}
+  .pct-box{width:100%;justify-content:center;}
   .prog-slider::-webkit-slider-thumb{width:28px;height:28px;}
   /* Task delete always visible on touch */
   .task-del{opacity:1;color:var(--text3);}
@@ -663,23 +708,58 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .fi,.fta,.fsel,.task-add-inp,.pct-inp,.notes-ta{font-size:16px;}
   .fta{resize:none;}
   /* Bottom sheet modal */
-  .modal{width:100vw;max-height:91vh;border-radius:20px 20px 0 0;margin:0;}
+  .modal{width:100vw;max-height:94vh;border-radius:22px 22px 0 0;margin:0;}
   .overlay{align-items:flex-end;}
   .overlay.open .modal{transform:translateY(0);}
   .modal{transform:translateY(100%);}
+  .modal-hd{padding:16px 16px 14px;}
+  .modal-body{padding:16px;gap:14px;}
+  .modal-foot{padding:12px 16px calc(12px + env(safe-area-inset-bottom));gap:8px;flex-wrap:wrap;}
+  .modal-foot .btn{flex:1;justify-content:center;}
   .f2col{grid-template-columns:1fr;}
   .toast-wrap{bottom:18px;right:10px;left:10px;}
   .toast{min-width:unset;}
-  .btn{padding:10px 15px;}
-  .btn-sm{padding:9px 12px;}
+  .btn{padding:11px 15px;}
+  .btn-sm{padding:10px 12px;}
   .station-header{flex-direction:column;align-items:flex-start;gap:8px;}
   .station-right{text-align:left;}
   .insights-grid{grid-template-columns:1fr;}
+  .section-hd{align-items:flex-end;gap:10px;margin-bottom:10px;}
+  .section-hd-title{font-size:15px;}
+  .section-hd-meta{font-size:10px;}
+  .focus-card-head{padding:14px 16px;flex-wrap:wrap;gap:6px;}
+  .focus-modes{padding:14px 16px 0;}
+  .focus-body{padding:18px 16px 18px;}
+  .focus-time-display{font-size:42px;}
+  .todo-input-row{flex-direction:column;}
+  .todo-input-row .btn{width:100%;justify-content:center;}
+  .todo-item{align-items:flex-start;gap:12px;padding:12px 0;}
+  .todo-nm{font-size:15px;line-height:1.45;}
+  .todo-del{opacity:1;padding:6px 8px;}
+  .planner-card{padding:16px;}
+  .planner-header{align-items:flex-start;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+  .planner-title{font-size:16px;}
+  .planner-meta{font-size:10px;}
+  .planner-mini{padding:12px;flex-direction:column;gap:8px;border-radius:14px;}
+  .planner-mini-label{min-width:0;padding-top:0;}
+  .planner-add{flex-direction:column;}
+  .planner-add .btn{width:100%;justify-content:center;}
+  .insight-list{padding:14px 16px;}
+  .mini-list{padding:8px 16px 16px;}
+  .activity-item{padding:12px 16px;gap:12px;}
+  .activity-txt{font-size:13px;line-height:1.55;}
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
 }
 @media(max-width:420px){
-  .kpi-row{grid-template-columns:repeat(2,1fr);}
-  .detail-kpis{grid-template-columns:repeat(2,1fr);}
+  .topbar{padding:10px 10px 12px;}
+  .content{padding:10px 10px 24px;}
+  .topbar-search{flex-basis:100%;}
+  .topbar > .btn.btn-primary.btn-sm{width:100%;}
+  .station-date{font-size:26px;}
+  .orbit-ring{width:142px;height:142px;}
+  .orbit-ring::after{inset:17px;}
+  .orbit-core strong{font-size:34px;}
+  .detail-kpis{grid-template-columns:1fr;}
   .type-chips{flex-wrap:wrap;}
 }
 </style>
@@ -1321,7 +1401,7 @@ function renderDailyTasks() {
         <button class="todo-del" onclick="delDailyTask(${t.id})">✕</button>
       </div>`).join('');
   return `<div class="au">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap">
       <div>
         <div style="font-weight:900;font-size:22px;letter-spacing:-.5px;color:var(--text)">Daily Tasks</div>
         <div style="font-family:var(--mono);font-size:11px;color:var(--text3);margin-top:3px">${new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})} · resets at midnight</div>
@@ -1356,7 +1436,7 @@ function renderWeeklyTasks() {
         <button class="todo-del" onclick="delWeeklyTask(${t.id})">✕</button>
       </div>`).join('');
   return `<div class="au">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap">
       <div>
         <div style="font-weight:900;font-size:22px;letter-spacing:-.5px;color:var(--text)">Weekly Tasks</div>
         <div style="font-family:var(--mono);font-size:11px;color:var(--text3);margin-top:3px">${getWeekLabel()} · resets Monday</div>
@@ -2188,7 +2268,10 @@ function renderDashboard() {
 function renderList(v) {
   const list = visibleProjects(v);
   if (!list.length) return `<div class="empty"><div class="empty-ill">📂</div><div class="empty-title">Nothing here yet</div><div class="empty-desc">${searchQuery.trim() ? 'No projects match your search.' : 'No projects in this category.'}</div><button class="btn btn-primary" onclick="openAdd()">+ Create Project</button></div>`;
-  return `<div class="pcards">${list.map((p,i)=>`<div class="au" style="animation-delay:${i*.05}s">${pcardHTML(p)}</div>`).join('')}</div>`;
+  return `<div class="au">
+    <div class="section-hd"><div class="section-hd-title">Projects List</div><div class="section-hd-meta">${list.length} visible</div></div>
+    <div class="pcards">${list.map((p,i)=>`<div class="au" style="animation-delay:${i*.05}s">${pcardHTML(p)}</div>`).join('')}</div>
+  </div>`;
 }
 
 function pcardHTML(p) {
@@ -2207,8 +2290,10 @@ function pcardHTML(p) {
     <div class="prog-hd"><span class="prog-hd-label">Progress</span><span class="prog-hd-pct" style="color:${pctCol}">${p.progress}%</span></div>
     <div class="pbar"><div class="pbar-fill" style="width:${p.progress}%;background:${pctCol}"></div></div>
     <div class="pcard-foot">
-      <div class="foot-pill"><div class="foot-dot" style="background:${col}"></div>${doneTasks}/${(p.tasks||[]).length} tasks</div>
-      ${due?`<span class="due-chip ${due.cls}">${due.txt}</span>`:''}
+      <div class="pcard-meta-grid">
+        <div class="foot-pill"><div class="foot-dot" style="background:${col}"></div>${doneTasks}/${(p.tasks||[]).length} tasks</div>
+        ${due?`<span class="due-chip ${due.cls}">${due.txt}</span>`:''}
+      </div>
       <span style="margin-left:auto;font-family:var(--mono);font-size:9px;color:var(--text3)">${(p.priority||'med').toUpperCase()}</span>
     </div>
   </div>`;
@@ -2223,7 +2308,7 @@ function renderDetail(p) {
   const stage=nearestStage(p.progress);
   const tLabels={today:'On due day',oneday:'1 day before',threedays:'3 days before',oneweek:'1 week before'};
   return `<div class="au">
-    <div class="detail-hd" style="border-left-color:${col}">
+    <div class="detail-hd detail-section" style="border-left-color:${col}">
       <div class="detail-top">
         <div class="detail-icon" style="background:${hexAlpha(col,.12)}">${p.icon||'📌'}</div>
         <div style="flex:1;min-width:0">
@@ -2252,7 +2337,7 @@ function renderDetail(p) {
       </div>
     </div>
     <div class="detail-grid">
-      <div class="card au au1">
+      <div class="card au au1 detail-section">
         <div class="card-head"><div class="card-title">Tasks</div><div class="card-meta">${doneTasks}/${totalTasks} done</div></div>
         <div id="task-list-${p.id}">
           ${(p.tasks||[]).length===0?`<div style="padding:18px;text-align:center;font-size:12px;color:var(--text3)">No tasks yet.</div>`:''}
@@ -2264,15 +2349,15 @@ function renderDetail(p) {
         </div>
         <div class="task-add-row"><input class="task-add-inp" id="tadd-${p.id}" placeholder="Add task, press Enter…" onkeydown="if(event.key==='Enter')addTask(${p.id})"><button class="btn btn-ghost btn-sm" onclick="addTask(${p.id})">Add</button></div>
       </div>
-      <div class="card au au2">
+      <div class="card au au2 detail-section">
         <div class="card-head"><div class="card-title">Stage</div><div class="card-meta">Sets base %</div></div>
         <div class="stage-opts">${STAGES.map(s=>`<div class="stage-opt ${nearestStage(p.progress).name===s.name?'active':''}" onclick="setStage(${p.id},${s.pct})"><div class="stage-dot" style="background:${s.color}"></div><div class="stage-name">${s.name}</div><div class="stage-pct">${s.pct}%</div></div>`).join('')}</div>
       </div>
-      <div class="card au au3">
+      <div class="card au au3 detail-section">
         <div class="card-head"><div class="card-title">Notes</div><div class="card-meta">Auto-saved</div></div>
         <textarea class="notes-ta" placeholder="Ideas, blockers, links…" id="notes-${p.id}" onblur="saveNotes(${p.id})">${p.notes||''}</textarea>
       </div>
-      <div class="card au au4">
+      <div class="card au au4 detail-section">
         <div class="card-head"><div class="card-title">Priority</div><div class="card-meta">Current: ${p.priority||'med'}</div></div>
         <div class="pri-grid">
           <button class="pri-btn ph ${p.priority==='high'?'on':''}" onclick="setPri(${p.id},'high')">🔴 High</button>
