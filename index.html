@@ -558,6 +558,8 @@ html[data-theme="light"] .station-eyebrow{color:#2563EB;}
 html[data-theme="light"] .station-date{color:#0C0D1A;}
 .topbar-back{display:none;align-items:center;gap:6px;padding:8px 12px;border-radius:12px;border:1px solid var(--border);background:var(--bg2);color:var(--text2);font-family:var(--font);font-size:13px;font-weight:700;cursor:pointer;}
 .topbar-back:hover{background:var(--bg3);color:var(--text);}
+.mobile-tabbar{display:none;}
+.tabbar-spacer{display:none;}
 
 /* ── Focus Timer ── */
 .focus-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;}
@@ -660,7 +662,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .topbar-search{order:10;flex:1 1 calc(100% - 112px);min-width:0;height:42px;border-radius:16px;}
   #tb-actions{order:11;display:none;}
   .topbar > .btn.btn-primary.btn-sm{order:9;padding:11px 14px;min-width:96px;justify-content:center;}
-  .content{padding:12px 12px 26px;}
+  .content{padding:12px 12px calc(96px + env(safe-area-inset-bottom));}
   .kpi-row{grid-template-columns:repeat(2,1fr);gap:10px;}
   .mission-grid,.orbit-grid,.planner-grid{grid-template-columns:1fr;}
   .mission-grid,.orbit-grid,.planner-grid,.insights-grid{gap:12px;}
@@ -754,6 +756,13 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .mini-list{padding:8px 16px 16px;}
   .activity-item{padding:12px 16px;gap:12px;}
   .activity-txt{font-size:13px;line-height:1.55;}
+  .mobile-tabbar{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;position:fixed;left:10px;right:10px;bottom:10px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));border-radius:22px;background:rgba(6,9,24,0.96);border:1px solid rgba(145,168,255,0.18);box-shadow:0 18px 40px rgba(0,0,0,0.34);backdrop-filter:blur(18px);z-index:450;}
+  .mobile-tab{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:56px;border:none;border-radius:16px;background:none;color:var(--text3);font-family:var(--font);font-size:11px;font-weight:700;cursor:pointer;}
+  .mobile-tab.active{background:linear-gradient(180deg, rgba(124,155,255,0.2), rgba(124,155,255,0.08));color:#fff;}
+  .mobile-tab-icon{font-size:15px;line-height:1;}
+  .mobile-tab-badge{position:absolute;top:6px;right:10px;min-width:16px;height:16px;padding:0 4px;border-radius:999px;background:rgba(255,255,255,0.1);color:#fff;font-family:var(--mono);font-size:9px;display:flex;align-items:center;justify-content:center;}
+  .mobile-tab.active .mobile-tab-badge{background:rgba(255,255,255,0.16);}
+  .tabbar-spacer{display:block;height:86px;}
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
 }
 @media(max-width:420px){
@@ -1032,7 +1041,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
           <rect y="11" width="16" height="2" rx="1" fill="currentColor"/>
         </svg>
       </button>
-      <button class="topbar-back" id="topbar-back" onclick="goView('dashboard')">← Back</button>
+      <button class="topbar-back" id="topbar-back" onclick="goBack()">← Back</button>
       <div class="topbar-title" id="tb-title">Dashboard</div>
       <div class="topbar-div"></div>
       <div class="topbar-crumb" id="tb-crumb">Overview</div>
@@ -1042,11 +1051,18 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
         <span class="sync-chip-label" id="topbar-sync-label">Not connected</span>
       </button>
       <div id="tb-actions"></div>
-      <button class="btn btn-primary btn-sm" onclick="openAdd()">+ New</button>
+      <button class="btn btn-primary btn-sm" id="topbar-new-btn" onclick="openAdd()">+ New</button>
     </div>
     <div class="content" id="content"></div>
   </div>
 </div>
+<nav class="mobile-tabbar" id="mobileTabbar">
+  <button class="mobile-tab active" id="mt-dashboard" onclick="goView('dashboard')"><span class="mobile-tab-icon">⌂</span><span>Home</span></button>
+  <button class="mobile-tab" id="mt-todo-daily" onclick="goView('todo-daily')"><span class="mobile-tab-icon">✓</span><span>Daily</span><span class="mobile-tab-badge" id="mt-badge-daily"></span></button>
+  <button class="mobile-tab" id="mt-all" onclick="goView('all')"><span class="mobile-tab-icon">◈</span><span>Projects</span><span class="mobile-tab-badge" id="mt-badge-projects"></span></button>
+  <button class="mobile-tab" id="mt-todo-weekly" onclick="goView('todo-weekly')"><span class="mobile-tab-icon">☰</span><span>Weekly</span><span class="mobile-tab-badge" id="mt-badge-weekly"></span></button>
+  <button class="mobile-tab" id="mt-done" onclick="goView('done')"><span class="mobile-tab-icon">★</span><span>Done</span><span class="mobile-tab-badge" id="mt-badge-done"></span></button>
+</nav>
 
 <script>
 // ══════════════════════════════════════════════════════════
@@ -1082,6 +1098,8 @@ let weeklyTasks = planner.weeklyTasks;
 let monthlyGoals = planner.monthlyGoals;
 let searchQuery = '';
 let dataSource = D.length ? 'local' : 'empty';
+let appHistory = [];
+let touchNav = { active: false, startX: 0, startY: 0 };
 
 // ── ISO week helper ──
 function isoWeek(d = new Date()) {
@@ -1866,19 +1884,41 @@ function updateSidebar() {
   document.querySelectorAll('.nav-item[id^="nav-"]').forEach(n=>n.classList.remove('active'));
   const m = {dashboard:'nav-dashboard',all:'nav-all',daily:'nav-daily',weekly:'nav-weekly',monthly:'nav-monthly',done:'nav-done',overdue:'nav-overdue','todo-daily':'nav-todo-daily','todo-weekly':'nav-todo-weekly'};
   if(view in m) document.getElementById(m[view])?.classList.add('active');
+  document.getElementById('mt-badge-daily').textContent = dailyUndone || '';
+  document.getElementById('mt-badge-weekly').textContent = weeklyUndone || '';
+  document.getElementById('mt-badge-projects').textContent = D.length || '';
+  document.getElementById('mt-badge-done').textContent = D.filter(p=>p.progress>=100).length || '';
+  document.querySelectorAll('.mobile-tab').forEach(n=>n.classList.remove('active'));
+  const mm = {dashboard:'mt-dashboard',all:'mt-all','todo-daily':'mt-todo-daily','todo-weekly':'mt-todo-weekly',done:'mt-done',project:'mt-all',daily:'mt-all',weekly:'mt-all',monthly:'mt-all',overdue:'mt-all'};
+  if(view in mm) document.getElementById(mm[view])?.classList.add('active');
 }
 
 // ══════════════════════════════════════════════════════════
 //  NAVIGATION
 // ══════════════════════════════════════════════════════════
-function goView(v)     { view=v; activeProject=null; closeSidebar(); updateSidebar(); renderContent(); }
-function goProject(id) { activeProject=id; view='project'; closeSidebar(); updateSidebar(); renderContent(); }
+function currentRoute() { return { view, activeProject }; }
+function pushRouteIfChanged(nextView, nextProject = null) {
+  if (view === nextView && activeProject === nextProject) return;
+  appHistory.push(currentRoute());
+  if (appHistory.length > 50) appHistory.shift();
+}
+function goView(v)     { pushRouteIfChanged(v, null); view=v; activeProject=null; closeSidebar(); updateSidebar(); renderContent(); }
+function goProject(id) { pushRouteIfChanged('project', id); activeProject=id; view='project'; closeSidebar(); updateSidebar(); renderContent(); }
+function goBack() {
+  const prev = appHistory.pop();
+  if (!prev) { view = 'dashboard'; activeProject = null; }
+  else { view = prev.view; activeProject = prev.activeProject || null; }
+  closeSidebar();
+  updateSidebar();
+  renderContent();
+}
 function renderContent() {
   const el   = document.getElementById('content');
   const tb   = document.getElementById('tb-title');
   const crumb= document.getElementById('tb-crumb');
   const acts = document.getElementById('tb-actions');
   const back = document.getElementById('topbar-back');
+  const newBtn = document.getElementById('topbar-new-btn');
   const sourceMap = {
     github: 'Synced from GitHub',
     bundled: 'Loaded from bundled data.json',
@@ -1887,6 +1927,7 @@ function renderContent() {
     empty: 'No local data yet'
   };
   if (back) back.style.display = view === 'dashboard' ? 'none' : 'inline-flex';
+  if (newBtn) newBtn.style.display = view === 'dashboard' ? 'none' : 'inline-flex';
   acts.innerHTML = `<label class="topbar-search" aria-label="Search projects">
     <span class="topbar-search-icon">⌕</span>
     <input id="project-search" type="search" placeholder="Search projects, tasks, notes…" value="${escapeHTML(searchQuery)}" oninput="setSearch(this.value)">
@@ -2467,6 +2508,19 @@ function toast(msg, color='#2563EB') {
 // ══════════════════════════════════════════════════════════
 //  KEYBOARD
 // ══════════════════════════════════════════════════════════
+document.addEventListener('touchstart', e => {
+  const t = e.touches[0];
+  touchNav = { active: t.clientX <= 24, startX: t.clientX, startY: t.clientY };
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+  if (!touchNav.active || view === 'dashboard') return;
+  const t = e.changedTouches[0];
+  const dx = t.clientX - touchNav.startX;
+  const dy = Math.abs(t.clientY - touchNav.startY);
+  if (dx > 90 && dy < 50) goBack();
+}, { passive: true });
+
 document.addEventListener('keydown', e => {
   if (e.key==='Escape') { closeAdd(); closeDel(); closeSetup(); }
   if ((e.metaKey||e.ctrlKey)&&e.key==='k') { e.preventDefault(); openAdd(); }
