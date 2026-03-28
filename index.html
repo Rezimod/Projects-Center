@@ -543,17 +543,21 @@ display:grid;place-items:center;position:relative;flex-shrink:0;box-shadow:inset
 .toast-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 
 /* ── Station Header ── */
-.station-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px;padding-bottom:18px;border-bottom:2px solid var(--border);}
-.station-left{}
-.station-eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--blue);text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
-.station-eyebrow::before{content:'';display:inline-block;width:18px;height:1.5px;background:var(--blue);flex-shrink:0;}
-.station-date{font-size:26px;font-weight:900;letter-spacing:-0.8px;color:var(--text);line-height:1.1;}
-.station-right{text-align:right;padding-bottom:2px;}
-.station-sub{font-family:var(--mono);font-size:10px;color:var(--text3);line-height:1.9;}
+.station-header{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;margin-bottom:24px;padding:28px 24px;border:1px solid var(--border);border-radius:28px;background:
+radial-gradient(circle at top center, rgba(124,155,255,0.2), transparent 34%),
+linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));box-shadow:var(--shadow);}
+.station-left{display:flex;flex-direction:column;align-items:center;}
+.station-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--blue);text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:12px;justify-content:center;}
+.station-eyebrow::before,.station-eyebrow::after{content:'';display:inline-block;width:30px;height:1.5px;background:linear-gradient(90deg, transparent, var(--blue), transparent);flex-shrink:0;}
+.station-date{font-size:52px;font-weight:900;letter-spacing:-2.2px;color:var(--text);line-height:0.98;max-width:10ch;}
+.station-right{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:16px;}
+.station-sub{font-family:var(--mono);font-size:11px;color:var(--text3);line-height:1.8;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.035);border:1px solid rgba(145,168,255,0.12);}
 .station-sub strong{color:var(--text2);}
 html[data-theme="light"] .station-header{border-bottom-color:#E8EBF8;}
 html[data-theme="light"] .station-eyebrow{color:#2563EB;}
 html[data-theme="light"] .station-date{color:#0C0D1A;}
+.topbar-back{display:none;align-items:center;gap:6px;padding:8px 12px;border-radius:12px;border:1px solid var(--border);background:var(--bg2);color:var(--text2);font-family:var(--font);font-size:13px;font-weight:700;cursor:pointer;}
+.topbar-back:hover{background:var(--bg3);color:var(--text);}
 
 /* ── Focus Timer ── */
 .focus-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;}
@@ -649,6 +653,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .mob-burger{display:flex;}
   .topbar{position:sticky;top:0;z-index:40;padding:10px 12px 12px;gap:8px;min-height:50px;height:auto;flex-wrap:wrap;backdrop-filter:blur(14px);}
   .topbar-title{font-size:15px;}
+  .topbar-back{display:inline-flex;}
   .topbar-div{display:none;}
   .topbar-crumb{order:2;flex:1 1 auto;max-width:none;font-size:12px;}
   .topbar-space{display:none;}
@@ -660,9 +665,10 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .mission-grid,.orbit-grid,.planner-grid{grid-template-columns:1fr;}
   .mission-grid,.orbit-grid,.planner-grid,.insights-grid{gap:12px;}
   .mission-card,.orbit-card,.planner-card,.card,.detail-hd{border-radius:18px;}
-  .station-header{margin-bottom:16px;padding-bottom:14px;}
-  .station-date{font-size:30px;line-height:1.08;}
-  .station-sub{font-size:10px;line-height:1.8;}
+  .station-header{margin-bottom:18px;padding:20px 16px;}
+  .station-date{font-size:40px;line-height:1.02;max-width:none;}
+  .station-right{gap:8px;}
+  .station-sub{font-size:10px;line-height:1.6;padding:7px 10px;}
   .kpi{padding:13px 14px;}
   .kpi-val{font-size:22px;}
   .pcards{grid-template-columns:1fr;}
@@ -761,6 +767,8 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .orbit-core strong{font-size:34px;}
   .detail-kpis{grid-template-columns:1fr;}
   .type-chips{flex-wrap:wrap;}
+  .station-date{font-size:34px;}
+  .station-eyebrow{font-size:9px;letter-spacing:3px;}
 }
 </style>
 </head>
@@ -1024,6 +1032,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
           <rect y="11" width="16" height="2" rx="1" fill="currentColor"/>
         </svg>
       </button>
+      <button class="topbar-back" id="topbar-back" onclick="goView('dashboard')">← Back</button>
       <div class="topbar-title" id="tb-title">Dashboard</div>
       <div class="topbar-div"></div>
       <div class="topbar-crumb" id="tb-crumb">Overview</div>
@@ -1869,6 +1878,7 @@ function renderContent() {
   const tb   = document.getElementById('tb-title');
   const crumb= document.getElementById('tb-crumb');
   const acts = document.getElementById('tb-actions');
+  const back = document.getElementById('topbar-back');
   const sourceMap = {
     github: 'Synced from GitHub',
     bundled: 'Loaded from bundled data.json',
@@ -1876,6 +1886,7 @@ function renderContent() {
     local: 'Loaded from this device',
     empty: 'No local data yet'
   };
+  if (back) back.style.display = view === 'dashboard' ? 'none' : 'inline-flex';
   acts.innerHTML = `<label class="topbar-search" aria-label="Search projects">
     <span class="topbar-search-icon">⌕</span>
     <input id="project-search" type="search" placeholder="Search projects, tasks, notes…" value="${escapeHTML(searchQuery)}" oninput="setSearch(this.value)">
