@@ -406,7 +406,14 @@
     }
   ],
   "planner": {
-    "dailyTasks": [],
+    "dailyTasks": [
+      {
+        "id": 1774727158111,
+        "text": "GWP-ს გარკვევა",
+        "done": false,
+        "date": "2026-03-28"
+      }
+    ],
     "weeklyTasks": [],
     "monthlyGoals": [],
     "dailyFocus": {
@@ -424,7 +431,10 @@
       "dailyWeekday": "12:00",
       "weeklyWeekday": "15:00"
     },
-    "telegramLog": {}
+    "telegramLog": {
+      "dailyTaskDigestSentOn": "",
+      "weeklyTaskDigestSentOn": ""
+    }
   },
   "activity": [
     {
