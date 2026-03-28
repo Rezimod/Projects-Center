@@ -304,8 +304,8 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 .kpi-label{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:7px;}
 .kpi-val{font-size:28px;font-weight:900;letter-spacing:-1.5px;line-height:1;}
 .kpi-sub{font-size:11px;color:var(--text3);margin-top:4px;}
-.orbit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:24px;}
-.mission-grid{display:grid;grid-template-columns:1.2fr 1.2fr .8fr;gap:14px;margin-bottom:24px;}
+.orbit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:24px;}
+.mission-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:24px;}
 .mission-card{padding:20px;border-radius:22px;border:1px solid var(--border);background:
  radial-gradient(circle at top right, rgba(124,155,255,0.18), transparent 28%),
  linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));box-shadow:var(--shadow);}
@@ -2167,14 +2167,19 @@ function renderDashboard() {
         stat: `${weeklyDone}/${weeklyTasks.length || 0} done`,
         items: topWeekly
       })}
+    </div>
+    ${recent.length > 0 ? `
+    <div class="section-hd au"><div class="section-hd-title">Projects Queue</div><button class="btn btn-ghost btn-sm" onclick="goView('all')">View all →</button></div>
+    <div class="pcards">${recent.map((p,i)=>`<div class="au" style="animation-delay:${i*.05}s">${pcardHTML(p)}</div>`).join('')}</div>` :
+    `<div class="empty"><div class="empty-ill">🚀</div><div class="empty-title">Ready to start?</div><div class="empty-desc">Create your first project and start tracking progress.</div><button class="btn btn-primary" onclick="openAdd()">+ Create First Project</button></div>`}
+    <div class="section-hd au"><div class="section-hd-title">Analytics</div><div class="section-hd-meta">Projects and planner visibility</div></div>
+    <div class="orbit-grid">
       ${renderRadarCard([
         { label: 'Daily', value: dailyPct, color: '#67E8F9' },
         { label: 'Weekly', value: weeklyPct, color: '#A78BFA' },
         { label: 'Projects', value: projectPct, color: '#F4B860' },
         { label: 'Monthly', value: monthPct, color: '#34D399' }
       ])}
-    </div>
-    <div class="orbit-grid">
       ${ringHTML({
         title: 'Execution Orbit',
         sub: 'Completed vs active work, with the percentage shown clearly in the center.',
@@ -2213,10 +2218,6 @@ function renderDashboard() {
         ]
       })}
     </div>
-    ${recent.length > 0 ? `
-    <div class="section-hd au"><div class="section-hd-title">Projects Queue</div><button class="btn btn-ghost btn-sm" onclick="goView('all')">View all →</button></div>
-    <div class="pcards">${recent.map((p,i)=>`<div class="au" style="animation-delay:${i*.05}s">${pcardHTML(p)}</div>`).join('')}</div>` :
-    `<div class="empty"><div class="empty-ill">🚀</div><div class="empty-title">Ready to start?</div><div class="empty-desc">Create your first project and start tracking progress.</div><button class="btn btn-primary" onclick="openAdd()">+ Create First Project</button></div>`}
     <div class="planner-grid">
       ${renderDailyFocusCard()}
       ${renderWeeklyCompassCard()}
