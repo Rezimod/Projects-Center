@@ -260,6 +260,11 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 .topbar-div{width:1px;height:16px;background:var(--border2);flex-shrink:0;}
 .topbar-crumb{font-size:13px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px;}
 .topbar-space{flex:1;}
+.topbar-search{flex:0 1 280px;min-width:160px;display:flex;align-items:center;gap:8px;padding:0 12px;height:36px;border:1px solid var(--border);border-radius:999px;background:var(--bg2);}
+.topbar-search:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.08);}
+.topbar-search-icon{font-size:12px;color:var(--text3);flex-shrink:0;}
+.topbar-search input{width:100%;border:none;outline:none;background:none;font-family:var(--font);font-size:13px;color:var(--text);}
+.topbar-search input::placeholder{color:var(--text3);}
 .mob-burger{display:none;}
 .content{flex:1;overflow-y:auto;padding:24px;scrollbar-width:thin;scrollbar-color:var(--border2) transparent;}
 .content::-webkit-scrollbar{width:5px;}
@@ -496,6 +501,19 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
 .focus-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--border2);margin:0 2px;transition:background .2s;vertical-align:middle;}
 .focus-dot.done{background:var(--blue);}
 
+/* ── Insights ── */
+.insights-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;margin-top:26px;align-items:start;}
+.insight-list{display:flex;flex-direction:column;gap:10px;padding:16px 18px;}
+.insight-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.insight-row:last-child{padding-bottom:0;border-bottom:none;}
+.insight-copy{min-width:0;}
+.insight-label{font-size:12px;font-weight:700;color:var(--text);}
+.insight-desc{font-size:12px;color:var(--text2);line-height:1.5;margin-top:2px;}
+.insight-val{font-family:var(--mono);font-size:11px;color:var(--text3);white-space:nowrap;}
+.mini-list{padding:8px 18px 18px;display:flex;flex-direction:column;gap:8px;}
+.mini-item{display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:10px;background:var(--bg2);font-size:12px;color:var(--text2);}
+.mini-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
 /* ── Sidebar logo clickable ── */
 .logo-area{cursor:pointer;}
 .logo-area:hover .logo-name{opacity:.85;}
@@ -561,8 +579,9 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .sidebar.mob-open{transform:translateX(0);box-shadow:8px 0 32px rgba(0,0,0,0.4);}
   .mob-backdrop{display:block;}
   .mob-burger{display:flex;}
-  .topbar{padding:0 14px;gap:8px;height:50px;}
+  .topbar{padding:8px 14px;gap:8px;min-height:50px;height:auto;flex-wrap:wrap;}
   .topbar-crumb{max-width:130px;}
+  .topbar-search{order:10;flex:1 1 100%;min-width:0;height:40px;}
   .content{padding:14px;}
   .kpi-row{grid-template-columns:repeat(2,1fr);gap:10px;}
   .kpi{padding:13px 14px;}
@@ -590,6 +609,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .btn-sm{padding:9px 12px;}
   .station-header{flex-direction:column;align-items:flex-start;gap:8px;}
   .station-right{text-align:left;}
+  .insights-grid{grid-template-columns:1fr;}
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
 }
 @media(max-width:420px){
@@ -878,7 +898,10 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
 // ══════════════════════════════════════════════════════════
 //  STATE
 // ══════════════════════════════════════════════════════════
-let D = JSON.parse(localStorage.getItem('pc_v3') || '[]');
+let D = JSON.parse(localStorage.getItem('pc_v3') || '[]').map(p => ({
+  ...p,
+  tasks: Array.isArray(p.tasks) ? p.tasks : []
+}));
 let theme = localStorage.getItem('pc_theme') || 'light';
 let view = 'dashboard';
 let activeProject = null;
@@ -892,6 +915,8 @@ let _saveTimer = null;
 let _isSaving = false;
 let dailyTasks = [];
 let weeklyTasks = [];
+let searchQuery = '';
+let dataSource = D.length ? 'local' : 'empty';
 
 // ── ISO week helper ──
 function isoWeek(d = new Date()) {
@@ -938,6 +963,95 @@ function initWeeklyTasks() {
 }
 function saveDailyTasks()  { localStorage.setItem('dailyTasks', JSON.stringify(dailyTasks)); updateSidebar(); }
 function saveWeeklyTasks() { localStorage.setItem('weeklyTasks', JSON.stringify(weeklyTasks)); updateSidebar(); }
+function escapeHTML(str) {
+  return String(str ?? '').replace(/[&<>"']/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[ch]));
+}
+function normalizeProject(p) {
+  return {
+    id: p.id || Date.now() + Math.floor(Math.random() * 10000),
+    name: p.name || 'Untitled Project',
+    desc: p.desc || '',
+    type: p.type || 'daily',
+    due: p.due || '',
+    priority: p.priority || 'med',
+    color: p.color || '#2563EB',
+    icon: p.icon || '📌',
+    progress: clamp(p.progress ?? 0),
+    tasks: Array.isArray(p.tasks) ? p.tasks.map(t => ({ name: t.name || '', done: !!t.done })) : [],
+    notes: p.notes || '',
+    created: p.created || p.id || Date.now(),
+    reminder: {
+      enabled: !!p.reminder?.enabled,
+      timing: p.reminder?.timing || 'oneday',
+      lastSent: p.reminder?.lastSent || null
+    }
+  };
+}
+function mergeProjects(primary = [], secondary = []) {
+  const map = new Map();
+  [...secondary, ...primary].forEach(project => {
+    const normalized = normalizeProject(project);
+    map.set(normalized.id, normalized);
+  });
+  return Array.from(map.values()).sort((a, b) => (b.created || 0) - (a.created || 0));
+}
+async function loadBundledData() {
+  try {
+    const res = await fetch(`./data.json?v=${Date.now()}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(res.status);
+    const data = await res.json();
+    return Array.isArray(data.projects) ? data.projects.map(normalizeProject) : [];
+  } catch (e) {
+    return null;
+  }
+}
+async function hydrateBundledProjects(reason = 'initial') {
+  if (D.length) {
+    dataSource = 'local';
+    return false;
+  }
+  const bundled = await loadBundledData();
+  if (!bundled || !bundled.length) return false;
+  const changed = JSON.stringify(bundled) !== JSON.stringify(D);
+  if (!changed) {
+    dataSource = 'bundled';
+    return false;
+  }
+  D = bundled;
+  dataSource = reason === 'initial' ? 'bundled' : 'merged';
+  localStorage.setItem('pc_v3', JSON.stringify(D));
+  updateSidebar();
+  renderContent();
+  return true;
+}
+function matchesSearch(project) {
+  if (!searchQuery.trim()) return true;
+  const q = searchQuery.trim().toLowerCase();
+  const haystack = [
+    project.name,
+    project.desc,
+    project.notes,
+    project.type,
+    project.priority,
+    ...(project.tasks || []).map(t => t.name)
+  ].join(' ').toLowerCase();
+  return haystack.includes(q);
+}
+function visibleProjects(v) {
+  return D.filter(p => filterProjects(p, v)).filter(matchesSearch);
+}
+function getDataInsights() {
+  const missingDue = D.filter(p => !p.due).length;
+  const missingDesc = D.filter(p => !(p.desc || '').trim()).length;
+  const withNotes = D.filter(p => (p.notes || '').trim()).length;
+  const withReminders = D.filter(p => p.reminder?.enabled).length;
+  const dueSoon = D.filter(p => {
+    if (!p.due || p.progress >= 100) return false;
+    const diff = Math.ceil((new Date(p.due) - new Date()) / 86400000);
+    return diff >= 0 && diff <= 7;
+  }).length;
+  return { missingDue, missingDesc, withNotes, withReminders, dueSoon };
+}
 
 // ── Daily task CRUD ──
 function addDailyTask() {
@@ -1124,8 +1238,9 @@ async function pullFromGitHub() {
   setSyncStatus('', 'Pulling…');
   const data = await ghLoad();
   if (data && data.projects) {
-    D = data.projects;
+    D = data.projects.map(normalizeProject);
     activityLog = data.activity || activityLog;
+    dataSource = 'github';
     localStorage.setItem('pc_v3', JSON.stringify(D));
     localStorage.setItem('pc_activity', JSON.stringify(activityLog));
     updateSidebar();
@@ -1150,6 +1265,7 @@ setInterval(() => {
 
 // Save: localStorage immediately, GitHub debounced 700ms
 function save() {
+  if (dataSource === 'empty') dataSource = 'local';
   localStorage.setItem('pc_v3', JSON.stringify(D));
   localStorage.setItem('pc_activity', JSON.stringify(activityLog.slice(0, 50)));
   clearTimeout(_saveTimer);
@@ -1165,13 +1281,15 @@ function logActivity(msg, color = '#2563EB') {
 async function initApp() {
   initDailyTasks();
   initWeeklyTasks();
+  await hydrateBundledProjects('initial');
   if (isGHConfigured()) {
     if (localStorage.getItem('autoPullOnOpen') !== '0') {
       setSyncStatus('', 'Loading…');
       const data = await ghLoad();
       if (data && data.projects) {
-        D = data.projects;
+        D = data.projects.map(normalizeProject);
         activityLog = data.activity || activityLog;
+        dataSource = 'github';
         localStorage.setItem('pc_v3', JSON.stringify(D));
         const t = new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
         setSyncStatus('ok', `Synced · ${t}`);
@@ -1184,7 +1302,7 @@ async function initApp() {
     }
   } else {
     setSyncStatus('', 'Not connected');
-    if (!localStorage.getItem('setup_seen')) {
+    if (!D.length && !localStorage.getItem('setup_seen')) {
       localStorage.setItem('setup_seen', '1');
       setTimeout(() => openSetup(), 600);
     }
@@ -1338,8 +1456,9 @@ async function saveSetup() {
     const data = await ghLoad();
     if (data !== null) {
       if (data.projects) {
-        D = data.projects;
+        D = data.projects.map(normalizeProject);
         activityLog = data.activity || activityLog;
+        dataSource = 'github';
       } else {
         await ghSave({ projects: D, activity: activityLog });
       }
@@ -1459,9 +1578,19 @@ function renderContent() {
   const tb   = document.getElementById('tb-title');
   const crumb= document.getElementById('tb-crumb');
   const acts = document.getElementById('tb-actions');
-  acts.innerHTML = '';
+  const sourceMap = {
+    github: 'Synced from GitHub',
+    bundled: 'Loaded from bundled data.json',
+    merged: 'Merged local changes with bundled data',
+    local: 'Loaded from this device',
+    empty: 'No local data yet'
+  };
+  acts.innerHTML = `<label class="topbar-search" aria-label="Search projects">
+    <span class="topbar-search-icon">⌕</span>
+    <input id="project-search" type="search" placeholder="Search projects, tasks, notes…" value="${escapeHTML(searchQuery)}" oninput="setSearch(this.value)">
+  </label>`;
   if (view === 'dashboard') {
-    tb.textContent='Dashboard'; crumb.textContent='Overview'; el.innerHTML=renderDashboard();
+    tb.textContent='Dashboard'; crumb.textContent=sourceMap[dataSource] || 'Overview'; el.innerHTML=renderDashboard();
   } else if (view === 'todo-daily') {
     tb.textContent='Daily Tasks'; crumb.textContent='Today\'s checklist'; el.innerHTML=renderDailyTasks();
   } else if (view === 'todo-weekly') {
@@ -1475,9 +1604,19 @@ function renderContent() {
   } else {
     const titles={all:'All Projects',daily:'Daily',weekly:'Weekly',monthly:'Monthly',done:'Completed',overdue:'Overdue'};
     tb.textContent = titles[view]||'Projects';
-    crumb.textContent = `${D.filter(p=>filterProjects(p,view)).length} projects`;
+    crumb.textContent = `${visibleProjects(view).length} projects`;
     el.innerHTML = renderList(view);
   }
+}
+function setSearch(val) {
+  searchQuery = val;
+  if (view === 'project' && activeProject) {
+    const current = D.find(x => x.id === activeProject);
+    if (current && !matchesSearch(current)) goView('all');
+    else renderContent();
+    return;
+  }
+  renderContent();
 }
 function filterProjects(p,v){
   if(v==='all')     return true;
@@ -1599,7 +1738,15 @@ function renderDashboard() {
   const overdue=D.filter(p=>p.due&&new Date(p.due)<new Date()&&p.progress<100).length;
   const avgPct=total>0?Math.round(D.reduce((s,p)=>s+p.progress,0)/total):0;
   const dayStr=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
-  const recent=D.filter(p=>p.progress<100).slice(0,6);
+  const recent=D.filter(p=>p.progress<100).filter(matchesSearch).slice(0,6);
+  const insights = getDataInsights();
+  const sourceLabel = {
+    github: 'GitHub sync',
+    bundled: 'Bundled repo data',
+    merged: 'Merged device + repo data',
+    local: 'Browser local data',
+    empty: 'No data source'
+  }[dataSource] || 'Unknown';
   const syncBanner = !isGHConfigured() ? `
     <div class="sync-banner">
       <span style="font-size:22px">🔗</span>
@@ -1635,15 +1782,41 @@ function renderDashboard() {
     <div class="section-hd au"><div class="section-hd-title">Active Projects</div><button class="btn btn-ghost btn-sm" onclick="goView('all')">View all →</button></div>
     <div class="pcards">${recent.map((p,i)=>`<div class="au" style="animation-delay:${i*.05}s">${pcardHTML(p)}</div>`).join('')}</div>` :
     `<div class="empty"><div class="empty-ill">🚀</div><div class="empty-title">Ready to start?</div><div class="empty-desc">Create your first project and start tracking progress.</div><button class="btn btn-primary" onclick="openAdd()">+ Create First Project</button></div>`}
+    <div class="insights-grid">
+      <div>
+        <div class="section-hd au"><div class="section-hd-title">Data Health</div><div class="section-hd-meta">${sourceLabel}</div></div>
+        <div class="card au">
+          <div class="insight-list">
+            <div class="insight-row">
+              <div class="insight-copy"><div class="insight-label">Due dates coverage</div><div class="insight-desc">Projects without due dates are harder to prioritize and harder to remind.</div></div>
+              <div class="insight-val">${total - insights.missingDue}/${total || 0}</div>
+            </div>
+            <div class="insight-row">
+              <div class="insight-copy"><div class="insight-label">Descriptions missing</div><div class="insight-desc">A short summary makes cards clearer on desktop and mobile.</div></div>
+              <div class="insight-val">${insights.missingDesc} open</div>
+            </div>
+            <div class="insight-row">
+              <div class="insight-copy"><div class="insight-label">Reminder coverage</div><div class="insight-desc">Only reminder-enabled projects will send deadline nudges.</div></div>
+              <div class="insight-val">${insights.withReminders} enabled</div>
+            </div>
+          </div>
+          <div class="mini-list">
+            <div class="mini-item"><span class="mini-dot" style="background:var(--amber)"></span>${insights.dueSoon} active project${insights.dueSoon !== 1 ? 's' : ''} due within 7 days</div>
+            <div class="mini-item"><span class="mini-dot" style="background:var(--blue)"></span>${insights.withNotes} project${insights.withNotes !== 1 ? 's' : ''} have notes saved</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-hd au"><div class="section-hd-title">Focus Timer</div></div>
+        ${renderFocusCardHTML()}
+      </div>
+    </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;align-items:start">
       ${activityLog.length > 0 ? `<div>
         <div class="section-hd au"><div class="section-hd-title">Recent Activity</div></div>
         <div class="card au">${activityLog.slice(0,6).map(a=>`<div class="activity-item"><div class="activity-dot" style="background:${a.color}"></div><div class="activity-txt">${a.msg}</div><div class="activity-time">${relTime(a.time)}</div></div>`).join('')}</div>
       </div>` : '<div></div>'}
-      <div>
-        <div class="section-hd au"><div class="section-hd-title">Focus Timer</div></div>
-        ${renderFocusCardHTML()}
-      </div>
+      <div></div>
     </div>
   </div>`;
 }
@@ -1652,8 +1825,8 @@ function renderDashboard() {
 //  LIST + CARDS
 // ══════════════════════════════════════════════════════════
 function renderList(v) {
-  const list = D.filter(p=>filterProjects(p,v));
-  if (!list.length) return `<div class="empty"><div class="empty-ill">📂</div><div class="empty-title">Nothing here yet</div><div class="empty-desc">No projects in this category.</div><button class="btn btn-primary" onclick="openAdd()">+ Create Project</button></div>`;
+  const list = visibleProjects(v);
+  if (!list.length) return `<div class="empty"><div class="empty-ill">📂</div><div class="empty-title">Nothing here yet</div><div class="empty-desc">${searchQuery.trim() ? 'No projects match your search.' : 'No projects in this category.'}</div><button class="btn btn-primary" onclick="openAdd()">+ Create Project</button></div>`;
   return `<div class="pcards">${list.map((p,i)=>`<div class="au" style="animation-delay:${i*.05}s">${pcardHTML(p)}</div>`).join('')}</div>`;
 }
 
