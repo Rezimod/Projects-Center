@@ -448,9 +448,17 @@
         "text": "Go with boyt",
         "done": false,
         "date": "2026-03-28"
+      },
+      {
+        "id": 1774730609849,
+        "text": "start Phase Two for Sky astroman",
+        "done": false,
+        "date": "2026-03-28"
       }
     ],
+    "completedDailyTasks": [],
     "weeklyTasks": [],
+    "completedWeeklyTasks": [],
     "monthlyGoals": [],
     "dailyFocus": {
       "mustDo": "",
