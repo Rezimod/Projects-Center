@@ -2,8 +2,10 @@ name: Send Project Reminders
 
 on:
   schedule:
-    # Runs at 12:00 UTC = 16:00 Tbilisi (UTC+4)
-    - cron: '0 12 * * *'
+    # Weekdays 12:00 Tbilisi (08:00 UTC)
+    - cron: '0 8 * * 1-5'
+    # Weekdays 15:00 Tbilisi (11:00 UTC)
+    - cron: '0 11 * * 1-5'
   workflow_dispatch:  # allow manual trigger from GitHub
 
 permissions:

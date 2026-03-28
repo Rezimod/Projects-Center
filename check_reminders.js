@@ -1,8 +1,10 @@
 /**
  * check_reminders.js
- * Run by GitHub Actions cron at 16:00 Tbilisi (12:00 UTC) daily.
- * Sends a digest of ALL active tasks to Telegram, then sends individual
- * due-date reminders for projects nearing their deadline.
+ * Run by GitHub Actions on weekday schedule slots.
+ * Sends:
+ * - 12:00 Tbilisi weekday daily-task brief
+ * - 15:00 Tbilisi weekday weekly-task brief
+ * - due-date reminders for projects nearing their deadline
  * Commits updated lastSent timestamps back to repo.
  */
 
@@ -26,9 +28,70 @@ try {
 }
 
 const projects = data.projects || [];
+const planner  = data.planner || {};
+planner.dailyTasks = Array.isArray(planner.dailyTasks) ? planner.dailyTasks : [];
+planner.weeklyTasks = Array.isArray(planner.weeklyTasks) ? planner.weeklyTasks : [];
+planner.monthlyGoals = Array.isArray(planner.monthlyGoals) ? planner.monthlyGoals : [];
+planner.dailyFocus = planner.dailyFocus || {};
+planner.weeklyPlan = planner.weeklyPlan || {};
+planner.telegramSchedule = planner.telegramSchedule || { timezone: 'Asia/Tbilisi', dailyWeekday: '12:00', weeklyWeekday: '15:00' };
+planner.telegramLog = planner.telegramLog || {};
+
 const now      = new Date();
 const todayStr = now.toDateString();
 const TIMING   = { today: 0, oneday: 1, threedays: 3, oneweek: 7 };
+const TZ       = planner.telegramSchedule.timezone || 'Asia/Tbilisi';
+
+function tzParts(date = new Date(), timeZone = TZ) {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone,
+    weekday: 'short',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  }).formatToParts(date).reduce((acc, part) => {
+    if (part.type !== 'literal') acc[part.type] = part.value;
+    return acc;
+  }, {});
+
+  return {
+    weekday: parts.weekday,
+    dateKey: `${parts.year}-${parts.month}-${parts.day}`,
+    timeKey: `${parts.hour}:${parts.minute}`
+  };
+}
+
+function isWeekdayInTbilisi(date = new Date()) {
+  return !['Sat', 'Sun'].includes(tzParts(date).weekday);
+}
+
+function buildDailyTaskDigest() {
+  const dateLabel = now.toLocaleDateString('en-US', { timeZone: TZ, weekday: 'long', month: 'long', day: 'numeric' });
+  const done = planner.dailyTasks.filter(t => t.done).length;
+  const undone = planner.dailyTasks.filter(t => !t.done);
+  const parts = [`☀️ <b>Daily Orbit — ${dateLabel}</b>`];
+  if (planner.dailyFocus.mustDo)  parts.push(`\n🎯 <b>Must Do</b>\n${planner.dailyFocus.mustDo}`);
+  if (planner.dailyFocus.stretch) parts.push(`\n🪐 <b>Stretch</b>\n${planner.dailyFocus.stretch}`);
+  if (planner.dailyFocus.note)    parts.push(`\n📝 <b>Note</b>\n${planner.dailyFocus.note}`);
+  parts.push(`\n✅ <b>Daily Tasks</b> (${done}/${planner.dailyTasks.length} done)`);
+  parts.push(undone.length ? undone.map(t => `• ${t.text}`).join('\n') : 'All daily tasks complete.');
+  return parts.join('\n');
+}
+
+function buildWeeklyTaskDigest() {
+  const done = planner.weeklyTasks.filter(t => t.done).length;
+  const undone = planner.weeklyTasks.filter(t => !t.done);
+  const parts = [`🌌 <b>Weekly Compass</b>`];
+  if (planner.weeklyPlan.theme) parts.push(`\n🧭 <b>Theme</b>\n${planner.weeklyPlan.theme}`);
+  if (planner.weeklyPlan.win)   parts.push(`\n🏁 <b>Win</b>\n${planner.weeklyPlan.win}`);
+  if (planner.weeklyPlan.risk)  parts.push(`\n⚠️ <b>Risk</b>\n${planner.weeklyPlan.risk}`);
+  parts.push(`\n📅 <b>Weekly Tasks</b> (${done}/${planner.weeklyTasks.length} done)`);
+  parts.push(undone.length ? undone.map(t => `• ${t.text}`).join('\n') : 'All weekly tasks complete.');
+  return parts.join('\n');
+}
 
 function sendTelegram(text) {
   return new Promise(resolve => {
@@ -47,32 +110,28 @@ function sendTelegram(text) {
 
 async function main() {
   let changed = false;
+  const tb = tzParts(now);
 
-  // ── 1. Daily active-tasks digest ───────────────────────────────────────────
-  const active = projects.filter(p => p.progress < 100);
-  if (active.length > 0) {
-    const lines = active.map(p => {
-      const bar   = Math.round(p.progress / 10);
-      const filled = '█'.repeat(bar) + '░'.repeat(10 - bar);
-      const dueInfo = p.due
-        ? ` · due ${new Date(p.due).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`
-        : '';
-      return `📌 <b>${p.name}</b>${dueInfo}\n   [${filled}] ${p.progress}%`;
-    });
+  if (isWeekdayInTbilisi(now)) {
+    const dailyTime = planner.telegramSchedule.dailyWeekday || '12:00';
+    const weeklyTime = planner.telegramSchedule.weeklyWeekday || '15:00';
 
-    const digest =
-      `📋 <b>Daily Task Digest — ${now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</b>\n` +
-      `<i>${active.length} active project${active.length !== 1 ? 's' : ''}</i>\n\n` +
-      lines.join('\n\n');
+    if (tb.timeKey === dailyTime && planner.telegramLog.dailyTaskDigestSentOn !== tb.dateKey) {
+      await sendTelegram(buildDailyTaskDigest());
+      planner.telegramLog.dailyTaskDigestSentOn = tb.dateKey;
+      changed = true;
+      console.log(`[digest] Sent weekday daily brief at ${tb.timeKey} ${TZ}`);
+    }
 
-    await sendTelegram(digest);
-    console.log(`[digest] Sent daily digest (${active.length} active projects)`);
-  } else {
-    await sendTelegram('✅ <b>All projects complete!</b>\nNo active tasks for today. Keep it up!');
-    console.log('[digest] All done — sent completion message');
+    if (tb.timeKey === weeklyTime && planner.telegramLog.weeklyTaskDigestSentOn !== tb.dateKey) {
+      await sendTelegram(buildWeeklyTaskDigest());
+      planner.telegramLog.weeklyTaskDigestSentOn = tb.dateKey;
+      changed = true;
+      console.log(`[digest] Sent weekday weekly brief at ${tb.timeKey} ${TZ}`);
+    }
   }
 
-  // ── 2. Individual due-date reminders ───────────────────────────────────────
+  // ── Due-date reminders ─────────────────────────────────────────────────────
   for (const p of projects) {
     if (!p.reminder?.enabled || !p.due || p.progress >= 100) continue;
 
@@ -99,6 +158,7 @@ async function main() {
 
   if (changed) {
     data.projects = projects;
+    data.planner = planner;
     fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
     console.log('Updated data.json with lastSent timestamps.');
   }

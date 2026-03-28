@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -23,16 +23,16 @@
   --sb-border:rgba(255,255,255,0.1);
 }
 [data-theme="dark"]{
-  --bg:#0D0D0C;--bg2:#131311;--bg3:#1A1A17;
-  --surface:rgba(26,26,23,0.75);--surface2:rgba(30,30,27,0.8);
-  --border:rgba(255,255,255,0.09);--border2:rgba(255,255,255,0.16);
-  --text:#F0EDE7;--text2:#B8B4AE;--text3:#6A6762;
-  --shadow:0 1px 2px rgba(0,0,0,0.4),0 4px 16px rgba(0,0,0,0.3);
-  --shadow-md:0 4px 24px rgba(0,0,0,0.5);
-  --shadow-lg:0 16px 56px rgba(0,0,0,0.65);
-  --sb:#0A0A09;--sb-t:#F0EDE7;--sb-t2:#A8A4A0;--sb-t3:#6A6762;
-  --sb-hover:rgba(255,255,255,0.07);--sb-active:rgba(255,255,255,0.12);
-  --sb-border:rgba(255,255,255,0.1);
+  --bg:#060816;--bg2:#0C1124;--bg3:#111936;
+  --surface:rgba(11,17,37,0.82);--surface2:rgba(16,24,51,0.88);
+  --border:rgba(145,168,255,0.14);--border2:rgba(145,168,255,0.28);
+  --text:#EEF4FF;--text2:#A7B4D6;--text3:#66759F;
+  --shadow:0 8px 30px rgba(0,0,0,0.34),0 2px 10px rgba(0,0,0,0.25);
+  --shadow-md:0 10px 36px rgba(0,0,0,0.44);
+  --shadow-lg:0 20px 70px rgba(0,0,0,0.58);
+  --sb:#050814;--sb-t:#F4F7FF;--sb-t2:#B0BDE0;--sb-t3:#6F80AC;
+  --sb-hover:rgba(130,156,255,0.12);--sb-active:rgba(130,156,255,0.2);
+  --sb-border:rgba(145,168,255,0.16);
 }
 /* ══ LIGHT MODE — Bright & Vivid ══ */
 
@@ -182,12 +182,12 @@ html[data-theme="light"] .pli.active .pli-name { color: #EEEDF8 !important; }
 }
 
 :root{
-  --blue:#2563EB;--blue-lt:rgba(37,99,235,0.1);
-  --green:#16A34A;--green-lt:rgba(22,163,74,0.1);
-  --amber:#D97706;--amber-lt:rgba(217,119,6,0.1);
-  --red:#DC2626;--red-lt:rgba(220,38,38,0.09);
-  --purple:#7C3AED;--purple-lt:rgba(124,58,237,0.1);
-  --teal:#0891B2;--rose:#E11D48;
+  --blue:#7C9BFF;--blue-lt:rgba(124,155,255,0.12);
+  --green:#34D399;--green-lt:rgba(52,211,153,0.12);
+  --amber:#F4B860;--amber-lt:rgba(244,184,96,0.12);
+  --red:#FB7185;--red-lt:rgba(251,113,133,0.12);
+  --purple:#A78BFA;--purple-lt:rgba(167,139,250,0.12);
+  --teal:#67E8F9;--rose:#F472B6;
   --font:'Cabinet Grotesk',sans-serif;
   --serif:'Instrument Serif',serif;
   --mono:'JetBrains Mono',monospace;
@@ -204,10 +204,11 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 [data-theme="light"] .content{background:transparent;}
 
 /* ── Layout ── */
-.app{display:grid;grid-template-columns:252px 1fr;height:100vh;overflow:hidden;}
+.app{display:grid;grid-template-columns:286px 1fr;height:100vh;overflow:hidden;}
 
 /* ── Sidebar ── */
-.sidebar{background:var(--sb);display:flex;flex-direction:column;height:100vh;overflow:hidden;position:relative;}
+.sidebar{background:linear-gradient(180deg, rgba(4,8,20,0.98), rgba(7,12,29,0.98));display:flex;flex-direction:column;height:100vh;overflow:hidden;position:relative;border-right:1px solid rgba(145,168,255,0.18);box-shadow:24px 0 50px rgba(0,0,0,0.28);}
+.sidebar::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top left, rgba(124,155,255,0.22), transparent 38%), radial-gradient(circle at bottom left, rgba(103,232,249,0.12), transparent 34%);pointer-events:none;z-index:0;}
 .sidebar::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:0;}
 
 .logo-area{padding:20px 18px 16px;border-bottom:1px solid var(--sb-border);position:relative;z-index:1;flex-shrink:0;}
@@ -221,26 +222,26 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 
 .sb-section{margin-bottom:20px;}
 .sb-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--sb-t3);text-transform:uppercase;padding:0 9px;margin-bottom:3px;}
-.nav-item{display:flex;align-items:center;gap:9px;padding:8px 9px;border-radius:var(--r-sm);cursor:pointer;transition:background .12s;color:var(--sb-t2);font-size:13px;font-weight:500;margin-bottom:1px;border:none;background:none;width:100%;text-align:left;position:relative;}
+.nav-item{display:flex;align-items:center;gap:9px;padding:10px 11px;border-radius:12px;cursor:pointer;transition:background .12s,color .12s,border-color .12s;color:var(--sb-t2);font-size:13px;font-weight:600;margin-bottom:4px;border:1px solid transparent;background:none;width:100%;text-align:left;position:relative;}
 .nav-item:hover{background:var(--sb-hover);color:var(--sb-t);}
-.nav-item.active{background:var(--sb-active);color:var(--sb-t);}
+.nav-item.active{background:linear-gradient(135deg, rgba(124,155,255,0.24), rgba(103,232,249,0.12));color:var(--sb-t);border-color:rgba(145,168,255,0.24);box-shadow:0 10px 24px rgba(3,8,25,0.28);}
 .nav-item.active .ni{background:rgba(37,99,235,0.2);color:#60A5FA;}
-.ni{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;background:rgba(255,255,255,0.04);}
+.ni{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;background:rgba(255,255,255,0.05);border:1px solid rgba(145,168,255,0.1);}
 .nb{font-family:var(--mono);font-size:10px;padding:1px 6px;border-radius:20px;background:rgba(255,255,255,0.07);color:var(--sb-t2);margin-left:auto;}
 .nb.hot{background:var(--red);color:white;}
 
-.pli{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:var(--r-sm);cursor:pointer;transition:background .12s;margin-bottom:1px;border:none;background:none;width:100%;}
+.pli{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:12px;cursor:pointer;transition:background .12s,border-color .12s;color:var(--sb-t2);margin-bottom:4px;border:1px solid transparent;background:none;width:100%;}
 .pli:hover{background:var(--sb-hover);}
-.pli.active{background:var(--sb-active);}
+.pli.active{background:rgba(124,155,255,0.16);border-color:rgba(145,168,255,0.18);}
 .pli-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 .pli-name{font-size:12.5px;font-weight:500;color:var(--sb-t2);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;}
 .pli.active .pli-name{color:var(--sb-t);}
 .pli-pct{font-family:var(--mono);font-size:10px;color:var(--sb-t3);}
 
-.sb-add{width:100%;display:flex;align-items:center;gap:7px;padding:7px 9px;border-radius:var(--r-sm);background:none;border:1px dashed var(--sb-t3);color:var(--sb-t3);font-family:var(--font);font-size:12.5px;cursor:pointer;transition:all .15s;margin-top:4px;}
+.sb-add{width:100%;display:flex;align-items:center;gap:7px;padding:10px 11px;border-radius:12px;background:none;border:1px dashed rgba(145,168,255,0.28);color:var(--sb-t2);font-family:var(--font);font-size:12.5px;cursor:pointer;transition:all .15s;margin-top:4px;}
 .sb-add:hover{border-color:var(--blue);color:#93B4FA;background:rgba(37,99,235,0.07);}
 
-.sb-foot{padding:12px 10px 16px;border-top:1px solid var(--sb-border);position:relative;z-index:1;flex-shrink:0;display:flex;flex-direction:column;gap:2px;}
+.sb-foot{padding:14px 10px 16px;border-top:1px solid var(--sb-border);position:relative;z-index:1;flex-shrink:0;display:flex;flex-direction:column;gap:6px;background:linear-gradient(180deg, rgba(255,255,255,0), rgba(124,155,255,0.05));}
 .sb-sync{display:flex;align-items:center;gap:7px;padding:7px 9px;font-family:var(--mono);font-size:10px;color:var(--sb-t3);cursor:pointer;border-radius:var(--r-sm);border:none;background:none;width:100%;transition:background .12s;text-align:left;}
 .sb-sync:hover{background:var(--sb-hover);}
 .sb-sync.ok{color:#4ADE80;}
@@ -303,6 +304,44 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 .kpi-label{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:7px;}
 .kpi-val{font-size:28px;font-weight:900;letter-spacing:-1.5px;line-height:1;}
 .kpi-sub{font-size:11px;color:var(--text3);margin-top:4px;}
+.orbit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:22px;}
+.orbit-card{position:relative;overflow:hidden;padding:18px;border-radius:18px;border:1px solid var(--border);background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));box-shadow:var(--shadow);}
+.orbit-card::before{content:'';position:absolute;inset:auto -10% -35% auto;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle, rgba(255,255,255,0.18), transparent 68%);opacity:.35;pointer-events:none;}
+.orbit-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px;}
+.orbit-title{font-size:13px;font-weight:800;color:var(--text);}
+.orbit-sub{font-size:11px;color:var(--text3);margin-top:4px;line-height:1.5;}
+.orbit-ring{--fill:50%;--ring:#7C9BFF;width:118px;height:118px;border-radius:50%;background:conic-gradient(var(--ring) var(--fill), rgba(255,255,255,0.08) 0);display:grid;place-items:center;position:relative;flex-shrink:0;}
+.orbit-ring::after{content:'';position:absolute;inset:12px;border-radius:50%;background:rgba(7,11,27,0.92);border:1px solid rgba(255,255,255,0.06);}
+.orbit-core{position:relative;z-index:1;text-align:center;}
+.orbit-core strong{display:block;font-size:24px;font-weight:900;letter-spacing:-1px;color:var(--text);}
+.orbit-core span{font-family:var(--mono);font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1.4px;}
+.orbit-legend{display:flex;flex-direction:column;gap:8px;}
+.orbit-row{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;color:var(--text2);}
+.orbit-row b{color:var(--text);font-weight:700;}
+.orbit-left{display:flex;align-items:center;gap:8px;min-width:0;}
+.orbit-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.planner-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px;}
+.planner-card{padding:18px;border-radius:18px;border:1px solid var(--border);background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));box-shadow:var(--shadow);}
+.planner-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;}
+.planner-title{font-size:14px;font-weight:800;color:var(--text);}
+.planner-meta{font-family:var(--mono);font-size:10px;color:var(--text3);}
+.planner-stack{display:flex;flex-direction:column;gap:10px;}
+.planner-mini{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,0.025);}
+.planner-mini textarea,.planner-mini input{width:100%;border:none;outline:none;background:none;color:var(--text);font-family:var(--font);font-size:13px;line-height:1.45;resize:none;}
+.planner-mini textarea::placeholder,.planner-mini input::placeholder{color:var(--text3);}
+.planner-mini-label{font-family:var(--mono);font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1.4px;min-width:64px;padding-top:2px;}
+.planner-list{display:flex;flex-direction:column;gap:8px;}
+.planner-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border);}
+.planner-item span{flex:1;font-size:13px;color:var(--text);}
+.planner-item span.done{text-decoration:line-through;color:var(--text3);}
+.planner-check{width:18px;height:18px;border-radius:50%;border:2px solid var(--border2);flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.planner-check.done{background:var(--green);border-color:var(--green);}
+.planner-check.done::after{content:'✓';font-size:10px;color:#fff;font-weight:700;}
+.planner-delete{width:26px;height:26px;border:none;border-radius:8px;background:none;color:var(--text3);cursor:pointer;}
+.planner-delete:hover{background:var(--red-lt);color:var(--red);}
+.planner-add{display:flex;gap:8px;margin-top:10px;}
+.planner-add input{flex:1;border:1px solid var(--border);background:var(--bg2);border-radius:10px;padding:10px 12px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;}
+.planner-add input:focus{border-color:var(--blue);}
 
 /* ── Project Cards ── */
 .section-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
@@ -518,9 +557,6 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
 .logo-area{cursor:pointer;}
 .logo-area:hover .logo-name{opacity:.85;}
 
-/* ── Nav active accent border ── */
-.nav-item.active{border-left:2px solid #60A5FA;padding-left:7px;}
-
 /* ── Todo Task UI ── */
 .todo-inp{flex:1;min-height:44px;padding:10px 12px;border:1px solid var(--border2);border-radius:var(--r-sm);background:var(--bg2);color:var(--text);font-family:var(--font);font-size:14px;outline:none;}
 .todo-inp:focus{border-color:var(--blue);}
@@ -584,6 +620,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .topbar-search{order:10;flex:1 1 100%;min-width:0;height:40px;}
   .content{padding:14px;}
   .kpi-row{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .orbit-grid,.planner-grid{grid-template-columns:1fr;}
   .kpi{padding:13px 14px;}
   .kpi-val{font-size:22px;}
   .pcards{grid-template-columns:1fr;}
@@ -770,9 +807,12 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
         <div class="fi-hint">Message <a href="https://t.me/userinfobot" target="_blank">@userinfobot</a> to find your ID</div>
       </div>
       <div class="field">
-        <div class="fl">Daily Digest Time (Tbilisi)</div>
-        <input class="fi" id="s-digest-time" type="time" value="16:00"/>
-        <div class="fi-hint">A summary of all active tasks is sent at this time every day when the app is open.</div>
+        <div class="fl">Weekday Telegram Schedule (Tbilisi)</div>
+        <div class="fi" style="line-height:1.7">
+          <strong>12:00</strong> Daily tasks and focus brief<br>
+          <strong>15:00</strong> Weekly tasks and weekly compass
+        </div>
+        <div class="fi-hint">These run from GitHub Actions on weekdays, so they send even when the app is closed.</div>
       </div>
       <div style="display:flex;gap:8px">
         <button class="btn btn-ghost" onclick="testTelegramSetup()" style="flex:1;justify-content:center">🔔 Test Notification</button>
@@ -902,7 +942,7 @@ let D = JSON.parse(localStorage.getItem('pc_v3') || '[]').map(p => ({
   ...p,
   tasks: Array.isArray(p.tasks) ? p.tasks : []
 }));
-let theme = localStorage.getItem('pc_theme') || 'light';
+let theme = localStorage.getItem('pc_theme') || 'dark';
 let view = 'dashboard';
 let activeProject = null;
 let editingId = null;
@@ -913,8 +953,19 @@ let activityLog = JSON.parse(localStorage.getItem('pc_activity') || '[]');
 let _dataSha = null;
 let _saveTimer = null;
 let _isSaving = false;
-let dailyTasks = [];
-let weeklyTasks = [];
+const DEFAULT_PLANNER = () => ({
+  dailyTasks: [],
+  weeklyTasks: [],
+  monthlyGoals: [],
+  dailyFocus: { mustDo: '', stretch: '', note: '' },
+  weeklyPlan: { theme: '', win: '', risk: '' },
+  telegramSchedule: { timezone: 'Asia/Tbilisi', dailyWeekday: '12:00', weeklyWeekday: '15:00' },
+  telegramLog: {}
+});
+let planner = normalizePlanner(JSON.parse(localStorage.getItem('pc_planner') || 'null') || {});
+let dailyTasks = planner.dailyTasks;
+let weeklyTasks = planner.weeklyTasks;
+let monthlyGoals = planner.monthlyGoals;
 let searchQuery = '';
 let dataSource = D.length ? 'local' : 'empty';
 
@@ -935,34 +986,90 @@ function getWeekLabel() {
 
 // ── Daily tasks init (reset checked tasks at midnight) ──
 function initDailyTasks() {
-  const stored = JSON.parse(localStorage.getItem('dailyTasks') || '[]');
+  const stored = planner.dailyTasks?.length ? planner.dailyTasks : JSON.parse(localStorage.getItem('dailyTasks') || '[]');
   const storedDate = localStorage.getItem('dailyTasksDate') || '';
   const today = new Date().toISOString().split('T')[0];
   if (storedDate !== today) {
-    dailyTasks = stored.filter(t => !t.done).map(t => ({ ...t, date: today }));
+    planner.dailyTasks = stored.filter(t => !t.done).map(t => ({ ...t, date: today }));
     localStorage.setItem('dailyTasksDate', today);
-    localStorage.setItem('dailyTasks', JSON.stringify(dailyTasks));
-  } else {
-    dailyTasks = stored;
+  } else if (!planner.dailyTasks?.length && stored.length) {
+    planner.dailyTasks = stored;
   }
+  syncPlannerRefs();
+  persistPlannerLocal();
 }
 // ── Weekly tasks init (reset checked tasks on new ISO week) ──
 function initWeeklyTasks() {
-  const stored = JSON.parse(localStorage.getItem('weeklyTasks') || '[]');
+  const stored = planner.weeklyTasks?.length ? planner.weeklyTasks : JSON.parse(localStorage.getItem('weeklyTasks') || '[]');
   const storedWeek = parseInt(localStorage.getItem('weeklyTasksWeek') || '0');
   const storedYear = parseInt(localStorage.getItem('weeklyTasksYear') || '0');
   const now = new Date(), curWeek = isoWeek(now), curYear = now.getFullYear();
   if (storedWeek !== curWeek || storedYear !== curYear) {
-    weeklyTasks = stored.filter(t => !t.done).map(t => ({ ...t, weekNum: curWeek, year: curYear }));
+    planner.weeklyTasks = stored.filter(t => !t.done).map(t => ({ ...t, weekNum: curWeek, year: curYear }));
     localStorage.setItem('weeklyTasksWeek', String(curWeek));
     localStorage.setItem('weeklyTasksYear', String(curYear));
-    localStorage.setItem('weeklyTasks', JSON.stringify(weeklyTasks));
-  } else {
-    weeklyTasks = stored;
+  } else if (!planner.weeklyTasks?.length && stored.length) {
+    planner.weeklyTasks = stored;
   }
+  syncPlannerRefs();
+  persistPlannerLocal();
 }
-function saveDailyTasks()  { localStorage.setItem('dailyTasks', JSON.stringify(dailyTasks)); updateSidebar(); }
-function saveWeeklyTasks() { localStorage.setItem('weeklyTasks', JSON.stringify(weeklyTasks)); updateSidebar(); }
+function saveDailyTasks()  { persistPlannerLocal(); save(); updateSidebar(); }
+function saveWeeklyTasks() { persistPlannerLocal(); save(); updateSidebar(); }
+function saveMonthlyGoals() { persistPlannerLocal(); save(); updateSidebar(); }
+function normalizePlanner(src = {}) {
+  const base = DEFAULT_PLANNER();
+  return {
+    dailyTasks: Array.isArray(src.dailyTasks) ? src.dailyTasks.map(t => ({ id: t.id || Date.now() + Math.random(), text: t.text || '', done: !!t.done, date: t.date || '' })) : base.dailyTasks,
+    weeklyTasks: Array.isArray(src.weeklyTasks) ? src.weeklyTasks.map(t => ({ id: t.id || Date.now() + Math.random(), text: t.text || '', done: !!t.done, weekNum: t.weekNum || 0, year: t.year || 0 })) : base.weeklyTasks,
+    monthlyGoals: Array.isArray(src.monthlyGoals) ? src.monthlyGoals.map(g => ({ id: g.id || Date.now() + Math.random(), text: g.text || '', done: !!g.done, monthKey: g.monthKey || '' })) : base.monthlyGoals,
+    dailyFocus: {
+      mustDo: src.dailyFocus?.mustDo || '',
+      stretch: src.dailyFocus?.stretch || '',
+      note: src.dailyFocus?.note || ''
+    },
+    weeklyPlan: {
+      theme: src.weeklyPlan?.theme || '',
+      win: src.weeklyPlan?.win || '',
+      risk: src.weeklyPlan?.risk || ''
+    },
+    telegramSchedule: {
+      timezone: src.telegramSchedule?.timezone || 'Asia/Tbilisi',
+      dailyWeekday: src.telegramSchedule?.dailyWeekday || '12:00',
+      weeklyWeekday: src.telegramSchedule?.weeklyWeekday || '15:00'
+    },
+    telegramLog: {
+      dailyTaskDigestSentOn: src.telegramLog?.dailyTaskDigestSentOn || '',
+      weeklyTaskDigestSentOn: src.telegramLog?.weeklyTaskDigestSentOn || ''
+    }
+  };
+}
+function syncPlannerRefs() {
+  dailyTasks = planner.dailyTasks;
+  weeklyTasks = planner.weeklyTasks;
+  monthlyGoals = planner.monthlyGoals;
+}
+function persistPlannerLocal() {
+  localStorage.setItem('pc_planner', JSON.stringify(planner));
+  localStorage.setItem('dailyTasks', JSON.stringify(planner.dailyTasks));
+  localStorage.setItem('weeklyTasks', JSON.stringify(planner.weeklyTasks));
+}
+function plannerMonthKey(d = new Date()) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+}
+function plannerHasContent(state = planner) {
+  return !!(
+    state.dailyTasks?.length ||
+    state.weeklyTasks?.length ||
+    state.monthlyGoals?.length ||
+    state.dailyFocus?.mustDo ||
+    state.dailyFocus?.stretch ||
+    state.dailyFocus?.note ||
+    state.weeklyPlan?.theme ||
+    state.weeklyPlan?.win ||
+    state.weeklyPlan?.risk
+  );
+}
 function escapeHTML(str) {
   return String(str ?? '').replace(/[&<>"']/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[ch]));
 }
@@ -1000,26 +1107,39 @@ async function loadBundledData() {
     const res = await fetch(`./data.json?v=${Date.now()}`, { cache: 'no-store' });
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
-    return Array.isArray(data.projects) ? data.projects.map(normalizeProject) : [];
+    return {
+      projects: Array.isArray(data.projects) ? data.projects.map(normalizeProject) : [],
+      planner: normalizePlanner(data.planner || {}),
+      activity: Array.isArray(data.activity) ? data.activity : []
+    };
   } catch (e) {
     return null;
   }
 }
 async function hydrateBundledProjects(reason = 'initial') {
+  const bundled = await loadBundledData();
+  if (!bundled) return false;
   if (D.length) {
+    if (!plannerHasContent() && plannerHasContent(bundled.planner)) {
+      planner = bundled.planner;
+      syncPlannerRefs();
+      persistPlannerLocal();
+    }
     dataSource = 'local';
     return false;
   }
-  const bundled = await loadBundledData();
-  if (!bundled || !bundled.length) return false;
-  const changed = JSON.stringify(bundled) !== JSON.stringify(D);
+  if (!bundled.projects.length) return false;
+  const changed = JSON.stringify(bundled.projects) !== JSON.stringify(D);
   if (!changed) {
     dataSource = 'bundled';
     return false;
   }
-  D = bundled;
+  D = bundled.projects;
+  planner = bundled.planner;
+  syncPlannerRefs();
   dataSource = reason === 'initial' ? 'bundled' : 'merged';
   localStorage.setItem('pc_v3', JSON.stringify(D));
+  persistPlannerLocal();
   updateSidebar();
   renderContent();
   return true;
@@ -1057,28 +1177,55 @@ function getDataInsights() {
 function addDailyTask() {
   const inp = document.getElementById('daily-task-inp');
   const text = inp?.value.trim(); if (!text) return;
-  dailyTasks.push({ id: Date.now(), text, done: false, date: new Date().toISOString().split('T')[0] });
+  planner.dailyTasks.push({ id: Date.now(), text, done: false, date: new Date().toISOString().split('T')[0] });
+  syncPlannerRefs();
   saveDailyTasks(); inp.value = ''; renderContent();
 }
 function toggleDailyTask(id) {
-  const t = dailyTasks.find(x => x.id === id); if (t) { t.done = !t.done; saveDailyTasks(); }
+  const t = planner.dailyTasks.find(x => x.id === id); if (t) { t.done = !t.done; syncPlannerRefs(); saveDailyTasks(); }
   renderContent();
 }
-function delDailyTask(id) { dailyTasks = dailyTasks.filter(x => x.id !== id); saveDailyTasks(); renderContent(); }
+function delDailyTask(id) { planner.dailyTasks = planner.dailyTasks.filter(x => x.id !== id); syncPlannerRefs(); saveDailyTasks(); renderContent(); }
 
 // ── Weekly task CRUD ──
 function addWeeklyTask() {
   const inp = document.getElementById('weekly-task-inp');
   const text = inp?.value.trim(); if (!text) return;
   const now = new Date();
-  weeklyTasks.push({ id: Date.now(), text, done: false, weekNum: isoWeek(now), year: now.getFullYear() });
+  planner.weeklyTasks.push({ id: Date.now(), text, done: false, weekNum: isoWeek(now), year: now.getFullYear() });
+  syncPlannerRefs();
   saveWeeklyTasks(); inp.value = ''; renderContent();
 }
 function toggleWeeklyTask(id) {
-  const t = weeklyTasks.find(x => x.id === id); if (t) { t.done = !t.done; saveWeeklyTasks(); }
+  const t = planner.weeklyTasks.find(x => x.id === id); if (t) { t.done = !t.done; syncPlannerRefs(); saveWeeklyTasks(); }
   renderContent();
 }
-function delWeeklyTask(id) { weeklyTasks = weeklyTasks.filter(x => x.id !== id); saveWeeklyTasks(); renderContent(); }
+function delWeeklyTask(id) { planner.weeklyTasks = planner.weeklyTasks.filter(x => x.id !== id); syncPlannerRefs(); saveWeeklyTasks(); renderContent(); }
+function addMonthlyGoal() {
+  const inp = document.getElementById('monthly-goal-inp');
+  const text = inp?.value.trim(); if (!text) return;
+  planner.monthlyGoals.push({ id: Date.now(), text, done: false, monthKey: plannerMonthKey() });
+  syncPlannerRefs();
+  saveMonthlyGoals();
+  inp.value = '';
+  renderContent();
+}
+function toggleMonthlyGoal(id) {
+  const g = planner.monthlyGoals.find(x => x.id === id);
+  if (g) { g.done = !g.done; syncPlannerRefs(); saveMonthlyGoals(); }
+  renderContent();
+}
+function delMonthlyGoal(id) {
+  planner.monthlyGoals = planner.monthlyGoals.filter(x => x.id !== id);
+  syncPlannerRefs();
+  saveMonthlyGoals();
+  renderContent();
+}
+function savePlannerField(section, key, value) {
+  planner[section][key] = value;
+  persistPlannerLocal();
+  save();
+}
 
 // ── Quick Telegram send ──
 function sendQuickTelegram() {
@@ -1239,10 +1386,13 @@ async function pullFromGitHub() {
   const data = await ghLoad();
   if (data && data.projects) {
     D = data.projects.map(normalizeProject);
+    planner = normalizePlanner(data.planner || planner);
+    syncPlannerRefs();
     activityLog = data.activity || activityLog;
     dataSource = 'github';
     localStorage.setItem('pc_v3', JSON.stringify(D));
     localStorage.setItem('pc_activity', JSON.stringify(activityLog));
+    persistPlannerLocal();
     updateSidebar();
     renderContent();
     const t = new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
@@ -1268,8 +1418,9 @@ function save() {
   if (dataSource === 'empty') dataSource = 'local';
   localStorage.setItem('pc_v3', JSON.stringify(D));
   localStorage.setItem('pc_activity', JSON.stringify(activityLog.slice(0, 50)));
+  persistPlannerLocal();
   clearTimeout(_saveTimer);
-  _saveTimer = setTimeout(() => ghSave({ projects: D, activity: activityLog.slice(0, 50) }), 700);
+  _saveTimer = setTimeout(() => ghSave({ projects: D, planner, activity: activityLog.slice(0, 50) }), 700);
 }
 
 function logActivity(msg, color = '#2563EB') {
@@ -1288,14 +1439,17 @@ async function initApp() {
       const data = await ghLoad();
       if (data && data.projects) {
         D = data.projects.map(normalizeProject);
+        planner = normalizePlanner(data.planner || planner);
+        syncPlannerRefs();
         activityLog = data.activity || activityLog;
         dataSource = 'github';
         localStorage.setItem('pc_v3', JSON.stringify(D));
+        persistPlannerLocal();
         const t = new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
         setSyncStatus('ok', `Synced · ${t}`);
       } else if (data !== null) {
         // File doesn't exist in repo yet — push local data up
-        await ghSave({ projects: D, activity: activityLog });
+        await ghSave({ projects: D, planner, activity: activityLog });
       }
     } else {
       setSyncStatus('ok', 'Connected (manual)');
@@ -1324,6 +1478,7 @@ function sendTelegram(text) {
 }
 
 function checkRemindersOnLoad() {
+  if (isGHConfigured()) return;
   if (!tgToken() || !tgChat()) return;
   const today = new Date().toDateString();
   let sent = JSON.parse(localStorage.getItem('r_sent') || '{}');
@@ -1395,24 +1550,6 @@ function _buildAndSendDigest() {
   sendTelegram(parts.join('\n'));
 }
 
-let _digestTimer = null;
-function scheduleDailyDigest() {
-  if (_digestTimer) { clearTimeout(_digestTimer); _digestTimer = null; }
-  const [h, m] = (localStorage.getItem('digest_time') || '16:00').split(':').map(Number);
-  const now  = new Date();
-  const next = new Date(now);
-  next.setHours(h, m, 0, 0);
-  if (next <= now) next.setDate(next.getDate() + 1);
-  const msUntil = next - now;
-  _digestTimer = setTimeout(() => {
-    sendDailyDigest();
-    // re-schedule for next day using same logic
-    _digestTimer = null;
-    scheduleDailyDigest();
-  }, msUntil);
-}
-scheduleDailyDigest();
-
 // ══════════════════════════════════════════════════════════
 //  SETUP MODAL
 // ══════════════════════════════════════════════════════════
@@ -1421,7 +1558,6 @@ function openSetup() {
   document.getElementById('s-gh-repo').value     = ghRepo()  || 'Rezimod/Projects-Center';
   document.getElementById('s-tg-token').value    = tgToken() || '';
   document.getElementById('s-tg-chatid').value   = tgChat()  || '';
-  document.getElementById('s-digest-time').value = localStorage.getItem('digest_time') || '16:00';
   document.getElementById('s-auto-pull').checked = localStorage.getItem('autoPullOnOpen') !== '0';
   const ds = JSON.parse(localStorage.getItem('telegramDigestSettings') || '{}');
   document.getElementById('s-dig-daily').checked   = ds.includeDailyTasks  !== false;
@@ -1436,12 +1572,10 @@ async function saveSetup() {
   const gr = document.getElementById('s-gh-repo').value.trim().replace(/^https?:\/\/github\.com\//, '');
   const tt = document.getElementById('s-tg-token').value.trim();
   const tc = document.getElementById('s-tg-chatid').value.trim();
-  const dt = document.getElementById('s-digest-time').value || '16:00';
   if (gt) localStorage.setItem('gh_token', gt);
   if (gr) localStorage.setItem('gh_repo', gr);
   if (tt) localStorage.setItem('tg_token', tt);
   if (tc) localStorage.setItem('tg_chat_id', tc);
-  localStorage.setItem('digest_time', dt);
   localStorage.setItem('autoPullOnOpen', document.getElementById('s-auto-pull').checked ? '1' : '0');
   localStorage.setItem('telegramDigestSettings', JSON.stringify({
     includeDailyTasks:  document.getElementById('s-dig-daily').checked,
@@ -1450,17 +1584,19 @@ async function saveSetup() {
   }));
   closeSetup();
   toast('Settings saved ✓', '#16A34A');
-  scheduleDailyDigest(); // reschedule with new time
   if (gt && gr) {
     setSyncStatus('', 'Connecting…');
     const data = await ghLoad();
     if (data !== null) {
       if (data.projects) {
         D = data.projects.map(normalizeProject);
+        planner = normalizePlanner(data.planner || planner);
+        syncPlannerRefs();
         activityLog = data.activity || activityLog;
         dataSource = 'github';
+        persistPlannerLocal();
       } else {
-        await ghSave({ projects: D, activity: activityLog });
+        await ghSave({ projects: D, planner, activity: activityLog });
       }
       setSyncStatus('ok', 'Connected');
       updateSidebar(); renderContent();
@@ -1728,6 +1864,53 @@ function renderFocusCardHTML() {
     </div>
   </div>`;
 }
+function ringHTML({ title, sub, value, suffix = '%', fill = 0, ring = '#7C9BFF', rows = [] }) {
+  return `<div class="orbit-card au">
+    <div class="orbit-head">
+      <div>
+        <div class="orbit-title">${title}</div>
+        <div class="orbit-sub">${sub}</div>
+      </div>
+      <div class="orbit-ring" style="--fill:${fill}%;--ring:${ring}">
+        <div class="orbit-core"><strong>${value}${suffix}</strong><span>orbital view</span></div>
+      </div>
+    </div>
+    <div class="orbit-legend">
+      ${rows.map(r => `<div class="orbit-row"><div class="orbit-left"><span class="orbit-dot" style="background:${r.color}"></span><span>${r.label}</span></div><b>${r.value}</b></div>`).join('')}
+    </div>
+  </div>`;
+}
+function renderDailyFocusCard() {
+  return `<div class="planner-card au">
+    <div class="planner-header"><div class="planner-title">Daily Orbit</div><div class="planner-meta">Weekday brief at 12:00</div></div>
+    <div class="planner-stack">
+      <div class="planner-mini"><div class="planner-mini-label">Must</div><textarea rows="2" placeholder="The one task that must get done" onblur="savePlannerField('dailyFocus','mustDo',this.value)">${escapeHTML(planner.dailyFocus.mustDo)}</textarea></div>
+      <div class="planner-mini"><div class="planner-mini-label">Stretch</div><textarea rows="2" placeholder="Nice-to-have if the day opens up" onblur="savePlannerField('dailyFocus','stretch',this.value)">${escapeHTML(planner.dailyFocus.stretch)}</textarea></div>
+      <div class="planner-mini"><div class="planner-mini-label">Note</div><textarea rows="2" placeholder="Anything to remember before noon" onblur="savePlannerField('dailyFocus','note',this.value)">${escapeHTML(planner.dailyFocus.note)}</textarea></div>
+    </div>
+  </div>`;
+}
+function renderWeeklyCompassCard() {
+  return `<div class="planner-card au">
+    <div class="planner-header"><div class="planner-title">Weekly Compass</div><div class="planner-meta">Weekday brief at 15:00</div></div>
+    <div class="planner-stack">
+      <div class="planner-mini"><div class="planner-mini-label">Theme</div><textarea rows="2" placeholder="What this week is about" onblur="savePlannerField('weeklyPlan','theme',this.value)">${escapeHTML(planner.weeklyPlan.theme)}</textarea></div>
+      <div class="planner-mini"><div class="planner-mini-label">Win</div><textarea rows="2" placeholder="Best result you want by Friday" onblur="savePlannerField('weeklyPlan','win',this.value)">${escapeHTML(planner.weeklyPlan.win)}</textarea></div>
+      <div class="planner-mini"><div class="planner-mini-label">Risk</div><textarea rows="2" placeholder="What could block you this week" onblur="savePlannerField('weeklyPlan','risk',this.value)">${escapeHTML(planner.weeklyPlan.risk)}</textarea></div>
+    </div>
+  </div>`;
+}
+function renderMonthlyGoalsCard() {
+  const monthKey = plannerMonthKey();
+  const list = monthlyGoals.filter(g => (g.monthKey || monthKey) === monthKey);
+  return `<div class="planner-card au">
+    <div class="planner-header"><div class="planner-title">Monthly Milestones</div><div class="planner-meta">${monthKey}</div></div>
+    <div class="planner-list">
+      ${list.length ? list.map(g => `<div class="planner-item"><div class="planner-check ${g.done ? 'done' : ''}" onclick="toggleMonthlyGoal(${g.id})"></div><span class="${g.done ? 'done' : ''}">${escapeHTML(g.text)}</span><button class="planner-delete" onclick="delMonthlyGoal(${g.id})">✕</button></div>`).join('') : `<div class="mini-item"><span class="mini-dot" style="background:var(--text3)"></span>No monthly goals yet.</div>`}
+    </div>
+    <div class="planner-add"><input id="monthly-goal-inp" placeholder="Add a monthly milestone" onkeydown="if(event.key==='Enter')addMonthlyGoal()"><button class="btn btn-primary btn-sm" onclick="addMonthlyGoal()">Add</button></div>
+  </div>`;
+}
 
 // ══════════════════════════════════════════════════════════
 //  DASHBOARD
@@ -1740,6 +1923,18 @@ function renderDashboard() {
   const dayStr=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
   const recent=D.filter(p=>p.progress<100).filter(matchesSearch).slice(0,6);
   const insights = getDataInsights();
+  const monthKey = plannerMonthKey();
+  const monthGoals = monthlyGoals.filter(g => (g.monthKey || monthKey) === monthKey);
+  const monthDone = monthGoals.filter(g => g.done).length;
+  const monthPct = monthGoals.length ? Math.round(monthDone / monthGoals.length * 100) : 0;
+  const highCount = D.filter(p => p.priority === 'high').length;
+  const medCount = D.filter(p => (p.priority || 'med') === 'med').length;
+  const lowCount = D.filter(p => p.priority === 'low').length;
+  const plannedCount = D.filter(p => p.due).length;
+  const dailyDone = dailyTasks.filter(t => t.done).length;
+  const dailyPct = dailyTasks.length ? Math.round(dailyDone / dailyTasks.length * 100) : 0;
+  const weeklyDone = weeklyTasks.filter(t => t.done).length;
+  const weeklyPct = weeklyTasks.length ? Math.round(weeklyDone / weeklyTasks.length * 100) : 0;
   const sourceLabel = {
     github: 'GitHub sync',
     bundled: 'Bundled repo data',
@@ -1756,9 +1951,6 @@ function renderDashboard() {
       </div>
       <button class="btn btn-sm" style="background:var(--amber);color:white;border:none;flex-shrink:0" onclick="openSetup()">Set up →</button>
     </div>` : '';
-  const dDone=dailyTasks.filter(t=>t.done).length, dTotal=dailyTasks.length;
-  const dPct=dTotal>0?Math.round(dDone/dTotal*100):0;
-  const taskBar=dTotal>0?`<div class="dash-dtbar-wrap"><div class="dash-dtbar-hd"><span>✅ Today's Tasks</span><span><a href="#" onclick="event.preventDefault();goView('todo-daily')" style="color:var(--blue);text-decoration:none">${dDone}/${dTotal} done · ${dPct}%</a></span></div><div class="dash-dtbar"><div class="dash-dtbar-fill" style="width:${dPct}%"></div></div></div>`:'';
   return `<div class="au">
     <div class="station-header au">
       <div class="station-left">
@@ -1767,21 +1959,58 @@ function renderDashboard() {
       </div>
       <div class="station-right">
         <div class="station-sub"><strong>${total}</strong> tracked &nbsp;·&nbsp; <strong>${active}</strong> active</div>
-        <div class="station-sub"><strong>${done}</strong> completed &nbsp;·&nbsp; avg <strong>${avgPct}%</strong></div>
+        <div class="station-sub"><strong>${done}</strong> completed &nbsp;·&nbsp; orbit avg <strong>${avgPct}%</strong></div>
       </div>
     </div>
-    ${taskBar}
     ${syncBanner}
-    <div class="kpi-row">
-      <div class="kpi au au1"><div class="kpi-label">Total</div><div class="kpi-val" style="color:var(--blue)">${total}</div><div class="kpi-sub">All time</div></div>
-      <div class="kpi au au2"><div class="kpi-label">Done</div><div class="kpi-val" style="color:var(--green)">${done}</div><div class="kpi-sub">${total>0?Math.round(done/total*100):0}% rate</div></div>
-      <div class="kpi au au3"><div class="kpi-label">Active</div><div class="kpi-val" style="color:var(--amber)">${active}</div><div class="kpi-sub">Avg ${avgPct}%</div></div>
-      <div class="kpi au au4"><div class="kpi-label">Overdue</div><div class="kpi-val" style="color:${overdue>0?'var(--red)':'var(--green)'}">${overdue}</div><div class="kpi-sub">${overdue>0?'⚠ Attention':'✓ On track'}</div></div>
+    <div class="orbit-grid">
+      ${ringHTML({
+        title: 'Execution Orbit',
+        sub: 'How much of the overall portfolio is already complete.',
+        value: total ? Math.round(done / total * 100) : 0,
+        fill: total ? Math.round(done / total * 100) : 0,
+        ring: '#8AA4FF',
+        rows: [
+          { label: 'Completed', value: `${done}`, color: '#4ADE80' },
+          { label: 'Active', value: `${active}`, color: '#38BDF8' },
+          { label: 'Overdue', value: `${overdue}`, color: '#FB7185' }
+        ]
+      })}
+      ${ringHTML({
+        title: 'Priority Constellation',
+        sub: 'Distribution of high, medium, and low priority work.',
+        value: total,
+        suffix: '',
+        fill: total ? Math.round(highCount / total * 100) : 0,
+        ring: '#FBBF24',
+        rows: [
+          { label: 'High', value: `${highCount}`, color: '#FB7185' },
+          { label: 'Medium', value: `${medCount}`, color: '#FBBF24' },
+          { label: 'Low', value: `${lowCount}`, color: '#67E8F9' }
+        ]
+      })}
+      ${ringHTML({
+        title: 'Planning Coverage',
+        sub: 'Daily, weekly, and monthly systems now live in shared data.',
+        value: plannedCount ? Math.round(plannedCount / total * 100) : 0,
+        fill: plannedCount ? Math.round(plannedCount / total * 100) : 0,
+        ring: '#67E8F9',
+        rows: [
+          { label: 'Daily tasks', value: `${dailyDone}/${dailyTasks.length}`, color: '#38BDF8' },
+          { label: 'Weekly tasks', value: `${weeklyDone}/${weeklyTasks.length}`, color: '#A78BFA' },
+          { label: 'Monthly goals', value: `${monthDone}/${monthGoals.length}`, color: '#4ADE80' }
+        ]
+      })}
     </div>
     ${recent.length > 0 ? `
     <div class="section-hd au"><div class="section-hd-title">Active Projects</div><button class="btn btn-ghost btn-sm" onclick="goView('all')">View all →</button></div>
     <div class="pcards">${recent.map((p,i)=>`<div class="au" style="animation-delay:${i*.05}s">${pcardHTML(p)}</div>`).join('')}</div>` :
     `<div class="empty"><div class="empty-ill">🚀</div><div class="empty-title">Ready to start?</div><div class="empty-desc">Create your first project and start tracking progress.</div><button class="btn btn-primary" onclick="openAdd()">+ Create First Project</button></div>`}
+    <div class="planner-grid">
+      ${renderDailyFocusCard()}
+      ${renderWeeklyCompassCard()}
+      ${renderMonthlyGoalsCard()}
+    </div>
     <div class="insights-grid">
       <div>
         <div class="section-hd au"><div class="section-hd-title">Data Health</div><div class="section-hd-meta">${sourceLabel}</div></div>
@@ -1803,6 +2032,7 @@ function renderDashboard() {
           <div class="mini-list">
             <div class="mini-item"><span class="mini-dot" style="background:var(--amber)"></span>${insights.dueSoon} active project${insights.dueSoon !== 1 ? 's' : ''} due within 7 days</div>
             <div class="mini-item"><span class="mini-dot" style="background:var(--blue)"></span>${insights.withNotes} project${insights.withNotes !== 1 ? 's' : ''} have notes saved</div>
+            <div class="mini-item"><span class="mini-dot" style="background:#A78BFA"></span>Daily ${dailyPct}% · Weekly ${weeklyPct}% · Monthly ${monthPct}% complete</div>
           </div>
         </div>
       </div>

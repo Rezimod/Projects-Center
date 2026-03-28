@@ -405,6 +405,27 @@
       }
     }
   ],
+  "planner": {
+    "dailyTasks": [],
+    "weeklyTasks": [],
+    "monthlyGoals": [],
+    "dailyFocus": {
+      "mustDo": "",
+      "stretch": "",
+      "note": ""
+    },
+    "weeklyPlan": {
+      "theme": "",
+      "win": "",
+      "risk": ""
+    },
+    "telegramSchedule": {
+      "timezone": "Asia/Tbilisi",
+      "dailyWeekday": "12:00",
+      "weeklyWeekday": "15:00"
+    },
+    "telegramLog": {}
+  },
   "activity": [
     {
       "msg": "Added task <strong>\"redisign it with my existing app. make it work.\"</strong> to \"Night Skywatcher\"",
