@@ -305,6 +305,29 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 .kpi-val{font-size:28px;font-weight:900;letter-spacing:-1.5px;line-height:1;}
 .kpi-sub{font-size:11px;color:var(--text3);margin-top:4px;}
 .orbit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:22px;}
+.mission-grid{display:grid;grid-template-columns:1.2fr 1.2fr .8fr;gap:14px;margin-bottom:24px;}
+.mission-card{padding:20px;border-radius:22px;border:1px solid var(--border);background:
+ radial-gradient(circle at top right, rgba(124,155,255,0.18), transparent 28%),
+ linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));box-shadow:var(--shadow);}
+.mission-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px;}
+.mission-title{font-size:18px;font-weight:900;letter-spacing:-.4px;color:var(--text);}
+.mission-sub{font-size:12px;color:var(--text2);line-height:1.55;margin-top:4px;max-width:440px;}
+.mission-stat{font-family:var(--mono);font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1.5px;}
+.mission-bar{height:10px;border-radius:999px;background:rgba(255,255,255,0.08);overflow:hidden;margin-bottom:14px;}
+.mission-bar-fill{height:100%;border-radius:999px;}
+.mission-list{display:flex;flex-direction:column;gap:8px;}
+.mission-task{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:14px;background:rgba(255,255,255,0.035);border:1px solid rgba(145,168,255,0.12);}
+.mission-bullet{width:10px;height:10px;border-radius:50%;margin-top:5px;flex-shrink:0;}
+.mission-copy{flex:1;min-width:0;}
+.mission-copy strong{display:block;font-size:13px;color:var(--text);}
+.mission-copy span{display:block;font-size:12px;color:var(--text2);line-height:1.45;margin-top:2px;}
+.mission-empty{padding:18px 14px;border-radius:16px;background:rgba(255,255,255,0.03);border:1px dashed rgba(145,168,255,0.18);font-size:12px;color:var(--text3);}
+.radar-stack{display:flex;flex-direction:column;gap:10px;}
+.radar-row{display:grid;grid-template-columns:86px 1fr 48px;gap:10px;align-items:center;}
+.radar-label{font-family:var(--mono);font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1.4px;}
+.radar-track{height:9px;border-radius:999px;background:rgba(255,255,255,0.08);overflow:hidden;}
+.radar-fill{height:100%;border-radius:999px;}
+.radar-value{font-size:12px;font-weight:800;color:var(--text);text-align:right;}
 .orbit-card{position:relative;overflow:hidden;padding:20px;border-radius:20px;border:1px solid var(--border);background:
   radial-gradient(circle at top right, rgba(124,155,255,0.16), transparent 30%),
   linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));box-shadow:var(--shadow);}
@@ -625,7 +648,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .topbar-search{order:10;flex:1 1 100%;min-width:0;height:40px;}
   .content{padding:14px;}
   .kpi-row{grid-template-columns:repeat(2,1fr);gap:10px;}
-  .orbit-grid,.planner-grid{grid-template-columns:1fr;}
+  .mission-grid,.orbit-grid,.planner-grid{grid-template-columns:1fr;}
   .kpi{padding:13px 14px;}
   .kpi-val{font-size:22px;}
   .pcards{grid-template-columns:1fr;}
@@ -1361,20 +1384,23 @@ updateThemeUI();
 //  GITHUB SYNC LAYER — fixed SHA conflict + auto-refresh
 // ══════════════════════════════════════════════════════════
 function ghToken()       { return localStorage.getItem('gh_token'); }
-function ghRepo()        { return localStorage.getItem('gh_repo'); }
+function ghRepo()        { return localStorage.getItem('gh_repo') || 'Rezimod/Projects-Center'; }
 function tgToken()       { return localStorage.getItem('tg_token'); }
 function tgChat()        { return localStorage.getItem('tg_chat_id'); }
+function isGHReadable(){ return !!ghRepo(); }
 function isGHConfigured(){ return !!(ghToken() && ghRepo()); }
 
 function toB64(str)  { return btoa(unescape(encodeURIComponent(str))); }
 function fromB64(str){ return decodeURIComponent(escape(atob(str.replace(/\n/g,'')))); }
 
 async function ghLoad() {
-  if (!isGHConfigured()) return null;
+  if (!isGHReadable()) return null;
   try {
+    const headers = { Accept: 'application/vnd.github.v3+json' };
+    if (ghToken()) headers.Authorization = `Bearer ${ghToken()}`;
     const res = await fetch(
       `https://api.github.com/repos/${ghRepo()}/contents/data.json`,
-      { headers: { Authorization: `Bearer ${ghToken()}`, Accept: 'application/vnd.github.v3+json' } }
+      { headers }
     );
     if (res.status === 404) return {};           // file doesn't exist yet
     if (res.status === 401) { setSyncStatus('err','Auth error — check token'); return null; }
@@ -1433,7 +1459,7 @@ function setSyncStatus(type, msg) {
 
 // Manual pull — call when user clicks sync button or on tab focus
 async function pullFromGitHub() {
-  if (!isGHConfigured()) { openSetup(); return; }
+  if (!isGHReadable()) { openSetup(); return; }
   setSyncStatus('', 'Pulling…');
   const data = await ghLoad();
   if (data && data.projects) {
@@ -1457,12 +1483,12 @@ async function pullFromGitHub() {
 
 // Auto-pull when app comes back into focus (switching from Mac to phone)
 document.addEventListener('visibilitychange', () => {
-  if (!document.hidden && isGHConfigured()) pullFromGitHub();
+  if (!document.hidden && isGHReadable()) pullFromGitHub();
 });
 
 // Poll every 2 minutes so changes appear without manual refresh
 setInterval(() => {
-  if (!document.hidden && isGHConfigured()) pullFromGitHub();
+  if (!document.hidden && isGHReadable()) pullFromGitHub();
 }, 120000);
 
 // Save: localStorage immediately, GitHub debounced 700ms
@@ -1485,7 +1511,7 @@ async function initApp() {
   initDailyTasks();
   initWeeklyTasks();
   await hydrateBundledProjects('initial');
-  if (isGHConfigured()) {
+  if (isGHReadable()) {
     if (localStorage.getItem('autoPullOnOpen') !== '0') {
       setSyncStatus('', 'Loading…');
       const data = await ghLoad();
@@ -1498,13 +1524,13 @@ async function initApp() {
         localStorage.setItem('pc_v3', JSON.stringify(D));
         persistPlannerLocal();
         const t = new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
-        setSyncStatus('ok', `Synced · ${t}`);
+        setSyncStatus('ok', ghToken() ? `Synced · ${t}` : `Read-only sync · ${t}`);
       } else if (data !== null) {
         // File doesn't exist in repo yet — push local data up
-        await ghSave({ projects: D, planner, activity: activityLog });
+        if (ghToken()) await ghSave({ projects: D, planner, activity: activityLog });
       }
     } else {
-      setSyncStatus('ok', 'Connected (manual)');
+      setSyncStatus('ok', ghToken() ? 'Connected (manual)' : 'Read-only repo');
     }
   } else {
     setSyncStatus('', 'Not connected');
@@ -1932,6 +1958,35 @@ function ringHTML({ title, sub, value, suffix = '%', fill = 0, ring = '#7C9BFF',
     </div>
   </div>`;
 }
+function renderMissionCard({ title, sub, percent, accent, stat, items }) {
+  return `<div class="mission-card au">
+    <div class="mission-head">
+      <div>
+        <div class="mission-title">${title}</div>
+        <div class="mission-sub">${sub}</div>
+      </div>
+      <div class="mission-stat">${stat}</div>
+    </div>
+    <div class="mission-bar"><div class="mission-bar-fill" style="width:${percent}%;background:${accent}"></div></div>
+    <div class="mission-list">
+      ${items.length ? items.map(item => `<div class="mission-task"><div class="mission-bullet" style="background:${item.color || accent}"></div><div class="mission-copy"><strong>${item.title}</strong><span>${item.text}</span></div></div>`).join('') : `<div class="mission-empty">No items yet. Add a few from the planner cards below.</div>`}
+    </div>
+  </div>`;
+}
+function renderRadarCard(rows) {
+  return `<div class="mission-card au">
+    <div class="mission-head">
+      <div>
+        <div class="mission-title">Focus Radar</div>
+        <div class="mission-sub">A quick scan of the work streams you care about most.</div>
+      </div>
+      <div class="mission-stat">Live</div>
+    </div>
+    <div class="radar-stack">
+      ${rows.map(row => `<div class="radar-row"><div class="radar-label">${row.label}</div><div class="radar-track"><div class="radar-fill" style="width:${row.value}%;background:${row.color}"></div></div><div class="radar-value">${row.value}%</div></div>`).join('')}
+    </div>
+  </div>`;
+}
 function renderDailyFocusCard() {
   return `<div class="planner-card au">
     <div class="planner-header"><div class="planner-title">Daily Orbit</div><div class="planner-meta">Weekday brief at 12:00</div></div>
@@ -1987,6 +2042,9 @@ function renderDashboard() {
   const dailyPct = dailyTasks.length ? Math.round(dailyDone / dailyTasks.length * 100) : 0;
   const weeklyDone = weeklyTasks.filter(t => t.done).length;
   const weeklyPct = weeklyTasks.length ? Math.round(weeklyDone / weeklyTasks.length * 100) : 0;
+  const topDaily = dailyTasks.filter(t => !t.done).slice(0, 3).map(t => ({ title: t.text, text: planner.dailyFocus.mustDo ? `Must do: ${planner.dailyFocus.mustDo}` : 'Due in today’s flow', color: '#67E8F9' }));
+  const topWeekly = weeklyTasks.filter(t => !t.done).slice(0, 3).map(t => ({ title: t.text, text: planner.weeklyPlan.theme ? `Theme: ${planner.weeklyPlan.theme}` : 'Part of this week’s push', color: '#A78BFA' }));
+  const projectPct = total ? Math.round(active / total * 100) : 0;
   const sourceLabel = {
     github: 'GitHub sync',
     bundled: 'Bundled repo data',
@@ -1994,14 +2052,14 @@ function renderDashboard() {
     local: 'Browser local data',
     empty: 'No data source'
   }[dataSource] || 'Unknown';
-  const syncBanner = !isGHConfigured() ? `
+  const syncBanner = !ghToken() ? `
     <div class="sync-banner">
       <span style="font-size:22px">🔗</span>
       <div class="sync-banner-text">
-        <strong>Sync not set up</strong>
-        <span>Open Settings & Sync → enter your GitHub token → data will appear on all devices.</span>
+        <strong>Read-only repo sync is active</strong>
+        <span>Your repo data loads automatically. Add a GitHub token in Settings & Sync to enable saving from this browser.</span>
       </div>
-      <button class="btn btn-sm" style="background:var(--amber);color:white;border:none;flex-shrink:0" onclick="openSetup()">Set up →</button>
+      <button class="btn btn-sm" style="background:var(--amber);color:white;border:none;flex-shrink:0" onclick="openSetup()">Add token →</button>
     </div>` : '';
   return `<div class="au">
     <div class="station-header au">
@@ -2015,10 +2073,34 @@ function renderDashboard() {
       </div>
     </div>
     ${syncBanner}
+    <div class="mission-grid">
+      ${renderMissionCard({
+        title: 'Daily Command',
+        sub: 'The tasks you should see first every time you open the dashboard.',
+        percent: dailyPct,
+        accent: 'linear-gradient(90deg,#67E8F9,#7C9BFF)',
+        stat: `${dailyDone}/${dailyTasks.length || 0} done`,
+        items: topDaily
+      })}
+      ${renderMissionCard({
+        title: 'Weekly Command',
+        sub: 'Your weekly queue and planning direction in one glance.',
+        percent: weeklyPct,
+        accent: 'linear-gradient(90deg,#A78BFA,#7C9BFF)',
+        stat: `${weeklyDone}/${weeklyTasks.length || 0} done`,
+        items: topWeekly
+      })}
+      ${renderRadarCard([
+        { label: 'Daily', value: dailyPct, color: '#67E8F9' },
+        { label: 'Weekly', value: weeklyPct, color: '#A78BFA' },
+        { label: 'Projects', value: projectPct, color: '#F4B860' },
+        { label: 'Monthly', value: monthPct, color: '#34D399' }
+      ])}
+    </div>
     <div class="orbit-grid">
       ${ringHTML({
         title: 'Execution Orbit',
-        sub: 'How much of the overall portfolio is already complete.',
+        sub: 'Completed vs active work, with the percentage shown clearly in the center.',
         value: total ? Math.round(done / total * 100) : 0,
         fill: total ? Math.round(done / total * 100) : 0,
         ring: '#8AA4FF',
@@ -2055,7 +2137,7 @@ function renderDashboard() {
       })}
     </div>
     ${recent.length > 0 ? `
-    <div class="section-hd au"><div class="section-hd-title">Active Projects</div><button class="btn btn-ghost btn-sm" onclick="goView('all')">View all →</button></div>
+    <div class="section-hd au"><div class="section-hd-title">Projects Queue</div><button class="btn btn-ghost btn-sm" onclick="goView('all')">View all →</button></div>
     <div class="pcards">${recent.map((p,i)=>`<div class="au" style="animation-delay:${i*.05}s">${pcardHTML(p)}</div>`).join('')}</div>` :
     `<div class="empty"><div class="empty-ill">🚀</div><div class="empty-title">Ready to start?</div><div class="empty-desc">Create your first project and start tracking progress.</div><button class="btn btn-primary" onclick="openAdd()">+ Create First Project</button></div>`}
     <div class="planner-grid">
