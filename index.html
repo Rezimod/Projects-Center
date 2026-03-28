@@ -256,12 +256,12 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 
 /* ── Main ── */
 .main{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden;background:transparent;min-height:0;}
-.topbar{height:54px;display:flex;align-items:center;padding:0 24px;gap:10px;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0;}
-.topbar-title{font-size:14px;font-weight:700;letter-spacing:-.1px;}
+.topbar{height:58px;display:flex;align-items:center;padding:0 18px;gap:10px;background:color-mix(in srgb, var(--surface) 90%, transparent);border-bottom:1px solid color-mix(in srgb, var(--border) 88%, transparent);flex-shrink:0;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);}
+.topbar-title{font-size:15px;font-weight:800;letter-spacing:-.2px;padding:0 2px;}
 .topbar-div{width:1px;height:16px;background:var(--border2);flex-shrink:0;}
 .topbar-crumb{font-size:13px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px;}
 .topbar-space{flex:1;}
-.topbar-search{flex:0 1 280px;min-width:160px;display:flex;align-items:center;gap:8px;padding:0 12px;height:36px;border:1px solid var(--border);border-radius:999px;background:var(--bg2);}
+.topbar-search{flex:0 1 280px;min-width:160px;display:flex;align-items:center;gap:8px;padding:0 12px;height:38px;border:1px solid var(--border);border-radius:999px;background:color-mix(in srgb, var(--bg2) 78%, transparent);}
 .topbar-search:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.08);}
 .topbar-search-icon{font-size:12px;color:var(--text3);flex-shrink:0;}
 .topbar-search input{width:100%;border:none;outline:none;background:none;font-family:var(--font);font-size:13px;color:var(--text);}
@@ -623,12 +623,25 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
 .dash-dtbar-fill{height:100%;border-radius:5px;background:var(--green);transition:width .5s ease;}
 
 /* ── Sync chip (topbar) ── */
-.sync-chip{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;background:var(--bg2);border:1px solid var(--border);font-family:var(--mono);font-size:10px;color:var(--text3);cursor:pointer;white-space:nowrap;transition:all .15s;flex-shrink:0;}
+.sync-chip{display:flex;align-items:center;gap:5px;padding:6px 11px;border-radius:999px;background:color-mix(in srgb, var(--bg2) 76%, transparent);border:1px solid var(--border);font-family:var(--mono);font-size:10px;color:var(--text3);cursor:pointer;white-space:nowrap;transition:all .15s;flex-shrink:0;}
 .sync-chip:hover{background:var(--bg3);}
 .sync-chip.ok{color:#16A34A;border-color:rgba(22,163,74,.3);background:rgba(22,163,74,.07);}
 .sync-chip.err{color:var(--red);border-color:rgba(220,38,38,.3);background:rgba(220,38,38,.07);}
 .sc-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;}
 @media(max-width:768px){.sync-chip-label{display:none;}}
+.mission-card-action{cursor:pointer;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;}
+.mission-card-action:hover,.mission-card-action:focus-visible{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:rgba(145,168,255,0.24);outline:none;}
+.inline-link{border:none;background:none;color:var(--blue);font:inherit;font-weight:700;cursor:pointer;padding:0;}
+.todo-archive-note{display:flex;align-items:center;gap:6px;margin-top:12px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,0.035);border:1px solid rgba(145,168,255,0.12);font-size:12px;color:var(--text2);}
+.completed-block{margin-bottom:16px;padding:18px;border-radius:22px;border:1px solid var(--border);background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));box-shadow:var(--shadow);}
+.completed-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+.completed-title{font-size:16px;font-weight:800;color:var(--text);}
+.completed-meta{font-family:var(--mono);font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1.4px;}
+.completed-list{display:flex;flex-direction:column;gap:10px;}
+.completed-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(145,168,255,0.12);}
+.completed-copy{min-width:0;display:flex;flex-direction:column;gap:3px;}
+.completed-copy strong{font-size:13px;color:var(--text);}
+.completed-copy span{font-size:11px;color:var(--text3);font-family:var(--mono);}
 
 /* ── Digest settings checkboxes ── */
 .digest-chk-row{display:flex;align-items:center;gap:10px;padding:8px 0;}
@@ -762,10 +775,10 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .mini-list{padding:8px 16px 16px;}
   .activity-item{padding:12px 16px;gap:12px;}
   .activity-txt{font-size:13px;line-height:1.55;}
-  .mobile-tabbar{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;position:fixed;left:8px;right:8px;bottom:max(8px, env(safe-area-inset-bottom));padding:8px 8px calc(8px + env(safe-area-inset-bottom));border-radius:22px;background:rgba(6,9,24,0.98);border:1px solid rgba(145,168,255,0.18);box-shadow:0 18px 40px rgba(0,0,0,0.34);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:450;animation:tabbarIn .28s ease both;}
-  .mobile-tab{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:56px;border:none;border-radius:16px;background:none;color:var(--text3);font-family:var(--font);font-size:11px;font-weight:700;cursor:pointer;}
-  .mobile-tab.active{background:linear-gradient(180deg, rgba(124,155,255,0.2), rgba(124,155,255,0.08));color:#fff;}
-  .mobile-tab-icon{font-size:15px;line-height:1;}
+  .mobile-tabbar{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;position:fixed;left:8px;right:8px;bottom:max(8px, env(safe-area-inset-bottom));padding:8px 8px calc(8px + env(safe-area-inset-bottom));border-radius:24px;background:rgba(5,9,24,0.97);border:1px solid rgba(145,168,255,0.16);box-shadow:0 18px 44px rgba(0,0,0,0.38);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:450;animation:tabbarIn .28s ease both;}
+  .mobile-tab{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:58px;border:none;border-radius:18px;background:none;color:var(--text3);font-family:var(--font);font-size:11px;font-weight:700;cursor:pointer;transition:all .18s ease;}
+  .mobile-tab.active{background:linear-gradient(180deg, rgba(124,155,255,0.24), rgba(124,155,255,0.1));color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,0.08);}
+  .mobile-tab-icon{font-size:16px;line-height:1;}
   .mobile-tab-badge{position:absolute;top:6px;right:10px;min-width:16px;height:16px;padding:0 4px;border-radius:999px;background:rgba(255,255,255,0.1);color:#fff;font-family:var(--mono);font-size:9px;display:flex;align-items:center;justify-content:center;}
   .mobile-tab.active .mobile-tab-badge{background:rgba(255,255,255,0.16);}
   .tabbar-spacer{display:block;height:92px;}
@@ -1093,7 +1106,9 @@ let _saveTimer = null;
 let _isSaving = false;
 const DEFAULT_PLANNER = () => ({
   dailyTasks: [],
+  completedDailyTasks: [],
   weeklyTasks: [],
+  completedWeeklyTasks: [],
   monthlyGoals: [],
   dailyFocus: { mustDo: '', stretch: '', note: '' },
   weeklyPlan: { theme: '', win: '', risk: '' },
@@ -1102,7 +1117,9 @@ const DEFAULT_PLANNER = () => ({
 });
 let planner = normalizePlanner(JSON.parse(localStorage.getItem('pc_planner') || 'null') || {});
 let dailyTasks = planner.dailyTasks;
+let completedDailyTasks = planner.completedDailyTasks;
 let weeklyTasks = planner.weeklyTasks;
+let completedWeeklyTasks = planner.completedWeeklyTasks;
 let monthlyGoals = planner.monthlyGoals;
 let searchQuery = '';
 let dataSource = D.length ? 'local' : 'empty';
@@ -1129,6 +1146,8 @@ function initDailyTasks() {
   const stored = planner.dailyTasks?.length ? planner.dailyTasks : JSON.parse(localStorage.getItem('dailyTasks') || '[]');
   const storedDate = localStorage.getItem('dailyTasksDate') || '';
   const today = new Date().toISOString().split('T')[0];
+  const doneToday = stored.filter(t => t.done).map(t => ({ id: t.id || Date.now() + Math.random(), text: t.text || '', date: t.date || today, completedAt: t.completedAt || new Date().toISOString() }));
+  planner.completedDailyTasks = mergeTaskList(planner.completedDailyTasks || [], doneToday, t => `${t.date || ''}:${(t.text || '').trim().toLowerCase()}`);
   if (storedDate !== today) {
     planner.dailyTasks = stored.filter(t => !t.done).map(t => ({ ...t, date: today }));
     localStorage.setItem('dailyTasksDate', today);
@@ -1144,6 +1163,8 @@ function initWeeklyTasks() {
   const storedWeek = parseInt(localStorage.getItem('weeklyTasksWeek') || '0');
   const storedYear = parseInt(localStorage.getItem('weeklyTasksYear') || '0');
   const now = new Date(), curWeek = isoWeek(now), curYear = now.getFullYear();
+  const doneWeek = stored.filter(t => t.done).map(t => ({ id: t.id || Date.now() + Math.random(), text: t.text || '', weekNum: t.weekNum || curWeek, year: t.year || curYear, completedAt: t.completedAt || new Date().toISOString() }));
+  planner.completedWeeklyTasks = mergeTaskList(planner.completedWeeklyTasks || [], doneWeek, t => `${t.year || ''}:${t.weekNum || ''}:${(t.text || '').trim().toLowerCase()}`);
   if (storedWeek !== curWeek || storedYear !== curYear) {
     planner.weeklyTasks = stored.filter(t => !t.done).map(t => ({ ...t, weekNum: curWeek, year: curYear }));
     localStorage.setItem('weeklyTasksWeek', String(curWeek));
@@ -1161,7 +1182,9 @@ function normalizePlanner(src = {}) {
   const base = DEFAULT_PLANNER();
   return {
     dailyTasks: Array.isArray(src.dailyTasks) ? src.dailyTasks.map(t => ({ id: t.id || Date.now() + Math.random(), text: t.text || '', done: !!t.done, date: t.date || '' })) : base.dailyTasks,
+    completedDailyTasks: Array.isArray(src.completedDailyTasks) ? src.completedDailyTasks.map(t => ({ id: t.id || Date.now() + Math.random(), text: t.text || '', date: t.date || '', completedAt: t.completedAt || '' })) : base.completedDailyTasks,
     weeklyTasks: Array.isArray(src.weeklyTasks) ? src.weeklyTasks.map(t => ({ id: t.id || Date.now() + Math.random(), text: t.text || '', done: !!t.done, weekNum: t.weekNum || 0, year: t.year || 0 })) : base.weeklyTasks,
+    completedWeeklyTasks: Array.isArray(src.completedWeeklyTasks) ? src.completedWeeklyTasks.map(t => ({ id: t.id || Date.now() + Math.random(), text: t.text || '', weekNum: t.weekNum || 0, year: t.year || 0, completedAt: t.completedAt || '' })) : base.completedWeeklyTasks,
     monthlyGoals: Array.isArray(src.monthlyGoals) ? src.monthlyGoals.map(g => ({ id: g.id || Date.now() + Math.random(), text: g.text || '', done: !!g.done, monthKey: g.monthKey || '' })) : base.monthlyGoals,
     dailyFocus: {
       mustDo: src.dailyFocus?.mustDo || '',
@@ -1186,7 +1209,9 @@ function normalizePlanner(src = {}) {
 }
 function syncPlannerRefs() {
   dailyTasks = planner.dailyTasks;
+  completedDailyTasks = planner.completedDailyTasks;
   weeklyTasks = planner.weeklyTasks;
+  completedWeeklyTasks = planner.completedWeeklyTasks;
   monthlyGoals = planner.monthlyGoals;
 }
 function persistPlannerLocal() {
@@ -1200,7 +1225,9 @@ function plannerMonthKey(d = new Date()) {
 function plannerHasContent(state = planner) {
   return !!(
     state.dailyTasks?.length ||
+    state.completedDailyTasks?.length ||
     state.weeklyTasks?.length ||
+    state.completedWeeklyTasks?.length ||
     state.monthlyGoals?.length ||
     state.dailyFocus?.mustDo ||
     state.dailyFocus?.stretch ||
@@ -1256,7 +1283,9 @@ function mergePlanner(primary = {}, secondary = {}) {
   const b = normalizePlanner(secondary);
   return {
     dailyTasks: mergeTaskList(a.dailyTasks, b.dailyTasks, t => `${t.date || ''}:${(t.text || '').trim().toLowerCase()}`),
+    completedDailyTasks: mergeTaskList(a.completedDailyTasks, b.completedDailyTasks, t => `${t.date || ''}:${(t.text || '').trim().toLowerCase()}`),
     weeklyTasks: mergeTaskList(a.weeklyTasks, b.weeklyTasks, t => `${t.year || ''}:${t.weekNum || ''}:${(t.text || '').trim().toLowerCase()}`),
+    completedWeeklyTasks: mergeTaskList(a.completedWeeklyTasks, b.completedWeeklyTasks, t => `${t.year || ''}:${t.weekNum || ''}:${(t.text || '').trim().toLowerCase()}`),
     monthlyGoals: mergeTaskList(a.monthlyGoals, b.monthlyGoals, g => `${g.monthKey || ''}:${(g.text || '').trim().toLowerCase()}`),
     dailyFocus: {
       mustDo: a.dailyFocus.mustDo || b.dailyFocus.mustDo,
@@ -1359,6 +1388,21 @@ function getDataInsights() {
   }).length;
   return { missingDue, missingDesc, withNotes, withReminders, dueSoon };
 }
+function todayKey() {
+  return new Date().toISOString().split('T')[0];
+}
+function currentWeekMeta() {
+  const now = new Date();
+  return { weekNum: isoWeek(now), year: now.getFullYear() };
+}
+function currentCompletedDailyTasks() {
+  const today = todayKey();
+  return completedDailyTasks.filter(t => t.date === today);
+}
+function currentCompletedWeeklyTasks() {
+  const { weekNum, year } = currentWeekMeta();
+  return completedWeeklyTasks.filter(t => t.weekNum === weekNum && t.year === year);
+}
 
 // ── Daily task CRUD ──
 function addDailyTask() {
@@ -1369,10 +1413,30 @@ function addDailyTask() {
   saveDailyTasks(); inp.value = ''; renderContent();
 }
 function toggleDailyTask(id) {
-  const t = planner.dailyTasks.find(x => x.id === id); if (t) { t.done = !t.done; syncPlannerRefs(); saveDailyTasks(); }
+  const i = planner.dailyTasks.findIndex(x => x.id === id);
+  if (i > -1) {
+    const t = planner.dailyTasks.splice(i, 1)[0];
+    planner.completedDailyTasks.unshift({ id: t.id, text: t.text, date: t.date || todayKey(), completedAt: new Date().toISOString() });
+    syncPlannerRefs();
+    saveDailyTasks();
+    logActivity(`Completed daily task <strong>"${t.text}"</strong>`, '#67E8F9');
+    toast('Moved to Completed', '#16A34A');
+  }
   renderContent();
 }
 function delDailyTask(id) { planner.dailyTasks = planner.dailyTasks.filter(x => x.id !== id); syncPlannerRefs(); saveDailyTasks(); renderContent(); }
+function restoreCompletedDailyTask(id) {
+  const i = planner.completedDailyTasks.findIndex(x => x.id === id);
+  if (i > -1) {
+    const t = planner.completedDailyTasks.splice(i, 1)[0];
+    planner.dailyTasks.unshift({ id: t.id, text: t.text, done: false, date: todayKey() });
+    syncPlannerRefs();
+    saveDailyTasks();
+    logActivity(`Restored daily task <strong>"${t.text}"</strong>`, '#2563EB');
+    toast('Returned to Daily', '#2563EB');
+    renderContent();
+  }
+}
 
 // ── Weekly task CRUD ──
 function addWeeklyTask() {
@@ -1384,10 +1448,32 @@ function addWeeklyTask() {
   saveWeeklyTasks(); inp.value = ''; renderContent();
 }
 function toggleWeeklyTask(id) {
-  const t = planner.weeklyTasks.find(x => x.id === id); if (t) { t.done = !t.done; syncPlannerRefs(); saveWeeklyTasks(); }
+  const i = planner.weeklyTasks.findIndex(x => x.id === id);
+  if (i > -1) {
+    const t = planner.weeklyTasks.splice(i, 1)[0];
+    const { weekNum, year } = currentWeekMeta();
+    planner.completedWeeklyTasks.unshift({ id: t.id, text: t.text, weekNum: t.weekNum || weekNum, year: t.year || year, completedAt: new Date().toISOString() });
+    syncPlannerRefs();
+    saveWeeklyTasks();
+    logActivity(`Completed weekly task <strong>"${t.text}"</strong>`, '#A78BFA');
+    toast('Moved to Completed', '#16A34A');
+  }
   renderContent();
 }
 function delWeeklyTask(id) { planner.weeklyTasks = planner.weeklyTasks.filter(x => x.id !== id); syncPlannerRefs(); saveWeeklyTasks(); renderContent(); }
+function restoreCompletedWeeklyTask(id) {
+  const i = planner.completedWeeklyTasks.findIndex(x => x.id === id);
+  if (i > -1) {
+    const t = planner.completedWeeklyTasks.splice(i, 1)[0];
+    const { weekNum, year } = currentWeekMeta();
+    planner.weeklyTasks.unshift({ id: t.id, text: t.text, done: false, weekNum, year });
+    syncPlannerRefs();
+    saveWeeklyTasks();
+    logActivity(`Restored weekly task <strong>"${t.text}"</strong>`, '#7C9BFF');
+    toast('Returned to Weekly', '#7C9BFF');
+    renderContent();
+  }
+}
 function addMonthlyGoal() {
   const inp = document.getElementById('monthly-goal-inp');
   const text = inp?.value.trim(); if (!text) return;
@@ -1426,13 +1512,14 @@ function sendQuickTelegram() {
 
 // ── Render Daily Tasks view ──
 function renderDailyTasks() {
-  const done = dailyTasks.filter(t => t.done).length, total = dailyTasks.length;
+  const completed = currentCompletedDailyTasks();
+  const done = completed.length, total = dailyTasks.length + done;
   const pct = total > 0 ? Math.round(done / total * 100) : 0;
-  const taskList = total === 0
+  const taskList = dailyTasks.length === 0
     ? `<div class="todo-empty">No tasks yet — add one above.</div>`
     : dailyTasks.map(t => `<div class="todo-item">
-        <div class="todo-ck ${t.done ? 'done' : ''}" onclick="toggleDailyTask(${t.id})"></div>
-        <span class="todo-nm ${t.done ? 'done' : ''}">${t.text}</span>
+        <div class="todo-ck" onclick="toggleDailyTask(${t.id})"></div>
+        <span class="todo-nm">${t.text}</span>
         <button class="todo-del" onclick="delDailyTask(${t.id})">✕</button>
       </div>`).join('');
   return `<div class="au">
@@ -1441,7 +1528,7 @@ function renderDailyTasks() {
         <div style="font-weight:900;font-size:22px;letter-spacing:-.5px;color:var(--text)">Daily Tasks</div>
         <div style="font-family:var(--mono);font-size:11px;color:var(--text3);margin-top:3px">${new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})} · resets at midnight</div>
       </div>
-      ${total > 0 ? `<div style="font-family:var(--mono);font-size:13px;color:var(--text3)">${done}/${total} done</div>` : ''}
+      ${total > 0 ? `<div style="font-family:var(--mono);font-size:13px;color:var(--text3)">${done}/${total} completed</div>` : ''}
     </div>
     ${total > 0 ? `<div class="dash-dtbar-wrap"><div class="dash-dtbar"><div class="dash-dtbar-fill" style="width:${pct}%"></div></div></div>` : ''}
     <div class="card" style="padding:18px">
@@ -1451,6 +1538,7 @@ function renderDailyTasks() {
       </div>
       <div>${taskList}</div>
     </div>
+    ${done ? `<div class="todo-archive-note">✓ ${done} completed item${done !== 1 ? 's' : ''} moved to <button class="inline-link" onclick="goView('done')">Completed</button></div>` : ''}
     ${tgToken() ? `<div class="card" style="padding:18px;margin-top:16px">
       <div class="todo-qs-label">Quick Send to Telegram</div>
       <textarea class="todo-qs-inp" id="tg-quick-inp" placeholder="Send a quick note to yourself…"></textarea>
@@ -1461,13 +1549,14 @@ function renderDailyTasks() {
 
 // ── Render Weekly Tasks view ──
 function renderWeeklyTasks() {
-  const done = weeklyTasks.filter(t => t.done).length, total = weeklyTasks.length;
+  const completed = currentCompletedWeeklyTasks();
+  const done = completed.length, total = weeklyTasks.length + done;
   const pct = total > 0 ? Math.round(done / total * 100) : 0;
-  const taskList = total === 0
+  const taskList = weeklyTasks.length === 0
     ? `<div class="todo-empty">No tasks this week — add one above.</div>`
     : weeklyTasks.map(t => `<div class="todo-item">
-        <div class="todo-ck ${t.done ? 'done' : ''}" onclick="toggleWeeklyTask(${t.id})"></div>
-        <span class="todo-nm ${t.done ? 'done' : ''}">${t.text}</span>
+        <div class="todo-ck" onclick="toggleWeeklyTask(${t.id})"></div>
+        <span class="todo-nm">${t.text}</span>
         <button class="todo-del" onclick="delWeeklyTask(${t.id})">✕</button>
       </div>`).join('');
   return `<div class="au">
@@ -1476,7 +1565,7 @@ function renderWeeklyTasks() {
         <div style="font-weight:900;font-size:22px;letter-spacing:-.5px;color:var(--text)">Weekly Tasks</div>
         <div style="font-family:var(--mono);font-size:11px;color:var(--text3);margin-top:3px">${getWeekLabel()} · resets Monday</div>
       </div>
-      ${total > 0 ? `<div style="font-family:var(--mono);font-size:13px;color:var(--text3)">${done}/${total} done</div>` : ''}
+      ${total > 0 ? `<div style="font-family:var(--mono);font-size:13px;color:var(--text3)">${done}/${total} completed</div>` : ''}
     </div>
     ${total > 0 ? `<div class="dash-dtbar-wrap"><div class="dash-dtbar"><div class="dash-dtbar-fill" style="width:${pct}%"></div></div></div>` : ''}
     <div class="card" style="padding:18px">
@@ -1486,6 +1575,7 @@ function renderWeeklyTasks() {
       </div>
       <div>${taskList}</div>
     </div>
+    ${done ? `<div class="todo-archive-note">✓ ${done} completed item${done !== 1 ? 's' : ''} moved to <button class="inline-link" onclick="goView('done')">Completed</button></div>` : ''}
   </div>`;
 }
 
@@ -1712,17 +1802,17 @@ function _buildAndSendDigest() {
   const dateStr = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
   const parts = [`📋 <b>Daily Digest — ${dateStr}</b>`];
 
-  if (inclDaily && dailyTasks.length > 0) {
-    const done = dailyTasks.filter(t => t.done).length;
-    const undone = dailyTasks.filter(t => !t.done);
-    parts.push(`\n✅ <b>Daily Tasks</b> (${done}/${dailyTasks.length} done)` +
-      (undone.length > 0 ? '\n' + undone.map(t => `  • ${t.text}`).join('\n') : '\n  All done! 🎉'));
+  if (inclDaily && (dailyTasks.length > 0 || currentCompletedDailyTasks().length > 0)) {
+    const done = currentCompletedDailyTasks().length;
+    const total = dailyTasks.length + done;
+    parts.push(`\n✅ <b>Daily Tasks</b> (${done}/${total} done)` +
+      (dailyTasks.length > 0 ? '\n' + dailyTasks.map(t => `  • ${t.text}`).join('\n') : '\n  All done! 🎉'));
   }
-  if (inclWeekly && weeklyTasks.length > 0) {
-    const done = weeklyTasks.filter(t => t.done).length;
-    const undone = weeklyTasks.filter(t => !t.done);
-    parts.push(`\n📅 <b>Weekly Tasks</b> (${done}/${weeklyTasks.length} done)` +
-      (undone.length > 0 ? '\n' + undone.map(t => `  • ${t.text}`).join('\n') : '\n  All done! 🎉'));
+  if (inclWeekly && (weeklyTasks.length > 0 || currentCompletedWeeklyTasks().length > 0)) {
+    const done = currentCompletedWeeklyTasks().length;
+    const total = weeklyTasks.length + done;
+    parts.push(`\n📅 <b>Weekly Tasks</b> (${done}/${total} done)` +
+      (weeklyTasks.length > 0 ? '\n' + weeklyTasks.map(t => `  • ${t.text}`).join('\n') : '\n  All done! 🎉'));
   }
 
   const active = D.filter(p => p.progress < 100);
@@ -1866,11 +1956,12 @@ function nearestStage(p){ return STAGES.reduce((a,b)=>Math.abs(b.pct-p)<Math.abs
 //  SIDEBAR
 // ══════════════════════════════════════════════════════════
 function updateSidebar() {
-  document.getElementById('nb-all').textContent    = D.length;
-  document.getElementById('nb-daily').textContent  = D.filter(p=>p.type==='daily').length;
-  document.getElementById('nb-weekly').textContent = D.filter(p=>p.type==='weekly').length;
-  document.getElementById('nb-monthly').textContent= D.filter(p=>p.type==='monthly').length;
-  document.getElementById('nb-done').textContent   = D.filter(p=>p.progress>=100).length;
+  const doneCount = D.filter(p=>p.progress>=100).length + completedDailyTasks.length + completedWeeklyTasks.length;
+  document.getElementById('nb-all').textContent    = D.filter(p=>p.progress<100).length;
+  document.getElementById('nb-daily').textContent  = D.filter(p=>p.type==='daily' && p.progress < 100).length;
+  document.getElementById('nb-weekly').textContent = D.filter(p=>p.type==='weekly' && p.progress < 100).length;
+  document.getElementById('nb-monthly').textContent= D.filter(p=>p.type==='monthly' && p.progress < 100).length;
+  document.getElementById('nb-done').textContent   = doneCount;
   const over = D.filter(p=>p.due&&p.progress<100&&new Date(p.due)<new Date()).length;
   const nbOver = document.getElementById('nb-overdue');
   nbOver.textContent = over;
@@ -1894,8 +1985,8 @@ function updateSidebar() {
   if(view in m) document.getElementById(m[view])?.classList.add('active');
   document.getElementById('mt-badge-daily').textContent = dailyUndone || '';
   document.getElementById('mt-badge-weekly').textContent = weeklyUndone || '';
-  document.getElementById('mt-badge-projects').textContent = D.length || '';
-  document.getElementById('mt-badge-done').textContent = D.filter(p=>p.progress>=100).length || '';
+  document.getElementById('mt-badge-projects').textContent = D.filter(p=>p.progress<100).length || '';
+  document.getElementById('mt-badge-done').textContent = doneCount || '';
   document.querySelectorAll('.mobile-tab').forEach(n=>n.classList.remove('active'));
   const mm = {dashboard:'mt-dashboard',all:'mt-all','todo-daily':'mt-todo-daily','todo-weekly':'mt-todo-weekly',done:'mt-done',project:'mt-all',daily:'mt-all',weekly:'mt-all',monthly:'mt-all',overdue:'mt-all'};
   if(view in mm) document.getElementById(mm[view])?.classList.add('active');
@@ -1958,7 +2049,9 @@ function renderContent(resetScroll = false) {
   } else {
     const titles={all:'All Projects',daily:'Daily',weekly:'Weekly',monthly:'Monthly',done:'Completed',overdue:'Overdue'};
     tb.textContent = titles[view]||'Projects';
-    crumb.textContent = `${visibleProjects(view).length} projects`;
+    crumb.textContent = view === 'done'
+      ? `${D.filter(p=>p.progress>=100).length + completedDailyTasks.length + completedWeeklyTasks.length} archived`
+      : `${visibleProjects(view).length} projects`;
     html = renderList(view);
   }
   el.innerHTML = `<div class="page-shell">${html}</div>`;
@@ -1975,7 +2068,7 @@ function setSearch(val) {
   renderContent();
 }
 function filterProjects(p,v){
-  if(v==='all')     return true;
+  if(v==='all')     return p.progress < 100;
   if(v==='daily')   return p.type==='daily';
   if(v==='weekly')  return p.type==='weekly';
   if(v==='monthly') return p.type==='monthly';
@@ -2101,13 +2194,15 @@ function ringHTML({ title, sub, value, suffix = '%', fill = 0, ring = '#7C9BFF',
   </div>`;
 }
 function renderMissionCard({ title, sub, percent, accent, stat, items }) {
-  return `<div class="mission-card au">
+  const targetView = title === 'Daily Command' ? 'todo-daily' : title === 'Weekly Command' ? 'todo-weekly' : '';
+  const openAttr = targetView ? ` role="button" tabindex="0" onclick="goView('${targetView}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goView('${targetView}')}"` : '';
+  return `<div class="mission-card mission-card-action au"${openAttr}>
     <div class="mission-head">
       <div>
         <div class="mission-title">${title}</div>
         <div class="mission-sub">${sub}</div>
       </div>
-      <div class="mission-stat">${stat}</div>
+      <div class="mission-stat">${stat}${targetView ? ' · open' : ''}</div>
     </div>
     <div class="mission-bar"><div class="mission-bar-fill" style="width:${percent}%;background:${accent}"></div></div>
     <div class="mission-list">
@@ -2180,12 +2275,14 @@ function renderDashboard() {
   const medCount = D.filter(p => (p.priority || 'med') === 'med').length;
   const lowCount = D.filter(p => p.priority === 'low').length;
   const plannedCount = D.filter(p => p.due).length;
-  const dailyDone = dailyTasks.filter(t => t.done).length;
-  const dailyPct = dailyTasks.length ? Math.round(dailyDone / dailyTasks.length * 100) : 0;
-  const weeklyDone = weeklyTasks.filter(t => t.done).length;
-  const weeklyPct = weeklyTasks.length ? Math.round(weeklyDone / weeklyTasks.length * 100) : 0;
-  const topDaily = dailyTasks.filter(t => !t.done).slice(0, 3).map(t => ({ title: t.text, text: planner.dailyFocus.mustDo ? `Must do: ${planner.dailyFocus.mustDo}` : 'Due in today’s flow', color: '#67E8F9' }));
-  const topWeekly = weeklyTasks.filter(t => !t.done).slice(0, 3).map(t => ({ title: t.text, text: planner.weeklyPlan.theme ? `Theme: ${planner.weeklyPlan.theme}` : 'Part of this week’s push', color: '#A78BFA' }));
+  const dailyDone = currentCompletedDailyTasks().length;
+  const dailyTotal = dailyTasks.length + dailyDone;
+  const dailyPct = dailyTotal ? Math.round(dailyDone / dailyTotal * 100) : 0;
+  const weeklyDone = currentCompletedWeeklyTasks().length;
+  const weeklyTotal = weeklyTasks.length + weeklyDone;
+  const weeklyPct = weeklyTotal ? Math.round(weeklyDone / weeklyTotal * 100) : 0;
+  const topDaily = dailyTasks.slice(0, 3).map(t => ({ title: t.text, text: planner.dailyFocus.mustDo ? `Must do: ${planner.dailyFocus.mustDo}` : 'Due in today’s flow', color: '#67E8F9' }));
+  const topWeekly = weeklyTasks.slice(0, 3).map(t => ({ title: t.text, text: planner.weeklyPlan.theme ? `Theme: ${planner.weeklyPlan.theme}` : 'Part of this week’s push', color: '#A78BFA' }));
   const projectPct = total ? Math.round(active / total * 100) : 0;
   const sourceLabel = {
     github: 'GitHub sync',
@@ -2221,7 +2318,7 @@ function renderDashboard() {
         sub: 'The tasks you should see first every time you open the dashboard.',
         percent: dailyPct,
         accent: 'linear-gradient(90deg,#67E8F9,#7C9BFF)',
-        stat: `${dailyDone}/${dailyTasks.length || 0} done`,
+        stat: `${dailyDone}/${dailyTotal || 0} done`,
         items: topDaily
       })}
       ${renderMissionCard({
@@ -2229,7 +2326,7 @@ function renderDashboard() {
         sub: 'Your weekly queue and planning direction in one glance.',
         percent: weeklyPct,
         accent: 'linear-gradient(90deg,#A78BFA,#7C9BFF)',
-        stat: `${weeklyDone}/${weeklyTasks.length || 0} done`,
+        stat: `${weeklyDone}/${weeklyTotal || 0} done`,
         items: topWeekly
       })}
     </div>
@@ -2277,8 +2374,8 @@ function renderDashboard() {
         fill: plannedCount ? Math.round(plannedCount / total * 100) : 0,
         ring: '#67E8F9',
         rows: [
-          { label: 'Daily tasks', value: `${dailyDone}/${dailyTasks.length}`, color: '#38BDF8' },
-          { label: 'Weekly tasks', value: `${weeklyDone}/${weeklyTasks.length}`, color: '#A78BFA' },
+          { label: 'Daily tasks', value: `${dailyDone}/${dailyTotal}`, color: '#38BDF8' },
+          { label: 'Weekly tasks', value: `${weeklyDone}/${weeklyTotal}`, color: '#A78BFA' },
           { label: 'Monthly goals', value: `${monthDone}/${monthGoals.length}`, color: '#4ADE80' }
         ]
       })}
@@ -2332,6 +2429,7 @@ function renderDashboard() {
 //  LIST + CARDS
 // ══════════════════════════════════════════════════════════
 function renderList(v) {
+  if (v === 'done') return renderCompletedView();
   const list = visibleProjects(v);
   if (!list.length) return `<div class="empty"><div class="empty-ill">📂</div><div class="empty-title">Nothing here yet</div><div class="empty-desc">${searchQuery.trim() ? 'No projects match your search.' : 'No projects in this category.'}</div><button class="btn btn-primary" onclick="openAdd()">+ Create Project</button></div>`;
   return `<div class="au">
@@ -2362,6 +2460,38 @@ function pcardHTML(p) {
       </div>
       <span style="margin-left:auto;font-family:var(--mono);font-size:9px;color:var(--text3)">${(p.priority||'med').toUpperCase()}</span>
     </div>
+  </div>`;
+}
+function renderCompletedView() {
+  const doneProjects = D.filter(p => p.progress >= 100);
+  const doneDaily = [...completedDailyTasks].sort((a,b) => new Date(b.completedAt || 0) - new Date(a.completedAt || 0));
+  const doneWeekly = [...completedWeeklyTasks].sort((a,b) => new Date(b.completedAt || 0) - new Date(a.completedAt || 0));
+  const totalDone = doneProjects.length + doneDaily.length + doneWeekly.length;
+  if (!totalDone) return `<div class="empty"><div class="empty-ill">★</div><div class="empty-title">Nothing completed yet</div><div class="empty-desc">Completed tasks and finished projects will land here automatically.</div></div>`;
+  const fmtStamp = val => {
+    if (!val) return '';
+    const d = new Date(val);
+    if (Number.isNaN(d.getTime())) return '';
+    return d.toLocaleDateString('en-US', { month:'short', day:'numeric' });
+  };
+  return `<div class="au">
+    <div class="section-hd"><div class="section-hd-title">Completed</div><div class="section-hd-meta">${totalDone} archived</div></div>
+    ${doneDaily.length ? `<div class="completed-block au au1">
+      <div class="completed-head"><div class="completed-title">Daily Tasks</div><div class="completed-meta">${doneDaily.length} complete</div></div>
+      <div class="completed-list">
+        ${doneDaily.map(t => `<div class="completed-item"><div class="completed-copy"><strong>${escapeHTML(t.text)}</strong><span>${fmtStamp(t.completedAt || t.date)}</span></div><button class="btn btn-ghost btn-sm" onclick="restoreCompletedDailyTask(${t.id})">Restore</button></div>`).join('')}
+      </div>
+    </div>` : ''}
+    ${doneWeekly.length ? `<div class="completed-block au au2">
+      <div class="completed-head"><div class="completed-title">Weekly Tasks</div><div class="completed-meta">${doneWeekly.length} complete</div></div>
+      <div class="completed-list">
+        ${doneWeekly.map(t => `<div class="completed-item"><div class="completed-copy"><strong>${escapeHTML(t.text)}</strong><span>Week ${t.weekNum} · ${t.year}</span></div><button class="btn btn-ghost btn-sm" onclick="restoreCompletedWeeklyTask(${t.id})">Restore</button></div>`).join('')}
+      </div>
+    </div>` : ''}
+    ${doneProjects.length ? `<div class="completed-block au au3">
+      <div class="completed-head"><div class="completed-title">Projects</div><div class="completed-meta">${doneProjects.length} finished</div></div>
+      <div class="pcards">${doneProjects.map((p,i)=>`<div class="au" style="animation-delay:${i*.04}s">${pcardHTML(p)}</div>`).join('')}</div>
+    </div>` : ''}
   </div>`;
 }
 
