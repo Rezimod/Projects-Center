@@ -196,7 +196,7 @@ html[data-theme="light"] .pli.active .pli-name { color: #EEEDF8 !important; }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 *{touch-action:manipulation;}
 input[type="range"]{touch-action:none;}
-html,body{height:100%;overflow:hidden;}
+html,body{height:100%;min-height:100%;overflow:hidden;}
 html[data-theme="light"],html[data-theme="light"] body { background: #FFFFFF; }
 html[data-theme="dark"],html[data-theme="dark"] body { background: #0D0D0C; }
 body{font-family:var(--font);font-size:14px;background:transparent;color:var(--text);-webkit-font-smoothing:antialiased;transition:color .25s;}
@@ -204,10 +204,10 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 [data-theme="light"] .content{background:transparent;}
 
 /* ── Layout ── */
-.app{display:grid;grid-template-columns:286px 1fr;height:100vh;overflow:hidden;}
+.app{display:grid;grid-template-columns:286px 1fr;height:100vh;height:100dvh;overflow:hidden;min-height:0;}
 
 /* ── Sidebar ── */
-.sidebar{background:linear-gradient(180deg, rgba(4,8,20,0.98), rgba(7,12,29,0.98));display:flex;flex-direction:column;height:100vh;overflow:hidden;position:relative;border-right:1px solid rgba(145,168,255,0.18);box-shadow:24px 0 50px rgba(0,0,0,0.28);}
+.sidebar{background:linear-gradient(180deg, rgba(4,8,20,0.98), rgba(7,12,29,0.98));display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden;position:relative;border-right:1px solid rgba(145,168,255,0.18);box-shadow:24px 0 50px rgba(0,0,0,0.28);}
 .sidebar::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top left, rgba(124,155,255,0.22), transparent 38%), radial-gradient(circle at bottom left, rgba(103,232,249,0.12), transparent 34%);pointer-events:none;z-index:0;}
 .sidebar::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:0;}
 
@@ -255,7 +255,7 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 [data-theme="dark"] .theme-pill::after{left:19px;background:white;}
 
 /* ── Main ── */
-.main{display:flex;flex-direction:column;height:100vh;overflow:hidden;background:transparent;}
+.main{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden;background:transparent;min-height:0;}
 .topbar{height:54px;display:flex;align-items:center;padding:0 24px;gap:10px;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0;}
 .topbar-title{font-size:14px;font-weight:700;letter-spacing:-.1px;}
 .topbar-div{width:1px;height:16px;background:var(--border2);flex-shrink:0;}
@@ -267,7 +267,7 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 .topbar-search input{width:100%;border:none;outline:none;background:none;font-family:var(--font);font-size:13px;color:var(--text);}
 .topbar-search input::placeholder{color:var(--text3);}
 .mob-burger{display:none;}
-.content{flex:1;overflow-y:auto;padding:24px;scrollbar-width:thin;scrollbar-color:var(--border2) transparent;}
+.content{flex:1;overflow-y:auto;padding:24px;scrollbar-width:thin;scrollbar-color:var(--border2) transparent;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;min-height:0;}
 .content::-webkit-scrollbar{width:5px;}
 .content::-webkit-scrollbar-thumb{background:var(--border2);border-radius:5px;}
 
@@ -560,6 +560,8 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
 .topbar-back:hover{background:var(--bg3);color:var(--text);}
 .mobile-tabbar{display:none;}
 .tabbar-spacer{display:none;}
+.mobile-search-toggle{display:none;}
+.page-shell{animation:pageIn .24s ease both;}
 
 /* ── Focus Timer ── */
 .focus-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;}
@@ -638,6 +640,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
 
 /* ── Animations ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pageIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 .au{animation:fadeUp .28s ease both;}
 .au1{animation-delay:.04s;}.au2{animation-delay:.08s;}.au3{animation-delay:.12s;}.au4{animation-delay:.16s;}
 
@@ -653,14 +656,17 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .sidebar.mob-open{transform:translateX(0);box-shadow:8px 0 32px rgba(0,0,0,0.4);}
   .mob-backdrop{display:block;}
   .mob-burger{display:flex;}
-  .topbar{position:sticky;top:0;z-index:40;padding:10px 12px 12px;gap:8px;min-height:50px;height:auto;flex-wrap:wrap;backdrop-filter:blur(14px);}
-  .topbar-title{font-size:15px;}
+  .topbar{position:sticky;top:0;z-index:40;padding:10px 12px 10px;gap:8px;min-height:50px;height:auto;flex-wrap:wrap;backdrop-filter:blur(14px);background:color-mix(in srgb, var(--surface) 86%, transparent);border-bottom:1px solid color-mix(in srgb, var(--border) 88%, transparent);}
+  .topbar-title{font-size:16px;font-weight:800;}
   .topbar-back{display:inline-flex;}
   .topbar-div{display:none;}
-  .topbar-crumb{order:2;flex:1 1 auto;max-width:none;font-size:12px;}
+  .topbar-crumb{display:none;}
   .topbar-space{display:none;}
-  .topbar-search{order:10;flex:1 1 calc(100% - 112px);min-width:0;height:42px;border-radius:16px;}
+  .topbar-search{order:10;flex:1 1 100%;min-width:0;height:40px;border-radius:14px;}
   #tb-actions{order:11;display:none;}
+  .sync-chip{order:4;margin-left:auto;}
+  .topbar.compact-dashboard-header .sync-chip{display:none;}
+  .topbar.compact-dashboard-header .topbar-search{display:none;}
   .topbar > .btn.btn-primary.btn-sm{order:9;padding:11px 14px;min-width:96px;justify-content:center;}
   .content{padding:12px 12px calc(96px + env(safe-area-inset-bottom));}
   .kpi-row{grid-template-columns:repeat(2,1fr);gap:10px;}
@@ -756,20 +762,21 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .mini-list{padding:8px 16px 16px;}
   .activity-item{padding:12px 16px;gap:12px;}
   .activity-txt{font-size:13px;line-height:1.55;}
-  .mobile-tabbar{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;position:fixed;left:10px;right:10px;bottom:10px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));border-radius:22px;background:rgba(6,9,24,0.96);border:1px solid rgba(145,168,255,0.18);box-shadow:0 18px 40px rgba(0,0,0,0.34);backdrop-filter:blur(18px);z-index:450;}
+  .mobile-tabbar{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;position:fixed;left:8px;right:8px;bottom:max(8px, env(safe-area-inset-bottom));padding:8px 8px calc(8px + env(safe-area-inset-bottom));border-radius:22px;background:rgba(6,9,24,0.98);border:1px solid rgba(145,168,255,0.18);box-shadow:0 18px 40px rgba(0,0,0,0.34);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:450;animation:tabbarIn .28s ease both;}
   .mobile-tab{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:56px;border:none;border-radius:16px;background:none;color:var(--text3);font-family:var(--font);font-size:11px;font-weight:700;cursor:pointer;}
   .mobile-tab.active{background:linear-gradient(180deg, rgba(124,155,255,0.2), rgba(124,155,255,0.08));color:#fff;}
   .mobile-tab-icon{font-size:15px;line-height:1;}
   .mobile-tab-badge{position:absolute;top:6px;right:10px;min-width:16px;height:16px;padding:0 4px;border-radius:999px;background:rgba(255,255,255,0.1);color:#fff;font-family:var(--mono);font-size:9px;display:flex;align-items:center;justify-content:center;}
   .mobile-tab.active .mobile-tab-badge{background:rgba(255,255,255,0.16);}
-  .tabbar-spacer{display:block;height:86px;}
+  .tabbar-spacer{display:block;height:92px;}
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
 }
 @media(max-width:420px){
-  .topbar{padding:10px 10px 12px;}
-  .content{padding:10px 10px 24px;}
+  .topbar{padding:10px 10px 10px;}
+  .content{padding:10px 10px calc(96px + env(safe-area-inset-bottom));}
   .topbar-search{flex-basis:100%;}
-  .topbar > .btn.btn-primary.btn-sm{width:100%;}
+  .topbar > .btn.btn-primary.btn-sm{width:auto;min-width:88px;}
+  .topbar-crumb{display:none;}
   .station-date{font-size:26px;}
   .orbit-ring{width:142px;height:142px;}
   .orbit-ring::after{inset:17px;}
@@ -779,6 +786,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .station-date{font-size:34px;}
   .station-eyebrow{font-size:9px;letter-spacing:3px;}
 }
+@keyframes tabbarIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
@@ -1590,10 +1598,10 @@ document.addEventListener('visibilitychange', () => {
   if (!document.hidden && isGHReadable()) pullFromGitHub();
 });
 
-// Poll every 2 minutes so changes appear without manual refresh
+// Poll every 10 minutes so repo changes appear without manual refresh
 setInterval(() => {
   if (!document.hidden && isGHReadable()) pullFromGitHub();
-}, 120000);
+}, 600000);
 
 // Save: localStorage immediately, GitHub debounced 700ms
 function save() {
@@ -1902,23 +1910,24 @@ function pushRouteIfChanged(nextView, nextProject = null) {
   appHistory.push(currentRoute());
   if (appHistory.length > 50) appHistory.shift();
 }
-function goView(v)     { pushRouteIfChanged(v, null); view=v; activeProject=null; closeSidebar(); updateSidebar(); renderContent(); }
-function goProject(id) { pushRouteIfChanged('project', id); activeProject=id; view='project'; closeSidebar(); updateSidebar(); renderContent(); }
+function goView(v)     { pushRouteIfChanged(v, null); view=v; activeProject=null; closeSidebar(); updateSidebar(); renderContent(true); }
+function goProject(id) { pushRouteIfChanged('project', id); activeProject=id; view='project'; closeSidebar(); updateSidebar(); renderContent(true); }
 function goBack() {
   const prev = appHistory.pop();
   if (!prev) { view = 'dashboard'; activeProject = null; }
   else { view = prev.view; activeProject = prev.activeProject || null; }
   closeSidebar();
   updateSidebar();
-  renderContent();
+  renderContent(true);
 }
-function renderContent() {
+function renderContent(resetScroll = false) {
   const el   = document.getElementById('content');
   const tb   = document.getElementById('tb-title');
   const crumb= document.getElementById('tb-crumb');
   const acts = document.getElementById('tb-actions');
   const back = document.getElementById('topbar-back');
   const newBtn = document.getElementById('topbar-new-btn');
+  const topbar = document.querySelector('.topbar');
   const sourceMap = {
     github: 'Synced from GitHub',
     bundled: 'Loaded from bundled data.json',
@@ -1928,28 +1937,32 @@ function renderContent() {
   };
   if (back) back.style.display = view === 'dashboard' ? 'none' : 'inline-flex';
   if (newBtn) newBtn.style.display = view === 'dashboard' ? 'none' : 'inline-flex';
+  if (topbar) topbar.classList.toggle('compact-dashboard-header', view === 'dashboard');
   acts.innerHTML = `<label class="topbar-search" aria-label="Search projects">
     <span class="topbar-search-icon">⌕</span>
     <input id="project-search" type="search" placeholder="Search projects, tasks, notes…" value="${escapeHTML(searchQuery)}" oninput="setSearch(this.value)">
   </label>`;
+  let html = '';
   if (view === 'dashboard') {
-    tb.textContent='Dashboard'; crumb.textContent=sourceMap[dataSource] || 'Overview'; el.innerHTML=renderDashboard();
+    tb.textContent='Dashboard'; crumb.textContent=sourceMap[dataSource] || 'Overview'; html = renderDashboard();
   } else if (view === 'todo-daily') {
-    tb.textContent='Daily Tasks'; crumb.textContent='Today\'s checklist'; el.innerHTML=renderDailyTasks();
+    tb.textContent='Daily Tasks'; crumb.textContent='Today\'s checklist'; html = renderDailyTasks();
   } else if (view === 'todo-weekly') {
-    tb.textContent='Weekly Tasks'; crumb.textContent=getWeekLabel(); el.innerHTML=renderWeeklyTasks();
+    tb.textContent='Weekly Tasks'; crumb.textContent=getWeekLabel(); html = renderWeeklyTasks();
   } else if (view === 'project' && activeProject) {
     const p = D.find(x=>x.id===activeProject);
     if (!p) { goView('dashboard'); return; }
     tb.textContent='Project'; crumb.textContent=p.name;
     acts.innerHTML=`<button class="btn btn-ghost btn-sm" onclick="openAdd(${p.id})">✎ Edit</button><button class="btn btn-danger btn-sm" onclick="openDel(${p.id})">🗑</button>`;
-    el.innerHTML = renderDetail(p);
+    html = renderDetail(p);
   } else {
     const titles={all:'All Projects',daily:'Daily',weekly:'Weekly',monthly:'Monthly',done:'Completed',overdue:'Overdue'};
     tb.textContent = titles[view]||'Projects';
     crumb.textContent = `${visibleProjects(view).length} projects`;
-    el.innerHTML = renderList(view);
+    html = renderList(view);
   }
+  el.innerHTML = `<div class="page-shell">${html}</div>`;
+  if (resetScroll) el.scrollTo({ top: 0, behavior: 'smooth' });
 }
 function setSearch(val) {
   searchQuery = val;
