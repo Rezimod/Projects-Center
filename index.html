@@ -304,7 +304,7 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 .kpi-label{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:7px;}
 .kpi-val{font-size:28px;font-weight:900;letter-spacing:-1.5px;line-height:1;}
 .kpi-sub{font-size:11px;color:var(--text3);margin-top:4px;}
-.orbit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:22px;}
+.orbit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:24px;}
 .mission-grid{display:grid;grid-template-columns:1.2fr 1.2fr .8fr;gap:14px;margin-bottom:24px;}
 .mission-card{padding:20px;border-radius:22px;border:1px solid var(--border);background:
  radial-gradient(circle at top right, rgba(124,155,255,0.18), transparent 28%),
@@ -328,24 +328,24 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 .radar-track{height:9px;border-radius:999px;background:rgba(255,255,255,0.08);overflow:hidden;}
 .radar-fill{height:100%;border-radius:999px;}
 .radar-value{font-size:12px;font-weight:800;color:var(--text);text-align:right;}
-.orbit-card{position:relative;overflow:hidden;padding:20px;border-radius:20px;border:1px solid var(--border);background:
-  radial-gradient(circle at top right, rgba(124,155,255,0.16), transparent 30%),
+.orbit-card{position:relative;overflow:hidden;padding:22px;border-radius:22px;border:1px solid var(--border);background:
+  radial-gradient(circle at top right, rgba(124,155,255,0.18), transparent 32%),
   linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));box-shadow:var(--shadow);}
 .orbit-card::before{content:'';position:absolute;inset:auto -10% -35% auto;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle, rgba(255,255,255,0.18), transparent 68%);opacity:.35;pointer-events:none;}
-.orbit-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px;}
-.orbit-title{font-size:13px;font-weight:800;color:var(--text);}
-.orbit-sub{font-size:11px;color:var(--text3);margin-top:4px;line-height:1.5;}
-.orbit-ring{--fill:50%;--ring:#7C9BFF;width:134px;height:134px;border-radius:50%;background:
-  conic-gradient(from -90deg, var(--ring) 0 var(--fill), rgba(255,255,255,0.08) var(--fill) 100%);
-display:grid;place-items:center;position:relative;flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.04), 0 12px 28px rgba(2,6,23,0.2);}
-.orbit-ring::before{content:'';position:absolute;inset:6px;border-radius:50%;border:1px dashed rgba(255,255,255,0.08);}
-.orbit-ring::after{content:'';position:absolute;inset:18px;border-radius:50%;background:rgba(7,11,27,0.95);border:1px solid rgba(255,255,255,0.06);}
+.orbit-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px;}
+.orbit-title{font-size:14px;font-weight:900;color:var(--text);}
+.orbit-sub{font-size:11px;color:var(--text2);margin-top:5px;line-height:1.55;max-width:240px;}
+.orbit-ring{--fill:50%;--ring:#7C9BFF;width:168px;height:168px;border-radius:50%;background:
+  conic-gradient(from -90deg, var(--ring) 0 var(--fill), rgba(255,255,255,0.1) var(--fill) 100%);
+display:grid;place-items:center;position:relative;flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06), 0 16px 34px rgba(2,6,23,0.24);}
+.orbit-ring::before{content:'';position:absolute;inset:7px;border-radius:50%;border:2px solid rgba(255,255,255,0.16);}
+.orbit-ring::after{content:'';position:absolute;inset:20px;border-radius:50%;background:rgba(5,8,24,0.98);border:1px solid rgba(255,255,255,0.08);box-shadow:inset 0 0 24px rgba(124,155,255,0.08);}
 .orbit-core{position:relative;z-index:1;text-align:center;}
-.orbit-core strong{display:block;font-size:28px;font-weight:900;letter-spacing:-1.4px;color:var(--text);line-height:1;}
-.orbit-core span{font-family:var(--mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:2px;margin-top:6px;display:block;}
+.orbit-core strong{display:block;font-size:40px;font-weight:900;letter-spacing:-2px;color:#FFFFFF;line-height:1;text-shadow:0 1px 0 rgba(255,255,255,0.08);}
+.orbit-core span{font-family:var(--mono);font-size:10px;color:#DDE6FF;text-transform:uppercase;letter-spacing:2.2px;margin-top:8px;display:block;}
 .orbit-legend{display:flex;flex-direction:column;gap:8px;}
 .orbit-row{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;color:var(--text2);}
-.orbit-row b{color:var(--text);font-weight:700;}
+.orbit-row b{color:#FFFFFF;font-weight:800;font-size:13px;}
 .orbit-left{display:flex;align-items:center;gap:8px;min-width:0;}
 .orbit-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .planner-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px;}
@@ -897,15 +897,17 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
       </div>
     </div>
 
-    <div class="sb-body">
-      <div class="sb-section">
-        <div class="sb-label">Main</div>
-        <button class="nav-item active" id="nav-dashboard" onclick="goView('dashboard')"><div class="ni">⊞</div><span>Dashboard</span></button>
-        <button class="nav-item" id="nav-all" onclick="goView('all')"><div class="ni">◈</div><span style="flex:1">All Projects</span><span class="nb" id="nb-all">0</span></button>
-        <button class="nav-item" id="nav-daily" onclick="goView('daily')"><div class="ni">⚡</div><span style="flex:1">Daily</span><span class="nb" id="nb-daily">0</span></button>
-        <button class="nav-item" id="nav-weekly" onclick="goView('weekly')"><div class="ni">📅</div><span style="flex:1">Weekly</span><span class="nb" id="nb-weekly">0</span></button>
-        <button class="nav-item" id="nav-monthly" onclick="goView('monthly')"><div class="ni">🗓</div><span style="flex:1">Monthly</span><span class="nb" id="nb-monthly">0</span></button>
-      </div>
+	    <div class="sb-body">
+	      <div class="sb-section">
+	        <div class="sb-label">Focus</div>
+	        <button class="nav-item active" id="nav-dashboard" onclick="goView('dashboard')"><div class="ni">⊞</div><span>Dashboard</span></button>
+	        <button class="nav-item" id="nav-todo-daily" onclick="goView('todo-daily')"><div class="ni">✅</div><span style="flex:1">Daily Tasks</span><span class="nb" id="nb-todo-daily">0</span></button>
+	        <button class="nav-item" id="nav-todo-weekly" onclick="goView('todo-weekly')"><div class="ni">📋</div><span style="flex:1">Weekly Tasks</span><span class="nb" id="nb-todo-weekly">0</span></button>
+	        <button class="nav-item" id="nav-all" onclick="goView('all')"><div class="ni">◈</div><span style="flex:1">All Projects</span><span class="nb" id="nb-all">0</span></button>
+	        <button class="nav-item" id="nav-daily" onclick="goView('daily')"><div class="ni">⚡</div><span style="flex:1">Daily</span><span class="nb" id="nb-daily">0</span></button>
+	        <button class="nav-item" id="nav-weekly" onclick="goView('weekly')"><div class="ni">📅</div><span style="flex:1">Weekly</span><span class="nb" id="nb-weekly">0</span></button>
+	        <button class="nav-item" id="nav-monthly" onclick="goView('monthly')"><div class="ni">🗓</div><span style="flex:1">Monthly</span><span class="nb" id="nb-monthly">0</span></button>
+	      </div>
       <div class="sb-section">
         <div class="sb-label">Projects</div>
         <div id="sb-project-list"></div>
@@ -916,12 +918,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
         <button class="nav-item" id="nav-done" onclick="goView('done')"><div class="ni">✅</div><span style="flex:1">Completed</span><span class="nb" id="nb-done">0</span></button>
         <button class="nav-item" id="nav-overdue" onclick="goView('overdue')"><div class="ni">⚠️</div><span style="flex:1">Overdue</span><span class="nb" id="nb-overdue">0</span></button>
       </div>
-      <div class="sb-section">
-        <div class="sb-label">To-Do</div>
-        <button class="nav-item" id="nav-todo-daily" onclick="goView('todo-daily')"><div class="ni">✅</div><span style="flex:1">Daily Tasks</span><span class="nb" id="nb-todo-daily">0</span></button>
-        <button class="nav-item" id="nav-todo-weekly" onclick="goView('todo-weekly')"><div class="ni">📋</div><span style="flex:1">Weekly Tasks</span><span class="nb" id="nb-todo-weekly">0</span></button>
-      </div>
-    </div>
+	    </div>
 
     <div class="sb-foot">
       <button class="sb-sync" id="sync-status" onclick="pullFromGitHub()">
