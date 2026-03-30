@@ -414,12 +414,6 @@
         "date": "2026-03-28"
       },
       {
-        "id": 1774727253328,
-        "text": "ასტრომანზე გარკვევა",
-        "done": false,
-        "date": "2026-03-28"
-      },
-      {
         "id": 1774727264971,
         "text": "ტერმინალის გააქტიურება",
         "done": false,
@@ -464,6 +458,12 @@
     ],
     "completedDailyTasks": [
       {
+        "id": 1774727253328,
+        "text": "ასტრომანზე გარკვევა",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T08:15:49.978Z"
+      },
+      {
         "id": 1774727244137,
         "text": "სტელარზე მუშაობა",
         "date": "2026-03-28",
@@ -494,6 +494,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"ასტრომანზე გარკვევა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1774858549978
+    },
     {
       "msg": "Completed daily task <strong>\"სტელარზე მუშაობა\"</strong>",
       "color": "#67E8F9",
@@ -738,11 +743,6 @@
       "msg": "Priority set to <strong>med</strong> on \"Daily\"",
       "color": "#2563EB",
       "time": 1772647595964
-    },
-    {
-      "msg": "Priority set to <strong>none</strong> on \"Daily\"",
-      "color": "#2563EB",
-      "time": 1772647594468
     }
   ]
 }
