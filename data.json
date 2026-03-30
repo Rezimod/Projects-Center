@@ -49,54 +49,6 @@
       }
     },
     {
-      "id": 1772362170631,
-      "name": "Content For Week",
-      "desc": "Create visuals, product displays and sales for every week",
-      "type": "weekly",
-      "due": "2026-03-30",
-      "priority": "high",
-      "color": "#2563EB",
-      "icon": "📱",
-      "progress": 0,
-      "tasks": [
-        {
-          "name": "5 telescope designs",
-          "done": false
-        },
-        {
-          "name": "5 different moon lamp design",
-          "done": false
-        },
-        {
-          "name": "5 air humidifier",
-          "done": false
-        },
-        {
-          "name": "5 projector",
-          "done": false
-        },
-        {
-          "name": "5 cosmonaut decoration",
-          "done": false
-        },
-        {
-          "name": "5. kids toy",
-          "done": false
-        },
-        {
-          "name": "5 random lamp",
-          "done": false
-        }
-      ],
-      "notes": "",
-      "created": 1772362170631,
-      "reminder": {
-        "enabled": false,
-        "timing": "oneday",
-        "lastSent": null
-      }
-    },
-    {
       "id": 1772361692835,
       "name": "Current Website Update",
       "desc": "Update the www.astroman.ge",
@@ -435,6 +387,11 @@
   },
   "activity": [
     {
+      "msg": "Deleted project <strong>\"Content For Week\"</strong>",
+      "color": "#DC2626",
+      "time": 1774858640213
+    },
+    {
       "msg": "Deleted project <strong>\"Daily\"</strong>",
       "color": "#DC2626",
       "time": 1774858634074
@@ -678,11 +635,6 @@
       "msg": "Completed task <strong>\"astroman excel march update\"</strong>",
       "color": "#2563EB",
       "time": 1772795044210
-    },
-    {
-      "msg": "Completed task <strong>\"optimo last import update\"</strong>",
-      "color": "#2563EB",
-      "time": 1772795043100
     }
   ]
 }
