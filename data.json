@@ -426,12 +426,6 @@
         "date": "2026-03-28"
       },
       {
-        "id": 1774729006626,
-        "text": "Go with boyt",
-        "done": false,
-        "date": "2026-03-28"
-      },
-      {
         "id": 1774730609849,
         "text": "start Phase Two for Sky astroman",
         "done": false,
@@ -451,6 +445,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1774729006626,
+        "text": "Go with boyt",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T08:15:58.951Z"
+      },
       {
         "id": 1774729001978,
         "text": "Meet builder",
@@ -494,6 +494,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"Go with boyt\"</strong>",
+      "color": "#67E8F9",
+      "time": 1774858558952
+    },
     {
       "msg": "Completed daily task <strong>\"Meet builder\"</strong>",
       "color": "#67E8F9",
@@ -738,11 +743,6 @@
       "msg": "Added task <strong>\"optimo last import update\"</strong> to \"Daily\"",
       "color": "#2563EB",
       "time": 1772729444468
-    },
-    {
-      "msg": "Deleted project <strong>\"Ticket ai\"</strong>",
-      "color": "#DC2626",
-      "time": 1772647604503
     }
   ]
 }
