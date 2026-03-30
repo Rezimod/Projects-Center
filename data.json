@@ -414,12 +414,6 @@
         "date": "2026-03-28"
       },
       {
-        "id": 1774727244137,
-        "text": "სტელარზე მუშაობა",
-        "done": false,
-        "date": "2026-03-28"
-      },
-      {
         "id": 1774727253328,
         "text": "ასტრომანზე გარკვევა",
         "done": false,
@@ -468,7 +462,14 @@
         "date": "2026-03-28"
       }
     ],
-    "completedDailyTasks": [],
+    "completedDailyTasks": [
+      {
+        "id": 1774727244137,
+        "text": "სტელარზე მუშაობა",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T08:15:48.500Z"
+      }
+    ],
     "weeklyTasks": [],
     "completedWeeklyTasks": [],
     "monthlyGoals": [],
@@ -493,6 +494,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"სტელარზე მუშაობა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1774858548501
+    },
     {
       "msg": "Added task <strong>\"redisign it with my existing app. make it work.\"</strong> to \"Night Skywatcher\"",
       "color": "#2563EB",
@@ -737,11 +743,6 @@
       "msg": "Priority set to <strong>none</strong> on \"Daily\"",
       "color": "#2563EB",
       "time": 1772647594468
-    },
-    {
-      "msg": "Priority set to <strong>med</strong> on \"Daily\"",
-      "color": "#2563EB",
-      "time": 1772647588359
     }
   ]
 }
