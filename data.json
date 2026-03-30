@@ -201,7 +201,7 @@
       "name": "Advance AI",
       "desc": "Ai",
       "type": "daily",
-      "due": "2026-03-15",
+      "due": "2026-04-15",
       "priority": "high",
       "color": "#2563EB",
       "icon": "🦿",
@@ -419,6 +419,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Updated project <strong>\"Advance AI\"</strong>",
+      "color": "#2563EB",
+      "time": 1774879952719
+    },
     {
       "msg": "Updated project <strong>\"Astroman Loyal Club\"</strong>",
       "color": "#2563EB",
@@ -663,11 +668,6 @@
       "msg": "Added task <strong>\"test\"</strong> to \"Auto Content Creator\"",
       "color": "#2563EB",
       "time": 1772920268037
-    },
-    {
-      "msg": "Added task <strong>\"different agents\"</strong> to \"Auto Content Creator\"",
-      "color": "#2563EB",
-      "time": 1772920259616
     }
   ]
 }
