@@ -53,7 +53,7 @@
       "name": "Current Website Update",
       "desc": "Update the www.astroman.ge",
       "type": "weekly",
-      "due": "2026-03-15",
+      "due": "2026-04-15",
       "priority": "med",
       "color": "#2563EB",
       "icon": "🌍",
@@ -420,6 +420,11 @@
   },
   "activity": [
     {
+      "msg": "Updated project <strong>\"Current Website Update\"</strong>",
+      "color": "#2563EB",
+      "time": 1774879921903
+    },
+    {
       "msg": "Completed daily task <strong>\"GWP-ს გარკვევა\"</strong>",
       "color": "#67E8F9",
       "time": 1774879904235
@@ -663,11 +668,6 @@
       "msg": "Completed task <strong>\"street interview 2, what comes first about astroman\"</strong>",
       "color": "#2563EB",
       "time": 1772795064763
-    },
-    {
-      "msg": "Completed task <strong>\"televizoris chabareba\"</strong>",
-      "color": "#2563EB",
-      "time": 1772795062494
     }
   ]
 }
