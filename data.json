@@ -256,12 +256,6 @@
   "planner": {
     "dailyTasks": [
       {
-        "id": 1774727158111,
-        "text": "GWP-ს გარკვევა",
-        "done": false,
-        "date": "2026-03-28"
-      },
-      {
         "id": 1774727264971,
         "text": "ტერმინალის გააქტიურება",
         "done": false,
@@ -287,6 +281,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1774727158111,
+        "text": "GWP-ს გარკვევა",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T14:11:44.235Z"
+      },
       {
         "id": 1774730622136,
         "text": "ორშაბათის იუსტიციის სახლში მისვლა დაგეგმვა",
@@ -419,6 +419,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"GWP-ს გარკვევა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1774879904235
+    },
     {
       "msg": "Completed daily task <strong>\"ორშაბათის იუსტიციის სახლში მისვლა დაგეგმვა\"</strong>",
       "color": "#67E8F9",
@@ -663,11 +668,6 @@
       "msg": "Completed task <strong>\"televizoris chabareba\"</strong>",
       "color": "#2563EB",
       "time": 1772795062494
-    },
-    {
-      "msg": "Completed task <strong>\"3 video ideas\"</strong>",
-      "color": "#2563EB",
-      "time": 1772795052416
     }
   ]
 }
