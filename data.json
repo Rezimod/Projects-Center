@@ -324,7 +324,15 @@
         "completedAt": "2026-03-30T08:15:48.500Z"
       }
     ],
-    "weeklyTasks": [],
+    "weeklyTasks": [
+      {
+        "id": 1774879071332,
+        "text": "Create Bundles, Bundle posts and visuals",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
+      }
+    ],
     "completedWeeklyTasks": [],
     "monthlyGoals": [],
     "dailyFocus": {
