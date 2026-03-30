@@ -93,7 +93,7 @@
       "name": "Night Skywatcher",
       "desc": "Sky watching app for astroman",
       "type": "monthly",
-      "due": "2026-03-10",
+      "due": "2026-04-05",
       "priority": "med",
       "color": "#2563EB",
       "icon": "🌃",
@@ -420,6 +420,11 @@
   },
   "activity": [
     {
+      "msg": "Updated project <strong>\"Night Skywatcher\"</strong>",
+      "color": "#2563EB",
+      "time": 1774879933679
+    },
+    {
       "msg": "Updated project <strong>\"Current Website Update\"</strong>",
       "color": "#2563EB",
       "time": 1774879921903
@@ -663,11 +668,6 @@
       "msg": "Added task <strong>\"ai agents base build\"</strong> to \"Auto Content Creator\"",
       "color": "#2563EB",
       "time": 1772920253976
-    },
-    {
-      "msg": "Completed task <strong>\"street interview 2, what comes first about astroman\"</strong>",
-      "color": "#2563EB",
-      "time": 1772795064763
     }
   ]
 }
