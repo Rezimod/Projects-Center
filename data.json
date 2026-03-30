@@ -426,12 +426,6 @@
         "date": "2026-03-28"
       },
       {
-        "id": 1774729001978,
-        "text": "Meet builder",
-        "done": false,
-        "date": "2026-03-28"
-      },
-      {
         "id": 1774729006626,
         "text": "Go with boyt",
         "done": false,
@@ -457,6 +451,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1774729001978,
+        "text": "Meet builder",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T08:15:57.792Z"
+      },
       {
         "id": 1774727253328,
         "text": "ასტრომანზე გარკვევა",
@@ -494,6 +494,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"Meet builder\"</strong>",
+      "color": "#67E8F9",
+      "time": 1774858557792
+    },
     {
       "msg": "Completed daily task <strong>\"ასტრომანზე გარკვევა\"</strong>",
       "color": "#67E8F9",
@@ -738,11 +743,6 @@
       "msg": "Deleted project <strong>\"Ticket ai\"</strong>",
       "color": "#DC2626",
       "time": 1772647604503
-    },
-    {
-      "msg": "Priority set to <strong>med</strong> on \"Daily\"",
-      "color": "#2563EB",
-      "time": 1772647595964
     }
   ]
 }
