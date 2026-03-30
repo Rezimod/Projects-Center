@@ -426,12 +426,6 @@
         "date": "2026-03-28"
       },
       {
-        "id": 1774730609849,
-        "text": "start Phase Two for Sky astroman",
-        "done": false,
-        "date": "2026-03-28"
-      },
-      {
         "id": 1774730622136,
         "text": "ორშაბათის იუსტიციის სახლში მისვლა დაგეგმვა",
         "done": false,
@@ -445,6 +439,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1774730609849,
+        "text": "start Phase Two for Sky astroman",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T08:16:04.241Z"
+      },
       {
         "id": 1774729006626,
         "text": "Go with boyt",
@@ -494,6 +494,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"start Phase Two for Sky astroman\"</strong>",
+      "color": "#67E8F9",
+      "time": 1774858564241
+    },
     {
       "msg": "Completed daily task <strong>\"Go with boyt\"</strong>",
       "color": "#67E8F9",
@@ -738,11 +743,6 @@
       "msg": "Added task <strong>\"astroman excel march update\"</strong> to \"Daily\"",
       "color": "#2563EB",
       "time": 1772729451622
-    },
-    {
-      "msg": "Added task <strong>\"optimo last import update\"</strong> to \"Daily\"",
-      "color": "#2563EB",
-      "time": 1772729444468
     }
   ]
 }
