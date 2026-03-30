@@ -49,66 +49,6 @@
       }
     },
     {
-      "id": 1772542366810,
-      "name": "Daily",
-      "desc": "daily activities",
-      "type": "daily",
-      "due": "",
-      "priority": "med",
-      "color": "#2563EB",
-      "icon": "🎯",
-      "progress": 70,
-      "tasks": [
-        {
-          "name": "street interview 2, what comes first about astroman",
-          "done": true
-        },
-        {
-          "name": "3 video ideas",
-          "done": true
-        },
-        {
-          "name": "televizoris chabareba",
-          "done": true
-        },
-        {
-          "name": "ხათუნას გამოწერები",
-          "done": true
-        },
-        {
-          "name": "მაისურების დამზადება 20ც, 5ც დარიგება",
-          "done": false
-        },
-        {
-          "name": "optimo last import update",
-          "done": true
-        },
-        {
-          "name": "astroman excel march update",
-          "done": true
-        },
-        {
-          "name": "make finance app for astroman",
-          "done": false
-        },
-        {
-          "name": "jason new order",
-          "done": true
-        },
-        {
-          "name": "extrar Ge finalize",
-          "done": false
-        }
-      ],
-      "notes": "",
-      "created": 1772542366810,
-      "reminder": {
-        "enabled": true,
-        "timing": "today",
-        "lastSent": null
-      }
-    },
-    {
       "id": 1772362170631,
       "name": "Content For Week",
       "desc": "Create visuals, product displays and sales for every week",
@@ -495,6 +435,11 @@
   },
   "activity": [
     {
+      "msg": "Deleted project <strong>\"Daily\"</strong>",
+      "color": "#DC2626",
+      "time": 1774858634074
+    },
+    {
       "msg": "Completed daily task <strong>\"start Phase Two for Sky astroman\"</strong>",
       "color": "#67E8F9",
       "time": 1774858564241
@@ -738,11 +683,6 @@
       "msg": "Completed task <strong>\"optimo last import update\"</strong>",
       "color": "#2563EB",
       "time": 1772795043100
-    },
-    {
-      "msg": "Added task <strong>\"astroman excel march update\"</strong> to \"Daily\"",
-      "color": "#2563EB",
-      "time": 1772729451622
     }
   ]
 }
