@@ -197,50 +197,6 @@
       }
     },
     {
-      "id": 1772357035349,
-      "name": "Auto Content Creator",
-      "desc": "",
-      "type": "weekly",
-      "due": "2026-03-15",
-      "priority": "med",
-      "color": "#2563EB",
-      "icon": "✏️",
-      "progress": 50,
-      "tasks": [
-        {
-          "name": "ai agents base build",
-          "done": true
-        },
-        {
-          "name": "different agents",
-          "done": true
-        },
-        {
-          "name": "test",
-          "done": true
-        },
-        {
-          "name": "deplou",
-          "done": false
-        },
-        {
-          "name": "make piels",
-          "done": false
-        },
-        {
-          "name": "real use",
-          "done": false
-        }
-      ],
-      "notes": "",
-      "created": 1772357035349,
-      "reminder": {
-        "enabled": false,
-        "timing": "oneday",
-        "lastSent": null
-      }
-    },
-    {
       "id": 1772312387968,
       "name": "Advance AI",
       "desc": "Ai",
@@ -386,6 +342,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Deleted project <strong>\"Auto Content Creator\"</strong>",
+      "color": "#DC2626",
+      "time": 1774858645366
+    },
     {
       "msg": "Deleted project <strong>\"Content For Week\"</strong>",
       "color": "#DC2626",
@@ -630,11 +591,6 @@
       "msg": "Completed task <strong>\"ხათუნას გამოწერები\"</strong>",
       "color": "#2563EB",
       "time": 1772795047829
-    },
-    {
-      "msg": "Completed task <strong>\"astroman excel march update\"</strong>",
-      "color": "#2563EB",
-      "time": 1772795044210
     }
   ]
 }
