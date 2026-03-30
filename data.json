@@ -338,6 +338,13 @@
         "done": false,
         "weekNum": 14,
         "year": 2026
+      },
+      {
+        "id": 1774879116001,
+        "text": "დააფიქსირე 1 ახალი შესაძლებლობა",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
       }
     ],
     "completedWeeklyTasks": [],
