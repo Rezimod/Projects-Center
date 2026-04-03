@@ -389,13 +389,6 @@
         "year": 2026
       },
       {
-        "id": 1774880726515,
-        "text": "ანტიბიოტიკი 6:30 ზე,",
-        "done": false,
-        "weekNum": 14,
-        "year": 2026
-      },
-      {
         "id": 1774880736941,
         "text": "დ ვიტამინი დილით საუზმისას, კარაქიანი პურის მერე",
         "done": false,
@@ -411,6 +404,13 @@
       }
     ],
     "completedWeeklyTasks": [
+      {
+        "id": 1774880726515,
+        "text": "ანტიბიოტიკი 6:30 ზე,",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-03T19:27:51.688Z"
+      },
       {
         "id": 1774879149061,
         "text": "გასაუბრება დეველოპერთან სამშაბათს 5 საათზე",
@@ -448,6 +448,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed weekly task <strong>\"ანტიბიოტიკი 6:30 ზე,\"</strong>",
+      "color": "#A78BFA",
+      "time": 1775244471689
+    },
     {
       "msg": "Completed weekly task <strong>\"გასაუბრება დეველოპერთან სამშაბათს 5 საათზე\"</strong>",
       "color": "#A78BFA",
@@ -692,11 +697,6 @@
       "msg": "Added task <strong>\"real use\"</strong> to \"Auto Content Creator\"",
       "color": "#2563EB",
       "time": 1772920280154
-    },
-    {
-      "msg": "Added task <strong>\"make piels\"</strong> to \"Auto Content Creator\"",
-      "color": "#2563EB",
-      "time": 1772920277098
     }
   ]
 }
