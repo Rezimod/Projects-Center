@@ -354,13 +354,6 @@
         "year": 2026
       },
       {
-        "id": 1774879149061,
-        "text": "გასაუბრება დეველოპერთან სამშაბათს 5 საათზე",
-        "done": false,
-        "weekNum": 14,
-        "year": 2026
-      },
-      {
         "id": 1774879179505,
         "text": "ასტრომანის ლოიალობის კლუბის გაშვება",
         "done": false,
@@ -419,6 +412,13 @@
     ],
     "completedWeeklyTasks": [
       {
+        "id": 1774879149061,
+        "text": "გასაუბრება დეველოპერთან სამშაბათს 5 საათზე",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-03T19:27:41.491Z"
+      },
+      {
         "id": 1774879116001,
         "text": "დააფიქსირე 1 ახალი შესაძლებლობა",
         "weekNum": 14,
@@ -448,6 +448,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed weekly task <strong>\"გასაუბრება დეველოპერთან სამშაბათს 5 საათზე\"</strong>",
+      "color": "#A78BFA",
+      "time": 1775244461492
+    },
     {
       "msg": "Completed weekly task <strong>\"დააფიქსირე 1 ახალი შესაძლებლობა\"</strong>",
       "color": "#A78BFA",
@@ -692,11 +697,6 @@
       "msg": "Added task <strong>\"make piels\"</strong> to \"Auto Content Creator\"",
       "color": "#2563EB",
       "time": 1772920277098
-    },
-    {
-      "msg": "Added task <strong>\"deplou\"</strong> to \"Auto Content Creator\"",
-      "color": "#2563EB",
-      "time": 1772920272874
     }
   ]
 }
