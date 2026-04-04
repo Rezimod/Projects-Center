@@ -10,7 +10,12 @@
       "color": "#2563EB",
       "icon": "📌",
       "progress": 0,
-      "tasks": [],
+      "tasks": [
+        {
+          "name": "Register + set up infrastructure",
+          "done": false
+        }
+      ],
       "notes": "",
       "created": 1775333164116,
       "reminder": {
@@ -489,6 +494,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Register + set up infrastructure\"</strong> to \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333170665
+    },
+    {
       "msg": "Created project <strong>\"Stellar\"</strong>",
       "color": "#2563EB",
       "time": 1775333164117
@@ -732,11 +742,6 @@
       "msg": "Completed task <strong>\"test\"</strong>",
       "color": "#2563EB",
       "time": 1772920286377
-    },
-    {
-      "msg": "Completed task <strong>\"different agents\"</strong>",
-      "color": "#2563EB",
-      "time": 1772920282688
     }
   ]
 }
