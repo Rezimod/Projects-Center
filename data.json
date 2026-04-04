@@ -26,6 +26,10 @@
         {
           "name": "Sky Observatory dashboard (April 10-13)",
           "done": false
+        },
+        {
+          "name": "AI Space Companion (April 13-17)",
+          "done": false
         }
       ],
       "notes": "",
@@ -506,6 +510,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"AI Space Companion (April 13-17)\"</strong> to \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333216463
+    },
+    {
       "msg": "Added task <strong>\"Sky Observatory dashboard (April 10-13)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333211100
@@ -749,11 +758,6 @@
       "msg": "Added task <strong>\"jason new order\"</strong> to \"Daily\"",
       "color": "#2563EB",
       "time": 1773060042136
-    },
-    {
-      "msg": "Completed task <strong>\"add forgot password option\"</strong>",
-      "color": "#2563EB",
-      "time": 1773056870643
     }
   ]
 }
