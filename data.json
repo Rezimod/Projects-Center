@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 0,
+      "progress": 20,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
@@ -530,6 +530,11 @@
   },
   "activity": [
     {
+      "msg": "Stage set to <strong>Planning</strong> on \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333259019
+    },
+    {
       "msg": "Added task <strong>\"Pitch video + submit (May 5-11)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333249381
@@ -773,11 +778,6 @@
       "msg": "Added task <strong>\"app idea, name, etc\"</strong> to \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1773086915210
-    },
-    {
-      "msg": "Added task <strong>\"create a plan\"</strong> to \"Weekend Coding Event\"",
-      "color": "#2563EB",
-      "time": 1773086909169
     }
   ]
 }
