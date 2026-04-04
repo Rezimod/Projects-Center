@@ -46,6 +46,10 @@
         {
           "name": "Traction sprint + beta testing (April 29 – May 4)",
           "done": false
+        },
+        {
+          "name": "Pitch video + submit (May 5-11)",
+          "done": false
         }
       ],
       "notes": "",
@@ -526,6 +530,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Pitch video + submit (May 5-11)\"</strong> to \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333249381
+    },
+    {
       "msg": "Added task <strong>\"Traction sprint + beta testing (April 29 – May 4)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333242767
@@ -769,11 +778,6 @@
       "msg": "Added task <strong>\"create a plan\"</strong> to \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1773086909169
-    },
-    {
-      "msg": "Created project <strong>\"Weekend Coding Event\"</strong>",
-      "color": "#2563EB",
-      "time": 1773086904820
     }
   ]
 }
