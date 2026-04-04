@@ -262,12 +262,6 @@
         "date": "2026-03-28"
       },
       {
-        "id": 1774727269752,
-        "text": "დეველოპერის მოძებნა",
-        "done": false,
-        "date": "2026-03-28"
-      },
-      {
         "id": 1774730631315,
         "text": "აწარმოეში გადარეკვა",
         "done": false,
@@ -281,6 +275,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1774727269752,
+        "text": "დეველოპერის მოძებნა",
+        "date": "2026-03-28",
+        "completedAt": "2026-04-04T19:48:57.596Z"
+      },
       {
         "id": 1774727158111,
         "text": "GWP-ს გარკვევა",
@@ -469,6 +469,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"დეველოპერის მოძებნა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1775332137597
+    },
     {
       "msg": "Completed weekly task <strong>\"ანტიბიოტიკი 6:30 ზე,\"</strong>",
       "color": "#A78BFA",
@@ -713,11 +718,6 @@
       "msg": "Completed task <strong>\"ai agents base build\"</strong>",
       "color": "#2563EB",
       "time": 1772920281614
-    },
-    {
-      "msg": "Added task <strong>\"real use\"</strong> to \"Auto Content Creator\"",
-      "color": "#2563EB",
-      "time": 1772920280154
     }
   ]
 }
