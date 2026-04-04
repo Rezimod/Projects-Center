@@ -30,6 +30,10 @@
         {
           "name": "AI Space Companion (April 13-17)",
           "done": false
+        },
+        {
+          "name": "Missions + gamification (April 17-21)",
+          "done": false
         }
       ],
       "notes": "",
@@ -510,6 +514,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Missions + gamification (April 17-21)\"</strong> to \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333223956
+    },
+    {
       "msg": "Added task <strong>\"AI Space Companion (April 13-17)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333216463
@@ -753,11 +762,6 @@
       "msg": "Completed task <strong>\"jason new order\"</strong>",
       "color": "#2563EB",
       "time": 1773068950871
-    },
-    {
-      "msg": "Added task <strong>\"jason new order\"</strong> to \"Daily\"",
-      "color": "#2563EB",
-      "time": 1773060042136
     }
   ]
 }
