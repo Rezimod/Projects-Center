@@ -22,6 +22,10 @@
         {
           "name": "Wallet connect + Solana foundation (April 8-10)",
           "done": false
+        },
+        {
+          "name": "Sky Observatory dashboard (April 10-13)",
+          "done": false
         }
       ],
       "notes": "",
@@ -502,6 +506,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Sky Observatory dashboard (April 10-13)\"</strong> to \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333211100
+    },
+    {
       "msg": "Added task <strong>\"Wallet connect + Solana foundation (April 8-10)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333204146
@@ -745,11 +754,6 @@
       "msg": "Completed task <strong>\"add forgot password option\"</strong>",
       "color": "#2563EB",
       "time": 1773056870643
-    },
-    {
-      "msg": "Added task <strong>\"make finance app for astroman\"</strong> to \"Daily\"",
-      "color": "#2563EB",
-      "time": 1773044062296
     }
   ]
 }
