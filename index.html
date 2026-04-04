@@ -1089,10 +1089,8 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
 // ══════════════════════════════════════════════════════════
 //  STATE
 // ══════════════════════════════════════════════════════════
-let D = JSON.parse(localStorage.getItem('pc_v3') || '[]').map(p => ({
-  ...p,
-  tasks: Array.isArray(p.tasks) ? p.tasks : []
-}));
+let D = JSON.parse(localStorage.getItem('pc_v3') || '[]').map(normalizeProject);
+let completedProjects = JSON.parse(localStorage.getItem('pc_v3_completed') || '[]').map(normalizeProject);
 let theme = localStorage.getItem('pc_theme') || 'dark';
 let view = 'dashboard';
 let activeProject = null;
@@ -1122,9 +1120,10 @@ let weeklyTasks = planner.weeklyTasks;
 let completedWeeklyTasks = planner.completedWeeklyTasks;
 let monthlyGoals = planner.monthlyGoals;
 let searchQuery = '';
-let dataSource = D.length ? 'local' : 'empty';
+let dataSource = (D.length || completedProjects.length) ? 'local' : 'empty';
 let appHistory = [];
 let touchNav = { active: false, startX: 0, startY: 0 };
+rebalanceProjects();
 
 // ── ISO week helper ──
 function isoWeek(d = new Date()) {
@@ -1261,6 +1260,30 @@ function normalizeProject(p) {
     }
   };
 }
+function sortProjects(list = []) {
+  return [...list].sort((a, b) => (b.created || 0) - (a.created || 0));
+}
+function splitProjects(list = []) {
+  const activeMap = new Map();
+  const completedMap = new Map();
+  list.forEach(project => {
+    const normalized = normalizeProject(project);
+    if (normalized.progress >= 100) completedMap.set(normalized.id, normalized);
+    else activeMap.set(normalized.id, normalized);
+  });
+  return {
+    active: sortProjects(Array.from(activeMap.values())),
+    completed: sortProjects(Array.from(completedMap.values()))
+  };
+}
+function rebalanceProjects() {
+  const { active, completed } = splitProjects([...(D || []), ...(completedProjects || [])]);
+  D = active;
+  completedProjects = completed;
+}
+function getProjectById(id) {
+  return D.find(x => x.id === id) || completedProjects.find(x => x.id === id) || null;
+}
 function mergeProjects(primary = [], secondary = []) {
   const map = new Map();
   [...secondary, ...primary].forEach(project => {
@@ -1313,8 +1336,13 @@ async function loadBundledData() {
     const res = await fetch(`./data.json?v=${Date.now()}`, { cache: 'no-store' });
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
+    const { active, completed } = splitProjects([
+      ...(Array.isArray(data.projects) ? data.projects : []),
+      ...(Array.isArray(data.completedProjects) ? data.completedProjects : [])
+    ]);
     return {
-      projects: Array.isArray(data.projects) ? data.projects.map(normalizeProject) : [],
+      projects: active,
+      completedProjects: completed,
       planner: normalizePlanner(data.planner || {}),
       activity: Array.isArray(data.activity) ? data.activity : []
     };
@@ -1327,14 +1355,18 @@ async function hydrateBundledProjects(reason = 'initial') {
   if (!bundled) return false;
   if (D.length) {
     const mergedProjects = mergeProjects(D, bundled.projects || []);
+    const mergedCompletedProjects = mergeProjects(completedProjects, bundled.completedProjects || []);
+    const { active, completed } = splitProjects([...(mergedProjects || []), ...(mergedCompletedProjects || [])]);
     const mergedPlanner = mergePlanner(planner, bundled.planner || {});
-    const projectChanged = JSON.stringify(mergedProjects) !== JSON.stringify(D);
+    const projectChanged = JSON.stringify(active) !== JSON.stringify(D) || JSON.stringify(completed) !== JSON.stringify(completedProjects);
     const plannerChanged = JSON.stringify(mergedPlanner) !== JSON.stringify(planner);
     if (projectChanged || plannerChanged) {
-      D = mergedProjects;
+      D = active;
+      completedProjects = completed;
       planner = mergedPlanner;
       syncPlannerRefs();
       localStorage.setItem('pc_v3', JSON.stringify(D));
+      localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
       persistPlannerLocal();
       updateSidebar();
       renderContent();
@@ -1344,17 +1376,19 @@ async function hydrateBundledProjects(reason = 'initial') {
     dataSource = 'local';
     return false;
   }
-  if (!bundled.projects.length) return false;
-  const changed = JSON.stringify(bundled.projects) !== JSON.stringify(D);
+  if (!bundled.projects.length && !bundled.completedProjects.length) return false;
+  const changed = JSON.stringify(bundled.projects) !== JSON.stringify(D) || JSON.stringify(bundled.completedProjects) !== JSON.stringify(completedProjects);
   if (!changed) {
     dataSource = 'bundled';
     return false;
   }
   D = bundled.projects;
+  completedProjects = bundled.completedProjects || [];
   planner = bundled.planner;
   syncPlannerRefs();
   dataSource = reason === 'initial' ? 'bundled' : 'merged';
   localStorage.setItem('pc_v3', JSON.stringify(D));
+  localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
   persistPlannerLocal();
   updateSidebar();
   renderContent();
@@ -1664,13 +1698,19 @@ async function pullFromGitHub() {
   if (!isGHReadable()) { openSetup(); return; }
   setSyncStatus('', 'Pulling…');
   const data = await ghLoad();
-  if (data && data.projects) {
-    D = data.projects.map(normalizeProject);
+  if (data && (data.projects || data.completedProjects)) {
+    const { active, completed } = splitProjects([
+      ...(Array.isArray(data.projects) ? data.projects : []),
+      ...(Array.isArray(data.completedProjects) ? data.completedProjects : [])
+    ]);
+    D = active;
+    completedProjects = completed;
     planner = normalizePlanner(data.planner || planner);
     syncPlannerRefs();
     activityLog = data.activity || activityLog;
     dataSource = 'github';
     localStorage.setItem('pc_v3', JSON.stringify(D));
+    localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
     localStorage.setItem('pc_activity', JSON.stringify(activityLog));
     persistPlannerLocal();
     updateSidebar();
@@ -1695,12 +1735,14 @@ setInterval(() => {
 
 // Save: localStorage immediately, GitHub debounced 700ms
 function save() {
+  rebalanceProjects();
   if (dataSource === 'empty') dataSource = 'local';
   localStorage.setItem('pc_v3', JSON.stringify(D));
+  localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
   localStorage.setItem('pc_activity', JSON.stringify(activityLog.slice(0, 50)));
   persistPlannerLocal();
   clearTimeout(_saveTimer);
-  _saveTimer = setTimeout(() => ghSave({ projects: D, planner, activity: activityLog.slice(0, 50) }), 700);
+  _saveTimer = setTimeout(() => ghSave({ projects: D, completedProjects, planner, activity: activityLog.slice(0, 50) }), 700);
 }
 
 function logActivity(msg, color = '#2563EB') {
@@ -1717,26 +1759,32 @@ async function initApp() {
     if (localStorage.getItem('autoPullOnOpen') !== '0') {
       setSyncStatus('', 'Loading…');
       const data = await ghLoad();
-      if (data && data.projects) {
-        D = data.projects.map(normalizeProject);
+      if (data && (data.projects || data.completedProjects)) {
+        const { active, completed } = splitProjects([
+          ...(Array.isArray(data.projects) ? data.projects : []),
+          ...(Array.isArray(data.completedProjects) ? data.completedProjects : [])
+        ]);
+        D = active;
+        completedProjects = completed;
         planner = normalizePlanner(data.planner || planner);
         syncPlannerRefs();
         activityLog = data.activity || activityLog;
         dataSource = 'github';
         localStorage.setItem('pc_v3', JSON.stringify(D));
+        localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
         persistPlannerLocal();
         const t = new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
         setSyncStatus('ok', ghToken() ? `Synced · ${t}` : `Read-only sync · ${t}`);
       } else if (data !== null) {
         // File doesn't exist in repo yet — push local data up
-        if (ghToken()) await ghSave({ projects: D, planner, activity: activityLog });
+        if (ghToken()) await ghSave({ projects: D, completedProjects, planner, activity: activityLog });
       }
     } else {
       setSyncStatus('ok', ghToken() ? 'Connected (manual)' : 'Read-only repo');
     }
   } else {
     setSyncStatus('', 'Not connected');
-    if (!D.length && !localStorage.getItem('setup_seen')) {
+    if (!D.length && !completedProjects.length && !localStorage.getItem('setup_seen')) {
       localStorage.setItem('setup_seen', '1');
       setTimeout(() => openSetup(), 600);
     }
@@ -1868,15 +1916,22 @@ async function saveSetup() {
     setSyncStatus('', 'Connecting…');
     const data = await ghLoad();
     if (data !== null) {
-      if (data.projects) {
-        D = data.projects.map(normalizeProject);
+      if (data.projects || data.completedProjects) {
+        const { active, completed } = splitProjects([
+          ...(Array.isArray(data.projects) ? data.projects : []),
+          ...(Array.isArray(data.completedProjects) ? data.completedProjects : [])
+        ]);
+        D = active;
+        completedProjects = completed;
         planner = normalizePlanner(data.planner || planner);
         syncPlannerRefs();
         activityLog = data.activity || activityLog;
         dataSource = 'github';
+        localStorage.setItem('pc_v3', JSON.stringify(D));
+        localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
         persistPlannerLocal();
       } else {
-        await ghSave({ projects: D, planner, activity: activityLog });
+        await ghSave({ projects: D, completedProjects, planner, activity: activityLog });
       }
       setSyncStatus('ok', 'Connected');
       updateSidebar(); renderContent();
@@ -1956,13 +2011,13 @@ function nearestStage(p){ return STAGES.reduce((a,b)=>Math.abs(b.pct-p)<Math.abs
 //  SIDEBAR
 // ══════════════════════════════════════════════════════════
 function updateSidebar() {
-  const doneCount = D.filter(p=>p.progress>=100).length + completedDailyTasks.length + completedWeeklyTasks.length;
-  document.getElementById('nb-all').textContent    = D.filter(p=>p.progress<100).length;
-  document.getElementById('nb-daily').textContent  = D.filter(p=>p.type==='daily' && p.progress < 100).length;
-  document.getElementById('nb-weekly').textContent = D.filter(p=>p.type==='weekly' && p.progress < 100).length;
-  document.getElementById('nb-monthly').textContent= D.filter(p=>p.type==='monthly' && p.progress < 100).length;
+  const doneCount = completedProjects.length + completedDailyTasks.length + completedWeeklyTasks.length;
+  document.getElementById('nb-all').textContent    = D.length;
+  document.getElementById('nb-daily').textContent  = D.filter(p=>p.type==='daily').length;
+  document.getElementById('nb-weekly').textContent = D.filter(p=>p.type==='weekly').length;
+  document.getElementById('nb-monthly').textContent= D.filter(p=>p.type==='monthly').length;
   document.getElementById('nb-done').textContent   = doneCount;
-  const over = D.filter(p=>p.due&&p.progress<100&&new Date(p.due)<new Date()).length;
+  const over = D.filter(p=>p.due&&new Date(p.due)<new Date()).length;
   const nbOver = document.getElementById('nb-overdue');
   nbOver.textContent = over;
   nbOver.className = over > 0 ? 'nb hot' : 'nb';
@@ -1973,7 +2028,7 @@ function updateSidebar() {
   document.getElementById('nb-todo-weekly').textContent = weeklyUndone || '';
 
   const list = document.getElementById('sb-project-list');
-  list.innerHTML = D.map(p => `
+  list.innerHTML = D.filter(p => p.progress < 100).map(p => `
     <button class="pli ${activeProject===p.id?'active':''}" onclick="goProject(${p.id})">
       <div class="pli-dot" style="background:${p.color||'#2563EB'}"></div>
       <span class="pli-name">${p.icon?p.icon+' ':''}${p.name}</span>
@@ -1985,7 +2040,7 @@ function updateSidebar() {
   if(view in m) document.getElementById(m[view])?.classList.add('active');
   document.getElementById('mt-badge-daily').textContent = dailyUndone || '';
   document.getElementById('mt-badge-weekly').textContent = weeklyUndone || '';
-  document.getElementById('mt-badge-projects').textContent = D.filter(p=>p.progress<100).length || '';
+  document.getElementById('mt-badge-projects').textContent = D.length || '';
   document.getElementById('mt-badge-done').textContent = doneCount || '';
   document.querySelectorAll('.mobile-tab').forEach(n=>n.classList.remove('active'));
   const mm = {dashboard:'mt-dashboard',all:'mt-all','todo-daily':'mt-todo-daily','todo-weekly':'mt-todo-weekly',done:'mt-done',project:'mt-all',daily:'mt-all',weekly:'mt-all',monthly:'mt-all',overdue:'mt-all'};
@@ -2041,7 +2096,7 @@ function renderContent(resetScroll = false) {
   } else if (view === 'todo-weekly') {
     tb.textContent='Weekly Tasks'; crumb.textContent=getWeekLabel(); html = renderWeeklyTasks();
   } else if (view === 'project' && activeProject) {
-    const p = D.find(x=>x.id===activeProject);
+    const p = getProjectById(activeProject);
     if (!p) { goView('dashboard'); return; }
     tb.textContent='Project'; crumb.textContent=p.name;
     acts.innerHTML=`<button class="btn btn-ghost btn-sm" onclick="openAdd(${p.id})">✎ Edit</button><button class="btn btn-danger btn-sm" onclick="openDel(${p.id})">🗑</button>`;
@@ -2050,7 +2105,7 @@ function renderContent(resetScroll = false) {
     const titles={all:'All Projects',daily:'Daily',weekly:'Weekly',monthly:'Monthly',done:'Completed',overdue:'Overdue'};
     tb.textContent = titles[view]||'Projects';
     crumb.textContent = view === 'done'
-      ? `${D.filter(p=>p.progress>=100).length + completedDailyTasks.length + completedWeeklyTasks.length} archived`
+      ? `${completedProjects.length + completedDailyTasks.length + completedWeeklyTasks.length} archived`
       : `${visibleProjects(view).length} projects`;
     html = renderList(view);
   }
@@ -2060,7 +2115,7 @@ function renderContent(resetScroll = false) {
 function setSearch(val) {
   searchQuery = val;
   if (view === 'project' && activeProject) {
-    const current = D.find(x => x.id === activeProject);
+    const current = getProjectById(activeProject);
     if (current && !matchesSearch(current)) goView('all');
     else renderContent();
     return;
@@ -2069,9 +2124,9 @@ function setSearch(val) {
 }
 function filterProjects(p,v){
   if(v==='all')     return p.progress < 100;
-  if(v==='daily')   return p.type==='daily';
-  if(v==='weekly')  return p.type==='weekly';
-  if(v==='monthly') return p.type==='monthly';
+  if(v==='daily')   return p.type==='daily' && p.progress < 100;
+  if(v==='weekly')  return p.type==='weekly' && p.progress < 100;
+  if(v==='monthly') return p.type==='monthly' && p.progress < 100;
   if(v==='done')    return p.progress>=100;
   if(v==='overdue') return p.due&&new Date(p.due)<new Date()&&p.progress<100;
   return true;
@@ -2260,10 +2315,10 @@ function renderMonthlyGoalsCard() {
 //  DASHBOARD
 // ══════════════════════════════════════════════════════════
 function renderDashboard() {
-  const total=D.length, done=D.filter(p=>p.progress>=100).length;
-  const active=D.filter(p=>p.progress>0&&p.progress<100).length;
-  const overdue=D.filter(p=>p.due&&new Date(p.due)<new Date()&&p.progress<100).length;
-  const avgPct=total>0?Math.round(D.reduce((s,p)=>s+p.progress,0)/total):0;
+  const total=D.length + completedProjects.length, done=completedProjects.length;
+  const active=D.filter(p=>p.progress>0).length;
+  const overdue=D.filter(p=>p.due&&new Date(p.due)<new Date()).length;
+  const avgPct=total>0?Math.round(([...D, ...completedProjects].reduce((s,p)=>s+p.progress,0))/total):0;
   const dayStr=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
   const recent=D.filter(p=>p.progress<100).filter(matchesSearch).slice(0,6);
   const insights = getDataInsights();
@@ -2271,10 +2326,11 @@ function renderDashboard() {
   const monthGoals = monthlyGoals.filter(g => (g.monthKey || monthKey) === monthKey);
   const monthDone = monthGoals.filter(g => g.done).length;
   const monthPct = monthGoals.length ? Math.round(monthDone / monthGoals.length * 100) : 0;
-  const highCount = D.filter(p => p.priority === 'high').length;
-  const medCount = D.filter(p => (p.priority || 'med') === 'med').length;
-  const lowCount = D.filter(p => p.priority === 'low').length;
-  const plannedCount = D.filter(p => p.due).length;
+  const allProjects = [...D, ...completedProjects];
+  const highCount = allProjects.filter(p => p.priority === 'high').length;
+  const medCount = allProjects.filter(p => (p.priority || 'med') === 'med').length;
+  const lowCount = allProjects.filter(p => p.priority === 'low').length;
+  const plannedCount = allProjects.filter(p => p.due).length;
   const dailyDone = currentCompletedDailyTasks().length;
   const dailyTotal = dailyTasks.length + dailyDone;
   const dailyPct = dailyTotal ? Math.round(dailyDone / dailyTotal * 100) : 0;
@@ -2463,7 +2519,7 @@ function pcardHTML(p) {
   </div>`;
 }
 function renderCompletedView() {
-  const doneProjects = D.filter(p => p.progress >= 100);
+  const doneProjects = completedProjects;
   const doneDaily = [...completedDailyTasks].sort((a,b) => new Date(b.completedAt || 0) - new Date(a.completedAt || 0));
   const doneWeekly = [...completedWeeklyTasks].sort((a,b) => new Date(b.completedAt || 0) - new Date(a.completedAt || 0));
   const totalDone = doneProjects.length + doneDaily.length + doneWeekly.length;
@@ -2569,17 +2625,17 @@ function renderDetail(p) {
 // ══════════════════════════════════════════════════════════
 //  PROGRESS / TASKS / STAGE / NOTES
 // ══════════════════════════════════════════════════════════
-function livePct(val,id){val=clamp(val);const c=pctColor(val);document.getElementById('ppct-disp').textContent=val+'%';document.getElementById('ppct-disp').style.color=c;document.getElementById('ppct-bar').style.cssText=`width:${val}%;background:${c}`;document.getElementById('ppct-num').value=val;const p=D.find(x=>x.id===id);if(p){p.progress=val;save();updateSidebar();}}
+function livePct(val,id){val=clamp(val);const c=pctColor(val);document.getElementById('ppct-disp').textContent=val+'%';document.getElementById('ppct-disp').style.color=c;document.getElementById('ppct-bar').style.cssText=`width:${val}%;background:${c}`;document.getElementById('ppct-num').value=val;const p=getProjectById(id);if(p){p.progress=val;save();updateSidebar();}}
 function livePctNum(val,id){val=clamp(val);document.getElementById('ppct-sl').value=val;livePct(val,id);}
-function savePct(id){const p=D.find(x=>x.id===id);if(p)logActivity(`Progress updated to <strong>${p.progress}%</strong> on "${p.name}"`,p.color);}
+function savePct(id){const p=getProjectById(id);if(p)logActivity(`Progress updated to <strong>${p.progress}%</strong> on "${p.name}"`,p.color);}
 function clamp(v){return Math.min(100,Math.max(0,parseInt(v)||0));}
-function addTask(id){const inp=document.getElementById(`tadd-${id}`);const name=inp.value.trim();if(!name)return;const p=D.find(x=>x.id===id);if(!p)return;p.tasks=p.tasks||[];p.tasks.push({name,done:false});autoProgress(p);save();inp.value='';logActivity(`Added task <strong>"${name}"</strong> to "${p.name}"`,p.color);goProject(id);toast('Task added','#16A34A');}
-function toggleTask(id,i){const p=D.find(x=>x.id===id);if(!p||!p.tasks)return;p.tasks[i].done=!p.tasks[i].done;autoProgress(p);save();updateSidebar();logActivity(`${p.tasks[i].done?'Completed':'Unchecked'} task <strong>"${p.tasks[i].name}"</strong>`,p.color);goProject(id);}
-function delTask(id,i){const p=D.find(x=>x.id===id);if(!p||!p.tasks)return;const name=p.tasks[i].name;p.tasks.splice(i,1);autoProgress(p);save();updateSidebar();logActivity(`Deleted task <strong>"${name}"</strong> from "${p.name}"`, '#DC2626');goProject(id);}
+function addTask(id){const inp=document.getElementById(`tadd-${id}`);const name=inp.value.trim();if(!name)return;const p=getProjectById(id);if(!p)return;p.tasks=p.tasks||[];p.tasks.push({name,done:false});autoProgress(p);save();inp.value='';logActivity(`Added task <strong>"${name}"</strong> to "${p.name}"`,p.color);goProject(id);toast('Task added','#16A34A');}
+function toggleTask(id,i){const p=getProjectById(id);if(!p||!p.tasks)return;p.tasks[i].done=!p.tasks[i].done;autoProgress(p);save();updateSidebar();logActivity(`${p.tasks[i].done?'Completed':'Unchecked'} task <strong>"${p.tasks[i].name}"</strong>`,p.color);goProject(id);}
+function delTask(id,i){const p=getProjectById(id);if(!p||!p.tasks)return;const name=p.tasks[i].name;p.tasks.splice(i,1);autoProgress(p);save();updateSidebar();logActivity(`Deleted task <strong>"${name}"</strong> from "${p.name}"`, '#DC2626');goProject(id);}
 function autoProgress(p){if(!p.tasks||!p.tasks.length)return;p.progress=Math.round(p.tasks.filter(t=>t.done).length/p.tasks.length*100);}
-function setStage(id,pct){const p=D.find(x=>x.id===id);if(!p)return;p.progress=pct;save();updateSidebar();logActivity(`Stage set to <strong>${nearestStage(pct).name}</strong> on "${p.name}"`,p.color);goProject(id);toast('Stage updated','#16A34A');}
-function saveNotes(id){const p=D.find(x=>x.id===id);if(!p)return;p.notes=document.getElementById(`notes-${id}`).value;save();toast('Notes saved','#16A34A');}
-function setPri(id,val){const p=D.find(x=>x.id===id);if(!p)return;p.priority=val;save();logActivity(`Priority set to <strong>${val}</strong> on "${p.name}"`,p.color);goProject(id);}
+function setStage(id,pct){const p=getProjectById(id);if(!p)return;p.progress=pct;save();updateSidebar();logActivity(`Stage set to <strong>${nearestStage(pct).name}</strong> on "${p.name}"`,p.color);goProject(id);toast('Stage updated','#16A34A');}
+function saveNotes(id){const p=getProjectById(id);if(!p)return;p.notes=document.getElementById(`notes-${id}`).value;save();toast('Notes saved','#16A34A');}
+function setPri(id,val){const p=getProjectById(id);if(!p)return;p.priority=val;save();logActivity(`Priority set to <strong>${val}</strong> on "${p.name}"`,p.color);goProject(id);}
 function toggleReminderUI(){document.getElementById('reminder-timing-wrap').style.display=document.getElementById('f-reminder').checked?'':'none';}
 
 // ══════════════════════════════════════════════════════════
@@ -2587,7 +2643,7 @@ function toggleReminderUI(){document.getElementById('reminder-timing-wrap').styl
 // ══════════════════════════════════════════════════════════
 function openAdd(id) {
   editingId = id||null;
-  const p = id ? D.find(x=>x.id===id) : null;
+  const p = id ? getProjectById(id) : null;
   newType = p?.type||'daily'; newColor = p?.color||'#2563EB';
   document.getElementById('modal-title-txt').textContent = p ? 'Edit Project' : 'New Project';
   document.getElementById('f-name').value    = p?.name||'';
@@ -2617,7 +2673,7 @@ function saveProject() {
   const pct = clamp(document.getElementById('f-pn').value);
   const rem = { enabled: document.getElementById('f-reminder').checked, timing: document.getElementById('f-reminder-timing').value, lastSent: null };
   if (editingId) {
-    const p = D.find(x=>x.id===editingId);
+    const p = getProjectById(editingId);
     if (p) { p.name=name; p.desc=document.getElementById('f-desc').value.trim(); p.type=newType; p.due=document.getElementById('f-due').value; p.priority=document.getElementById('f-pri').value; p.color=newColor; p.icon=document.getElementById('f-icon').value.trim()||'📌'; p.progress=pct; p.reminder={...rem,lastSent:p.reminder?.lastSent||null}; }
     save(); closeAdd(); updateSidebar(); logActivity(`Updated project <strong>"${name}"</strong>`,newColor);
     if (activeProject===editingId) goProject(editingId); toast('Project updated','#16A34A');
@@ -2626,9 +2682,9 @@ function saveProject() {
     D.unshift(p); save(); closeAdd(); updateSidebar(); logActivity(`Created project <strong>"${name}"</strong>`,newColor); goProject(p.id); toast('Project created 🎉','#16A34A');
   }
 }
-function openDel(id){ deleteId=id; const p=D.find(x=>x.id===id); document.getElementById('del-desc').textContent=`"${p?.name}" and all its data will be removed.`; document.getElementById('delOverlay').classList.add('open'); }
+function openDel(id){ deleteId=id; const p=getProjectById(id); document.getElementById('del-desc').textContent=`"${p?.name}" and all its data will be removed.`; document.getElementById('delOverlay').classList.add('open'); }
 function closeDel(){ document.getElementById('delOverlay').classList.remove('open'); deleteId=null; }
-function doDelete(){ const p=D.find(x=>x.id===deleteId); const name=p?.name||'project'; D=D.filter(x=>x.id!==deleteId); save(); closeDel(); logActivity(`Deleted project <strong>"${name}"</strong>`,'#DC2626'); if(activeProject===deleteId)activeProject=null; goView('dashboard'); toast('Project deleted','#DC2626'); }
+function doDelete(){ const p=getProjectById(deleteId); const name=p?.name||'project'; D=D.filter(x=>x.id!==deleteId); completedProjects=completedProjects.filter(x=>x.id!==deleteId); save(); closeDel(); logActivity(`Deleted project <strong>"${name}"</strong>`,'#DC2626'); if(activeProject===deleteId)activeProject=null; goView('dashboard'); toast('Project deleted','#DC2626'); }
 
 // Close overlays on backdrop click
 document.getElementById('addOverlay').addEventListener('click',e=>{if(e.target===e.currentTarget)closeAdd();});
