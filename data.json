@@ -18,6 +18,10 @@
         {
           "name": "Fork repo and build app shell (April 6-7)",
           "done": false
+        },
+        {
+          "name": "Wallet connect + Solana foundation (April 8-10)",
+          "done": false
         }
       ],
       "notes": "",
@@ -498,6 +502,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Wallet connect + Solana foundation (April 8-10)\"</strong> to \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333204146
+    },
+    {
       "msg": "Added task <strong>\"Fork repo and build app shell (April 6-7)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333197405
@@ -741,11 +750,6 @@
       "msg": "Added task <strong>\"make finance app for astroman\"</strong> to \"Daily\"",
       "color": "#2563EB",
       "time": 1773044062296
-    },
-    {
-      "msg": "Completed task <strong>\"Manual Upload feature to add\"</strong>",
-      "color": "#2563EB",
-      "time": 1772973585767
     }
   ]
 }
