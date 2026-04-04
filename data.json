@@ -530,6 +530,11 @@
   },
   "activity": [
     {
+      "msg": "Stage set to <strong>Done</strong> on \"Weekend Coding Event\"",
+      "color": "#2563EB",
+      "time": 1775333620590
+    },
+    {
       "msg": "Unchecked task <strong>\"Fork repo and build app shell (April 6-7)\"</strong>",
       "color": "#2563EB",
       "time": 1775333270182
@@ -773,11 +778,6 @@
       "msg": "Added task <strong>\"has to be a problem solving\"</strong> to \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1773476904316
-    },
-    {
-      "msg": "Deleted project <strong>\"Inventory Company\"</strong>",
-      "color": "#DC2626",
-      "time": 1773142935402
     }
   ]
 }
