@@ -69,7 +69,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 100,
+      "progress": 80,
       "tasks": [
         {
           "name": "create a plan",
@@ -530,6 +530,11 @@
   },
   "activity": [
     {
+      "msg": "Stage set to <strong>Review</strong> on \"Weekend Coding Event\"",
+      "color": "#2563EB",
+      "time": 1775333621580
+    },
+    {
       "msg": "Stage set to <strong>Done</strong> on \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1775333620590
@@ -773,11 +778,6 @@
       "msg": "Completed task <strong>\"create a plan\"</strong>",
       "color": "#2563EB",
       "time": 1773476907514
-    },
-    {
-      "msg": "Added task <strong>\"has to be a problem solving\"</strong> to \"Weekend Coding Event\"",
-      "color": "#2563EB",
-      "time": 1773476904316
     }
   ]
 }
