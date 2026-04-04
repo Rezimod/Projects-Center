@@ -34,6 +34,10 @@
         {
           "name": "Missions + gamification (April 17-21)",
           "done": false
+        },
+        {
+          "name": "Marketplace + payments (April 21-26)",
+          "done": false
         }
       ],
       "notes": "",
@@ -514,6 +518,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Marketplace + payments (April 21-26)\"</strong> to \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333229488
+    },
+    {
       "msg": "Added task <strong>\"Missions + gamification (April 17-21)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333223956
@@ -757,11 +766,6 @@
       "msg": "Completed task <strong>\"ტელესკოპის რენდომ ჩვენება\"</strong>",
       "color": "#2563EB",
       "time": 1773078996384
-    },
-    {
-      "msg": "Completed task <strong>\"jason new order\"</strong>",
-      "color": "#2563EB",
-      "time": 1773068950871
     }
   ]
 }
