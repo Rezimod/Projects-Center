@@ -38,6 +38,10 @@
         {
           "name": "Marketplace + payments (April 21-26)",
           "done": false
+        },
+        {
+          "name": "Discovery Attestations NFT minting (April 26-29)",
+          "done": false
         }
       ],
       "notes": "",
@@ -518,6 +522,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Discovery Attestations NFT minting (April 26-29)\"</strong> to \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333236253
+    },
+    {
       "msg": "Added task <strong>\"Marketplace + payments (April 21-26)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333229488
@@ -761,11 +770,6 @@
       "msg": "Completed task <strong>\"check matematics and new registration.\"</strong>",
       "color": "#2563EB",
       "time": 1773079007230
-    },
-    {
-      "msg": "Completed task <strong>\"ტელესკოპის რენდომ ჩვენება\"</strong>",
-      "color": "#2563EB",
-      "time": 1773078996384
     }
   ]
 }
