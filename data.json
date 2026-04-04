@@ -9,11 +9,11 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 20,
+      "progress": 10,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
-          "done": false
+          "done": true
         },
         {
           "name": "Fork repo and build app shell (April 6-7)",
@@ -530,6 +530,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Register + set up infrastructure\"</strong>",
+      "color": "#2563EB",
+      "time": 1775333266578
+    },
+    {
       "msg": "Stage set to <strong>Planning</strong> on \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333262229
@@ -773,11 +778,6 @@
       "msg": "Unchecked task <strong>\"make finance app for astroman\"</strong>",
       "color": "#2563EB",
       "time": 1773091133390
-    },
-    {
-      "msg": "Completed task <strong>\"make finance app for astroman\"</strong>",
-      "color": "#2563EB",
-      "time": 1773091124221
     }
   ]
 }
