@@ -1,6 +1,25 @@
 {
   "projects": [
     {
+      "id": 1775333164116,
+      "name": "Stellar",
+      "desc": "",
+      "type": "monthly",
+      "due": "2026-05-11",
+      "priority": "high",
+      "color": "#2563EB",
+      "icon": "📌",
+      "progress": 0,
+      "tasks": [],
+      "notes": "",
+      "created": 1775333164116,
+      "reminder": {
+        "enabled": true,
+        "timing": "oneweek",
+        "lastSent": null
+      }
+    },
+    {
       "id": 1773086904820,
       "name": "Weekend Coding Event",
       "desc": "",
@@ -470,6 +489,11 @@
   },
   "activity": [
     {
+      "msg": "Created project <strong>\"Stellar\"</strong>",
+      "color": "#2563EB",
+      "time": 1775333164117
+    },
+    {
       "msg": "Completed daily task <strong>\"დეველოპერის მოძებნა\"</strong>",
       "color": "#67E8F9",
       "time": 1775332137597
@@ -713,11 +737,6 @@
       "msg": "Completed task <strong>\"different agents\"</strong>",
       "color": "#2563EB",
       "time": 1772920282688
-    },
-    {
-      "msg": "Completed task <strong>\"ai agents base build\"</strong>",
-      "color": "#2563EB",
-      "time": 1772920281614
     }
   ]
 }
