@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 50,
+      "progress": 0,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
@@ -530,6 +530,11 @@
   },
   "activity": [
     {
+      "msg": "Stage set to <strong>Idea</strong> on \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333261414
+    },
+    {
       "msg": "Stage set to <strong>In Progress</strong> on \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333260154
@@ -773,11 +778,6 @@
       "msg": "Completed task <strong>\"მაისურების დამზადება 20ც, 5ც დარიგება\"</strong>",
       "color": "#2563EB",
       "time": 1773091123334
-    },
-    {
-      "msg": "Added task <strong>\"people to meet\"</strong> to \"Weekend Coding Event\"",
-      "color": "#2563EB",
-      "time": 1773086921859
     }
   ]
 }
