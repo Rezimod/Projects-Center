@@ -483,6 +483,13 @@
         "done": false,
         "weekNum": 14,
         "year": 2026
+      },
+      {
+        "id": 1775336830812,
+        "text": "Orion Telescope Search",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
       }
     ],
     "completedWeeklyTasks": [
