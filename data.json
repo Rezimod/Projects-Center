@@ -42,6 +42,10 @@
         {
           "name": "Discovery Attestations NFT minting (April 26-29)",
           "done": false
+        },
+        {
+          "name": "Traction sprint + beta testing (April 29 – May 4)",
+          "done": false
         }
       ],
       "notes": "",
@@ -522,6 +526,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Traction sprint + beta testing (April 29 – May 4)\"</strong> to \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333242767
+    },
+    {
       "msg": "Added task <strong>\"Discovery Attestations NFT minting (April 26-29)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333236253
@@ -765,11 +774,6 @@
       "msg": "Created project <strong>\"Weekend Coding Event\"</strong>",
       "color": "#2563EB",
       "time": 1773086904820
-    },
-    {
-      "msg": "Completed task <strong>\"check matematics and new registration.\"</strong>",
-      "color": "#2563EB",
-      "time": 1773079007230
     }
   ]
 }
