@@ -9,11 +9,11 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 20,
+      "progress": 10,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
-          "done": true
+          "done": false
         },
         {
           "name": "Fork repo and build app shell (April 6-7)",
@@ -530,6 +530,11 @@
   },
   "activity": [
     {
+      "msg": "Unchecked task <strong>\"Register + set up infrastructure\"</strong>",
+      "color": "#2563EB",
+      "time": 1775333269312
+    },
+    {
       "msg": "Completed task <strong>\"Fork repo and build app shell (April 6-7)\"</strong>",
       "color": "#2563EB",
       "time": 1775333268378
@@ -773,11 +778,6 @@
       "msg": "Added task <strong>\"learn the plan\"</strong> to \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1773135721851
-    },
-    {
-      "msg": "Unchecked task <strong>\"მაისურების დამზადება 20ც, 5ც დარიგება\"</strong>",
-      "color": "#2563EB",
-      "time": 1773091139061
     }
   ]
 }
