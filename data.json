@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 0,
+      "progress": 20,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
@@ -530,6 +530,11 @@
   },
   "activity": [
     {
+      "msg": "Stage set to <strong>Planning</strong> on \"Stellar\"",
+      "color": "#2563EB",
+      "time": 1775333262229
+    },
+    {
       "msg": "Stage set to <strong>Idea</strong> on \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333261414
@@ -773,11 +778,6 @@
       "msg": "Completed task <strong>\"make finance app for astroman\"</strong>",
       "color": "#2563EB",
       "time": 1773091124221
-    },
-    {
-      "msg": "Completed task <strong>\"მაისურების დამზადება 20ც, 5ც დარიგება\"</strong>",
-      "color": "#2563EB",
-      "time": 1773091123334
     }
   ]
 }
