@@ -61,54 +61,6 @@
       }
     },
     {
-      "id": 1773086904820,
-      "name": "Weekend Coding Event",
-      "desc": "",
-      "type": "weekly",
-      "due": "2026-03-14",
-      "priority": "high",
-      "color": "#2563EB",
-      "icon": "📌",
-      "progress": 80,
-      "tasks": [
-        {
-          "name": "create a plan",
-          "done": true
-        },
-        {
-          "name": "app idea, name, etc",
-          "done": true
-        },
-        {
-          "name": "people to meet",
-          "done": true
-        },
-        {
-          "name": "learn the plan",
-          "done": true
-        },
-        {
-          "name": "has to be a problem solving",
-          "done": true
-        },
-        {
-          "name": "replit.com",
-          "done": true
-        },
-        {
-          "name": "done",
-          "done": true
-        }
-      ],
-      "notes": "I am building Proof of Observation — Strava for astronomy on Solana\nfor telescope owners at Georgia's first astronomy store\nthat solves no way to verify, reward, or share real stargazing\nby gamified sky missions with camera proof, satellite-verified conditions (FarmHawk), offline mesh submission (Pollinet), and NFT achievement minting — built from Scriptonia-generated specs",
-      "created": 1773086904820,
-      "reminder": {
-        "enabled": false,
-        "timing": "oneday",
-        "lastSent": null
-      }
-    },
-    {
       "id": 1772361692835,
       "name": "Current Website Update",
       "desc": "Update the www.astroman.ge",
@@ -313,7 +265,56 @@
       }
     }
   ],
-  "completedProjects": [],
+  "completedProjects": [
+    {
+      "id": 1773086904820,
+      "name": "Weekend Coding Event",
+      "desc": "",
+      "type": "weekly",
+      "due": "2026-03-14",
+      "priority": "high",
+      "color": "#2563EB",
+      "icon": "📌",
+      "progress": 100,
+      "tasks": [
+        {
+          "name": "create a plan",
+          "done": true
+        },
+        {
+          "name": "app idea, name, etc",
+          "done": true
+        },
+        {
+          "name": "people to meet",
+          "done": true
+        },
+        {
+          "name": "learn the plan",
+          "done": true
+        },
+        {
+          "name": "has to be a problem solving",
+          "done": true
+        },
+        {
+          "name": "replit.com",
+          "done": true
+        },
+        {
+          "name": "done",
+          "done": true
+        }
+      ],
+      "notes": "I am building Proof of Observation — Strava for astronomy on Solana\nfor telescope owners at Georgia's first astronomy store\nthat solves no way to verify, reward, or share real stargazing\nby gamified sky missions with camera proof, satellite-verified conditions (FarmHawk), offline mesh submission (Pollinet), and NFT achievement minting — built from Scriptonia-generated specs",
+      "created": 1773086904820,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    }
+  ],
   "planner": {
     "dailyTasks": [
       {
@@ -537,6 +538,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Progress updated to <strong>100%</strong> on \"Weekend Coding Event\"",
+      "color": "#2563EB",
+      "time": 1775414961635
+    },
     {
       "msg": "Stage set to <strong>Review</strong> on \"Weekend Coding Event\"",
       "color": "#2563EB",
@@ -781,11 +787,6 @@
       "msg": "Completed task <strong>\"people to meet\"</strong>",
       "color": "#2563EB",
       "time": 1773476910064
-    },
-    {
-      "msg": "Completed task <strong>\"create a plan\"</strong>",
-      "color": "#2563EB",
-      "time": 1773476907514
     }
   ]
 }
