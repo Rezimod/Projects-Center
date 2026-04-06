@@ -336,12 +336,6 @@
         "date": "2026-04-06"
       },
       {
-        "id": 1775472069114,
-        "text": "meeting with Kostya, make product blueprint",
-        "done": false,
-        "date": "2026-04-06"
-      },
-      {
         "id": 1775472078650,
         "text": "get missions takss from Kostya for me",
         "done": false,
@@ -349,6 +343,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1775472069114,
+        "text": "meeting with Kostya, make product blueprint",
+        "date": "2026-04-06",
+        "completedAt": "2026-04-06T14:29:31.976Z"
+      },
       {
         "id": 1775463080138,
         "text": "meeting with kostya, write a plan and all that.",
@@ -569,6 +569,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"meeting with Kostya, make product blueprint\"</strong>",
+      "color": "#67E8F9",
+      "time": 1775485771977
+    },
     {
       "msg": "Completed daily task <strong>\"meeting with kostya, write a plan and all that.\"</strong>",
       "color": "#67E8F9",
@@ -813,11 +818,6 @@
       "msg": "Completed task <strong>\"has to be a problem solving\"</strong>",
       "color": "#2563EB",
       "time": 1773664487011
-    },
-    {
-      "msg": "Added task <strong>\"replit.com\"</strong> to \"Weekend Coding Event\"",
-      "color": "#2563EB",
-      "time": 1773488035981
     }
   ]
 }
