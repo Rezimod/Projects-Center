@@ -487,16 +487,16 @@
         "done": false,
         "weekNum": 14,
         "year": 2026
-      },
-      {
-        "id": 1775463066240,
-        "text": "10 video sctips for Qeta",
-        "done": false,
-        "weekNum": 15,
-        "year": 2026
       }
     ],
     "completedWeeklyTasks": [
+      {
+        "id": 1775463066240,
+        "text": "10 video sctips for Qeta",
+        "weekNum": 15,
+        "year": 2026,
+        "completedAt": "2026-04-06T14:30:04.514Z"
+      },
       {
         "id": 1775331831073,
         "text": "Start working on Stellar",
@@ -569,6 +569,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed weekly task <strong>\"10 video sctips for Qeta\"</strong>",
+      "color": "#A78BFA",
+      "time": 1775485804515
+    },
     {
       "msg": "Completed weekly task <strong>\"Start working on Stellar\"</strong>",
       "color": "#A78BFA",
@@ -813,11 +818,6 @@
       "msg": "Added task <strong>\"redisign it with my existing app. make it work.\"</strong> to \"Night Skywatcher\"",
       "color": "#2563EB",
       "time": 1773667986902
-    },
-    {
-      "msg": "Added task <strong>\"extrar Ge finalize\"</strong> to \"Daily\"",
-      "color": "#2563EB",
-      "time": 1773667969594
     }
   ]
 }
