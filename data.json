@@ -482,13 +482,6 @@
         "year": 2026
       },
       {
-        "id": 1775331924565,
-        "text": "Meeting with constantine",
-        "done": false,
-        "weekNum": 14,
-        "year": 2026
-      },
-      {
         "id": 1775332116381,
         "text": "Astroman Scaling",
         "done": false,
@@ -511,6 +504,13 @@
       }
     ],
     "completedWeeklyTasks": [
+      {
+        "id": 1775331924565,
+        "text": "Meeting with constantine",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-06T14:30:00.087Z"
+      },
       {
         "id": 1774879270224,
         "text": "კონიაკზე გამწოვის მოგვარება",
@@ -569,6 +569,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed weekly task <strong>\"Meeting with constantine\"</strong>",
+      "color": "#A78BFA",
+      "time": 1775485800088
+    },
     {
       "msg": "Completed weekly task <strong>\"კონიაკზე გამწოვის მოგვარება\"</strong>",
       "color": "#A78BFA",
@@ -813,11 +818,6 @@
       "msg": "Completed task <strong>\"done\"</strong>",
       "color": "#2563EB",
       "time": 1773664495045
-    },
-    {
-      "msg": "Added task <strong>\"done\"</strong> to \"Weekend Coding Event\"",
-      "color": "#2563EB",
-      "time": 1773664493578
     }
   ]
 }
