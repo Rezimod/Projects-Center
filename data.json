@@ -334,15 +334,15 @@
         "text": "Find out about the new order Childres center",
         "done": false,
         "date": "2026-04-06"
-      },
-      {
-        "id": 1775472078650,
-        "text": "get missions takss from Kostya for me",
-        "done": false,
-        "date": "2026-04-06"
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1775472078650,
+        "text": "get missions takss from Kostya for me",
+        "date": "2026-04-06",
+        "completedAt": "2026-04-06T14:29:33.540Z"
+      },
       {
         "id": 1775472069114,
         "text": "meeting with Kostya, make product blueprint",
@@ -569,6 +569,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"get missions takss from Kostya for me\"</strong>",
+      "color": "#67E8F9",
+      "time": 1775485773541
+    },
     {
       "msg": "Completed daily task <strong>\"meeting with Kostya, make product blueprint\"</strong>",
       "color": "#67E8F9",
@@ -813,11 +818,6 @@
       "msg": "Completed task <strong>\"replit.com\"</strong>",
       "color": "#2563EB",
       "time": 1773664487331
-    },
-    {
-      "msg": "Completed task <strong>\"has to be a problem solving\"</strong>",
-      "color": "#2563EB",
-      "time": 1773664487011
     }
   ]
 }
