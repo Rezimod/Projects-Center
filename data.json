@@ -475,13 +475,6 @@
         "year": 2026
       },
       {
-        "id": 1775331831073,
-        "text": "Start working on Stellar",
-        "done": false,
-        "weekNum": 14,
-        "year": 2026
-      },
-      {
         "id": 1775332116381,
         "text": "Astroman Scaling",
         "done": false,
@@ -504,6 +497,13 @@
       }
     ],
     "completedWeeklyTasks": [
+      {
+        "id": 1775331831073,
+        "text": "Start working on Stellar",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-06T14:30:01.157Z"
+      },
       {
         "id": 1775331924565,
         "text": "Meeting with constantine",
@@ -569,6 +569,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed weekly task <strong>\"Start working on Stellar\"</strong>",
+      "color": "#A78BFA",
+      "time": 1775485801158
+    },
     {
       "msg": "Completed weekly task <strong>\"Meeting with constantine\"</strong>",
       "color": "#A78BFA",
@@ -813,11 +818,6 @@
       "msg": "Added task <strong>\"extrar Ge finalize\"</strong> to \"Daily\"",
       "color": "#2563EB",
       "time": 1773667969594
-    },
-    {
-      "msg": "Completed task <strong>\"done\"</strong>",
-      "color": "#2563EB",
-      "time": 1773664495045
     }
   ]
 }
