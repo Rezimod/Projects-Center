@@ -447,13 +447,6 @@
         "year": 2026
       },
       {
-        "id": 1774879270224,
-        "text": "კონიაკზე გამწოვის მოგვარება",
-        "done": false,
-        "weekNum": 14,
-        "year": 2026
-      },
-      {
         "id": 1774879353180,
         "text": "დარეკვა მინიმუმ 5 სკოლასთან და შეთავაზების გაკეთება",
         "done": false,
@@ -519,6 +512,13 @@
     ],
     "completedWeeklyTasks": [
       {
+        "id": 1774879270224,
+        "text": "კონიაკზე გამწოვის მოგვარება",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-06T14:29:46.742Z"
+      },
+      {
         "id": 1774879129464,
         "text": "მოემზადე 4 აპრილის შეხვედრისთთვის",
         "weekNum": 14,
@@ -569,6 +569,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed weekly task <strong>\"კონიაკზე გამწოვის მოგვარება\"</strong>",
+      "color": "#A78BFA",
+      "time": 1775485786742
+    },
     {
       "msg": "Completed weekly task <strong>\"მოემზადე 4 აპრილის შეხვედრისთთვის\"</strong>",
       "color": "#A78BFA",
@@ -813,11 +818,6 @@
       "msg": "Added task <strong>\"done\"</strong> to \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1773664493578
-    },
-    {
-      "msg": "Completed task <strong>\"app idea, name, etc\"</strong>",
-      "color": "#2563EB",
-      "time": 1773664488136
     }
   ]
 }
