@@ -330,12 +330,6 @@
         "date": "2026-03-30"
       },
       {
-        "id": 1775463080138,
-        "text": "meeting with kostya, write a plan and all that.",
-        "done": false,
-        "date": "2026-04-06"
-      },
-      {
         "id": 1775472059754,
         "text": "Find out about the new order Childres center",
         "done": false,
@@ -355,6 +349,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1775463080138,
+        "text": "meeting with kostya, write a plan and all that.",
+        "date": "2026-04-06",
+        "completedAt": "2026-04-06T14:29:28.204Z"
+      },
       {
         "id": 1774727264971,
         "text": "ტერმინალის გააქტიურება",
@@ -569,6 +569,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"meeting with kostya, write a plan and all that.\"</strong>",
+      "color": "#67E8F9",
+      "time": 1775485768205
+    },
     {
       "msg": "Completed daily task <strong>\"ტერმინალის გააქტიურება\"</strong>",
       "color": "#67E8F9",
@@ -813,11 +818,6 @@
       "msg": "Added task <strong>\"replit.com\"</strong> to \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1773488035981
-    },
-    {
-      "msg": "Completed task <strong>\"learn the plan\"</strong>",
-      "color": "#2563EB",
-      "time": 1773476912039
     }
   ]
 }
