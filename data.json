@@ -318,12 +318,6 @@
   "planner": {
     "dailyTasks": [
       {
-        "id": 1774727264971,
-        "text": "ტერმინალის გააქტიურება",
-        "done": false,
-        "date": "2026-03-28"
-      },
-      {
         "id": 1774730631315,
         "text": "აწარმოეში გადარეკვა",
         "done": false,
@@ -343,6 +337,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1774727264971,
+        "text": "ტერმინალის გააქტიურება",
+        "date": "2026-03-28",
+        "completedAt": "2026-04-06T08:11:30.378Z"
+      },
       {
         "id": 1774727269752,
         "text": "დეველოპერის მოძებნა",
@@ -551,6 +551,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"ტერმინალის გააქტიურება\"</strong>",
+      "color": "#67E8F9",
+      "time": 1775463090379
+    },
     {
       "msg": "Progress updated to <strong>100%</strong> on \"Weekend Coding Event\"",
       "color": "#2563EB",
@@ -795,11 +800,6 @@
       "msg": "Completed task <strong>\"learn the plan\"</strong>",
       "color": "#2563EB",
       "time": 1773476912039
-    },
-    {
-      "msg": "Completed task <strong>\"people to meet\"</strong>",
-      "color": "#2563EB",
-      "time": 1773476910064
     }
   ]
 }
