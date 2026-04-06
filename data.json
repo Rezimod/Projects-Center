@@ -426,13 +426,6 @@
         "year": 2026
       },
       {
-        "id": 1774879129464,
-        "text": "მოემზადე 4 აპრილის შეხვედრისთთვის",
-        "done": false,
-        "weekNum": 14,
-        "year": 2026
-      },
-      {
         "id": 1774879140555,
         "text": "სტელარის რებრენდინგი, და სოლანას კოლიზეუმზე მორგება",
         "done": false,
@@ -526,6 +519,13 @@
     ],
     "completedWeeklyTasks": [
       {
+        "id": 1774879129464,
+        "text": "მოემზადე 4 აპრილის შეხვედრისთთვის",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-06T14:29:39.568Z"
+      },
+      {
         "id": 1774880726515,
         "text": "ანტიბიოტიკი 6:30 ზე,",
         "weekNum": 14,
@@ -569,6 +569,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed weekly task <strong>\"მოემზადე 4 აპრილის შეხვედრისთთვის\"</strong>",
+      "color": "#A78BFA",
+      "time": 1775485779569
+    },
     {
       "msg": "Completed daily task <strong>\"get missions takss from Kostya for me\"</strong>",
       "color": "#67E8F9",
@@ -813,11 +818,6 @@
       "msg": "Completed task <strong>\"app idea, name, etc\"</strong>",
       "color": "#2563EB",
       "time": 1773664488136
-    },
-    {
-      "msg": "Completed task <strong>\"replit.com\"</strong>",
-      "color": "#2563EB",
-      "time": 1773664487331
     }
   ]
 }
