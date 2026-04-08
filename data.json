@@ -318,12 +318,6 @@
   "planner": {
     "dailyTasks": [
       {
-        "id": 1774730631315,
-        "text": "აწარმოეში გადარეკვა",
-        "done": false,
-        "date": "2026-03-28"
-      },
-      {
         "id": 1774858718157,
         "text": "ასტრომანის ექსელი",
         "done": false,
@@ -337,6 +331,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1774730631315,
+        "text": "აწარმოეში გადარეკვა",
+        "date": "2026-03-28",
+        "completedAt": "2026-04-08T21:48:06.320Z"
+      },
       {
         "id": 1775472078650,
         "text": "get missions takss from Kostya for me",
@@ -562,6 +562,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"აწარმოეში გადარეკვა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1775684886322
+    },
     {
       "msg": "Completed weekly task <strong>\"10 video sctips for Qeta\"</strong>",
       "color": "#A78BFA",
@@ -806,11 +811,6 @@
       "msg": "Completed daily task <strong>\"სტელარზე მუშაობა\"</strong>",
       "color": "#67E8F9",
       "time": 1774858548501
-    },
-    {
-      "msg": "Added task <strong>\"redisign it with my existing app. make it work.\"</strong> to \"Night Skywatcher\"",
-      "color": "#2563EB",
-      "time": 1773667986902
     }
   ]
 }
