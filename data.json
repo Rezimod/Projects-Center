@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 30,
+      "progress": 40,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
@@ -25,7 +25,7 @@
         },
         {
           "name": "Sky Observatory dashboard (April 10-13)",
-          "done": false
+          "done": true
         },
         {
           "name": "AI Space Companion (April 13-17)",
@@ -563,6 +563,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Sky Observatory dashboard (April 10-13)\"</strong>",
+      "color": "#2563EB",
+      "time": 1776084286936
+    },
+    {
       "msg": "Completed task <strong>\"Wallet connect + Solana foundation (April 8-10)\"</strong>",
       "color": "#2563EB",
       "time": 1776084277217
@@ -806,11 +811,6 @@
       "msg": "Deleted project <strong>\"Daily\"</strong>",
       "color": "#DC2626",
       "time": 1774858634074
-    },
-    {
-      "msg": "Completed daily task <strong>\"start Phase Two for Sky astroman\"</strong>",
-      "color": "#67E8F9",
-      "time": 1774858564241
     }
   ]
 }
