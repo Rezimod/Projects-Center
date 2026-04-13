@@ -18,6 +18,10 @@
         {
           "name": "Finish Sky Page",
           "done": false
+        },
+        {
+          "name": "finish learning page",
+          "done": false
         }
       ],
       "notes": "",
@@ -587,6 +591,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"finish learning page\"</strong> to \"Stellar Week 2\"",
+      "color": "#2563EB",
+      "time": 1776084393379
+    },
+    {
       "msg": "Deleted task <strong>\"Finish Learning pog\"</strong> from \"Stellar Week 2\"",
       "color": "#DC2626",
       "time": 1776084389443
@@ -830,11 +839,6 @@
       "msg": "Created project <strong>\"Stellar\"</strong>",
       "color": "#2563EB",
       "time": 1775333164117
-    },
-    {
-      "msg": "Completed daily task <strong>\"დეველოპერის მოძებნა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1775332137597
     }
   ]
 }
