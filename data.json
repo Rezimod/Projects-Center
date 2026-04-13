@@ -1,6 +1,25 @@
 {
   "projects": [
     {
+      "id": 1776084363616,
+      "name": "Stellar Week 2",
+      "desc": "",
+      "type": "monthly",
+      "due": "2026-04-20",
+      "priority": "high",
+      "color": "#2563EB",
+      "icon": "📌",
+      "progress": 0,
+      "tasks": [],
+      "notes": "",
+      "created": 1776084363616,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
       "id": 1772361692835,
       "name": "Current Website Update",
       "desc": "Update the www.astroman.ge",
@@ -559,6 +578,11 @@
   },
   "activity": [
     {
+      "msg": "Created project <strong>\"Stellar Week 2\"</strong>",
+      "color": "#2563EB",
+      "time": 1776084363618
+    },
+    {
       "msg": "Updated project <strong>\"Stellar Week 1\"</strong>",
       "color": "#2563EB",
       "time": 1776084335721
@@ -802,11 +826,6 @@
       "msg": "Updated project <strong>\"Advance AI\"</strong>",
       "color": "#2563EB",
       "time": 1774879952719
-    },
-    {
-      "msg": "Updated project <strong>\"Astroman Loyal Club\"</strong>",
-      "color": "#2563EB",
-      "time": 1774879944235
     }
   ]
 }
