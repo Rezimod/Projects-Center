@@ -10,7 +10,12 @@
       "color": "#2563EB",
       "icon": "📌",
       "progress": 0,
-      "tasks": [],
+      "tasks": [
+        {
+          "name": "Work on Missions page",
+          "done": false
+        }
+      ],
       "notes": "",
       "created": 1776084363616,
       "reminder": {
@@ -578,6 +583,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Work on Missions page\"</strong> to \"Stellar Week 2\"",
+      "color": "#2563EB",
+      "time": 1776084372571
+    },
+    {
       "msg": "Created project <strong>\"Stellar Week 2\"</strong>",
       "color": "#2563EB",
       "time": 1776084363618
@@ -821,11 +831,6 @@
       "msg": "Completed weekly task <strong>\"დააფიქსირე 1 ახალი შესაძლებლობა\"</strong>",
       "color": "#A78BFA",
       "time": 1775244457170
-    },
-    {
-      "msg": "Updated project <strong>\"Advance AI\"</strong>",
-      "color": "#2563EB",
-      "time": 1774879952719
     }
   ]
 }
