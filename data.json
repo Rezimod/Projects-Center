@@ -9,11 +9,11 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 0,
+      "progress": 10,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
-          "done": false
+          "done": true
         },
         {
           "name": "Fork repo and build app shell (April 6-7)",
@@ -563,6 +563,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Register + set up infrastructure\"</strong>",
+      "color": "#2563EB",
+      "time": 1776084273452
+    },
+    {
       "msg": "Completed daily task <strong>\"ასტრომანის ექსელი\"</strong>",
       "color": "#67E8F9",
       "time": 1776084255024
@@ -806,11 +811,6 @@
       "msg": "Completed daily task <strong>\"Meet builder\"</strong>",
       "color": "#67E8F9",
       "time": 1774858557792
-    },
-    {
-      "msg": "Completed daily task <strong>\"ასტრომანზე გარკვევა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1774858549978
     }
   ]
 }
