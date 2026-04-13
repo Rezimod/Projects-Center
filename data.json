@@ -26,6 +26,10 @@
         {
           "name": "finish marketplace",
           "done": false
+        },
+        {
+          "name": "Finish Profile",
+          "done": false
         }
       ],
       "notes": "",
@@ -595,6 +599,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Finish Profile\"</strong> to \"Stellar Week 2\"",
+      "color": "#2563EB",
+      "time": 1776084410928
+    },
+    {
       "msg": "Deleted task <strong>\"Dinish profile\"</strong> from \"Stellar Week 2\"",
       "color": "#DC2626",
       "time": 1776084406252
@@ -838,11 +847,6 @@
       "msg": "Added task <strong>\"Sky Observatory dashboard (April 10-13)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333211100
-    },
-    {
-      "msg": "Added task <strong>\"Wallet connect + Solana foundation (April 8-10)\"</strong> to \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333204146
     }
   ]
 }
