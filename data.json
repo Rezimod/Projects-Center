@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 80,
+      "progress": 90,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
@@ -45,7 +45,7 @@
         },
         {
           "name": "Traction sprint + beta testing (April 29 – May 4)",
-          "done": false
+          "done": true
         },
         {
           "name": "Pitch video + submit (May 5-11)",
@@ -563,6 +563,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Traction sprint + beta testing (April 29 – May 4)\"</strong>",
+      "color": "#2563EB",
+      "time": 1776084302940
+    },
+    {
       "msg": "Completed task <strong>\"Discovery Attestations NFT minting (April 26-29)\"</strong>",
       "color": "#2563EB",
       "time": 1776084298935
@@ -806,11 +811,6 @@
       "msg": "Updated project <strong>\"Current Website Update\"</strong>",
       "color": "#2563EB",
       "time": 1774879921903
-    },
-    {
-      "msg": "Completed daily task <strong>\"GWP-ს გარკვევა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1774879904235
     }
   ]
 }
