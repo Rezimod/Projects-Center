@@ -38,6 +38,10 @@
         {
           "name": "leaderboard",
           "done": false
+        },
+        {
+          "name": "Full tests and Demo video",
+          "done": false
         }
       ],
       "notes": "",
@@ -607,6 +611,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Full tests and Demo video\"</strong> to \"Stellar Week 2\"",
+      "color": "#2563EB",
+      "time": 1776084469608
+    },
+    {
       "msg": "Added task <strong>\"leaderboard\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084460586
@@ -850,11 +859,6 @@
       "msg": "Added task <strong>\"Marketplace + payments (April 21-26)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333229488
-    },
-    {
-      "msg": "Added task <strong>\"Missions + gamification (April 17-21)\"</strong> to \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333223956
     }
   ]
 }
