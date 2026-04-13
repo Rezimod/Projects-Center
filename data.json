@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 40,
+      "progress": 50,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
@@ -29,7 +29,7 @@
         },
         {
           "name": "AI Space Companion (April 13-17)",
-          "done": false
+          "done": true
         },
         {
           "name": "Missions + gamification (April 17-21)",
@@ -563,6 +563,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"AI Space Companion (April 13-17)\"</strong>",
+      "color": "#2563EB",
+      "time": 1776084292636
+    },
+    {
       "msg": "Completed task <strong>\"Sky Observatory dashboard (April 10-13)\"</strong>",
       "color": "#2563EB",
       "time": 1776084286936
@@ -806,11 +811,6 @@
       "msg": "Deleted project <strong>\"Content For Week\"</strong>",
       "color": "#DC2626",
       "time": 1774858640213
-    },
-    {
-      "msg": "Deleted project <strong>\"Daily\"</strong>",
-      "color": "#DC2626",
-      "time": 1774858634074
     }
   ]
 }
