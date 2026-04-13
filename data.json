@@ -30,6 +30,10 @@
         {
           "name": "Finish Profile",
           "done": false
+        },
+        {
+          "name": "fihisn home page",
+          "done": false
         }
       ],
       "notes": "",
@@ -599,6 +603,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"fihisn home page\"</strong> to \"Stellar Week 2\"",
+      "color": "#2563EB",
+      "time": 1776084457568
+    },
+    {
       "msg": "Added task <strong>\"Finish Profile\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084410928
@@ -842,11 +851,6 @@
       "msg": "Added task <strong>\"AI Space Companion (April 13-17)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333216463
-    },
-    {
-      "msg": "Added task <strong>\"Sky Observatory dashboard (April 10-13)\"</strong> to \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333211100
     }
   ]
 }
