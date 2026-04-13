@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 20,
+      "progress": 30,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
@@ -21,7 +21,7 @@
         },
         {
           "name": "Wallet connect + Solana foundation (April 8-10)",
-          "done": false
+          "done": true
         },
         {
           "name": "Sky Observatory dashboard (April 10-13)",
@@ -563,6 +563,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Wallet connect + Solana foundation (April 8-10)\"</strong>",
+      "color": "#2563EB",
+      "time": 1776084277217
+    },
+    {
       "msg": "Completed task <strong>\"Fork repo and build app shell (April 6-7)\"</strong>",
       "color": "#2563EB",
       "time": 1776084275836
@@ -806,11 +811,6 @@
       "msg": "Completed daily task <strong>\"start Phase Two for Sky astroman\"</strong>",
       "color": "#67E8F9",
       "time": 1774858564241
-    },
-    {
-      "msg": "Completed daily task <strong>\"Go with boyt\"</strong>",
-      "color": "#67E8F9",
-      "time": 1774858558952
     }
   ]
 }
