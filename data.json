@@ -208,7 +208,7 @@
   "completedProjects": [
     {
       "id": 1775333164116,
-      "name": "Stellar",
+      "name": "Stellar Week 1",
       "desc": "",
       "type": "monthly",
       "due": "2026-05-11",
@@ -559,6 +559,11 @@
   },
   "activity": [
     {
+      "msg": "Updated project <strong>\"Stellar Week 1\"</strong>",
+      "color": "#2563EB",
+      "time": 1776084335721
+    },
+    {
       "msg": "Deleted task <strong>\"Pitch video + submit (May 5-11)\"</strong> from \"Stellar\"",
       "color": "#DC2626",
       "time": 1776084319080
@@ -802,11 +807,6 @@
       "msg": "Updated project <strong>\"Astroman Loyal Club\"</strong>",
       "color": "#2563EB",
       "time": 1774879944235
-    },
-    {
-      "msg": "Updated project <strong>\"Night Skywatcher\"</strong>",
-      "color": "#2563EB",
-      "time": 1774879933679
     }
   ]
 }
