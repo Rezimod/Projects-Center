@@ -14,6 +14,10 @@
         {
           "name": "Work on Missions page",
           "done": false
+        },
+        {
+          "name": "Finish Sky Page",
+          "done": false
         }
       ],
       "notes": "",
@@ -583,6 +587,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Finish Sky Page\"</strong> to \"Stellar Week 2\"",
+      "color": "#2563EB",
+      "time": 1776084379601
+    },
+    {
       "msg": "Added task <strong>\"Work on Missions page\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084372571
@@ -826,11 +835,6 @@
       "msg": "Completed weekly task <strong>\"გასაუბრება დეველოპერთან სამშაბათს 5 საათზე\"</strong>",
       "color": "#A78BFA",
       "time": 1775244461492
-    },
-    {
-      "msg": "Completed weekly task <strong>\"დააფიქსირე 1 ახალი შესაძლებლობა\"</strong>",
-      "color": "#A78BFA",
-      "time": 1775244457170
     }
   ]
 }
