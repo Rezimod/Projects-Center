@@ -26,10 +26,6 @@
         {
           "name": "finish marketplace",
           "done": false
-        },
-        {
-          "name": "Dinish profile",
-          "done": false
         }
       ],
       "notes": "",
@@ -599,6 +595,11 @@
   },
   "activity": [
     {
+      "msg": "Deleted task <strong>\"Dinish profile\"</strong> from \"Stellar Week 2\"",
+      "color": "#DC2626",
+      "time": 1776084406252
+    },
+    {
       "msg": "Added task <strong>\"Dinish profile\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084403311
@@ -842,11 +843,6 @@
       "msg": "Added task <strong>\"Wallet connect + Solana foundation (April 8-10)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333204146
-    },
-    {
-      "msg": "Added task <strong>\"Fork repo and build app shell (April 6-7)\"</strong> to \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333197405
     }
   ]
 }
