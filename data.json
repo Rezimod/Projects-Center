@@ -22,6 +22,10 @@
         {
           "name": "finish learning page",
           "done": false
+        },
+        {
+          "name": "finish marketplace",
+          "done": false
         }
       ],
       "notes": "",
@@ -591,6 +595,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"finish marketplace\"</strong> to \"Stellar Week 2\"",
+      "color": "#2563EB",
+      "time": 1776084398735
+    },
+    {
       "msg": "Added task <strong>\"finish learning page\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084393379
@@ -834,11 +843,6 @@
       "msg": "Added task <strong>\"Register + set up infrastructure\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333170665
-    },
-    {
-      "msg": "Created project <strong>\"Stellar\"</strong>",
-      "color": "#2563EB",
-      "time": 1775333164117
     }
   ]
 }
