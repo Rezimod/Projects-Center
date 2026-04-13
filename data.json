@@ -26,6 +26,10 @@
         {
           "name": "finish marketplace",
           "done": false
+        },
+        {
+          "name": "Dinish profile",
+          "done": false
         }
       ],
       "notes": "",
@@ -595,6 +599,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Dinish profile\"</strong> to \"Stellar Week 2\"",
+      "color": "#2563EB",
+      "time": 1776084403311
+    },
+    {
       "msg": "Added task <strong>\"finish marketplace\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084398735
@@ -838,11 +847,6 @@
       "msg": "Added task <strong>\"Fork repo and build app shell (April 6-7)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333197405
-    },
-    {
-      "msg": "Added task <strong>\"Register + set up infrastructure\"</strong> to \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333170665
     }
   ]
 }
