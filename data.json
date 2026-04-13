@@ -18,10 +18,6 @@
         {
           "name": "Finish Sky Page",
           "done": false
-        },
-        {
-          "name": "Finish Learning pog",
-          "done": false
         }
       ],
       "notes": "",
@@ -591,6 +587,11 @@
   },
   "activity": [
     {
+      "msg": "Deleted task <strong>\"Finish Learning pog\"</strong> from \"Stellar Week 2\"",
+      "color": "#DC2626",
+      "time": 1776084389443
+    },
+    {
       "msg": "Added task <strong>\"Finish Learning pog\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084385516
@@ -834,11 +835,6 @@
       "msg": "Completed daily task <strong>\"დეველოპერის მოძებნა\"</strong>",
       "color": "#67E8F9",
       "time": 1775332137597
-    },
-    {
-      "msg": "Completed weekly task <strong>\"ანტიბიოტიკი 6:30 ზე,\"</strong>",
-      "color": "#A78BFA",
-      "time": 1775244471689
     }
   ]
 }
