@@ -34,6 +34,10 @@
         {
           "name": "fihisn home page",
           "done": false
+        },
+        {
+          "name": "leaderboard",
+          "done": false
         }
       ],
       "notes": "",
@@ -603,6 +607,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"leaderboard\"</strong> to \"Stellar Week 2\"",
+      "color": "#2563EB",
+      "time": 1776084460586
+    },
+    {
       "msg": "Added task <strong>\"fihisn home page\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084457568
@@ -846,11 +855,6 @@
       "msg": "Added task <strong>\"Missions + gamification (April 17-21)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333223956
-    },
-    {
-      "msg": "Added task <strong>\"AI Space Companion (April 13-17)\"</strong> to \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333216463
     }
   ]
 }
