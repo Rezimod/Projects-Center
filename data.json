@@ -318,12 +318,6 @@
   "planner": {
     "dailyTasks": [
       {
-        "id": 1774858718157,
-        "text": "ასტრომანის ექსელი",
-        "done": false,
-        "date": "2026-03-30"
-      },
-      {
         "id": 1775472059754,
         "text": "Find out about the new order Childres center",
         "done": false,
@@ -331,6 +325,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1774858718157,
+        "text": "ასტრომანის ექსელი",
+        "date": "2026-03-30",
+        "completedAt": "2026-04-13T12:44:15.022Z"
+      },
       {
         "id": 1774730631315,
         "text": "აწარმოეში გადარეკვა",
@@ -562,6 +562,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"ასტრომანის ექსელი\"</strong>",
+      "color": "#67E8F9",
+      "time": 1776084255024
+    },
     {
       "msg": "Completed daily task <strong>\"აწარმოეში გადარეკვა\"</strong>",
       "color": "#67E8F9",
@@ -806,11 +811,6 @@
       "msg": "Completed daily task <strong>\"ასტრომანზე გარკვევა\"</strong>",
       "color": "#67E8F9",
       "time": 1774858549978
-    },
-    {
-      "msg": "Completed daily task <strong>\"სტელარზე მუშაობა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1774858548501
     }
   ]
 }
