@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 70,
+      "progress": 80,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
@@ -41,7 +41,7 @@
         },
         {
           "name": "Discovery Attestations NFT minting (April 26-29)",
-          "done": false
+          "done": true
         },
         {
           "name": "Traction sprint + beta testing (April 29 – May 4)",
@@ -563,6 +563,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Discovery Attestations NFT minting (April 26-29)\"</strong>",
+      "color": "#2563EB",
+      "time": 1776084298935
+    },
+    {
       "msg": "Completed task <strong>\"Marketplace + payments (April 21-26)\"</strong>",
       "color": "#2563EB",
       "time": 1776084296401
@@ -806,11 +811,6 @@
       "msg": "Completed daily task <strong>\"GWP-ს გარკვევა\"</strong>",
       "color": "#67E8F9",
       "time": 1774879904235
-    },
-    {
-      "msg": "Completed daily task <strong>\"ორშაბათის იუსტიციის სახლში მისვლა დაგეგმვა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1774879203012
     }
   ]
 }
