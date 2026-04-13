@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 60,
+      "progress": 70,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
@@ -37,7 +37,7 @@
         },
         {
           "name": "Marketplace + payments (April 21-26)",
-          "done": false
+          "done": true
         },
         {
           "name": "Discovery Attestations NFT minting (April 26-29)",
@@ -563,6 +563,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Marketplace + payments (April 21-26)\"</strong>",
+      "color": "#2563EB",
+      "time": 1776084296401
+    },
+    {
       "msg": "Completed task <strong>\"Missions + gamification (April 17-21)\"</strong>",
       "color": "#2563EB",
       "time": 1776084294015
@@ -806,11 +811,6 @@
       "msg": "Completed daily task <strong>\"ორშაბათის იუსტიციის სახლში მისვლა დაგეგმვა\"</strong>",
       "color": "#67E8F9",
       "time": 1774879203012
-    },
-    {
-      "msg": "Deleted project <strong>\"Auto Content Creator\"</strong>",
-      "color": "#DC2626",
-      "time": 1774858645366
     }
   ]
 }
