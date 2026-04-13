@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 10,
+      "progress": 20,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
@@ -17,7 +17,7 @@
         },
         {
           "name": "Fork repo and build app shell (April 6-7)",
-          "done": false
+          "done": true
         },
         {
           "name": "Wallet connect + Solana foundation (April 8-10)",
@@ -563,6 +563,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Fork repo and build app shell (April 6-7)\"</strong>",
+      "color": "#2563EB",
+      "time": 1776084275836
+    },
+    {
       "msg": "Completed task <strong>\"Register + set up infrastructure\"</strong>",
       "color": "#2563EB",
       "time": 1776084273452
@@ -806,11 +811,6 @@
       "msg": "Completed daily task <strong>\"Go with boyt\"</strong>",
       "color": "#67E8F9",
       "time": 1774858558952
-    },
-    {
-      "msg": "Completed daily task <strong>\"Meet builder\"</strong>",
-      "color": "#67E8F9",
-      "time": 1774858557792
     }
   ]
 }
