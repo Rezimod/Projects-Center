@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 50,
+      "progress": 60,
       "tasks": [
         {
           "name": "Register + set up infrastructure",
@@ -33,7 +33,7 @@
         },
         {
           "name": "Missions + gamification (April 17-21)",
-          "done": false
+          "done": true
         },
         {
           "name": "Marketplace + payments (April 21-26)",
@@ -563,6 +563,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Missions + gamification (April 17-21)\"</strong>",
+      "color": "#2563EB",
+      "time": 1776084294015
+    },
+    {
       "msg": "Completed task <strong>\"AI Space Companion (April 13-17)\"</strong>",
       "color": "#2563EB",
       "time": 1776084292636
@@ -806,11 +811,6 @@
       "msg": "Deleted project <strong>\"Auto Content Creator\"</strong>",
       "color": "#DC2626",
       "time": 1774858645366
-    },
-    {
-      "msg": "Deleted project <strong>\"Content For Week\"</strong>",
-      "color": "#DC2626",
-      "time": 1774858640213
     }
   ]
 }
