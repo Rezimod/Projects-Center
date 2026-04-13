@@ -1,66 +1,6 @@
 {
   "projects": [
     {
-      "id": 1775333164116,
-      "name": "Stellar",
-      "desc": "",
-      "type": "monthly",
-      "due": "2026-05-11",
-      "priority": "high",
-      "color": "#2563EB",
-      "icon": "📌",
-      "progress": 90,
-      "tasks": [
-        {
-          "name": "Register + set up infrastructure",
-          "done": true
-        },
-        {
-          "name": "Fork repo and build app shell (April 6-7)",
-          "done": true
-        },
-        {
-          "name": "Wallet connect + Solana foundation (April 8-10)",
-          "done": true
-        },
-        {
-          "name": "Sky Observatory dashboard (April 10-13)",
-          "done": true
-        },
-        {
-          "name": "AI Space Companion (April 13-17)",
-          "done": true
-        },
-        {
-          "name": "Missions + gamification (April 17-21)",
-          "done": true
-        },
-        {
-          "name": "Marketplace + payments (April 21-26)",
-          "done": true
-        },
-        {
-          "name": "Discovery Attestations NFT minting (April 26-29)",
-          "done": true
-        },
-        {
-          "name": "Traction sprint + beta testing (April 29 – May 4)",
-          "done": true
-        },
-        {
-          "name": "Pitch video + submit (May 5-11)",
-          "done": false
-        }
-      ],
-      "notes": "",
-      "created": 1775333164116,
-      "reminder": {
-        "enabled": true,
-        "timing": "oneweek",
-        "lastSent": null
-      }
-    },
-    {
       "id": 1772361692835,
       "name": "Current Website Update",
       "desc": "Update the www.astroman.ge",
@@ -266,6 +206,62 @@
     }
   ],
   "completedProjects": [
+    {
+      "id": 1775333164116,
+      "name": "Stellar",
+      "desc": "",
+      "type": "monthly",
+      "due": "2026-05-11",
+      "priority": "high",
+      "color": "#2563EB",
+      "icon": "📌",
+      "progress": 100,
+      "tasks": [
+        {
+          "name": "Register + set up infrastructure",
+          "done": true
+        },
+        {
+          "name": "Fork repo and build app shell (April 6-7)",
+          "done": true
+        },
+        {
+          "name": "Wallet connect + Solana foundation (April 8-10)",
+          "done": true
+        },
+        {
+          "name": "Sky Observatory dashboard (April 10-13)",
+          "done": true
+        },
+        {
+          "name": "AI Space Companion (April 13-17)",
+          "done": true
+        },
+        {
+          "name": "Missions + gamification (April 17-21)",
+          "done": true
+        },
+        {
+          "name": "Marketplace + payments (April 21-26)",
+          "done": true
+        },
+        {
+          "name": "Discovery Attestations NFT minting (April 26-29)",
+          "done": true
+        },
+        {
+          "name": "Traction sprint + beta testing (April 29 – May 4)",
+          "done": true
+        }
+      ],
+      "notes": "",
+      "created": 1775333164116,
+      "reminder": {
+        "enabled": true,
+        "timing": "oneweek",
+        "lastSent": null
+      }
+    },
     {
       "id": 1773086904820,
       "name": "Weekend Coding Event",
@@ -563,6 +559,11 @@
   },
   "activity": [
     {
+      "msg": "Deleted task <strong>\"Pitch video + submit (May 5-11)\"</strong> from \"Stellar\"",
+      "color": "#DC2626",
+      "time": 1776084319080
+    },
+    {
       "msg": "Completed task <strong>\"Traction sprint + beta testing (April 29 – May 4)\"</strong>",
       "color": "#2563EB",
       "time": 1776084302940
@@ -806,11 +807,6 @@
       "msg": "Updated project <strong>\"Night Skywatcher\"</strong>",
       "color": "#2563EB",
       "time": 1774879933679
-    },
-    {
-      "msg": "Updated project <strong>\"Current Website Update\"</strong>",
-      "color": "#2563EB",
-      "time": 1774879921903
     }
   ]
 }
