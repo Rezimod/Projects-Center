@@ -42,6 +42,10 @@
         {
           "name": "Full tests and Demo video",
           "done": false
+        },
+        {
+          "name": "create new logo",
+          "done": false
         }
       ],
       "notes": "",
@@ -641,6 +645,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"create new logo\"</strong> to \"Stellar Week 2\"",
+      "color": "#2563EB",
+      "time": 1776164363060
+    },
+    {
       "msg": "Completed daily task <strong>\"ბიდეტი\"</strong>",
       "color": "#67E8F9",
       "time": 1776163256824
@@ -884,11 +893,6 @@
       "msg": "Added task <strong>\"Traction sprint + beta testing (April 29 – May 4)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333242767
-    },
-    {
-      "msg": "Added task <strong>\"Discovery Attestations NFT minting (April 26-29)\"</strong> to \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333236253
     }
   ]
 }
