@@ -384,12 +384,6 @@
         "date": "2026-04-13"
       },
       {
-        "id": 1776102289655,
-        "text": "ბიდეტი",
-        "done": false,
-        "date": "2026-04-13"
-      },
-      {
         "id": 1776102294853,
         "text": "ასტრომანის კვირის პოსტები",
         "done": false,
@@ -403,6 +397,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1776102289655,
+        "text": "ბიდეტი",
+        "date": "2026-04-13",
+        "completedAt": "2026-04-14T10:40:56.822Z"
+      },
       {
         "id": 1774858718157,
         "text": "ასტრომანის ექსელი",
@@ -640,6 +640,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Completed daily task <strong>\"ბიდეტი\"</strong>",
+      "color": "#67E8F9",
+      "time": 1776163256824
+    },
     {
       "msg": "Added task <strong>\"Full tests and Demo video\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
@@ -884,11 +889,6 @@
       "msg": "Added task <strong>\"Discovery Attestations NFT minting (April 26-29)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333236253
-    },
-    {
-      "msg": "Added task <strong>\"Marketplace + payments (April 21-26)\"</strong> to \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333229488
     }
   ]
 }
