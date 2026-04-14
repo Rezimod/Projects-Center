@@ -382,12 +382,6 @@
         "date": "2026-04-13"
       },
       {
-        "id": 1776102285254,
-        "text": "Gwp გარკვევა",
-        "done": false,
-        "date": "2026-04-13"
-      },
-      {
         "id": 1776102294853,
         "text": "ასტრომანის კვირის პოსტები",
         "done": false,
@@ -401,6 +395,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1776102285254,
+        "text": "Gwp გარკვევა",
+        "date": "2026-04-13",
+        "completedAt": "2026-04-14T16:46:27.583Z"
+      },
       {
         "id": 1776102289655,
         "text": "ბიდეტი",
@@ -645,6 +645,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"Gwp გარკვევა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1776185187585
+    },
+    {
       "msg": "Added task <strong>\"create new logo\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776164363060
@@ -888,11 +893,6 @@
       "msg": "Added task <strong>\"Pitch video + submit (May 5-11)\"</strong> to \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333249381
-    },
-    {
-      "msg": "Added task <strong>\"Traction sprint + beta testing (April 29 – May 4)\"</strong> to \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333242767
     }
   ]
 }
