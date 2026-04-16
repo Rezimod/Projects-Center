@@ -46,6 +46,10 @@
         {
           "name": "create new logo",
           "done": false
+        },
+        {
+          "name": "use design sites to create design",
+          "done": false
         }
       ],
       "notes": "",
@@ -651,6 +655,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"use design sites to create design\"</strong> to \"Stellar Week 2\"",
+      "color": "#2563EB",
+      "time": 1776367780995
+    },
+    {
       "msg": "Completed daily task <strong>\"Gwp გარკვევა\"</strong>",
       "color": "#67E8F9",
       "time": 1776185187585
@@ -894,11 +903,6 @@
       "msg": "Stage set to <strong>Planning</strong> on \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333259019
-    },
-    {
-      "msg": "Added task <strong>\"Pitch video + submit (May 5-11)\"</strong> to \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333249381
     }
   ]
 }
