@@ -404,12 +404,6 @@
         "date": "2026-04-14"
       },
       {
-        "id": 1777029102560,
-        "text": "რუკა",
-        "done": false,
-        "date": "2026-04-24"
-      },
-      {
         "id": 1777029105973,
         "text": "ექატრა ჯი",
         "done": false,
@@ -417,6 +411,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1777029102560,
+        "text": "რუკა",
+        "date": "2026-04-24",
+        "completedAt": "2026-04-27T08:04:58.243Z"
+      },
       {
         "id": 1776102285254,
         "text": "Gwp გარკვევა",
@@ -667,6 +667,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"რუკა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1777277098244
+    },
+    {
       "msg": "Added task <strong>\"use design sites to create design\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776367780995
@@ -910,11 +915,6 @@
       "msg": "Stage set to <strong>In Progress</strong> on \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333260154
-    },
-    {
-      "msg": "Stage set to <strong>Planning</strong> on \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333259019
     }
   ]
 }
