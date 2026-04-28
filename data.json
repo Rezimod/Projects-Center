@@ -392,12 +392,6 @@
         "date": "2026-04-13"
       },
       {
-        "id": 1776102300829,
-        "text": "გერმანიიდან ტელესკოპების შეკვეთა",
-        "done": false,
-        "date": "2026-04-13"
-      },
-      {
         "id": 1776185210366,
         "text": "Astroman New Ad",
         "done": false,
@@ -429,6 +423,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1776102300829,
+        "text": "გერმანიიდან ტელესკოპების შეკვეთა",
+        "date": "2026-04-13",
+        "completedAt": "2026-04-28T17:58:18.135Z"
+      },
       {
         "id": 1777029102560,
         "text": "რუკა",
@@ -685,6 +685,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"გერმანიიდან ტელესკოპების შეკვეთა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1777399098137
+    },
+    {
       "msg": "Completed daily task <strong>\"რუკა\"</strong>",
       "color": "#67E8F9",
       "time": 1777277098244
@@ -928,11 +933,6 @@
       "msg": "Stage set to <strong>Idea</strong> on \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333261414
-    },
-    {
-      "msg": "Stage set to <strong>In Progress</strong> on \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333260154
     }
   ]
 }
