@@ -392,12 +392,6 @@
         "date": "2026-04-13"
       },
       {
-        "id": 1776185210366,
-        "text": "Astroman New Ad",
-        "done": false,
-        "date": "2026-04-14"
-      },
-      {
         "id": 1777029105973,
         "text": "ექატრა ჯი",
         "done": false,
@@ -423,6 +417,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1776185210366,
+        "text": "Astroman New Ad",
+        "date": "2026-04-14",
+        "completedAt": "2026-04-28T17:58:20.500Z"
+      },
       {
         "id": 1776102300829,
         "text": "გერმანიიდან ტელესკოპების შეკვეთა",
@@ -685,6 +685,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"Astroman New Ad\"</strong>",
+      "color": "#67E8F9",
+      "time": 1777399100503
+    },
+    {
       "msg": "Completed daily task <strong>\"გერმანიიდან ტელესკოპების შეკვეთა\"</strong>",
       "color": "#67E8F9",
       "time": 1777399098137
@@ -928,11 +933,6 @@
       "msg": "Stage set to <strong>Planning</strong> on \"Stellar\"",
       "color": "#2563EB",
       "time": 1775333262229
-    },
-    {
-      "msg": "Stage set to <strong>Idea</strong> on \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333261414
     }
   ]
 }
