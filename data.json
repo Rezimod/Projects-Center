@@ -392,12 +392,6 @@
         "date": "2026-04-13"
       },
       {
-        "id": 1777029105973,
-        "text": "ექატრა ჯი",
-        "done": false,
-        "date": "2026-04-24"
-      },
-      {
         "id": 1777277106957,
         "text": "სასამართლოში დარეკვა",
         "done": false,
@@ -417,6 +411,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1777029105973,
+        "text": "ექატრა ჯი",
+        "date": "2026-04-24",
+        "completedAt": "2026-04-28T17:58:21.680Z"
+      },
       {
         "id": 1776185210366,
         "text": "Astroman New Ad",
@@ -685,6 +685,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"ექატრა ჯი\"</strong>",
+      "color": "#67E8F9",
+      "time": 1777399101683
+    },
+    {
       "msg": "Completed daily task <strong>\"Astroman New Ad\"</strong>",
       "color": "#67E8F9",
       "time": 1777399100503
@@ -928,11 +933,6 @@
       "msg": "Completed task <strong>\"Register + set up infrastructure\"</strong>",
       "color": "#2563EB",
       "time": 1775333266578
-    },
-    {
-      "msg": "Stage set to <strong>Planning</strong> on \"Stellar\"",
-      "color": "#2563EB",
-      "time": 1775333262229
     }
   ]
 }
