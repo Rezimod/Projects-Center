@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 0,
+      "progress": 10,
       "tasks": [
         {
           "name": "Work on Missions page",
@@ -45,7 +45,7 @@
         },
         {
           "name": "create new logo",
-          "done": false
+          "done": true
         },
         {
           "name": "use design sites to create design",
@@ -679,6 +679,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"create new logo\"</strong>",
+      "color": "#2563EB",
+      "time": 1777399128416
+    },
+    {
       "msg": "Completed daily task <strong>\"პრობაციაზე დარეკვა\"</strong>",
       "color": "#67E8F9",
       "time": 1777399111653
@@ -922,11 +927,6 @@
       "msg": "Stage set to <strong>Done</strong> on \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1775333620590
-    },
-    {
-      "msg": "Unchecked task <strong>\"Fork repo and build app shell (April 6-7)\"</strong>",
-      "color": "#2563EB",
-      "time": 1775333270182
     }
   ]
 }
