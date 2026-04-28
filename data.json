@@ -386,18 +386,6 @@
         "date": "2026-04-13"
       },
       {
-        "id": 1777277106957,
-        "text": "სასამართლოში დარეკვა",
-        "done": false,
-        "date": "2026-04-27"
-      },
-      {
-        "id": 1777277111825,
-        "text": "პრავაზე გარკვევა",
-        "done": false,
-        "date": "2026-04-27"
-      },
-      {
         "id": 1777277149433,
         "text": "პრობაციაზე დარეკვა",
         "done": false,
@@ -405,6 +393,18 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1777277106957,
+        "text": "სასამართლოში დარეკვა",
+        "date": "2026-04-27",
+        "completedAt": "2026-04-28T17:58:30.326Z"
+      },
+      {
+        "id": 1777277111825,
+        "text": "პრავაზე გარკვევა",
+        "date": "2026-04-27",
+        "completedAt": "2026-04-28T17:58:29.765Z"
+      },
       {
         "id": 1777029105973,
         "text": "ექატრა ჯი",
@@ -679,6 +679,16 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"სასამართლოში დარეკვა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1777399110328
+    },
+    {
+      "msg": "Completed daily task <strong>\"პრავაზე გარკვევა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1777399109767
+    },
+    {
       "msg": "Completed daily task <strong>\"ექატრა ჯი\"</strong>",
       "color": "#67E8F9",
       "time": 1777399101683
@@ -917,16 +927,6 @@
       "msg": "Unchecked task <strong>\"Register + set up infrastructure\"</strong>",
       "color": "#2563EB",
       "time": 1775333269312
-    },
-    {
-      "msg": "Completed task <strong>\"Fork repo and build app shell (April 6-7)\"</strong>",
-      "color": "#2563EB",
-      "time": 1775333268378
-    },
-    {
-      "msg": "Completed task <strong>\"Register + set up infrastructure\"</strong>",
-      "color": "#2563EB",
-      "time": 1775333266578
     }
   ]
 }
