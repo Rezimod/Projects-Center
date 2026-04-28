@@ -384,15 +384,15 @@
         "text": "ასტრომანის კვირის პოსტები",
         "done": false,
         "date": "2026-04-13"
-      },
-      {
-        "id": 1777277149433,
-        "text": "პრობაციაზე დარეკვა",
-        "done": false,
-        "date": "2026-04-27"
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1777277149433,
+        "text": "პრობაციაზე დარეკვა",
+        "date": "2026-04-27",
+        "completedAt": "2026-04-28T17:58:31.649Z"
+      },
       {
         "id": 1777277106957,
         "text": "სასამართლოში დარეკვა",
@@ -679,6 +679,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"პრობაციაზე დარეკვა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1777399111653
+    },
+    {
       "msg": "Completed daily task <strong>\"სასამართლოში დარეკვა\"</strong>",
       "color": "#67E8F9",
       "time": 1777399110328
@@ -922,11 +927,6 @@
       "msg": "Unchecked task <strong>\"Fork repo and build app shell (April 6-7)\"</strong>",
       "color": "#2563EB",
       "time": 1775333270182
-    },
-    {
-      "msg": "Unchecked task <strong>\"Register + set up infrastructure\"</strong>",
-      "color": "#2563EB",
-      "time": 1775333269312
     }
   ]
 }
