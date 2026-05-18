@@ -9,11 +9,11 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 10,
+      "progress": 20,
       "tasks": [
         {
           "name": "Work on Missions page",
-          "done": false
+          "done": true
         },
         {
           "name": "Finish Sky Page",
@@ -679,6 +679,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Work on Missions page\"</strong>",
+      "color": "#2563EB",
+      "time": 1779130112439
+    },
+    {
       "msg": "Updated project <strong>\"Stellar Continiues\"</strong>",
       "color": "#2563EB",
       "time": 1779130108505
@@ -922,11 +927,6 @@
       "msg": "Progress updated to <strong>100%</strong> on \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1775414961635
-    },
-    {
-      "msg": "Stage set to <strong>Review</strong> on \"Weekend Coding Event\"",
-      "color": "#2563EB",
-      "time": 1775333621580
     }
   ]
 }
