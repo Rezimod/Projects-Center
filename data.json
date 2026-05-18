@@ -1,6 +1,70 @@
 {
   "projects": [
     {
+      "id": 1776084363616,
+      "name": "Stellar Continiues",
+      "desc": "",
+      "type": "monthly",
+      "due": "2026-06-20",
+      "priority": "high",
+      "color": "#2563EB",
+      "icon": "📌",
+      "progress": 91,
+      "tasks": [
+        {
+          "name": "Work on Missions page",
+          "done": true
+        },
+        {
+          "name": "Finish Sky Page",
+          "done": true
+        },
+        {
+          "name": "finish learning page",
+          "done": true
+        },
+        {
+          "name": "finish marketplace",
+          "done": true
+        },
+        {
+          "name": "Finish Profile",
+          "done": true
+        },
+        {
+          "name": "fihisn home page",
+          "done": true
+        },
+        {
+          "name": "leaderboard",
+          "done": true
+        },
+        {
+          "name": "Full tests and Demo video",
+          "done": true
+        },
+        {
+          "name": "create new logo",
+          "done": true
+        },
+        {
+          "name": "use design sites to create design",
+          "done": true
+        },
+        {
+          "name": "as",
+          "done": false
+        }
+      ],
+      "notes": "",
+      "created": 1776084363616,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
       "id": 1772361692835,
       "name": "Current Website Update",
       "desc": "Update the www.astroman.ge",
@@ -206,66 +270,6 @@
     }
   ],
   "completedProjects": [
-    {
-      "id": 1776084363616,
-      "name": "Stellar Continiues",
-      "desc": "",
-      "type": "monthly",
-      "due": "2026-06-20",
-      "priority": "high",
-      "color": "#2563EB",
-      "icon": "📌",
-      "progress": 100,
-      "tasks": [
-        {
-          "name": "Work on Missions page",
-          "done": true
-        },
-        {
-          "name": "Finish Sky Page",
-          "done": true
-        },
-        {
-          "name": "finish learning page",
-          "done": true
-        },
-        {
-          "name": "finish marketplace",
-          "done": true
-        },
-        {
-          "name": "Finish Profile",
-          "done": true
-        },
-        {
-          "name": "fihisn home page",
-          "done": true
-        },
-        {
-          "name": "leaderboard",
-          "done": true
-        },
-        {
-          "name": "Full tests and Demo video",
-          "done": true
-        },
-        {
-          "name": "create new logo",
-          "done": true
-        },
-        {
-          "name": "use design sites to create design",
-          "done": true
-        }
-      ],
-      "notes": "",
-      "created": 1776084363616,
-      "reminder": {
-        "enabled": false,
-        "timing": "oneday",
-        "lastSent": null
-      }
-    },
     {
       "id": 1775333164116,
       "name": "Stellar Week 1",
@@ -679,6 +683,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"as\"</strong> to \"Stellar Continiues\"",
+      "color": "#2563EB",
+      "time": 1779130143575
+    },
+    {
       "msg": "Completed task <strong>\"use design sites to create design\"</strong>",
       "color": "#2563EB",
       "time": 1779130121138
@@ -922,11 +931,6 @@
       "msg": "Completed weekly task <strong>\"10 video sctips for Qeta\"</strong>",
       "color": "#A78BFA",
       "time": 1775485804515
-    },
-    {
-      "msg": "Completed weekly task <strong>\"Start working on Stellar\"</strong>",
-      "color": "#A78BFA",
-      "time": 1775485801158
     }
   ]
 }
