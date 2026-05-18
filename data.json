@@ -2,10 +2,10 @@
   "projects": [
     {
       "id": 1776084363616,
-      "name": "Stellar Week 2",
+      "name": "Stellar Continiues",
       "desc": "",
       "type": "monthly",
-      "due": "2026-04-20",
+      "due": "2026-06-20",
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
@@ -679,6 +679,11 @@
   },
   "activity": [
     {
+      "msg": "Updated project <strong>\"Stellar Continiues\"</strong>",
+      "color": "#2563EB",
+      "time": 1779130108505
+    },
+    {
       "msg": "Completed task <strong>\"create new logo\"</strong>",
       "color": "#2563EB",
       "time": 1777399128416
@@ -922,11 +927,6 @@
       "msg": "Stage set to <strong>Review</strong> on \"Weekend Coding Event\"",
       "color": "#2563EB",
       "time": 1775333621580
-    },
-    {
-      "msg": "Stage set to <strong>Done</strong> on \"Weekend Coding Event\"",
-      "color": "#2563EB",
-      "time": 1775333620590
     }
   ]
 }
