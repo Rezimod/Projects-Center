@@ -512,12 +512,6 @@
   "planner": {
     "dailyTasks": [
       {
-        "id": 1776084479304,
-        "text": "Astroman Weekle Content Creation",
-        "done": false,
-        "date": "2026-04-13"
-      },
-      {
         "id": 1776102294853,
         "text": "ასტრომანის კვირის პოსტები",
         "done": false,
@@ -555,6 +549,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1776084479304,
+        "text": "Astroman Weekle Content Creation",
+        "date": "2026-04-13",
+        "completedAt": "2026-05-18T19:12:49.042Z"
+      },
       {
         "id": 1777277149433,
         "text": "პრობაციაზე დარეკვა",
@@ -847,6 +847,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"Astroman Weekle Content Creation\"</strong>",
+      "color": "#67E8F9",
+      "time": 1779131569043
+    },
+    {
       "msg": "Created project <strong>\"Stellar Continue\"</strong>",
       "color": "#2563EB",
       "time": 1779131427104
@@ -1090,11 +1095,6 @@
       "msg": "Completed task <strong>\"Wallet connect + Solana foundation (April 8-10)\"</strong>",
       "color": "#2563EB",
       "time": 1776084277217
-    },
-    {
-      "msg": "Completed task <strong>\"Fork repo and build app shell (April 6-7)\"</strong>",
-      "color": "#2563EB",
-      "time": 1776084275836
     }
   ]
 }
