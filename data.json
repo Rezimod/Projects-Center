@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 60,
+      "progress": 80,
       "tasks": [
         {
           "name": "Work on Missions page",
@@ -33,11 +33,11 @@
         },
         {
           "name": "fihisn home page",
-          "done": false
+          "done": true
         },
         {
           "name": "leaderboard",
-          "done": false
+          "done": true
         },
         {
           "name": "Full tests and Demo video",
@@ -679,6 +679,16 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"leaderboard\"</strong>",
+      "color": "#2563EB",
+      "time": 1779130118964
+    },
+    {
+      "msg": "Completed task <strong>\"fihisn home page\"</strong>",
+      "color": "#2563EB",
+      "time": 1779130118319
+    },
+    {
       "msg": "Completed task <strong>\"Finish Profile\"</strong>",
       "color": "#2563EB",
       "time": 1779130116866
@@ -917,16 +927,6 @@
       "msg": "Completed weekly task <strong>\"კონიაკზე გამწოვის მოგვარება\"</strong>",
       "color": "#A78BFA",
       "time": 1775485786742
-    },
-    {
-      "msg": "Completed weekly task <strong>\"მოემზადე 4 აპრილის შეხვედრისთთვის\"</strong>",
-      "color": "#A78BFA",
-      "time": 1775485779569
-    },
-    {
-      "msg": "Completed daily task <strong>\"get missions takss from Kostya for me\"</strong>",
-      "color": "#67E8F9",
-      "time": 1775485773541
     }
   ]
 }
