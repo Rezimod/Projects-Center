@@ -9,7 +9,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "🌍",
-      "progress": 20,
+      "progress": 0,
       "tasks": [
         {
           "id": 1779131350091,
@@ -36,14 +36,7 @@
           "completedAt": null
         }
       ],
-      "completedTasks": [
-        {
-          "id": 1779131348921,
-          "name": "add clubs page",
-          "done": true,
-          "completedAt": "2026-05-18T19:09:48.309Z"
-        }
-      ],
+      "completedTasks": [],
       "notes": "",
       "created": 1772361692835,
       "reminder": {
@@ -804,6 +797,11 @@
   },
   "activity": [
     {
+      "msg": "Deleted completed task <strong>\"add clubs page\"</strong> from \"Current Website Update\"",
+      "color": "#DC2626",
+      "time": 1779131391234
+    },
+    {
       "msg": "Completed task <strong>\"add clubs page\"</strong> on \"Current Website Update\"",
       "color": "#2563EB",
       "time": 1779131388310
@@ -1047,11 +1045,6 @@
       "msg": "Completed task <strong>\"Register + set up infrastructure\"</strong>",
       "color": "#2563EB",
       "time": 1776084273452
-    },
-    {
-      "msg": "Completed daily task <strong>\"ასტრომანის ექსელი\"</strong>",
-      "color": "#67E8F9",
-      "time": 1776084255024
     }
   ]
 }
