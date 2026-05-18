@@ -9,27 +9,39 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "🌍",
-      "progress": 0,
+      "progress": 20,
       "tasks": [
         {
-          "name": "add clubs page",
-          "done": false
-        },
-        {
+          "id": 1779131350091,
           "name": "add skywatcher page",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1779131344734,
           "name": "add one more buit in ai",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1779131347003,
           "name": "make product page more convertable",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1779131342660,
           "name": "ask claude how to improve system of the web",
-          "done": false
+          "done": false,
+          "completedAt": null
+        }
+      ],
+      "completedTasks": [
+        {
+          "id": 1779131348921,
+          "name": "add clubs page",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:48.309Z"
         }
       ],
       "notes": "",
@@ -52,36 +64,54 @@
       "progress": 50,
       "tasks": [
         {
-          "name": "cretate website",
-          "done": true
-        },
-        {
-          "name": "add different features",
-          "done": true
-        },
-        {
-          "name": "test everything",
-          "done": true
-        },
-        {
+          "id": 1779131351642,
           "name": "integrate with my website",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1779131347107,
           "name": "create marketing plan for deployment",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1779131343101,
           "name": "deploy",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
-          "name": "ტელესკოპის რენდომ ჩვენება",
-          "done": true
-        },
-        {
+          "id": 1779131343588,
           "name": "redisign it with my existing app. make it work.",
-          "done": false
+          "done": false,
+          "completedAt": null
+        }
+      ],
+      "completedTasks": [
+        {
+          "id": 1779131349401,
+          "name": "cretate website",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131349788,
+          "name": "add different features",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131349733,
+          "name": "test everything",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131343737,
+          "name": "ტელესკოპის რენდომ ჩვენება",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         }
       ],
       "notes": "",
@@ -104,40 +134,60 @@
       "progress": 56,
       "tasks": [
         {
-          "name": "Create website",
-          "done": true
-        },
-        {
-          "name": "build admin and dashboard page",
-          "done": true
-        },
-        {
+          "id": 1779131351641,
           "name": "make it perfect.",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
-          "name": "Manual Upload feature to add",
-          "done": true
-        },
-        {
+          "id": 1779131343162,
           "name": "check if everything works",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1779131349198,
           "name": "Create deployment marketing plan",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1779131345503,
           "name": "admin page setup",
-          "done": false
+          "done": false,
+          "completedAt": null
+        }
+      ],
+      "completedTasks": [
+        {
+          "id": 1779131346540,
+          "name": "Create website",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131346559,
+          "name": "build admin and dashboard page",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131352021,
+          "name": "Manual Upload feature to add",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131349250,
           "name": "add forgot password option",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131347280,
           "name": "check matematics and new registration.",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         }
       ],
       "notes": "",
@@ -160,40 +210,60 @@
       "progress": 44,
       "tasks": [
         {
-          "name": "name",
-          "done": true
-        },
-        {
-          "name": "logo",
-          "done": true
-        },
-        {
+          "id": 1779131345779,
           "name": "soc medias",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
-          "name": "business plan",
-          "done": true
-        },
-        {
-          "name": "marketing plan",
-          "done": true
-        },
-        {
+          "id": 1779131348977,
           "name": "Ads manager &business suite",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1779131344212,
           "name": "website",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1779131343740,
           "name": "First ad",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1779131344152,
           "name": "First Client",
-          "done": false
+          "done": false,
+          "completedAt": null
+        }
+      ],
+      "completedTasks": [
+        {
+          "id": 1779131345841,
+          "name": "name",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131352402,
+          "name": "logo",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131350919,
+          "name": "business plan",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131347529,
+          "name": "marketing plan",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         }
       ],
       "notes": "",
@@ -216,46 +286,67 @@
       "color": "#2563EB",
       "icon": "📌",
       "progress": 100,
-      "tasks": [
+      "tasks": [],
+      "completedTasks": [
         {
+          "id": 1779131352037,
           "name": "Work on Missions page",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131346537,
           "name": "Finish Sky Page",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131343514,
           "name": "finish learning page",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131350470,
           "name": "finish marketplace",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131349973,
           "name": "Finish Profile",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131344667,
           "name": "fihisn home page",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131342762,
           "name": "leaderboard",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131344285,
           "name": "Full tests and Demo video",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131343516,
           "name": "create new logo",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131345602,
           "name": "use design sites to create design",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         }
       ],
       "notes": "",
@@ -276,42 +367,61 @@
       "color": "#2563EB",
       "icon": "📌",
       "progress": 100,
-      "tasks": [
+      "tasks": [],
+      "completedTasks": [
         {
+          "id": 1779131349707,
           "name": "Register + set up infrastructure",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131347936,
           "name": "Fork repo and build app shell (April 6-7)",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131343235,
           "name": "Wallet connect + Solana foundation (April 8-10)",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131351064,
           "name": "Sky Observatory dashboard (April 10-13)",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131348722,
           "name": "AI Space Companion (April 13-17)",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131348531,
           "name": "Missions + gamification (April 17-21)",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131352483,
           "name": "Marketplace + payments (April 21-26)",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131346074,
           "name": "Discovery Attestations NFT minting (April 26-29)",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131351173,
           "name": "Traction sprint + beta testing (April 29 – May 4)",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         }
       ],
       "notes": "",
@@ -332,34 +442,49 @@
       "color": "#2563EB",
       "icon": "📌",
       "progress": 100,
-      "tasks": [
+      "tasks": [],
+      "completedTasks": [
         {
+          "id": 1779131351366,
           "name": "create a plan",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131344920,
           "name": "app idea, name, etc",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131347188,
           "name": "people to meet",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131348713,
           "name": "learn the plan",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131342565,
           "name": "has to be a problem solving",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131345854,
           "name": "replit.com",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         },
         {
+          "id": 1779131345953,
           "name": "done",
-          "done": true
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
         }
       ],
       "notes": "I am building Proof of Observation — Strava for astronomy on Solana\nfor telescope owners at Georgia's first astronomy store\nthat solves no way to verify, reward, or share real stargazing\nby gamified sky missions with camera proof, satellite-verified conditions (FarmHawk), offline mesh submission (Pollinet), and NFT achievement minting — built from Scriptonia-generated specs",
@@ -679,6 +804,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"add clubs page\"</strong> on \"Current Website Update\"",
+      "color": "#2563EB",
+      "time": 1779131388310
+    },
+    {
       "msg": "Deleted task <strong>\"as\"</strong> from \"Stellar Continiues\"",
       "color": "#DC2626",
       "time": 1779130146327
@@ -922,11 +1052,6 @@
       "msg": "Completed daily task <strong>\"ასტრომანის ექსელი\"</strong>",
       "color": "#67E8F9",
       "time": 1776084255024
-    },
-    {
-      "msg": "Completed daily task <strong>\"აწარმოეში გადარეკვა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1775684886322
     }
   ]
 }
