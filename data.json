@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 40,
+      "progress": 60,
       "tasks": [
         {
           "name": "Work on Missions page",
@@ -25,11 +25,11 @@
         },
         {
           "name": "finish marketplace",
-          "done": false
+          "done": true
         },
         {
           "name": "Finish Profile",
-          "done": false
+          "done": true
         },
         {
           "name": "fihisn home page",
@@ -679,6 +679,16 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Finish Profile\"</strong>",
+      "color": "#2563EB",
+      "time": 1779130116866
+    },
+    {
+      "msg": "Completed task <strong>\"finish marketplace\"</strong>",
+      "color": "#2563EB",
+      "time": 1779130116009
+    },
+    {
       "msg": "Completed task <strong>\"finish learning page\"</strong>",
       "color": "#2563EB",
       "time": 1779130114959
@@ -917,16 +927,6 @@
       "msg": "Completed daily task <strong>\"get missions takss from Kostya for me\"</strong>",
       "color": "#67E8F9",
       "time": 1775485773541
-    },
-    {
-      "msg": "Completed daily task <strong>\"meeting with Kostya, make product blueprint\"</strong>",
-      "color": "#67E8F9",
-      "time": 1775485771977
-    },
-    {
-      "msg": "Completed daily task <strong>\"meeting with kostya, write a plan and all that.\"</strong>",
-      "color": "#67E8F9",
-      "time": 1775485768205
     }
   ]
 }
