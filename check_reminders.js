@@ -68,27 +68,52 @@ function isWeekdayInTbilisi(date = new Date()) {
   return !['Sat', 'Sun'].includes(tzParts(date).weekday);
 }
 
+function isoWeek(d = new Date()) {
+  const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  date.setUTCDate(date.getUTCDate() + 4 - (date.getUTCDay() || 7));
+  const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+  return Math.ceil(((date - yearStart) / 86400000 + 1) / 7);
+}
+
+function todayTasksForDigest() {
+  const today = tzParts(now).dateKey;
+  return planner.dailyTasks.filter(t => !t.done && (!t.date || t.date === today));
+}
+
+function currentWeekTasksForDigest() {
+  const weekNum = isoWeek(now);
+  const year = now.getFullYear();
+  return planner.weeklyTasks.filter(t => !t.done && t.weekNum === weekNum && t.year === year);
+}
+
 function buildDailyTaskDigest() {
   const dateLabel = now.toLocaleDateString('en-US', { timeZone: TZ, weekday: 'long', month: 'long', day: 'numeric' });
-  const done = planner.dailyTasks.filter(t => t.done).length;
-  const undone = planner.dailyTasks.filter(t => !t.done);
+  const todayTasks = todayTasksForDigest();
+  const today = tzParts(now).dateKey;
+  const done = planner.completedDailyTasks.filter(t => t.date === today).length;
+  const undone = todayTasks;
   const parts = [`☀️ <b>Daily Orbit — ${dateLabel}</b>`];
   if (planner.dailyFocus.mustDo)  parts.push(`\n🎯 <b>Must Do</b>\n${planner.dailyFocus.mustDo}`);
   if (planner.dailyFocus.stretch) parts.push(`\n🪐 <b>Stretch</b>\n${planner.dailyFocus.stretch}`);
   if (planner.dailyFocus.note)    parts.push(`\n📝 <b>Note</b>\n${planner.dailyFocus.note}`);
-  parts.push(`\n✅ <b>Daily Tasks</b> (${done}/${planner.dailyTasks.length} done)`);
+  const total = todayTasks.length + done;
+  parts.push(`\n✅ <b>Daily Tasks</b> (${done}/${total || 0} done)`);
   parts.push(undone.length ? undone.map(t => `• ${t.text}`).join('\n') : 'All daily tasks complete.');
   return parts.join('\n');
 }
 
 function buildWeeklyTaskDigest() {
-  const done = planner.weeklyTasks.filter(t => t.done).length;
-  const undone = planner.weeklyTasks.filter(t => !t.done);
+  const weekTasks = currentWeekTasksForDigest();
+  const weekNum = isoWeek(now);
+  const year = now.getFullYear();
+  const done = planner.completedWeeklyTasks.filter(t => t.weekNum === weekNum && t.year === year).length;
+  const undone = weekTasks;
   const parts = [`🌌 <b>Weekly Compass</b>`];
   if (planner.weeklyPlan.theme) parts.push(`\n🧭 <b>Theme</b>\n${planner.weeklyPlan.theme}`);
   if (planner.weeklyPlan.win)   parts.push(`\n🏁 <b>Win</b>\n${planner.weeklyPlan.win}`);
   if (planner.weeklyPlan.risk)  parts.push(`\n⚠️ <b>Risk</b>\n${planner.weeklyPlan.risk}`);
-  parts.push(`\n📅 <b>Weekly Tasks</b> (${done}/${planner.weeklyTasks.length} done)`);
+  const total = weekTasks.length + done;
+  parts.push(`\n📅 <b>Weekly Tasks</b> (${done}/${total || 0} done)`);
   parts.push(undone.length ? undone.map(t => `• ${t.text}`).join('\n') : 'All weekly tasks complete.');
   return parts.join('\n');
 }

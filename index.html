@@ -448,6 +448,12 @@ display:grid;place-items:center;position:relative;flex-shrink:0;box-shadow:inset
 .task-add-row{display:flex;align-items:center;gap:10px;padding:9px 18px;background:var(--bg2);border-top:1px solid var(--border);}
 .task-add-inp{flex:1;background:none;border:none;outline:none;font-family:var(--font);font-size:13px;color:var(--text);}
 .task-add-inp::placeholder{color:var(--text3);}
+.task-completed-wrap{border-top:1px solid var(--border);background:var(--bg2);}
+.task-completed-hd{display:flex;align-items:center;justify-content:space-between;padding:10px 18px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--text3);}
+.task-completed-hd span{color:var(--green);}
+.task-completed-item{opacity:.88;}
+.task-restore{font-size:11px;font-weight:600;color:var(--blue);padding:4px 8px;border-radius:6px;border:none;background:var(--blue-lt);cursor:pointer;}
+.task-restore:hover{background:rgba(37,99,235,0.2);}
 
 /* ── Stage / Priority ── */
 .stage-opts{padding:8px 12px;display:flex;flex-direction:column;gap:3px;}
@@ -800,9 +806,21 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
   .station-eyebrow{font-size:9px;letter-spacing:3px;}
 }
 @keyframes tabbarIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.app-loader{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:var(--bg);transition:opacity .28s ease,visibility .28s ease;}
+.app-loader.done{opacity:0;visibility:hidden;pointer-events:none;}
+.app-loader-ring{width:44px;height:44px;border-radius:50%;border:3px solid rgba(124,155,255,0.15);border-top-color:var(--blue);animation:spin .75s linear infinite;}
+.app-loader-text{font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn:disabled,.btn.is-saving{opacity:.65;pointer-events:none;cursor:wait;}
+.kbd-hint{font-family:var(--mono);font-size:10px;color:var(--text3);padding:8px 10px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);line-height:1.6;}
 </style>
 </head>
 <body>
+
+<div class="app-loader" id="app-loader" aria-live="polite" aria-busy="true">
+  <div class="app-loader-ring"></div>
+  <div class="app-loader-text">Loading workspace</div>
+</div>
 
 <div class="toast-wrap" id="toastWrap"></div>
 <div class="mob-backdrop" id="mobBackdrop" onclick="closeSidebar()"></div>
@@ -924,7 +942,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
       </div>
       <div class="field">
         <div class="fl">Repository (owner/repo-name)</div>
-        <input class="fi" id="s-gh-repo" placeholder="Morningbriefrezi/Projects-Center" value="Morningbriefrezi/Projects-Center"/>
+        <input class="fi" id="s-gh-repo" placeholder="Rezimod/Projects-Center" value="Rezimod/Projects-Center"/>
         <div class="fi-hint">Already filled in — just add your token above and click Save & Connect</div>
       </div>
       <div class="field" style="padding:4px 0">
@@ -985,6 +1003,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
         <label for="s-dig-overdue">Include Overdue Projects</label>
       </div>
     </div>
+    <div class="kbd-hint" style="margin:0 20px 12px">⌘K new project · ⌘D dashboard · Esc close panels</div>
     <div class="modal-foot">
       <button class="btn btn-ghost" onclick="closeSetup()">Close</button>
       <button class="btn btn-primary" onclick="saveSetup()">Save & Connect</button>
@@ -1087,10 +1106,34 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
 
 <script>
 // ══════════════════════════════════════════════════════════
+//  UTILITIES
+// ══════════════════════════════════════════════════════════
+function safeParse(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return fallback;
+    const val = JSON.parse(raw);
+    return val === null || val === undefined ? fallback : val;
+  } catch {
+    try { localStorage.removeItem(key); } catch {}
+    return fallback;
+  }
+}
+function hideAppLoader() {
+  const el = document.getElementById('app-loader');
+  if (!el) return;
+  el.classList.add('done');
+  el.setAttribute('aria-busy', 'false');
+  setTimeout(() => el.remove(), 320);
+}
+
+// ══════════════════════════════════════════════════════════
 //  STATE
 // ══════════════════════════════════════════════════════════
-let D = JSON.parse(localStorage.getItem('pc_v3') || '[]').map(normalizeProject);
-let completedProjects = JSON.parse(localStorage.getItem('pc_v3_completed') || '[]').map(normalizeProject);
+const _storedProjects = safeParse('pc_v3', []);
+const _storedCompleted = safeParse('pc_v3_completed', []);
+let D = (Array.isArray(_storedProjects) ? _storedProjects : []).map(normalizeProject);
+let completedProjects = (Array.isArray(_storedCompleted) ? _storedCompleted : []).map(normalizeProject);
 let theme = localStorage.getItem('pc_theme') || 'dark';
 let view = 'dashboard';
 let activeProject = null;
@@ -1098,7 +1141,7 @@ let editingId = null;
 let deleteId = null;
 let newType = 'daily';
 let newColor = '#2563EB';
-let activityLog = JSON.parse(localStorage.getItem('pc_activity') || '[]');
+let activityLog = Array.isArray(safeParse('pc_activity', [])) ? safeParse('pc_activity', []) : [];
 let _dataSha = null;
 let _saveTimer = null;
 let _isSaving = false;
@@ -1113,7 +1156,7 @@ const DEFAULT_PLANNER = () => ({
   telegramSchedule: { timezone: 'Asia/Tbilisi', dailyWeekday: '12:00', weeklyWeekday: '15:00' },
   telegramLog: {}
 });
-let planner = normalizePlanner(JSON.parse(localStorage.getItem('pc_planner') || 'null') || {});
+let planner = normalizePlanner(safeParse('pc_planner', null) || {});
 let dailyTasks = planner.dailyTasks;
 let completedDailyTasks = planner.completedDailyTasks;
 let weeklyTasks = planner.weeklyTasks;
@@ -1142,7 +1185,7 @@ function getWeekLabel() {
 
 // ── Daily tasks init (reset checked tasks at midnight) ──
 function initDailyTasks() {
-  const stored = planner.dailyTasks?.length ? planner.dailyTasks : JSON.parse(localStorage.getItem('dailyTasks') || '[]');
+  const stored = planner.dailyTasks?.length ? planner.dailyTasks : (Array.isArray(safeParse('dailyTasks', [])) ? safeParse('dailyTasks', []) : []);
   const storedDate = localStorage.getItem('dailyTasksDate') || '';
   const today = new Date().toISOString().split('T')[0];
   const doneToday = stored.filter(t => t.done).map(t => ({ id: t.id || Date.now() + Math.random(), text: t.text || '', date: t.date || today, completedAt: t.completedAt || new Date().toISOString() }));
@@ -1158,7 +1201,7 @@ function initDailyTasks() {
 }
 // ── Weekly tasks init (reset checked tasks on new ISO week) ──
 function initWeeklyTasks() {
-  const stored = planner.weeklyTasks?.length ? planner.weeklyTasks : JSON.parse(localStorage.getItem('weeklyTasks') || '[]');
+  const stored = planner.weeklyTasks?.length ? planner.weeklyTasks : (Array.isArray(safeParse('weeklyTasks', [])) ? safeParse('weeklyTasks', []) : []);
   const storedWeek = parseInt(localStorage.getItem('weeklyTasksWeek') || '0');
   const storedYear = parseInt(localStorage.getItem('weeklyTasksYear') || '0');
   const now = new Date(), curWeek = isoWeek(now), curYear = now.getFullYear();
@@ -1239,7 +1282,43 @@ function plannerHasContent(state = planner) {
 function escapeHTML(str) {
   return String(str ?? '').replace(/[&<>"']/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[ch]));
 }
+function normalizeProjectTask(t, { done = false } = {}) {
+  return {
+    id: t.id || Date.now() + Math.floor(Math.random() * 10000),
+    name: t.name || '',
+    done: !!done,
+    completedAt: t.completedAt || null
+  };
+}
+function splitLegacyProjectTasks(rawTasks = []) {
+  const active = [];
+  const completed = [];
+  rawTasks.forEach(t => {
+    const norm = normalizeProjectTask(t, { done: !!t.done });
+    if (norm.done) completed.push({ ...norm, completedAt: norm.completedAt || new Date().toISOString() });
+    else active.push({ ...norm, done: false });
+  });
+  return { active, completed };
+}
+function projectTaskCounts(p) {
+  const active = Array.isArray(p.tasks) ? p.tasks : [];
+  const completed = Array.isArray(p.completedTasks) ? p.completedTasks : [];
+  return { active: active.length, completed: completed.length, total: active.length + completed.length };
+}
 function normalizeProject(p) {
+  const rawTasks = Array.isArray(p.tasks) ? p.tasks : [];
+  const rawCompleted = Array.isArray(p.completedTasks) ? p.completedTasks : [];
+  let tasks, completedTasks;
+  if (rawCompleted.length) {
+    tasks = rawTasks.filter(t => !t.done).map(t => normalizeProjectTask(t, { done: false }));
+    completedTasks = [...rawCompleted, ...rawTasks.filter(t => t.done)].map(t =>
+      normalizeProjectTask(t, { done: true })
+    ).map(t => ({ ...t, completedAt: t.completedAt || new Date().toISOString() }));
+  } else {
+    const split = splitLegacyProjectTasks(rawTasks);
+    tasks = split.active;
+    completedTasks = split.completed;
+  }
   return {
     id: p.id || Date.now() + Math.floor(Math.random() * 10000),
     name: p.name || 'Untitled Project',
@@ -1250,7 +1329,8 @@ function normalizeProject(p) {
     color: p.color || '#2563EB',
     icon: p.icon || '📌',
     progress: clamp(p.progress ?? 0),
-    tasks: Array.isArray(p.tasks) ? p.tasks.map(t => ({ name: t.name || '', done: !!t.done })) : [],
+    tasks,
+    completedTasks,
     notes: p.notes || '',
     created: p.created || p.id || Date.now(),
     reminder: {
@@ -1403,7 +1483,8 @@ function matchesSearch(project) {
     project.notes,
     project.type,
     project.priority,
-    ...(project.tasks || []).map(t => t.name)
+    ...(project.tasks || []).map(t => t.name),
+    ...(project.completedTasks || []).map(t => t.name)
   ].join(' ').toLowerCase();
   return haystack.includes(q);
 }
@@ -1553,7 +1634,7 @@ function renderDailyTasks() {
     ? `<div class="todo-empty">No tasks yet — add one above.</div>`
     : dailyTasks.map(t => `<div class="todo-item">
         <div class="todo-ck" onclick="toggleDailyTask(${t.id})"></div>
-        <span class="todo-nm">${t.text}</span>
+        <span class="todo-nm">${escapeHTML(t.text)}</span>
         <button class="todo-del" onclick="delDailyTask(${t.id})">✕</button>
       </div>`).join('');
   return `<div class="au">
@@ -1590,7 +1671,7 @@ function renderWeeklyTasks() {
     ? `<div class="todo-empty">No tasks this week — add one above.</div>`
     : weeklyTasks.map(t => `<div class="todo-item">
         <div class="todo-ck" onclick="toggleWeeklyTask(${t.id})"></div>
-        <span class="todo-nm">${t.text}</span>
+        <span class="todo-nm">${escapeHTML(t.text)}</span>
         <button class="todo-del" onclick="delWeeklyTask(${t.id})">✕</button>
       </div>`).join('');
   return `<div class="au">
@@ -1653,6 +1734,7 @@ async function ghLoad() {
 async function ghSave(data, _retry = false) {
   if (!isGHConfigured() || _isSaving) return;
   _isSaving = true;
+  document.querySelectorAll('.btn-primary').forEach(b => b.classList.add('is-saving'));
   setSyncStatus('', 'Saving…');
   try {
     const body = { message: 'chore: sync projects', content: toB64(JSON.stringify(data, null, 2)) };
@@ -1679,9 +1761,11 @@ async function ghSave(data, _retry = false) {
       setSyncStatus('err', `Save failed (${res.status})`);
     }
   } catch(e) {
-    setSyncStatus('err', 'Offline');
+    setSyncStatus('err', 'Offline — saved locally');
+    toast('GitHub sync failed — changes saved on this device', '#D97706');
   }
   _isSaving = false;
+  document.querySelectorAll('.btn-primary.is-saving').forEach(b => b.classList.remove('is-saving'));
 }
 
 function setSyncStatus(type, msg) {
@@ -1752,8 +1836,11 @@ function logActivity(msg, color = '#2563EB') {
 
 // ── Init ──
 async function initApp() {
+  try {
   initDailyTasks();
   initWeeklyTasks();
+  D = D.map(normalizeProject);
+  completedProjects = completedProjects.map(normalizeProject);
   await hydrateBundledProjects('initial');
   if (isGHReadable()) {
     if (localStorage.getItem('autoPullOnOpen') !== '0') {
@@ -1792,7 +1879,22 @@ async function initApp() {
   updateSidebar();
   renderContent();
   checkRemindersOnLoad();
+  } catch (err) {
+    console.error('[Projects Center]', err);
+    toast('Could not load workspace — using local data', '#DC2626');
+    updateSidebar();
+    renderContent();
+  } finally {
+    hideAppLoader();
+  }
 }
+window.addEventListener('error', e => {
+  console.error('[Projects Center]', e.error || e.message);
+  toast('Something went wrong — try refreshing', '#DC2626');
+});
+window.addEventListener('unhandledrejection', e => {
+  console.error('[Projects Center]', e.reason);
+});
 initApp();
 
 // ══════════════════════════════════════════════════════════
@@ -2031,7 +2133,7 @@ function updateSidebar() {
   list.innerHTML = D.filter(p => p.progress < 100).map(p => `
     <button class="pli ${activeProject===p.id?'active':''}" onclick="goProject(${p.id})">
       <div class="pli-dot" style="background:${p.color||'#2563EB'}"></div>
-      <span class="pli-name">${p.icon?p.icon+' ':''}${p.name}</span>
+      <span class="pli-name">${p.icon?p.icon+' ':''}${escapeHTML(p.name)}</span>
       <span class="pli-pct">${p.progress}%</span>
     </button>`).join('') || `<div style="padding:7px 9px;font-size:12px;color:var(--sb-t3)">No projects yet.</div>`;
 
@@ -2111,6 +2213,7 @@ function renderContent(resetScroll = false) {
   }
   el.innerHTML = `<div class="page-shell">${html}</div>`;
   if (resetScroll) el.scrollTo({ top: 0, behavior: 'smooth' });
+  if (view === 'dashboard') _renderFocusTimer();
 }
 function setSearch(val) {
   searchQuery = val;
@@ -2261,7 +2364,7 @@ function renderMissionCard({ title, sub, percent, accent, stat, items }) {
     </div>
     <div class="mission-bar"><div class="mission-bar-fill" style="width:${percent}%;background:${accent}"></div></div>
     <div class="mission-list">
-      ${items.length ? items.map(item => `<div class="mission-task"><div class="mission-bullet" style="background:${item.color || accent}"></div><div class="mission-copy"><strong>${item.title}</strong><span>${item.text}</span></div></div>`).join('') : `<div class="mission-empty">No items yet. Add a few from the planner cards below.</div>`}
+      ${items.length ? items.map(item => `<div class="mission-task"><div class="mission-bullet" style="background:${item.color || accent}"></div><div class="mission-copy"><strong>${escapeHTML(item.title)}</strong><span>${escapeHTML(item.text)}</span></div></div>`).join('') : `<div class="mission-empty">No items yet. Add a few from the planner cards below.</div>`}
     </div>
   </div>`;
 }
@@ -2496,7 +2599,8 @@ function renderList(v) {
 
 function pcardHTML(p) {
   const col=p.color||'#2563EB', due=dueInfo(p.due), pctCol=pctColor(p.progress);
-  const doneTasks=(p.tasks||[]).filter(t=>t.done).length, hasR=p.reminder?.enabled&&p.due;
+  const { active: activeTaskCount, completed: doneTasks, total: totalTaskCount } = projectTaskCounts(p);
+  const hasR=p.reminder?.enabled&&p.due;
   return `<div class="pcard" style="border-left-color:${col}" onclick="goProject(${p.id})">
     <div class="pcard-top">
       <div class="pcard-icon" style="background:${hexAlpha(col,.12)}">${p.icon||'📌'}</div>
@@ -2505,13 +2609,13 @@ function pcardHTML(p) {
         <span class="pbadge ${typeBadgeClass(p.type)}">${typeLabel(p.type)}</span>
       </div>
     </div>
-    <div class="pcard-name">${p.name}</div>
-    <div class="pcard-desc">${p.desc||'<span style="color:var(--text3)">No description.</span>'}</div>
+    <div class="pcard-name">${escapeHTML(p.name)}</div>
+    <div class="pcard-desc">${p.desc ? escapeHTML(p.desc) : '<span style="color:var(--text3)">No description.</span>'}</div>
     <div class="prog-hd"><span class="prog-hd-label">Progress</span><span class="prog-hd-pct" style="color:${pctCol}">${p.progress}%</span></div>
     <div class="pbar"><div class="pbar-fill" style="width:${p.progress}%;background:${pctCol}"></div></div>
     <div class="pcard-foot">
       <div class="pcard-meta-grid">
-        <div class="foot-pill"><div class="foot-dot" style="background:${col}"></div>${doneTasks}/${(p.tasks||[]).length} tasks</div>
+        <div class="foot-pill"><div class="foot-dot" style="background:${col}"></div>${doneTasks}/${totalTaskCount} tasks</div>
         ${due?`<span class="due-chip ${due.cls}">${due.txt}</span>`:''}
       </div>
       <span style="margin-left:auto;font-family:var(--mono);font-size:9px;color:var(--text3)">${(p.priority||'med').toUpperCase()}</span>
@@ -2556,7 +2660,9 @@ function renderCompletedView() {
 // ══════════════════════════════════════════════════════════
 function renderDetail(p) {
   const col=p.color||'#2563EB', pctCol=pctColor(p.progress), due=dueInfo(p.due);
-  const doneTasks=(p.tasks||[]).filter(t=>t.done).length, totalTasks=(p.tasks||[]).length;
+  const activeTasks = p.tasks || [];
+  const completedTasks = p.completedTasks || [];
+  const { completed: doneTasks, total: totalTasks } = projectTaskCounts(p);
   const stage=nearestStage(p.progress);
   const tLabels={today:'On due day',oneday:'1 day before',threedays:'3 days before',oneweek:'1 week before'};
   return `<div class="au">
@@ -2564,8 +2670,8 @@ function renderDetail(p) {
       <div class="detail-top">
         <div class="detail-icon" style="background:${hexAlpha(col,.12)}">${p.icon||'📌'}</div>
         <div style="flex:1;min-width:0">
-          <div class="detail-title">${p.name}</div>
-          <div class="detail-desc">${p.desc||'<span style="color:var(--text3)">No description.</span>'}</div>
+          <div class="detail-title">${escapeHTML(p.name)}</div>
+          <div class="detail-desc">${p.desc ? escapeHTML(p.desc) : '<span style="color:var(--text3)">No description.</span>'}</div>
         </div>
         <div class="detail-chips">
           ${due?`<span class="due-chip ${due.cls}">${due.txt}</span>`:''}
@@ -2590,16 +2696,25 @@ function renderDetail(p) {
     </div>
     <div class="detail-grid">
       <div class="card au au1 detail-section">
-        <div class="card-head"><div class="card-title">Tasks</div><div class="card-meta">${doneTasks}/${totalTasks} done</div></div>
+        <div class="card-head"><div class="card-title">Current Tasks</div><motion class="card-meta">${activeTasks.length} open · ${doneTasks} done</div></div>
         <div id="task-list-${p.id}">
-          ${(p.tasks||[]).length===0?`<div style="padding:18px;text-align:center;font-size:12px;color:var(--text3)">No tasks yet.</div>`:''}
-          ${(p.tasks||[]).map((t,i)=>`<div class="task-item">
-            <div class="task-check ${t.done?'done':''}" onclick="toggleTask(${p.id},${i})"></div>
-            <span class="task-name ${t.done?'done':''}">${t.name}</span>
-            <button class="task-del" onclick="delTask(${p.id},${i})">✕</button>
+          ${activeTasks.length===0?`<div style="padding:18px;text-align:center;font-size:12px;color:var(--text3)">No open tasks — add one below.</div>`:''}
+          ${activeTasks.map(t=>`<div class="task-item">
+            <div class="task-check" onclick="completeProjectTask(${p.id},${t.id})"></div>
+            <span class="task-name">${escapeHTML(t.name)}</span>
+            <button class="task-del" onclick="delActiveTask(${p.id},${t.id})">✕</button>
           </div>`).join('')}
         </div>
         <div class="task-add-row"><input class="task-add-inp" id="tadd-${p.id}" placeholder="Add task, press Enter…" onkeydown="if(event.key==='Enter')addTask(${p.id})"><button class="btn btn-ghost btn-sm" onclick="addTask(${p.id})">Add</button></div>
+        ${completedTasks.length ? `<div class="task-completed-wrap">
+          <div class="task-completed-hd">Completed <span>${completedTasks.length}</span></div>
+          ${completedTasks.map(t=>`<div class="task-item task-completed-item">
+            <div class="task-check done"></div>
+            <span class="task-name done">${escapeHTML(t.name)}</span>
+            <button class="task-restore" onclick="restoreProjectTask(${p.id},${t.id})">Restore</button>
+            <button class="task-del" onclick="delCompletedTask(${p.id},${t.id})">✕</button>
+          </div>`).join('')}
+        </div>` : ''}
       </div>
       <div class="card au au2 detail-section">
         <div class="card-head"><div class="card-title">Stage</div><div class="card-meta">Sets base %</div></div>
@@ -2629,10 +2744,12 @@ function livePct(val,id){val=clamp(val);const c=pctColor(val);document.getElemen
 function livePctNum(val,id){val=clamp(val);document.getElementById('ppct-sl').value=val;livePct(val,id);}
 function savePct(id){const p=getProjectById(id);if(p)logActivity(`Progress updated to <strong>${p.progress}%</strong> on "${p.name}"`,p.color);}
 function clamp(v){return Math.min(100,Math.max(0,parseInt(v)||0));}
-function addTask(id){const inp=document.getElementById(`tadd-${id}`);const name=inp.value.trim();if(!name)return;const p=getProjectById(id);if(!p)return;p.tasks=p.tasks||[];p.tasks.push({name,done:false});autoProgress(p);save();inp.value='';logActivity(`Added task <strong>"${name}"</strong> to "${p.name}"`,p.color);goProject(id);toast('Task added','#16A34A');}
-function toggleTask(id,i){const p=getProjectById(id);if(!p||!p.tasks)return;p.tasks[i].done=!p.tasks[i].done;autoProgress(p);save();updateSidebar();logActivity(`${p.tasks[i].done?'Completed':'Unchecked'} task <strong>"${p.tasks[i].name}"</strong>`,p.color);goProject(id);}
-function delTask(id,i){const p=getProjectById(id);if(!p||!p.tasks)return;const name=p.tasks[i].name;p.tasks.splice(i,1);autoProgress(p);save();updateSidebar();logActivity(`Deleted task <strong>"${name}"</strong> from "${p.name}"`, '#DC2626');goProject(id);}
-function autoProgress(p){if(!p.tasks||!p.tasks.length)return;p.progress=Math.round(p.tasks.filter(t=>t.done).length/p.tasks.length*100);}
+function addTask(id){const inp=document.getElementById(`tadd-${id}`);const name=inp.value.trim();if(!name)return;const p=getProjectById(id);if(!p)return;p.tasks=p.tasks||[];p.tasks.push(normalizeProjectTask({name}, {done:false}));autoProgress(p);save();inp.value='';logActivity(`Added task <strong>"${escapeHTML(name)}"</strong> to "${p.name}"`,p.color);goProject(id);toast('Task added','#16A34A');}
+function completeProjectTask(id, taskId){const p=getProjectById(id);if(!p||!p.tasks)return;const i=p.tasks.findIndex(t=>t.id===taskId);if(i<0)return;const t=p.tasks.splice(i,1)[0];p.completedTasks=p.completedTasks||[];p.completedTasks.unshift({...t,done:true,completedAt:new Date().toISOString()});autoProgress(p);save();updateSidebar();logActivity(`Completed task <strong>"${t.name}"</strong> on "${p.name}"`,p.color);goProject(id);toast('Moved to Completed','#16A34A');}
+function restoreProjectTask(id, taskId){const p=getProjectById(id);if(!p||!p.completedTasks)return;const i=p.completedTasks.findIndex(t=>t.id===taskId);if(i<0)return;const t=p.completedTasks.splice(i,1)[0];p.tasks=p.tasks||[];p.tasks.push({...t,done:false,completedAt:null});autoProgress(p);save();updateSidebar();logActivity(`Restored task <strong>"${t.name}"</strong> on "${p.name}"`,p.color);goProject(id);toast('Returned to current tasks','#2563EB');}
+function delActiveTask(id, taskId){const p=getProjectById(id);if(!p||!p.tasks)return;const i=p.tasks.findIndex(t=>t.id===taskId);if(i<0)return;const name=p.tasks[i].name;p.tasks.splice(i,1);autoProgress(p);save();updateSidebar();logActivity(`Deleted task <strong>"${name}"</strong> from "${p.name}"`, '#DC2626');goProject(id);}
+function delCompletedTask(id, taskId){const p=getProjectById(id);if(!p||!p.completedTasks)return;const i=p.completedTasks.findIndex(t=>t.id===taskId);if(i<0)return;const name=p.completedTasks[i].name;p.completedTasks.splice(i,1);autoProgress(p);save();updateSidebar();logActivity(`Deleted completed task <strong>"${name}"</strong> from "${p.name}"`, '#DC2626');goProject(id);}
+function autoProgress(p){const {total,completed}=projectTaskCounts(p);if(!total)return;p.progress=Math.round(completed/total*100);}
 function setStage(id,pct){const p=getProjectById(id);if(!p)return;p.progress=pct;save();updateSidebar();logActivity(`Stage set to <strong>${nearestStage(pct).name}</strong> on "${p.name}"`,p.color);goProject(id);toast('Stage updated','#16A34A');}
 function saveNotes(id){const p=getProjectById(id);if(!p)return;p.notes=document.getElementById(`notes-${id}`).value;save();toast('Notes saved','#16A34A');}
 function setPri(id,val){const p=getProjectById(id);if(!p)return;p.priority=val;save();logActivity(`Priority set to <strong>${val}</strong> on "${p.name}"`,p.color);goProject(id);}
@@ -2698,7 +2815,7 @@ function toast(msg, color='#2563EB') {
   const w=document.getElementById('toastWrap');
   const el=document.createElement('div');
   el.className='toast';
-  el.innerHTML=`<div class="toast-dot" style="background:${color}"></div>${msg}`;
+  el.innerHTML=`<div class="toast-dot" style="background:${color}"></div>${escapeHTML(msg)}`;
   w.appendChild(el);
   requestAnimationFrame(()=>el.classList.add('show'));
   setTimeout(()=>{el.classList.remove('show');setTimeout(()=>el.remove(),380);},2800);
