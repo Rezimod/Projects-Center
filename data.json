@@ -9,7 +9,7 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 30,
+      "progress": 40,
       "tasks": [
         {
           "name": "Work on Missions page",
@@ -21,7 +21,7 @@
         },
         {
           "name": "finish learning page",
-          "done": false
+          "done": true
         },
         {
           "name": "finish marketplace",
@@ -679,6 +679,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"finish learning page\"</strong>",
+      "color": "#2563EB",
+      "time": 1779130114959
+    },
+    {
       "msg": "Completed task <strong>\"Finish Sky Page\"</strong>",
       "color": "#2563EB",
       "time": 1779130113568
@@ -922,11 +927,6 @@
       "msg": "Completed daily task <strong>\"meeting with kostya, write a plan and all that.\"</strong>",
       "color": "#67E8F9",
       "time": 1775485768205
-    },
-    {
-      "msg": "Completed daily task <strong>\"ტერმინალის გააქტიურება\"</strong>",
-      "color": "#67E8F9",
-      "time": 1775463090379
     }
   ]
 }
