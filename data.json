@@ -1,6 +1,26 @@
 {
   "projects": [
     {
+      "id": 1779131427103,
+      "name": "Stellar Continue",
+      "desc": "",
+      "type": "monthly",
+      "due": "1992-05-20",
+      "priority": "med",
+      "color": "#2563EB",
+      "icon": "📌",
+      "progress": 0,
+      "tasks": [],
+      "completedTasks": [],
+      "notes": "",
+      "created": 1779131427103,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
       "id": 1772361692835,
       "name": "Current Website Update",
       "desc": "Update the www.astroman.ge",
@@ -797,6 +817,11 @@
   },
   "activity": [
     {
+      "msg": "Created project <strong>\"Stellar Continue\"</strong>",
+      "color": "#2563EB",
+      "time": 1779131427104
+    },
+    {
       "msg": "Deleted completed task <strong>\"add clubs page\"</strong> from \"Current Website Update\"",
       "color": "#DC2626",
       "time": 1779131391234
@@ -1040,11 +1065,6 @@
       "msg": "Completed task <strong>\"Fork repo and build app shell (April 6-7)\"</strong>",
       "color": "#2563EB",
       "time": 1776084275836
-    },
-    {
-      "msg": "Completed task <strong>\"Register + set up infrastructure\"</strong>",
-      "color": "#2563EB",
-      "time": 1776084273452
     }
   ]
 }
