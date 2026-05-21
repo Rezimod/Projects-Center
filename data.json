@@ -82,6 +82,12 @@
           "name": "Apply for Alchemy Solana Infrastructure Fund",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1779356671971,
+          "name": "Block Sep 28 – Nov 2 for Colosseum Frontier Fall hackathon",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -926,6 +932,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Block Sep 28 – Nov 2 for Colosseum Frontier Fall hackathon\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779356663368
+    },
+    {
       "msg": "Added task <strong>\"Apply for Alchemy Solana Infrastructure Fund\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356655880
@@ -1169,11 +1180,6 @@
       "msg": "Deleted task <strong>\"Finish Learning pog\"</strong> from \"Stellar Week 2\"",
       "color": "#DC2626",
       "time": 1776084389443
-    },
-    {
-      "msg": "Added task <strong>\"Finish Learning pog\"</strong> to \"Stellar Week 2\"",
-      "color": "#2563EB",
-      "time": 1776084385516
     }
   ]
 }
