@@ -16,6 +16,12 @@
           "name": "Apply to teather grant",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1779356588719,
+          "name": "Add Tether QVAC win to live site",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -860,6 +866,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Add Tether QVAC win to live site\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779356586156
+    },
+    {
       "msg": "Added task <strong>\"Apply to teather grant\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779355010594
@@ -1103,11 +1114,6 @@
       "msg": "Completed task <strong>\"AI Space Companion (April 13-17)\"</strong>",
       "color": "#2563EB",
       "time": 1776084292636
-    },
-    {
-      "msg": "Completed task <strong>\"Sky Observatory dashboard (April 10-13)\"</strong>",
-      "color": "#2563EB",
-      "time": 1776084286936
     }
   ]
 }
