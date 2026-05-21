@@ -70,6 +70,12 @@
           "name": "Draft Astroman beta launch email",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1779356652683,
+          "name": "Submit to Anthology Fund (Anthropic × Menlo Ventures)",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -914,6 +920,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Submit to Anthology Fund (Anthropic × Menlo Ventures)\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779356648831
+    },
+    {
       "msg": "Added task <strong>\"Draft Astroman beta launch email\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356641412
@@ -1157,11 +1168,6 @@
       "msg": "Added task <strong>\"Finish Sky Page\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084379601
-    },
-    {
-      "msg": "Added task <strong>\"Work on Missions page\"</strong> to \"Stellar Week 2\"",
-      "color": "#2563EB",
-      "time": 1776084372571
     }
   ]
 }
