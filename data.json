@@ -34,6 +34,12 @@
           "name": "Submit Anthropic Startup Program application",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1779356609430,
+          "name": "Update pitch deck slide 6",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -878,6 +884,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Update pitch deck slide 6\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779356609365
+    },
+    {
       "msg": "Added task <strong>\"Submit Anthropic Startup Program application\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356601276
@@ -1121,11 +1132,6 @@
       "msg": "Completed task <strong>\"Discovery Attestations NFT minting (April 26-29)\"</strong>",
       "color": "#2563EB",
       "time": 1776084298935
-    },
-    {
-      "msg": "Completed task <strong>\"Marketplace + payments (April 21-26)\"</strong>",
-      "color": "#2563EB",
-      "time": 1776084296401
     }
   ]
 }
