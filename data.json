@@ -64,6 +64,12 @@
           "name": "Ship leaderboard MVP",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1779356646274,
+          "name": "Draft Astroman beta launch email",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -908,6 +914,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Draft Astroman beta launch email\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779356641412
+    },
+    {
       "msg": "Added task <strong>\"Ship leaderboard MVP\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356635149
@@ -1151,11 +1162,6 @@
       "msg": "Added task <strong>\"Work on Missions page\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084372571
-    },
-    {
-      "msg": "Created project <strong>\"Stellar Week 2\"</strong>",
-      "color": "#2563EB",
-      "time": 1776084363618
     }
   ]
 }
