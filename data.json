@@ -52,6 +52,12 @@
           "name": "Make /field a top-level nav item",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1779356638058,
+          "name": "Make /feed visible to logged-out visitors",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -896,6 +902,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Make /feed visible to logged-out visitors\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779356628924
+    },
+    {
       "msg": "Added task <strong>\"Make /field a top-level nav item\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356621895
@@ -1139,11 +1150,6 @@
       "msg": "Updated project <strong>\"Stellar Week 1\"</strong>",
       "color": "#2563EB",
       "time": 1776084335721
-    },
-    {
-      "msg": "Deleted task <strong>\"Pitch video + submit (May 5-11)\"</strong> from \"Stellar\"",
-      "color": "#DC2626",
-      "time": 1776084319080
     }
   ]
 }
