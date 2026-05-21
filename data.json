@@ -10,7 +10,14 @@
       "color": "#2563EB",
       "icon": "📌",
       "progress": 0,
-      "tasks": [],
+      "tasks": [
+        {
+          "id": 1779355011799,
+          "name": "Apply to teather grant",
+          "done": false,
+          "completedAt": null
+        }
+      ],
       "completedTasks": [],
       "notes": "",
       "created": 1779131427103,
@@ -853,6 +860,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Apply to teather grant\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779355010594
+    },
+    {
       "msg": "Completed daily task <strong>\"Astroman Weekle Content Creation\"</strong>",
       "color": "#67E8F9",
       "time": 1779131569043
@@ -1096,11 +1108,6 @@
       "msg": "Completed task <strong>\"Sky Observatory dashboard (April 10-13)\"</strong>",
       "color": "#2563EB",
       "time": 1776084286936
-    },
-    {
-      "msg": "Completed task <strong>\"Wallet connect + Solana foundation (April 8-10)\"</strong>",
-      "color": "#2563EB",
-      "time": 1776084277217
     }
   ]
 }
