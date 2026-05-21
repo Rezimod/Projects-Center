@@ -76,6 +76,12 @@
           "name": "Submit to Anthology Fund (Anthropic × Menlo Ventures)",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1779356657772,
+          "name": "Apply for Alchemy Solana Infrastructure Fund",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -920,6 +926,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Apply for Alchemy Solana Infrastructure Fund\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779356655880
+    },
+    {
       "msg": "Added task <strong>\"Submit to Anthology Fund (Anthropic × Menlo Ventures)\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356648831
@@ -1163,11 +1174,6 @@
       "msg": "Added task <strong>\"Finish Learning pog\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084385516
-    },
-    {
-      "msg": "Added task <strong>\"Finish Sky Page\"</strong> to \"Stellar Week 2\"",
-      "color": "#2563EB",
-      "time": 1776084379601
     }
   ]
 }
