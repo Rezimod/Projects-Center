@@ -58,6 +58,12 @@
           "name": "Make /feed visible to logged-out visitors",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1779356636094,
+          "name": "Ship leaderboard MVP",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -902,6 +908,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Ship leaderboard MVP\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779356635149
+    },
+    {
       "msg": "Added task <strong>\"Make /feed visible to logged-out visitors\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356628924
@@ -1145,11 +1156,6 @@
       "msg": "Created project <strong>\"Stellar Week 2\"</strong>",
       "color": "#2563EB",
       "time": 1776084363618
-    },
-    {
-      "msg": "Updated project <strong>\"Stellar Week 1\"</strong>",
-      "color": "#2563EB",
-      "time": 1776084335721
     }
   ]
 }
