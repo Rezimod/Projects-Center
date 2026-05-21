@@ -46,6 +46,12 @@
           "name": "Apply for Solana Mobile Builder Grants",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1779356624162,
+          "name": "Make /field a top-level nav item",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -890,6 +896,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Make /field a top-level nav item\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779356621895
+    },
+    {
       "msg": "Added task <strong>\"Apply for Solana Mobile Builder Grants\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356615700
@@ -1133,11 +1144,6 @@
       "msg": "Deleted task <strong>\"Pitch video + submit (May 5-11)\"</strong> from \"Stellar\"",
       "color": "#DC2626",
       "time": 1776084319080
-    },
-    {
-      "msg": "Completed task <strong>\"Traction sprint + beta testing (April 29 – May 4)\"</strong>",
-      "color": "#2563EB",
-      "time": 1776084302940
     }
   ]
 }
