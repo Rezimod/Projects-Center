@@ -28,6 +28,12 @@
           "name": "Post Tether win on X",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1779356609271,
+          "name": "Submit Anthropic Startup Program application",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -872,6 +878,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Submit Anthropic Startup Program application\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779356601276
+    },
+    {
       "msg": "Added task <strong>\"Post Tether win on X\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356594321
@@ -1115,11 +1126,6 @@
       "msg": "Completed task <strong>\"Marketplace + payments (April 21-26)\"</strong>",
       "color": "#2563EB",
       "time": 1776084296401
-    },
-    {
-      "msg": "Completed task <strong>\"Missions + gamification (April 17-21)\"</strong>",
-      "color": "#2563EB",
-      "time": 1776084294015
     }
   ]
 }
