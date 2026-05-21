@@ -40,6 +40,12 @@
           "name": "Update pitch deck slide 6",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1779356623283,
+          "name": "Apply for Solana Mobile Builder Grants",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -884,6 +890,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Apply for Solana Mobile Builder Grants\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779356615700
+    },
+    {
       "msg": "Added task <strong>\"Update pitch deck slide 6\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356609365
@@ -1127,11 +1138,6 @@
       "msg": "Completed task <strong>\"Traction sprint + beta testing (April 29 – May 4)\"</strong>",
       "color": "#2563EB",
       "time": 1776084302940
-    },
-    {
-      "msg": "Completed task <strong>\"Discovery Attestations NFT minting (April 26-29)\"</strong>",
-      "color": "#2563EB",
-      "time": 1776084298935
     }
   ]
 }
