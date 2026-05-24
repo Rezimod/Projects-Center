@@ -655,6 +655,12 @@
         "text": "Astroman upgrade",
         "done": false,
         "date": "2026-05-22"
+      },
+      {
+        "id": 1779658248832,
+        "text": "აწარმოეში დარეკვა",
+        "done": false,
+        "date": "2026-05-24"
       }
     ],
     "completedDailyTasks": [
