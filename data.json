@@ -657,12 +657,6 @@
         "date": "2026-05-22"
       },
       {
-        "id": 1779658248832,
-        "text": "აწარმოეში დარეკვა",
-        "done": false,
-        "date": "2026-05-24"
-      },
-      {
         "id": 1779658253363,
         "text": "გერმანიაზე გარკვევა",
         "done": false,
@@ -676,6 +670,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1779658248832,
+        "text": "აწარმოეში დარეკვა",
+        "date": "2026-05-24",
+        "completedAt": "2026-05-25T09:01:10.159Z"
+      },
       {
         "id": 1779131460714,
         "text": "მოპედის ყიდვა",
@@ -980,6 +980,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"აწარმოეში დარეკვა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1779699670160
+    },
+    {
       "msg": "Completed daily task <strong>\"მოპედის ყიდვა\"</strong>",
       "color": "#67E8F9",
       "time": 1779361450653
@@ -1223,11 +1228,6 @@
       "msg": "Added task <strong>\"finish marketplace\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084398735
-    },
-    {
-      "msg": "Added task <strong>\"finish learning page\"</strong> to \"Stellar Week 2\"",
-      "color": "#2563EB",
-      "time": 1776084393379
     }
   ]
 }
