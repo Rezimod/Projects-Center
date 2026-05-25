@@ -591,12 +591,6 @@
   "planner": {
     "dailyTasks": [
       {
-        "id": 1776102294853,
-        "text": "ასტრომანის კვირის პოსტები",
-        "done": false,
-        "date": "2026-04-13"
-      },
-      {
         "id": 1779131447185,
         "text": "STellar continue, Qvac Grant apply",
         "done": false,
@@ -664,6 +658,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1776102294853,
+        "text": "ასტრომანის კვირის პოსტები",
+        "date": "2026-04-13",
+        "completedAt": "2026-05-25T17:04:02.476Z"
+      },
       {
         "id": 1779658253363,
         "text": "გერმანიაზე გარკვევა",
@@ -980,6 +980,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"ასტრომანის კვირის პოსტები\"</strong>",
+      "color": "#67E8F9",
+      "time": 1779728642477
+    },
+    {
       "msg": "Completed daily task <strong>\"გერმანიაზე გარკვევა\"</strong>",
       "color": "#67E8F9",
       "time": 1779728633600
@@ -1223,11 +1228,6 @@
       "msg": "Deleted task <strong>\"Dinish profile\"</strong> from \"Stellar Week 2\"",
       "color": "#DC2626",
       "time": 1776084406252
-    },
-    {
-      "msg": "Added task <strong>\"Dinish profile\"</strong> to \"Stellar Week 2\"",
-      "color": "#2563EB",
-      "time": 1776084403311
     }
   ]
 }
