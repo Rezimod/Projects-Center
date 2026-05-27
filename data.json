@@ -9,14 +9,8 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 0,
+      "progress": 8,
       "tasks": [
-        {
-          "id": 1779355011799,
-          "name": "Apply to teather grant",
-          "done": false,
-          "completedAt": null
-        },
         {
           "id": 1779356588719,
           "name": "Add Tether QVAC win to live site",
@@ -90,7 +84,14 @@
           "completedAt": null
         }
       ],
-      "completedTasks": [],
+      "completedTasks": [
+        {
+          "id": 1779355011799,
+          "name": "Apply to teather grant",
+          "done": true,
+          "completedAt": "2026-05-27T17:12:15.865Z"
+        }
+      ],
       "notes": "",
       "created": 1779131427103,
       "reminder": {
@@ -980,6 +981,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Apply to teather grant\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779901935866
+    },
+    {
       "msg": "Completed daily task <strong>\"ასტრომანის კვირის პოსტები\"</strong>",
       "color": "#67E8F9",
       "time": 1779728642477
@@ -1223,11 +1229,6 @@
       "msg": "Added task <strong>\"Finish Profile\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084410928
-    },
-    {
-      "msg": "Deleted task <strong>\"Dinish profile\"</strong> from \"Stellar Week 2\"",
-      "color": "#DC2626",
-      "time": 1776084406252
     }
   ]
 }
