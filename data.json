@@ -9,7 +9,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 20,
+      "progress": 19,
       "tasks": [
         {
           "id": 1779356588719,
@@ -80,6 +80,12 @@
         {
           "id": 1779902008652,
           "name": "win superteam 5K",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1779902020824,
+          "name": "make autonomous X content creator",
           "done": false,
           "completedAt": null
         }
@@ -993,6 +999,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"make autonomous X content creator\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779902012057
+    },
+    {
       "msg": "Added task <strong>\"win superteam 5K\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779901999954
@@ -1236,11 +1247,6 @@
       "msg": "Added task <strong>\"create new logo\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776164363060
-    },
-    {
-      "msg": "Completed daily task <strong>\"ბიდეტი\"</strong>",
-      "color": "#67E8F9",
-      "time": 1776163256824
     }
   ]
 }
