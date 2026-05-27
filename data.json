@@ -9,17 +9,11 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 15,
+      "progress": 23,
       "tasks": [
         {
           "id": 1779356588719,
           "name": "Add Tether QVAC win to live site",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1779356600517,
-          "name": "Post Tether win on X",
           "done": false,
           "completedAt": null
         },
@@ -79,6 +73,12 @@
         }
       ],
       "completedTasks": [
+        {
+          "id": 1779356600517,
+          "name": "Post Tether win on X",
+          "done": true,
+          "completedAt": "2026-05-27T17:12:45.862Z"
+        },
         {
           "id": 1779356609430,
           "name": "Update pitch deck slide 6",
@@ -981,6 +981,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Post Tether win on X\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779901965863
+    },
+    {
       "msg": "Completed task <strong>\"Update pitch deck slide 6\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779901941299
@@ -1224,11 +1229,6 @@
       "msg": "Added task <strong>\"leaderboard\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084460586
-    },
-    {
-      "msg": "Added task <strong>\"fihisn home page\"</strong> to \"Stellar Week 2\"",
-      "color": "#2563EB",
-      "time": 1776084457568
     }
   ]
 }
