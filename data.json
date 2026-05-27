@@ -9,7 +9,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 8,
+      "progress": 15,
       "tasks": [
         {
           "id": 1779356588719,
@@ -26,12 +26,6 @@
         {
           "id": 1779356609271,
           "name": "Submit Anthropic Startup Program application",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1779356609430,
-          "name": "Update pitch deck slide 6",
           "done": false,
           "completedAt": null
         },
@@ -85,6 +79,12 @@
         }
       ],
       "completedTasks": [
+        {
+          "id": 1779356609430,
+          "name": "Update pitch deck slide 6",
+          "done": true,
+          "completedAt": "2026-05-27T17:12:21.298Z"
+        },
         {
           "id": 1779355011799,
           "name": "Apply to teather grant",
@@ -981,6 +981,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Update pitch deck slide 6\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779901941299
+    },
+    {
       "msg": "Completed task <strong>\"Apply to teather grant\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779901935866
@@ -1224,11 +1229,6 @@
       "msg": "Added task <strong>\"fihisn home page\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084457568
-    },
-    {
-      "msg": "Added task <strong>\"Finish Profile\"</strong> to \"Stellar Week 2\"",
-      "color": "#2563EB",
-      "time": 1776084410928
     }
   ]
 }
