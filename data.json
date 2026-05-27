@@ -9,7 +9,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 23,
+      "progress": 21,
       "tasks": [
         {
           "id": 1779356588719,
@@ -68,6 +68,12 @@
         {
           "id": 1779356671971,
           "name": "Block Sep 28 – Nov 2 for Colosseum Frontier Fall hackathon",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1779901998287,
+          "name": "Apply to superteam earn for 5K",
           "done": false,
           "completedAt": null
         }
@@ -981,6 +987,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Apply to superteam earn for 5K\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779901994595
+    },
+    {
       "msg": "Completed task <strong>\"Post Tether win on X\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779901965863
@@ -1224,11 +1235,6 @@
       "msg": "Added task <strong>\"Full tests and Demo video\"</strong> to \"Stellar Week 2\"",
       "color": "#2563EB",
       "time": 1776084469608
-    },
-    {
-      "msg": "Added task <strong>\"leaderboard\"</strong> to \"Stellar Week 2\"",
-      "color": "#2563EB",
-      "time": 1776084460586
     }
   ]
 }
