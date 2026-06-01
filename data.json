@@ -706,12 +706,6 @@
         "date": "2026-06-01"
       },
       {
-        "id": 1780304412448,
-        "text": "გერმანიის შეკვეთის დაბინავებბა",
-        "done": false,
-        "date": "2026-06-01"
-      },
-      {
         "id": 1780304422950,
         "text": "ასტრომანის გარე სივრცის შეღებვა",
         "done": false,
@@ -719,6 +713,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1780304412448,
+        "text": "გერმანიის შეკვეთის დაბინავებბა",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-01T16:07:28.825Z"
+      },
       {
         "id": 1780304417067,
         "text": "კონიაკის დალაგება",
@@ -1053,6 +1053,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"გერმანიის შეკვეთის დაბინავებბა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1780330048826
+    },
+    {
       "msg": "Completed daily task <strong>\"კონიაკის დალაგება\"</strong>",
       "color": "#67E8F9",
       "time": 1780330045967
@@ -1296,11 +1301,6 @@
       "msg": "Completed daily task <strong>\"Astroman New Ad\"</strong>",
       "color": "#67E8F9",
       "time": 1777399100503
-    },
-    {
-      "msg": "Completed daily task <strong>\"გერმანიიდან ტელესკოპების შეკვეთა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1777399098137
     }
   ]
 }
