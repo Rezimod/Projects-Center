@@ -9,7 +9,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 19,
+      "progress": 25,
       "tasks": [
         {
           "id": 1779356588719,
@@ -72,12 +72,6 @@
           "completedAt": null
         },
         {
-          "id": 1779901998287,
-          "name": "Apply to superteam earn for 5K",
-          "done": false,
-          "completedAt": null
-        },
-        {
           "id": 1779902008652,
           "name": "win superteam 5K",
           "done": false,
@@ -91,6 +85,12 @@
         }
       ],
       "completedTasks": [
+        {
+          "id": 1779901998287,
+          "name": "Apply to superteam earn for 5K",
+          "done": true,
+          "completedAt": "2026-06-01T09:01:34.098Z"
+        },
         {
           "id": 1779356600517,
           "name": "Post Tether win on X",
@@ -1047,6 +1047,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Apply to superteam earn for 5K\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1780304494099
+    },
+    {
       "msg": "Added task <strong>\"make autonomous X content creator\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779902012057
@@ -1290,11 +1295,6 @@
       "msg": "Completed daily task <strong>\"Gwp გარკვევა\"</strong>",
       "color": "#67E8F9",
       "time": 1776185187585
-    },
-    {
-      "msg": "Added task <strong>\"create new logo\"</strong> to \"Stellar Week 2\"",
-      "color": "#2563EB",
-      "time": 1776164363060
     }
   ]
 }
