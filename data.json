@@ -712,12 +712,6 @@
         "date": "2026-06-01"
       },
       {
-        "id": 1780304417067,
-        "text": "კონიაკის დალაგება",
-        "done": false,
-        "date": "2026-06-01"
-      },
-      {
         "id": 1780304422950,
         "text": "ასტრომანის გარე სივრცის შეღებვა",
         "done": false,
@@ -725,6 +719,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1780304417067,
+        "text": "კონიაკის დალაგება",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-01T16:07:25.965Z"
+      },
       {
         "id": 1780304380703,
         "text": "პრიზის გადმორიცხვა",
@@ -1053,6 +1053,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"კონიაკის დალაგება\"</strong>",
+      "color": "#67E8F9",
+      "time": 1780330045967
+    },
+    {
       "msg": "Completed daily task <strong>\"პრიზის გადმორიცხვა\"</strong>",
       "color": "#67E8F9",
       "time": 1780330042664
@@ -1296,11 +1301,6 @@
       "msg": "Completed daily task <strong>\"გერმანიიდან ტელესკოპების შეკვეთა\"</strong>",
       "color": "#67E8F9",
       "time": 1777399098137
-    },
-    {
-      "msg": "Completed daily task <strong>\"რუკა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1777277098244
     }
   ]
 }
