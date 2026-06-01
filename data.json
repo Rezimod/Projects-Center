@@ -694,12 +694,6 @@
         "date": "2026-06-01"
       },
       {
-        "id": 1780304380703,
-        "text": "პრიზის გადმორიცხვა",
-        "done": false,
-        "date": "2026-06-01"
-      },
-      {
         "id": 1780304386611,
         "text": "ჩინეთში შეკვეთის გაკეთება",
         "done": false,
@@ -731,6 +725,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1780304380703,
+        "text": "პრიზის გადმორიცხვა",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-01T16:07:22.663Z"
+      },
       {
         "id": 1776102294853,
         "text": "ასტრომანის კვირის პოსტები",
@@ -1053,6 +1053,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"პრიზის გადმორიცხვა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1780330042664
+    },
+    {
       "msg": "Added task <strong>\"Token and mainnet lunch\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1780304520365
@@ -1296,11 +1301,6 @@
       "msg": "Completed daily task <strong>\"რუკა\"</strong>",
       "color": "#67E8F9",
       "time": 1777277098244
-    },
-    {
-      "msg": "Added task <strong>\"use design sites to create design\"</strong> to \"Stellar Week 2\"",
-      "color": "#2563EB",
-      "time": 1776367780995
     }
   ]
 }
