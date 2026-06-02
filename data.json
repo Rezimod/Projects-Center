@@ -710,6 +710,12 @@
         "text": "ასტრომანის გარე სივრცის შეღებვა",
         "done": false,
         "date": "2026-06-01"
+      },
+      {
+        "id": 1780409573399,
+        "text": "New optics",
+        "done": false,
+        "date": "2026-06-02"
       }
     ],
     "completedDailyTasks": [
