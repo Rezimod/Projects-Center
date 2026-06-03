@@ -2,21 +2,106 @@
   "projects": [
     {
       "id": 1780507294746,
-      "name": "ASTROMAN",
-      "desc": "Astroman brand development, success and growth.",
+      "name": "Astroman",
+      "desc": "June Growth Plan & Summer Runway 2026 — store + online",
       "type": "monthly",
-      "due": "2026-11-03",
-      "priority": "low",
-      "color": "#2563EB",
-      "icon": "🚀",
+      "due": "2026-06-30",
+      "priority": "high",
+      "color": "#7C3AED",
+      "icon": "🔭",
       "progress": 0,
-      "tasks": [],
+      "tasks": [
+        {
+          "name": "Wk1 · Finalize accessories reorder (eyepieces, Barlow, moon filters, tripods, red flashlights)",
+          "done": false
+        },
+        {
+          "name": "Wk1 · Build telescope buying-guide page (beginner vs intermediate, hero SKUs)",
+          "done": false
+        },
+        {
+          "name": "Wk1 · Summer window display: hero telescope + Moon Lamp + nebula projector",
+          "done": false
+        },
+        {
+          "name": "Wk1 · Post Venus–Jupiter conjunction (Jun 8–9) — FB Georgian + TikTok, telescope CTA",
+          "done": false
+        },
+        {
+          "name": "Wk2 · Launch 3 telescope bundles (200–500 GEL tier: scope + eyepiece + bag + star map)",
+          "done": false
+        },
+        {
+          "name": "Wk2 · Train 60-sec FORESEEN 70mm demo — scope assembled on shop floor",
+          "done": false
+        },
+        {
+          "name": "Wk2 · Post Sky This Month – June in Georgian (solstice, planet lineup, SEO)",
+          "done": false
+        },
+        {
+          "name": "Wk2 · Restock impulse heroes: Nebula Projector, Moon Crystal Balls, keychains, Universe projector",
+          "done": false
+        },
+        {
+          "name": "Wk3 · Google + retargeting ads (ტელესკოპი, telescope Tbilisi) — 300–500 GEL budget",
+          "done": false
+        },
+        {
+          "name": "Wk3 · Gift/decor shelf at checkout (moon lamps, crystal balls, keychains)",
+          "done": false
+        },
+        {
+          "name": "Wk3 · Solstice post (Jun 21) + repost customer telescope UGC",
+          "done": false
+        },
+        {
+          "name": "Wk3 · Draft guesthouse/summer-camp outreach (rental or stargazing-night package)",
+          "done": false
+        },
+        {
+          "name": "Wk4 · ORDER eclipse stock NOW — solar glasses + filters for Aug 12 eclipse",
+          "done": false
+        },
+        {
+          "name": "Wk4 · Pre-launch Aug 12 eclipse landing page + email signup",
+          "done": false
+        },
+        {
+          "name": "Wk4 · Strawberry Moon display (Jun 29) + Meteor Watch binocular promo (Jun 30)",
+          "done": false
+        },
+        {
+          "name": "Wk4 · June review: vs 14k baseline, top 5 SKUs for July, cut dead stock",
+          "done": false
+        },
+        {
+          "name": "Weekly · Sunday check: telescope units, avg basket, eclipse signups",
+          "done": false
+        },
+        {
+          "name": "Target · 20+ telescope units in June",
+          "done": false
+        },
+        {
+          "name": "Target · Raise avg basket 145 → 180 GEL (accessory attach every scope)",
+          "done": false
+        },
+        {
+          "name": "Target · 100+ eclipse signups by month end",
+          "done": false
+        },
+        {
+          "name": "Target · Open 1 B2B deal (guesthouse or summer camp)",
+          "done": false
+        }
+      ],
       "completedTasks": [],
-      "notes": "",
+      "notes": "June Growth Plan & Summer Runway 2026 (Jan 1 – Jun 3 data)\nBaseline: ~14,000 GEL/month · 61% margin · telescopes = 58.7% revenue\nHero SKUs: FORESEEN 70mm, Foreseen 800/50, Visionking, Astronomical 36050\nSummer events: Venus–Jupiter Jun 8–9 · Solstice Jun 21 · Strawberry Moon Jun 29 · Aug 12 total eclipse + Perseids\nGoal: push toward 18,000–20,000 GEL in June",
       "created": 1780507294746,
       "reminder": {
-        "enabled": false,
-        "timing": "oneday",
+        "enabled": true,
+        "timing": "oneweek",
         "lastSent": null
       }
     },
@@ -1055,6 +1140,11 @@
   },
   "activity": [
     {
+      "msg": "Populated <strong>21 tasks</strong> on <strong>Astroman</strong> from June Growth Plan",
+      "color": "#7C3AED",
+      "time": 1780517102568
+    },
+    {
       "msg": "Created project <strong>\"ASTROMAN\"</strong>",
       "color": "#2563EB",
       "time": 1780507294748
@@ -1298,11 +1388,6 @@
       "msg": "Completed daily task <strong>\"სასამართლოში დარეკვა\"</strong>",
       "color": "#67E8F9",
       "time": 1777399110328
-    },
-    {
-      "msg": "Completed daily task <strong>\"პრავაზე გარკვევა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1777399109767
     }
   ]
 }
