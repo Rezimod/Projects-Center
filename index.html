@@ -442,9 +442,16 @@ display:grid;place-items:center;position:relative;flex-shrink:0;box-shadow:inset
 .task-check.done::after{content:'✓';font-size:11px;color:white;font-weight:700;}
 .task-name{font-size:13px;font-weight:500;flex:1;line-height:1.4;}
 .task-name.done{text-decoration:line-through;color:var(--text3);}
-.task-del{width:26px;height:26px;border-radius:5px;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text3);transition:all .12s;}
+.task-actions{display:flex;align-items:center;gap:2px;flex-shrink:0;}
+.task-edit,.task-del{width:26px;height:26px;border-radius:5px;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text3);transition:all .12s;}
+.task-item:hover .task-edit{color:var(--blue);}
 .task-item:hover .task-del{color:var(--red);}
+.task-edit:hover{background:var(--blue-lt);}
 .task-del:hover{background:var(--red-lt);}
+.task-item.task-editing{align-items:center;flex-wrap:wrap;gap:8px;background:var(--bg2);}
+.task-edit-inp{flex:1;min-width:0;background:var(--surface);border:1px solid var(--border2);border-radius:6px;padding:7px 10px;font-family:var(--font);font-size:13px;color:var(--text);outline:none;}
+.task-edit-inp:focus{border-color:var(--blue);box-shadow:0 0 0 2px rgba(37,99,235,0.15);}
+.task-edit-save,.task-edit-cancel{font-size:11px;padding:5px 10px;}
 .task-add-row{display:flex;align-items:center;gap:10px;padding:9px 18px;background:var(--bg2);border-top:1px solid var(--border);}
 .task-add-inp{flex:1;background:none;border:none;outline:none;font-family:var(--font);font-size:13px;color:var(--text);}
 .task-add-inp::placeholder{color:var(--text3);}
@@ -1138,6 +1145,7 @@ let theme = localStorage.getItem('pc_theme') || 'dark';
 let view = 'dashboard';
 let activeProject = null;
 let editingId = null;
+let editingTask = null; // { pid, taskId, section: 'active'|'completed' }
 let deleteId = null;
 let newType = 'daily';
 let newColor = '#2563EB';
@@ -2658,6 +2666,35 @@ function renderCompletedView() {
 // ══════════════════════════════════════════════════════════
 //  DETAIL
 // ══════════════════════════════════════════════════════════
+function taskItemHTML(p, t, section) {
+  const editing = editingTask && editingTask.pid === p.id && editingTask.taskId === t.id && editingTask.section === section;
+  if (editing) {
+    return `<div class="task-item task-editing">
+      <input class="task-edit-inp" id="task-edit-inp-${t.id}" value="${escapeHTML(t.name)}" onkeydown="taskEditKeydown(event,${p.id},${t.id},'${section}')">
+      <button type="button" class="btn btn-primary btn-sm task-edit-save" onclick="saveEditTask(${p.id},${t.id},'${section}')">Save</button>
+      <button type="button" class="btn btn-ghost btn-sm task-edit-cancel" onclick="cancelEditTask()">Cancel</button>
+    </div>`;
+  }
+  const doneCls = section === 'completed' ? ' done' : '';
+  const completedCls = section === 'completed' ? ' task-completed-item' : '';
+  const check = section === 'completed'
+    ? '<div class="task-check done"></div>'
+    : `<div class="task-check" onclick="completeProjectTask(${p.id},${t.id})"></div>`;
+  const restore = section === 'completed'
+    ? `<button type="button" class="task-restore" onclick="restoreProjectTask(${p.id},${t.id})">Restore</button>`
+    : '';
+  const delFn = section === 'completed' ? 'delCompletedTask' : 'delActiveTask';
+  return `<div class="task-item${completedCls}">
+    ${check}
+    <span class="task-name${doneCls}">${escapeHTML(t.name)}</span>
+    <div class="task-actions">
+      <button type="button" class="task-edit" title="Edit" onclick="startEditTask(${p.id},${t.id},'${section}')">✎</button>
+      ${restore}
+      <button type="button" class="task-del" title="Delete" onclick="${delFn}(${p.id},${t.id})">✕</button>
+    </div>
+  </div>`;
+}
+
 function renderDetail(p) {
   const col=p.color||'#2563EB', pctCol=pctColor(p.progress), due=dueInfo(p.due);
   const activeTasks = p.tasks || [];
@@ -2699,21 +2736,12 @@ function renderDetail(p) {
         <div class="card-head"><div class="card-title">Current Tasks</div><div class="card-meta">${activeTasks.length} open · ${doneTasks} done</div></div>
         <div id="task-list-${p.id}">
           ${activeTasks.length===0?`<div style="padding:18px;text-align:center;font-size:12px;color:var(--text3)">No open tasks — add one below.</div>`:''}
-          ${activeTasks.map(t=>`<div class="task-item">
-            <div class="task-check" onclick="completeProjectTask(${p.id},${t.id})"></div>
-            <span class="task-name">${escapeHTML(t.name)}</span>
-            <button class="task-del" onclick="delActiveTask(${p.id},${t.id})">✕</button>
-          </div>`).join('')}
+          ${activeTasks.map(t => taskItemHTML(p, t, 'active')).join('')}
         </div>
         <div class="task-add-row"><input class="task-add-inp" id="tadd-${p.id}" placeholder="Add task, press Enter…" onkeydown="if(event.key==='Enter')addTask(${p.id})"><button class="btn btn-ghost btn-sm" onclick="addTask(${p.id})">Add</button></div>
         ${completedTasks.length ? `<div class="task-completed-wrap">
           <div class="task-completed-hd">Completed <span>${completedTasks.length}</span></div>
-          ${completedTasks.map(t=>`<div class="task-item task-completed-item">
-            <div class="task-check done"></div>
-            <span class="task-name done">${escapeHTML(t.name)}</span>
-            <button class="task-restore" onclick="restoreProjectTask(${p.id},${t.id})">Restore</button>
-            <button class="task-del" onclick="delCompletedTask(${p.id},${t.id})">✕</button>
-          </div>`).join('')}
+          ${completedTasks.map(t => taskItemHTML(p, t, 'completed')).join('')}
         </div>` : ''}
       </div>
       <div class="card au au2 detail-section">
@@ -2744,6 +2772,43 @@ function livePct(val,id){val=clamp(val);const c=pctColor(val);document.getElemen
 function livePctNum(val,id){val=clamp(val);document.getElementById('ppct-sl').value=val;livePct(val,id);}
 function savePct(id){const p=getProjectById(id);if(p)logActivity(`Progress updated to <strong>${p.progress}%</strong> on "${p.name}"`,p.color);}
 function clamp(v){return Math.min(100,Math.max(0,parseInt(v)||0));}
+function startEditTask(pid, taskId, section) {
+  editingTask = { pid, taskId, section };
+  goProject(pid);
+  requestAnimationFrame(() => {
+    const inp = document.getElementById(`task-edit-inp-${taskId}`);
+    if (inp) { inp.focus(); inp.select(); }
+  });
+}
+function cancelEditTask() {
+  const pid = editingTask?.pid;
+  editingTask = null;
+  if (pid) goProject(pid);
+}
+function taskEditKeydown(e, pid, taskId, section) {
+  if (e.key === 'Enter') { e.preventDefault(); saveEditTask(pid, taskId, section); }
+  if (e.key === 'Escape') { e.preventDefault(); cancelEditTask(); }
+}
+function saveEditTask(pid, taskId, section) {
+  const inp = document.getElementById(`task-edit-inp-${taskId}`);
+  const name = inp?.value.trim();
+  if (!name) { toast('Task name cannot be empty', '#DC2626'); return; }
+  const p = getProjectById(pid);
+  if (!p) return;
+  const list = section === 'completed' ? p.completedTasks : p.tasks;
+  if (!list) return;
+  const i = list.findIndex(t => t.id === taskId);
+  if (i < 0) return;
+  const old = list[i].name;
+  if (old === name) { editingTask = null; goProject(pid); return; }
+  list[i].name = name;
+  editingTask = null;
+  save();
+  updateSidebar();
+  logActivity(`Updated task on <strong>"${p.name}"</strong>`, p.color);
+  goProject(pid);
+  toast('Task saved', '#16A34A');
+}
 function addTask(id){const inp=document.getElementById(`tadd-${id}`);const name=inp.value.trim();if(!name)return;const p=getProjectById(id);if(!p)return;p.tasks=p.tasks||[];p.tasks.push(normalizeProjectTask({name}, {done:false}));autoProgress(p);save();inp.value='';logActivity(`Added task <strong>"${escapeHTML(name)}"</strong> to "${p.name}"`,p.color);goProject(id);toast('Task added','#16A34A');}
 function completeProjectTask(id, taskId){const p=getProjectById(id);if(!p||!p.tasks)return;const i=p.tasks.findIndex(t=>t.id===taskId);if(i<0)return;const t=p.tasks.splice(i,1)[0];p.completedTasks=p.completedTasks||[];p.completedTasks.unshift({...t,done:true,completedAt:new Date().toISOString()});autoProgress(p);save();updateSidebar();logActivity(`Completed task <strong>"${t.name}"</strong> on "${p.name}"`,p.color);goProject(id);toast('Moved to Completed','#16A34A');}
 function restoreProjectTask(id, taskId){const p=getProjectById(id);if(!p||!p.completedTasks)return;const i=p.completedTasks.findIndex(t=>t.id===taskId);if(i<0)return;const t=p.completedTasks.splice(i,1)[0];p.tasks=p.tasks||[];p.tasks.push({...t,done:false,completedAt:null});autoProgress(p);save();updateSidebar();logActivity(`Restored task <strong>"${t.name}"</strong> on "${p.name}"`,p.color);goProject(id);toast('Returned to current tasks','#2563EB');}
