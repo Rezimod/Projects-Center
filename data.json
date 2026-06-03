@@ -1,6 +1,26 @@
 {
   "projects": [
     {
+      "id": 1780507294746,
+      "name": "ASTROMAN",
+      "desc": "Astroman brand development, success and growth.",
+      "type": "monthly",
+      "due": "2026-11-03",
+      "priority": "low",
+      "color": "#2563EB",
+      "icon": "🚀",
+      "progress": 0,
+      "tasks": [],
+      "completedTasks": [],
+      "notes": "",
+      "created": 1780507294746,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
       "id": 1779131427103,
       "name": "Stellar Continue",
       "desc": "",
@@ -1035,6 +1055,11 @@
   },
   "activity": [
     {
+      "msg": "Created project <strong>\"ASTROMAN\"</strong>",
+      "color": "#2563EB",
+      "time": 1780507294748
+    },
+    {
       "msg": "Completed daily task <strong>\"პრობაციაზე მისვლა,\"</strong>",
       "color": "#67E8F9",
       "time": 1780475541045
@@ -1278,11 +1303,6 @@
       "msg": "Completed daily task <strong>\"პრავაზე გარკვევა\"</strong>",
       "color": "#67E8F9",
       "time": 1777399109767
-    },
-    {
-      "msg": "Completed daily task <strong>\"ექატრა ჯი\"</strong>",
-      "color": "#67E8F9",
-      "time": 1777399101683
     }
   ]
 }
