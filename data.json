@@ -682,12 +682,6 @@
         "date": "2026-05-24"
       },
       {
-        "id": 1780304366897,
-        "text": "პრობაციაზე მისვლა,",
-        "done": false,
-        "date": "2026-06-01"
-      },
-      {
         "id": 1780304370696,
         "text": "გერმანიაზე გარკვევა",
         "done": false,
@@ -719,6 +713,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1780304366897,
+        "text": "პრობაციაზე მისვლა,",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-03T08:32:21.043Z"
+      },
       {
         "id": 1780304412448,
         "text": "გერმანიის შეკვეთის დაბინავებბა",
@@ -1059,6 +1059,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"პრობაციაზე მისვლა,\"</strong>",
+      "color": "#67E8F9",
+      "time": 1780475541045
+    },
+    {
       "msg": "Completed daily task <strong>\"გერმანიის შეკვეთის დაბინავებბა\"</strong>",
       "color": "#67E8F9",
       "time": 1780330048826
@@ -1302,11 +1307,6 @@
       "msg": "Completed daily task <strong>\"ექატრა ჯი\"</strong>",
       "color": "#67E8F9",
       "time": 1777399101683
-    },
-    {
-      "msg": "Completed daily task <strong>\"Astroman New Ad\"</strong>",
-      "color": "#67E8F9",
-      "time": 1777399100503
     }
   ]
 }
