@@ -3,7 +3,7 @@
     {
       "id": 1780507294746,
       "name": "Astroman",
-      "desc": "June Growth Plan & Summer Runway 2026 — store + online",
+      "desc": "ივნისის ზრდის გეგმა და ზაფხულის სეზონი 2026 — მაღაზია + ონლაინ",
       "type": "monthly",
       "due": "2026-06-30",
       "priority": "high",
@@ -12,92 +12,92 @@
       "progress": 0,
       "tasks": [
         {
-          "name": "Wk1 · Finalize accessories reorder (eyepieces, Barlow, moon filters, tripods, red flashlights)",
+          "name": "კვ1 · აქსესუარების შეკვეთის დასრულება (ოკულარები, ბარლოუსი, მთვარის ფილტრები, შტატივები, წითელი ფანარები)",
           "done": false
         },
         {
-          "name": "Wk1 · Build telescope buying-guide page (beginner vs intermediate, hero SKUs)",
+          "name": "კვ1 · ტელესკოპის ამორჩევის გზამკვლევის გვერდი (დამწყები vs საშუალო, ძირითადი მოდელები)",
           "done": false
         },
         {
-          "name": "Wk1 · Summer window display: hero telescope + Moon Lamp + nebula projector",
+          "name": "კვ1 · ზაფხულის ვიტრინა: ძირითადი ტელესკოპი + მცურავი ლამპა + ნებულის პროექტორი",
           "done": false
         },
         {
-          "name": "Wk1 · Post Venus–Jupiter conjunction (Jun 8–9) — FB Georgian + TikTok, telescope CTA",
+          "name": "კვ1 · ვენერა–იუპიტერის კონუნქციის პოსტი (8–9 ივნ) — FB ქართულად + TikTok, ტელესკოპის ბმული",
           "done": false
         },
         {
-          "name": "Wk2 · Launch 3 telescope bundles (200–500 GEL tier: scope + eyepiece + bag + star map)",
+          "name": "კვ2 · 3 ტელესკოპის პაკეტის გაშვება (200–500 GEL: ტელესკოპი + ოკულარები + ჩანთა + ვარსკვლავთა რუკა)",
           "done": false
         },
         {
-          "name": "Wk2 · Train 60-sec FORESEEN 70mm demo — scope assembled on shop floor",
+          "name": "კვ2 · FORESEEN 70mm-ის 60-წამიანი დემო — ტელესკოპი მაღაზიაში შეკრებილი",
           "done": false
         },
         {
-          "name": "Wk2 · Post Sky This Month – June in Georgian (solstice, planet lineup, SEO)",
+          "name": "კვ2 · „ცა ამ თვეში – ივნისი“ ქართულად (ბრტყელს, პლანეტების ხაზი, SEO)",
           "done": false
         },
         {
-          "name": "Wk2 · Restock impulse heroes: Nebula Projector, Moon Crystal Balls, keychains, Universe projector",
+          "name": "კვ2 · იმპულსური პროდუქტების შევსება: ნებულის პროექტორი, მთვარის კრისტალი, ბრელოკები, Universe პროექტორი",
           "done": false
         },
         {
-          "name": "Wk3 · Google + retargeting ads (ტელესკოპი, telescope Tbilisi) — 300–500 GEL budget",
+          "name": "კვ3 · Google + რეტარგეტინგი („ტელესკოპი“, telescope Tbilisi) — ბიუჯეტი 300–500 GEL",
           "done": false
         },
         {
-          "name": "Wk3 · Gift/decor shelf at checkout (moon lamps, crystal balls, keychains)",
+          "name": "კვ3 · საჩუქრების თარო კასაზე (მთვარის ლამპები, კრისტალი, ბრელოკები)",
           "done": false
         },
         {
-          "name": "Wk3 · Solstice post (Jun 21) + repost customer telescope UGC",
+          "name": "კვ3 · ბრტყელსის პოსტი (21 ივნ) + მომხმარებლის ტელესკოპის ფოტოების გაზიარება",
           "done": false
         },
         {
-          "name": "Wk3 · Draft guesthouse/summer-camp outreach (rental or stargazing-night package)",
+          "name": "კვ3 · სასტუმრო/საბაკო ლაგერის შეთავაზება (ტელესკოპის გაქირავება ან ვარსკვლავური ღამე)",
           "done": false
         },
         {
-          "name": "Wk4 · ORDER eclipse stock NOW — solar glasses + filters for Aug 12 eclipse",
+          "name": "კვ4 · დაბურვვის მარაგის შეკვეთა ახლავე — სოლნის სათვალეები + ფილტრები 12 აგვისტოსთვის",
           "done": false
         },
         {
-          "name": "Wk4 · Pre-launch Aug 12 eclipse landing page + email signup",
+          "name": "კვ4 · 12 აგვისტოს დაბურვვის ლენდინგი + ელფოსტის რეგისტრაცია",
           "done": false
         },
         {
-          "name": "Wk4 · Strawberry Moon display (Jun 29) + Meteor Watch binocular promo (Jun 30)",
+          "name": "კვ4 · მის ბურთლოს მთვარის ვიტრინა (29 ივნ) + მეტეორების დაკვირვების აქცია კალეოპტრებზე (30 ივნ)",
           "done": false
         },
         {
-          "name": "Wk4 · June review: vs 14k baseline, top 5 SKUs for July, cut dead stock",
+          "name": "კვ4 · ივნისის ანგარიში: 14k-თან შედარება, ივლისის ტოპ 5 SKU, მკვდარი მარაგის მოჭრა",
           "done": false
         },
         {
-          "name": "Weekly · Sunday check: telescope units, avg basket, eclipse signups",
+          "name": "ყოველკვირეული · კვირა: ტელესკოპები, საშუალო კალათა, დაბურვვის რეგისტრაციები",
           "done": false
         },
         {
-          "name": "Target · 20+ telescope units in June",
+          "name": "მიზანი · 20+ ტელესკოპი ივნისში",
           "done": false
         },
         {
-          "name": "Target · Raise avg basket 145 → 180 GEL (accessory attach every scope)",
+          "name": "მიზანი · კალათის საშუალო 145 → 180 GEL (აქსესუარი ყოველ ტელესკოპზე)",
           "done": false
         },
         {
-          "name": "Target · 100+ eclipse signups by month end",
+          "name": "მიზანი · 100+ დაბურვვის რეგისტრაცია თვის ბოლომდე",
           "done": false
         },
         {
-          "name": "Target · Open 1 B2B deal (guesthouse or summer camp)",
+          "name": "მიზანი · 1 B2B შეთანხმება (სასტუმრო ან საბაკო ლაგერი)",
           "done": false
         }
       ],
       "completedTasks": [],
-      "notes": "June Growth Plan & Summer Runway 2026 (Jan 1 – Jun 3 data)\nBaseline: ~14,000 GEL/month · 61% margin · telescopes = 58.7% revenue\nHero SKUs: FORESEEN 70mm, Foreseen 800/50, Visionking, Astronomical 36050\nSummer events: Venus–Jupiter Jun 8–9 · Solstice Jun 21 · Strawberry Moon Jun 29 · Aug 12 total eclipse + Perseids\nGoal: push toward 18,000–20,000 GEL in June",
+      "notes": "ივნისის ზრდის გეგმა და ზაფხულის სეზონი 2026 (გაყიდვების მონაცემები 1 იან – 3 ივნ)\nსაწყისი: ~14,000 GEL/თვე · მარჟა 61% · ტელესკოპები = 58.7% შემოსავალი\nძირითადი პროდუქტები: FORESEEN 70mm, Foreseen 800/50, Visionking, Astronomical 36050\nზაფხულის მოვლენები: ვენერა–იუპიტერი 8–9 ივნ · ზაფხულის ბრტყელს 21 ივნ · მის ბურთლოს მთვარე 29 ივნ · 12 აგვტოს სრული დაბურვვა + პერსეიდები\nმიზანი: ივნისში 18,000–20,000 GEL-მდე მიღწევა",
       "created": 1780507294746,
       "reminder": {
         "enabled": true,
@@ -1140,6 +1140,11 @@
   },
   "activity": [
     {
+      "msg": "<strong>Astroman</strong>-ის 21 ამოცანა თარგმნილია ქართულად (ივნისის ზრდის გეგმა)",
+      "color": "#7C3AED",
+      "time": 1780518784912
+    },
+    {
       "msg": "Populated <strong>21 tasks</strong> on <strong>Astroman</strong> from June Growth Plan",
       "color": "#7C3AED",
       "time": 1780517102568
@@ -1383,11 +1388,6 @@
       "msg": "Completed daily task <strong>\"პრობაციაზე დარეკვა\"</strong>",
       "color": "#67E8F9",
       "time": 1777399111653
-    },
-    {
-      "msg": "Completed daily task <strong>\"სასამართლოში დარეკვა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1777399110328
     }
   ]
 }
