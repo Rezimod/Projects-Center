@@ -12,88 +12,130 @@
       "progress": 0,
       "tasks": [
         {
+          "id": 1781173474577,
           "name": "აქსესუარების შეკვეთა",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173482349,
           "name": "ტელესკოპის გზამკვლევი",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173483007,
           "name": "ზაფხულის ვიტრინა",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173480037,
           "name": "ვენერა–იუპიტერის პოსტი",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173477216,
           "name": "3 ტელესკოპის პაკეტი",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173479135,
           "name": "FORESEEN 70mm დემო",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173483554,
           "name": "„ცა ივნისში“ პოსტი",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173477588,
           "name": "იმპულსური მარაგი",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173481101,
           "name": "Google რეკლამა",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173474272,
           "name": "საჩუქრების თარო",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173483749,
           "name": "ბრტყელსის პოსტი",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173482539,
           "name": "B2B შეთავაზება",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173482202,
           "name": "დაბურვვის მარაგი",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173475814,
           "name": "დაბურვვის ლენდინგი",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173475519,
           "name": "მის ბურთლოს მთვარე",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173476117,
           "name": "ივნისის ანგარიში",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173483781,
           "name": "კვირანდი მეტრიკები",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173480097,
           "name": "20+ ტელესკოპი",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173481886,
           "name": "კალათა → 180 GEL",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173480733,
           "name": "100+ დაბურვვის რეგისტრაცია",
-          "done": false
+          "done": false,
+          "completedAt": null
         },
         {
+          "id": 1781173474036,
           "name": "1 B2B შეთანხმება",
-          "done": false
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -721,12 +763,6 @@
   "planner": {
     "dailyTasks": [
       {
-        "id": 1779131447185,
-        "text": "STellar continue, Qvac Grant apply",
-        "done": false,
-        "date": "2026-05-18"
-      },
-      {
         "id": 1779131451633,
         "text": "კონიაკის მიწა",
         "done": false,
@@ -794,6 +830,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1779131447185,
+        "text": "STellar continue, Qvac Grant apply",
+        "date": "2026-05-18",
+        "completedAt": "2026-06-11T10:24:53.517Z"
+      },
       {
         "id": 1780304366897,
         "text": "პრობაციაზე მისვლა,",
@@ -1140,6 +1182,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"STellar continue, Qvac Grant apply\"</strong>",
+      "color": "#67E8F9",
+      "time": 1781173493518
+    },
+    {
       "msg": "<strong>Astroman</strong> — ამოცანების სახელები შემოკლებულია",
       "color": "#7C3AED",
       "time": 1780519356759
@@ -1383,11 +1430,6 @@
       "msg": "Updated project <strong>\"Stellar Continiues\"</strong>",
       "color": "#2563EB",
       "time": 1779130108505
-    },
-    {
-      "msg": "Completed task <strong>\"create new logo\"</strong>",
-      "color": "#2563EB",
-      "time": 1777399128416
     }
   ]
 }
