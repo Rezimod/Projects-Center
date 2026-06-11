@@ -156,7 +156,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 29,
+      "progress": 35,
       "tasks": [
         {
           "id": 1779356588719,
@@ -219,12 +219,6 @@
           "completedAt": null
         },
         {
-          "id": 1779902020824,
-          "name": "make autonomous X content creator",
-          "done": false,
-          "completedAt": null
-        },
-        {
           "id": 1780304528552,
           "name": "Token and mainnet lunch",
           "done": false,
@@ -232,6 +226,12 @@
         }
       ],
       "completedTasks": [
+        {
+          "id": 1779902020824,
+          "name": "make autonomous X content creator",
+          "done": true,
+          "completedAt": "2026-06-11T10:26:07.838Z"
+        },
         {
           "id": 1779902008652,
           "name": "win superteam 5K",
@@ -1182,6 +1182,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"make autonomous X content creator\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781173567840
+    },
+    {
       "msg": "Completed task <strong>\"win superteam 5K\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1781173509324
@@ -1425,11 +1430,6 @@
       "msg": "Completed task <strong>\"Finish Sky Page\"</strong>",
       "color": "#2563EB",
       "time": 1779130113568
-    },
-    {
-      "msg": "Completed task <strong>\"Work on Missions page\"</strong>",
-      "color": "#2563EB",
-      "time": 1779130112439
     }
   ]
 }
