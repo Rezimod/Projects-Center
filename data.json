@@ -156,7 +156,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 39,
+      "progress": 37,
       "tasks": [
         {
           "id": 1779356609271,
@@ -221,6 +221,12 @@
         {
           "id": 1781358094751,
           "name": "Apply for GITA",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781358103123,
+          "name": "Apply for Qvac Hackaton",
           "done": false,
           "completedAt": null
         }
@@ -1188,6 +1194,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Apply for Qvac Hackaton\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781358101309
+    },
+    {
       "msg": "Added task <strong>\"Apply for GITA\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1781358094359
@@ -1431,11 +1442,6 @@
       "msg": "Completed task <strong>\"Finish Profile\"</strong>",
       "color": "#2563EB",
       "time": 1779130116866
-    },
-    {
-      "msg": "Completed task <strong>\"finish marketplace\"</strong>",
-      "color": "#2563EB",
-      "time": 1779130116009
     }
   ]
 }
