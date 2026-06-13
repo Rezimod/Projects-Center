@@ -156,7 +156,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 37,
+      "progress": 42,
       "tasks": [
         {
           "id": 1779356609271,
@@ -219,12 +219,6 @@
           "completedAt": null
         },
         {
-          "id": 1781358094751,
-          "name": "Apply for GITA",
-          "done": false,
-          "completedAt": null
-        },
-        {
           "id": 1781358103123,
           "name": "Apply for Qvac Hackaton",
           "done": false,
@@ -232,6 +226,12 @@
         }
       ],
       "completedTasks": [
+        {
+          "id": 1781358094751,
+          "name": "Apply for GITA",
+          "done": true,
+          "completedAt": "2026-06-13T13:41:44.921Z"
+        },
         {
           "id": 1779356588719,
           "name": "Add Tether QVAC win to live site",
@@ -1194,6 +1194,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Apply for GITA\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781358104922
+    },
+    {
       "msg": "Added task <strong>\"Apply for Qvac Hackaton\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1781358101309
@@ -1437,11 +1442,6 @@
       "msg": "Completed task <strong>\"fihisn home page\"</strong>",
       "color": "#2563EB",
       "time": 1779130118319
-    },
-    {
-      "msg": "Completed task <strong>\"Finish Profile\"</strong>",
-      "color": "#2563EB",
-      "time": 1779130116866
     }
   ]
 }
