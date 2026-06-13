@@ -156,7 +156,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 41,
+      "progress": 39,
       "tasks": [
         {
           "id": 1779356609271,
@@ -215,6 +215,12 @@
         {
           "id": 1780304528552,
           "name": "Token and mainnet lunch",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781358094751,
+          "name": "Apply for GITA",
           "done": false,
           "completedAt": null
         }
@@ -1182,6 +1188,11 @@
   },
   "activity": [
     {
+      "msg": "Added task <strong>\"Apply for GITA\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781358094359
+    },
+    {
       "msg": "Completed task <strong>\"Add Tether QVAC win to live site\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1781358072026
@@ -1425,11 +1436,6 @@
       "msg": "Completed task <strong>\"finish marketplace\"</strong>",
       "color": "#2563EB",
       "time": 1779130116009
-    },
-    {
-      "msg": "Completed task <strong>\"finish learning page\"</strong>",
-      "color": "#2563EB",
-      "time": 1779130114959
     }
   ]
 }
