@@ -156,14 +156,8 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 35,
+      "progress": 41,
       "tasks": [
-        {
-          "id": 1779356588719,
-          "name": "Add Tether QVAC win to live site",
-          "done": false,
-          "completedAt": null
-        },
         {
           "id": 1779356609271,
           "name": "Submit Anthropic Startup Program application",
@@ -226,6 +220,12 @@
         }
       ],
       "completedTasks": [
+        {
+          "id": 1779356588719,
+          "name": "Add Tether QVAC win to live site",
+          "done": true,
+          "completedAt": "2026-06-13T13:41:12.024Z"
+        },
         {
           "id": 1779902020824,
           "name": "make autonomous X content creator",
@@ -1182,6 +1182,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Add Tether QVAC win to live site\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781358072026
+    },
+    {
       "msg": "Completed task <strong>\"make autonomous X content creator\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1781173567840
@@ -1425,11 +1430,6 @@
       "msg": "Completed task <strong>\"finish learning page\"</strong>",
       "color": "#2563EB",
       "time": 1779130114959
-    },
-    {
-      "msg": "Completed task <strong>\"Finish Sky Page\"</strong>",
-      "color": "#2563EB",
-      "time": 1779130113568
     }
   ]
 }
