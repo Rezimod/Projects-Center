@@ -156,7 +156,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 80,
+      "progress": 50,
       "tasks": [
         {
           "id": 1779356609271,
@@ -1194,6 +1194,11 @@
   },
   "activity": [
     {
+      "msg": "Stage set to <strong>In Progress</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781635479182
+    },
+    {
       "msg": "Stage set to <strong>Review</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1781635477818
@@ -1437,11 +1442,6 @@
       "msg": "Completed task <strong>\"use design sites to create design\"</strong>",
       "color": "#2563EB",
       "time": 1779130121138
-    },
-    {
-      "msg": "Completed task <strong>\"Full tests and Demo video\"</strong>",
-      "color": "#2563EB",
-      "time": 1779130119684
     }
   ]
 }
