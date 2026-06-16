@@ -156,7 +156,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 42,
+      "progress": 47,
       "tasks": [
         {
           "id": 1779356609271,
@@ -217,15 +217,15 @@
           "name": "Token and mainnet lunch",
           "done": false,
           "completedAt": null
-        },
-        {
-          "id": 1781358103123,
-          "name": "Apply for Qvac Hackaton",
-          "done": false,
-          "completedAt": null
         }
       ],
       "completedTasks": [
+        {
+          "id": 1781358103123,
+          "name": "Apply for Qvac Hackaton",
+          "done": true,
+          "completedAt": "2026-06-16T18:44:09.855Z"
+        },
         {
           "id": 1781358094751,
           "name": "Apply for GITA",
@@ -1194,6 +1194,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Apply for Qvac Hackaton\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781635449856
+    },
+    {
       "msg": "Completed task <strong>\"Apply for GITA\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1781358104922
@@ -1437,11 +1442,6 @@
       "msg": "Completed task <strong>\"leaderboard\"</strong>",
       "color": "#2563EB",
       "time": 1779130118964
-    },
-    {
-      "msg": "Completed task <strong>\"fihisn home page\"</strong>",
-      "color": "#2563EB",
-      "time": 1779130118319
     }
   ]
 }
