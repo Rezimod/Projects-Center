@@ -156,7 +156,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 47,
+      "progress": 80,
       "tasks": [
         {
           "id": 1779356609271,
@@ -1194,6 +1194,11 @@
   },
   "activity": [
     {
+      "msg": "Stage set to <strong>Review</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781635477818
+    },
+    {
       "msg": "Completed task <strong>\"Apply for Qvac Hackaton\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1781635449856
@@ -1437,11 +1442,6 @@
       "msg": "Completed task <strong>\"Full tests and Demo video\"</strong>",
       "color": "#2563EB",
       "time": 1779130119684
-    },
-    {
-      "msg": "Completed task <strong>\"leaderboard\"</strong>",
-      "color": "#2563EB",
-      "time": 1779130118964
     }
   ]
 }
