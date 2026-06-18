@@ -156,7 +156,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 53,
+      "progress": 58,
       "tasks": [
         {
           "id": 1779356609271,
@@ -167,12 +167,6 @@
         {
           "id": 1779356623283,
           "name": "Apply for Solana Mobile Builder Grants",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1779356638058,
-          "name": "Make /feed visible to logged-out visitors",
           "done": false,
           "completedAt": null
         },
@@ -214,6 +208,12 @@
         }
       ],
       "completedTasks": [
+        {
+          "id": 1779356638058,
+          "name": "Make /feed visible to logged-out visitors",
+          "done": true,
+          "completedAt": "2026-06-18T08:24:51.699Z"
+        },
         {
           "id": 1779356624162,
           "name": "Make /field a top-level nav item",
@@ -1194,6 +1194,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Make /feed visible to logged-out visitors\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781771091700
+    },
+    {
       "msg": "Completed task <strong>\"Make /field a top-level nav item\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1781771084592
@@ -1437,11 +1442,6 @@
       "msg": "Deleted task <strong>\"as\"</strong> from \"Stellar Continiues\"",
       "color": "#DC2626",
       "time": 1779130146327
-    },
-    {
-      "msg": "Added task <strong>\"as\"</strong> to \"Stellar Continiues\"",
-      "color": "#2563EB",
-      "time": 1779130143575
     }
   ]
 }
