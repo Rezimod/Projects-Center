@@ -156,7 +156,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 50,
+      "progress": 53,
       "tasks": [
         {
           "id": 1779356609271,
@@ -167,12 +167,6 @@
         {
           "id": 1779356623283,
           "name": "Apply for Solana Mobile Builder Grants",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1779356624162,
-          "name": "Make /field a top-level nav item",
           "done": false,
           "completedAt": null
         },
@@ -220,6 +214,12 @@
         }
       ],
       "completedTasks": [
+        {
+          "id": 1779356624162,
+          "name": "Make /field a top-level nav item",
+          "done": true,
+          "completedAt": "2026-06-18T08:24:44.590Z"
+        },
         {
           "id": 1781358103123,
           "name": "Apply for Qvac Hackaton",
@@ -1194,6 +1194,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Make /field a top-level nav item\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781771084592
+    },
+    {
       "msg": "Stage set to <strong>In Progress</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1781635479182
@@ -1437,11 +1442,6 @@
       "msg": "Added task <strong>\"as\"</strong> to \"Stellar Continiues\"",
       "color": "#2563EB",
       "time": 1779130143575
-    },
-    {
-      "msg": "Completed task <strong>\"use design sites to create design\"</strong>",
-      "color": "#2563EB",
-      "time": 1779130121138
     }
   ]
 }
