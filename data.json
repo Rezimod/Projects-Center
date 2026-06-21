@@ -156,7 +156,7 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 58,
+      "progress": 63,
       "tasks": [
         {
           "id": 1779356609271,
@@ -199,15 +199,15 @@
           "name": "Block Sep 28 – Nov 2 for Colosseum Frontier Fall hackathon",
           "done": false,
           "completedAt": null
-        },
-        {
-          "id": 1780304528552,
-          "name": "Token and mainnet lunch",
-          "done": false,
-          "completedAt": null
         }
       ],
       "completedTasks": [
+        {
+          "id": 1780304528552,
+          "name": "Token and mainnet lunch",
+          "done": true,
+          "completedAt": "2026-06-21T14:13:27.793Z"
+        },
         {
           "id": 1779356638058,
           "name": "Make /feed visible to logged-out visitors",
@@ -1194,6 +1194,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Token and mainnet lunch\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1782051207796
+    },
+    {
       "msg": "Completed task <strong>\"Make /feed visible to logged-out visitors\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1781771091700
@@ -1437,11 +1442,6 @@
       "msg": "Completed task <strong>\"add clubs page\"</strong> on \"Current Website Update\"",
       "color": "#2563EB",
       "time": 1779131388310
-    },
-    {
-      "msg": "Deleted task <strong>\"as\"</strong> from \"Stellar Continiues\"",
-      "color": "#DC2626",
-      "time": 1779130146327
     }
   ]
 }
