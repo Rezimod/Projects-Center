@@ -361,7 +361,7 @@ display:grid;place-items:center;position:relative;flex-shrink:0;box-shadow:inset
 .planner-list{display:flex;flex-direction:column;gap:8px;}
 .planner-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border);}
 .planner-item span{flex:1;font-size:13px;color:var(--text);}
-.planner-item span.done{text-decoration:line-through;color:var(--text3);}
+.planner-item span.done{color:var(--text3);}
 .planner-check{width:18px;height:18px;border-radius:50%;border:2px solid var(--border2);flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;}
 .planner-check.done{background:var(--green);border-color:var(--green);}
 .planner-check.done::after{content:'✓';font-size:10px;color:#fff;font-weight:700;}
@@ -441,7 +441,7 @@ display:grid;place-items:center;position:relative;flex-shrink:0;box-shadow:inset
 .task-check.done{background:var(--green);border-color:var(--green);}
 .task-check.done::after{content:'✓';font-size:11px;color:white;font-weight:700;}
 .task-name{font-size:13px;font-weight:500;flex:1;line-height:1.4;}
-.task-name.done{text-decoration:line-through;color:var(--text3);}
+.task-name.done{color:var(--text3);}
 .task-actions{display:flex;align-items:center;gap:2px;flex-shrink:0;}
 .task-edit,.task-del{width:26px;height:26px;border-radius:5px;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text3);transition:all .12s;}
 .task-item:hover .task-edit{color:var(--blue);}
@@ -620,7 +620,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
 .todo-ck.done{background:var(--green);border-color:var(--green);}
 .todo-ck.done::after{content:'✓';color:white;font-size:10px;font-weight:700;}
 .todo-nm{flex:1;font-size:14px;color:var(--text);line-height:1.4;}
-.todo-nm.done{text-decoration:line-through;color:var(--text3);}
+.todo-nm.done{color:var(--text3);}
 .todo-del{background:none;border:none;color:var(--text3);cursor:pointer;font-size:12px;padding:4px 7px;border-radius:4px;opacity:0;transition:opacity .12s;min-width:28px;min-height:28px;}
 .todo-item:hover .todo-del,.todo-item:focus-within .todo-del{opacity:1;}
 .todo-empty{padding:28px;text-align:center;color:var(--text3);font-size:13px;}
