@@ -407,14 +407,8 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "💪",
-      "progress": 78,
+      "progress": 89,
       "tasks": [
-        {
-          "id": 1779131343162,
-          "name": "check if everything works",
-          "done": false,
-          "completedAt": null
-        },
         {
           "id": 1779131345503,
           "name": "admin page setup",
@@ -423,6 +417,12 @@
         }
       ],
       "completedTasks": [
+        {
+          "id": 1779131343162,
+          "name": "check if everything works",
+          "done": true,
+          "completedAt": "2026-06-24T15:41:42.898Z"
+        },
         {
           "id": 1779131349198,
           "name": "Create deployment marketing plan",
@@ -1194,6 +1194,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"check if everything works\"</strong> on \"Astroman Loyal Club\"",
+      "color": "#2563EB",
+      "time": 1782315702902
+    },
+    {
       "msg": "Completed task <strong>\"Create deployment marketing plan\"</strong> on \"Astroman Loyal Club\"",
       "color": "#2563EB",
       "time": 1782315701501
@@ -1437,11 +1442,6 @@
       "msg": "Added task <strong>\"Submit Anthropic Startup Program application\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356601276
-    },
-    {
-      "msg": "Added task <strong>\"Post Tether win on X\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356594321
     }
   ]
 }
