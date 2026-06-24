@@ -805,18 +805,6 @@
         "date": "2026-05-22"
       },
       {
-        "id": 1780304370696,
-        "text": "გერმანიაზე გარკვევა",
-        "done": false,
-        "date": "2026-06-01"
-      },
-      {
-        "id": 1780304386611,
-        "text": "ჩინეთში შეკვეთის გაკეთება",
-        "done": false,
-        "date": "2026-06-01"
-      },
-      {
         "id": 1780304399669,
         "text": "კონიაკის მიწაზე დარეკვა",
         "done": false,
@@ -836,6 +824,18 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1780304386611,
+        "text": "ჩინეთში შეკვეთის გაკეთება",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-24T15:41:06.702Z"
+      },
+      {
+        "id": 1780304370696,
+        "text": "გერმანიაზე გარკვევა",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-24T15:41:03.809Z"
+      },
       {
         "id": 1779658259522,
         "text": "სოლანას სიახლეები",
@@ -1194,6 +1194,16 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"ჩინეთში შეკვეთის გაკეთება\"</strong>",
+      "color": "#67E8F9",
+      "time": 1782315666704
+    },
+    {
+      "msg": "Completed daily task <strong>\"გერმანიაზე გარკვევა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1782315663814
+    },
+    {
       "msg": "Completed daily task <strong>\"სოლანას სიახლეები\"</strong>",
       "color": "#67E8F9",
       "time": 1782315663011
@@ -1432,16 +1442,6 @@
       "msg": "Completed daily task <strong>\"Astroman Weekle Content Creation\"</strong>",
       "color": "#67E8F9",
       "time": 1779131569043
-    },
-    {
-      "msg": "Created project <strong>\"Stellar Continue\"</strong>",
-      "color": "#2563EB",
-      "time": 1779131427104
-    },
-    {
-      "msg": "Deleted completed task <strong>\"add clubs page\"</strong> from \"Current Website Update\"",
-      "color": "#DC2626",
-      "time": 1779131391234
     }
   ]
 }
