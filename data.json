@@ -805,12 +805,6 @@
         "date": "2026-05-22"
       },
       {
-        "id": 1779658259522,
-        "text": "სოლანას სიახლეები",
-        "done": false,
-        "date": "2026-05-24"
-      },
-      {
         "id": 1780304370696,
         "text": "გერმანიაზე გარკვევა",
         "done": false,
@@ -842,6 +836,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1779658259522,
+        "text": "სოლანას სიახლეები",
+        "date": "2026-05-24",
+        "completedAt": "2026-06-24T15:41:03.009Z"
+      },
       {
         "id": 1779131447185,
         "text": "STellar continue, Qvac Grant apply",
@@ -1194,6 +1194,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"სოლანას სიახლეები\"</strong>",
+      "color": "#67E8F9",
+      "time": 1782315663011
+    },
+    {
       "msg": "Completed task <strong>\"Token and mainnet lunch\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1782051207796
@@ -1437,11 +1442,6 @@
       "msg": "Deleted completed task <strong>\"add clubs page\"</strong> from \"Current Website Update\"",
       "color": "#DC2626",
       "time": 1779131391234
-    },
-    {
-      "msg": "Completed task <strong>\"add clubs page\"</strong> on \"Current Website Update\"",
-      "color": "#2563EB",
-      "time": 1779131388310
     }
   ]
 }
