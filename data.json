@@ -144,7 +144,7 @@
       "reminder": {
         "enabled": true,
         "timing": "oneweek",
-        "lastSent": null
+        "lastSent": "2026-06-24T10:50:30.278Z"
       }
     },
     {
@@ -395,7 +395,7 @@
       "reminder": {
         "enabled": true,
         "timing": "threedays",
-        "lastSent": "2026-06-23T11:17:09.130Z"
+        "lastSent": "2026-06-24T10:50:30.278Z"
       }
     },
     {
@@ -471,7 +471,7 @@
       "reminder": {
         "enabled": true,
         "timing": "threedays",
-        "lastSent": "2026-06-23T11:17:09.130Z"
+        "lastSent": "2026-06-24T10:50:30.278Z"
       }
     },
     {
@@ -547,7 +547,7 @@
       "reminder": {
         "enabled": true,
         "timing": "oneweek",
-        "lastSent": "2026-06-23T11:17:09.130Z"
+        "lastSent": "2026-06-24T10:50:30.278Z"
       }
     }
   ],
