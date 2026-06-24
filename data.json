@@ -156,14 +156,8 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
-      "progress": 63,
+      "progress": 68,
       "tasks": [
-        {
-          "id": 1779356609271,
-          "name": "Submit Anthropic Startup Program application",
-          "done": false,
-          "completedAt": null
-        },
         {
           "id": 1779356623283,
           "name": "Apply for Solana Mobile Builder Grants",
@@ -202,6 +196,12 @@
         }
       ],
       "completedTasks": [
+        {
+          "id": 1779356609271,
+          "name": "Submit Anthropic Startup Program application",
+          "done": true,
+          "completedAt": "2026-06-24T15:42:08.725Z"
+        },
         {
           "id": 1780304528552,
           "name": "Token and mainnet lunch",
@@ -392,82 +392,6 @@
       ],
       "notes": "",
       "created": 1772361382049,
-      "reminder": {
-        "enabled": true,
-        "timing": "threedays",
-        "lastSent": "2026-06-24T10:50:30.278Z"
-      }
-    },
-    {
-      "id": 1772361025657,
-      "name": "Astroman Loyal Club",
-      "desc": "Loyalty Club for astroman",
-      "type": "weekly",
-      "due": "2026-04-05",
-      "priority": "high",
-      "color": "#2563EB",
-      "icon": "💪",
-      "progress": 89,
-      "tasks": [
-        {
-          "id": 1779131345503,
-          "name": "admin page setup",
-          "done": false,
-          "completedAt": null
-        }
-      ],
-      "completedTasks": [
-        {
-          "id": 1779131343162,
-          "name": "check if everything works",
-          "done": true,
-          "completedAt": "2026-06-24T15:41:42.898Z"
-        },
-        {
-          "id": 1779131349198,
-          "name": "Create deployment marketing plan",
-          "done": true,
-          "completedAt": "2026-06-24T15:41:41.500Z"
-        },
-        {
-          "id": 1779131351641,
-          "name": "make it perfect.",
-          "done": true,
-          "completedAt": "2026-06-24T15:41:40.874Z"
-        },
-        {
-          "id": 1779131346540,
-          "name": "Create website",
-          "done": true,
-          "completedAt": "2026-05-18T19:09:02.485Z"
-        },
-        {
-          "id": 1779131346559,
-          "name": "build admin and dashboard page",
-          "done": true,
-          "completedAt": "2026-05-18T19:09:02.485Z"
-        },
-        {
-          "id": 1779131352021,
-          "name": "Manual Upload feature to add",
-          "done": true,
-          "completedAt": "2026-05-18T19:09:02.485Z"
-        },
-        {
-          "id": 1779131349250,
-          "name": "add forgot password option",
-          "done": true,
-          "completedAt": "2026-05-18T19:09:02.485Z"
-        },
-        {
-          "id": 1779131347280,
-          "name": "check matematics and new registration.",
-          "done": true,
-          "completedAt": "2026-05-18T19:09:02.485Z"
-        }
-      ],
-      "notes": "",
-      "created": 1772361025657,
       "reminder": {
         "enabled": true,
         "timing": "threedays",
@@ -769,6 +693,81 @@
         "enabled": false,
         "timing": "oneday",
         "lastSent": null
+      }
+    },
+    {
+      "id": 1772361025657,
+      "name": "Astroman Loyal Club",
+      "desc": "Loyalty Club for astroman",
+      "type": "weekly",
+      "due": "2026-04-05",
+      "priority": "high",
+      "color": "#2563EB",
+      "icon": "💪",
+      "progress": 100,
+      "tasks": [],
+      "completedTasks": [
+        {
+          "id": 1779131345503,
+          "name": "admin page setup",
+          "done": true,
+          "completedAt": "2026-06-24T15:41:43.870Z"
+        },
+        {
+          "id": 1779131343162,
+          "name": "check if everything works",
+          "done": true,
+          "completedAt": "2026-06-24T15:41:42.898Z"
+        },
+        {
+          "id": 1779131349198,
+          "name": "Create deployment marketing plan",
+          "done": true,
+          "completedAt": "2026-06-24T15:41:41.500Z"
+        },
+        {
+          "id": 1779131351641,
+          "name": "make it perfect.",
+          "done": true,
+          "completedAt": "2026-06-24T15:41:40.874Z"
+        },
+        {
+          "id": 1779131346540,
+          "name": "Create website",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131346559,
+          "name": "build admin and dashboard page",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131352021,
+          "name": "Manual Upload feature to add",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131349250,
+          "name": "add forgot password option",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131347280,
+          "name": "check matematics and new registration.",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        }
+      ],
+      "notes": "",
+      "created": 1772361025657,
+      "reminder": {
+        "enabled": true,
+        "timing": "threedays",
+        "lastSent": "2026-06-24T10:50:30.278Z"
       }
     }
   ],
@@ -1194,6 +1193,16 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Submit Anthropic Startup Program application\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1782315728726
+    },
+    {
+      "msg": "Completed task <strong>\"admin page setup\"</strong> on \"Astroman Loyal Club\"",
+      "color": "#2563EB",
+      "time": 1782315703871
+    },
+    {
       "msg": "Completed task <strong>\"check if everything works\"</strong> on \"Astroman Loyal Club\"",
       "color": "#2563EB",
       "time": 1782315702902
@@ -1432,16 +1441,6 @@
       "msg": "Added task <strong>\"Apply for Solana Mobile Builder Grants\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356615700
-    },
-    {
-      "msg": "Added task <strong>\"Update pitch deck slide 6\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356609365
-    },
-    {
-      "msg": "Added task <strong>\"Submit Anthropic Startup Program application\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356601276
     }
   ]
 }
