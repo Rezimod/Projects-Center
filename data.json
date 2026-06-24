@@ -407,23 +407,11 @@
       "priority": "high",
       "color": "#2563EB",
       "icon": "💪",
-      "progress": 56,
+      "progress": 78,
       "tasks": [
-        {
-          "id": 1779131351641,
-          "name": "make it perfect.",
-          "done": false,
-          "completedAt": null
-        },
         {
           "id": 1779131343162,
           "name": "check if everything works",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1779131349198,
-          "name": "Create deployment marketing plan",
           "done": false,
           "completedAt": null
         },
@@ -435,6 +423,18 @@
         }
       ],
       "completedTasks": [
+        {
+          "id": 1779131349198,
+          "name": "Create deployment marketing plan",
+          "done": true,
+          "completedAt": "2026-06-24T15:41:41.500Z"
+        },
+        {
+          "id": 1779131351641,
+          "name": "make it perfect.",
+          "done": true,
+          "completedAt": "2026-06-24T15:41:40.874Z"
+        },
         {
           "id": 1779131346540,
           "name": "Create website",
@@ -1194,6 +1194,16 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"Create deployment marketing plan\"</strong> on \"Astroman Loyal Club\"",
+      "color": "#2563EB",
+      "time": 1782315701501
+    },
+    {
+      "msg": "Completed task <strong>\"make it perfect.\"</strong> on \"Astroman Loyal Club\"",
+      "color": "#2563EB",
+      "time": 1782315700876
+    },
+    {
       "msg": "Completed daily task <strong>\"კონიაკის მიწაზე დარეკვა\"</strong>",
       "color": "#67E8F9",
       "time": 1782315668522
@@ -1432,16 +1442,6 @@
       "msg": "Added task <strong>\"Post Tether win on X\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779356594321
-    },
-    {
-      "msg": "Added task <strong>\"Add Tether QVAC win to live site\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356586156
-    },
-    {
-      "msg": "Added task <strong>\"Apply to teather grant\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779355010594
     }
   ]
 }
