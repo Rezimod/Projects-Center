@@ -805,12 +805,6 @@
         "date": "2026-05-22"
       },
       {
-        "id": 1780304399669,
-        "text": "კონიაკის მიწაზე დარეკვა",
-        "done": false,
-        "date": "2026-06-01"
-      },
-      {
         "id": 1780304422950,
         "text": "ასტრომანის გარე სივრცის შეღებვა",
         "done": false,
@@ -824,6 +818,12 @@
       }
     ],
     "completedDailyTasks": [
+      {
+        "id": 1780304399669,
+        "text": "კონიაკის მიწაზე დარეკვა",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-24T15:41:08.519Z"
+      },
       {
         "id": 1780304386611,
         "text": "ჩინეთში შეკვეთის გაკეთება",
@@ -1194,6 +1194,11 @@
   },
   "activity": [
     {
+      "msg": "Completed daily task <strong>\"კონიაკის მიწაზე დარეკვა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1782315668522
+    },
+    {
       "msg": "Completed daily task <strong>\"ჩინეთში შეკვეთის გაკეთება\"</strong>",
       "color": "#67E8F9",
       "time": 1782315666704
@@ -1437,11 +1442,6 @@
       "msg": "Added task <strong>\"Apply to teather grant\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779355010594
-    },
-    {
-      "msg": "Completed daily task <strong>\"Astroman Weekle Content Creation\"</strong>",
-      "color": "#67E8F9",
-      "time": 1779131569043
     }
   ]
 }
