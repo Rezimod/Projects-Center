@@ -136,6 +136,42 @@
           "name": "1 B2B შეთანხმება",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1782388301001,
+          "name": "Paint Astroman outer walls — outer-space theme",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782388301002,
+          "name": "Fix outdoor lights at Astroman",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782388301003,
+          "name": "Get flowers for Astroman entrance",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782388301004,
+          "name": "Assemble bikes; sell one for 3000 GEL, keep one",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782388301005,
+          "name": "Confirm telescope + levitating lamps order",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782388301006,
+          "name": "Source 5 new fresh products for Astroman",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -1192,6 +1228,41 @@
     }
   },
   "activity": [
+    {
+      "msg": "Added task <strong>\"Paint Astroman outer walls — outer-space theme\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Added task <strong>\"Fix outdoor lights at Astroman\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Added task <strong>\"Get flowers for Astroman entrance\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Added task <strong>\"Assemble bikes; sell one for 3000 GEL, keep one\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Added task <strong>\"Confirm telescope + levitating lamps order\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Added task <strong>\"Source 5 new fresh products for Astroman\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Anthology Fund application finalized & submit-ready on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1782388301001
+    },
     {
       "msg": "Completed task <strong>\"Submit Anthropic Startup Program application\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
