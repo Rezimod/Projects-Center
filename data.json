@@ -328,26 +328,8 @@
       "priority": "med",
       "color": "#2563EB",
       "icon": "🌍",
-      "progress": 0,
+      "progress": 75,
       "tasks": [
-        {
-          "id": 1779131350091,
-          "name": "add skywatcher page",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1779131344734,
-          "name": "add one more buit in ai",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1779131347003,
-          "name": "make product page more convertable",
-          "done": false,
-          "completedAt": null
-        },
         {
           "id": 1779131342660,
           "name": "ask claude how to improve system of the web",
@@ -355,7 +337,26 @@
           "completedAt": null
         }
       ],
-      "completedTasks": [],
+      "completedTasks": [
+        {
+          "id": 1779131347003,
+          "name": "make product page more convertable",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:53.198Z"
+        },
+        {
+          "id": 1779131344734,
+          "name": "add one more buit in ai",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:52.806Z"
+        },
+        {
+          "id": 1779131350091,
+          "name": "add skywatcher page",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:52.385Z"
+        }
+      ],
       "notes": "",
       "created": 1772361692835,
       "reminder": {
@@ -1228,6 +1229,21 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"make product page more convertable\"</strong> on \"Current Website Update\"",
+      "color": "#2563EB",
+      "time": 1782389153199
+    },
+    {
+      "msg": "Completed task <strong>\"add one more buit in ai\"</strong> on \"Current Website Update\"",
+      "color": "#2563EB",
+      "time": 1782389152807
+    },
+    {
+      "msg": "Completed task <strong>\"add skywatcher page\"</strong> on \"Current Website Update\"",
+      "color": "#2563EB",
+      "time": 1782389152386
+    },
+    {
       "msg": "Completed task <strong>\"redisign it with my existing app. make it work.\"</strong> on \"Night Skywatcher\"",
       "color": "#2563EB",
       "time": 1782389147471
@@ -1461,21 +1477,6 @@
       "msg": "Completed task <strong>\"Post Tether win on X\"</strong> on \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779901965863
-    },
-    {
-      "msg": "Completed task <strong>\"Update pitch deck slide 6\"</strong> on \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779901941299
-    },
-    {
-      "msg": "Completed task <strong>\"Apply to teather grant\"</strong> on \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779901935866
-    },
-    {
-      "msg": "Completed daily task <strong>\"ასტრომანის კვირის პოსტები\"</strong>",
-      "color": "#67E8F9",
-      "time": 1779728642477
     }
   ]
 }
