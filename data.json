@@ -394,6 +394,147 @@
         "timing": "oneweek",
         "lastSent": "2026-06-25T10:42:07.921Z"
       }
+    },
+    {
+      "id": 1782398971393,
+      "name": "ELEVEN.FOOTBALL",
+      "desc": "Solana live football micro-prediction game · Superteam × TxODDS World Cup Hackathon",
+      "type": "monthly",
+      "due": "2026-07-17",
+      "priority": "high",
+      "color": "#16A34A",
+      "icon": "⚽",
+      "progress": 0,
+      "tasks": [
+        {
+          "id": 1782398971373,
+          "name": "GATE — Day 1: TxODDS auth end-to-end (JWT → World Cup free tier → fetch one live event). Pass = green-light the calendar; fail = pivot/kill before sinking a week",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971374,
+          "name": "Verify every V1 event maps to TxODDS taxonomy; document in txodds-mapping.md (CUT menu 10 → 4 core events)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971375,
+          "name": "Scaffold: domain eleven.football, @elevenfootball handle, GitHub repo, fork Stellarr boilerplate (Next.js/Privy/Supabase/Tailwind)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971376,
+          "name": "Supabase schema live (matches, pools, participants, predictions, events) + next-intl EN locale",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971377,
+          "name": "Anchor program: Pool/Participant/SettlementRoot accounts + create_pool / join_pool",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971378,
+          "name": "Settlement: SINGLE-KEY settle_pool (CUT 2-of-3 multisig) + emergency_withdraw safety path",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971379,
+          "name": "Devnet deploy + integration tests pass (happy path + emergency refund path)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971380,
+          "name": "Core frontend: match list, Privy wallet connect, age gate, join-pool flow",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971381,
+          "name": "Match room: score header, 4-event menu, leaderboard, live ticker + Supabase Realtime",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971382,
+          "name": "Commit-reveal backend with AUTO-REVEAL client-side (user never sees a claim step)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971383,
+          "name": "TxODDS poller (15s) + scoring engine + lock-ahead window logic",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971384,
+          "name": "Settlement backend: build Merkle tree → call settle_pool; full 3-browser devnet run passes",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971385,
+          "name": "Phase 4 — private real-match test on a Round-of-16 game (4 wallets, 20+ predictions, settle, bug list)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971386,
+          "name": "Phase 5 — ugly beta, 5 real users (Mariam/Otar/Luka/Mdzelo + 1 Astroman customer), quarterfinal pool, debrief call. Target 7+/10",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971387,
+          "name": "Phase 6 — fix beta bugs, dopamine animations, FREE-PLAY hero as primary CTA, onboarding, landing page live",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971388,
+          "name": "Phase 6 — Georgian translation pass (all UI strings)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971389,
+          "name": "Phase 7 — public beta: open matchmaking, launch tweet thread, Astroman FB post, Superteam + Georgian crypto channels. Target 20 wallets / 100+ predictions",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971390,
+          "name": "Phase 8 — record 90s Loom on a semifinal (real match + real users + real payout), write 300-word submission, clean repo/README",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971391,
+          "name": "Mainnet deploy (hold until ~Day 14, before public beta)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782398971392,
+          "name": "Phase 9 — SUBMIT on Superteam Earn by July 17 (2 days before deadline); confirm + screenshot",
+          "done": false,
+          "completedAt": null
+        }
+      ],
+      "completedTasks": [],
+      "notes": "22-day solo sprint, Jun 26 → Jul 17 (submit 2 days before Jul 19 deadline).\nV1 CUTS (agent rec, 2026-06-25): single-key settlement (not multisig), 4 event types (not 10), auto-reveal commit-reveal, free-play as the hero.\nGATE: do not commit the calendar until the Day-1 TxODDS auth test passes.\nWin on the mechanic + live match footage, not architectural completeness.",
+      "created": 1782398971393,
+      "reminder": {
+        "enabled": true,
+        "timing": "threedays",
+        "lastSent": null
+      }
     }
   ],
   "completedProjects": [
@@ -1227,6 +1368,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Created project <strong>\"ELEVEN.FOOTBALL\"</strong> with 20 tasks (World Cup hackathon, due Jul 17)",
+      "color": "#16A34A",
+      "time": 1782398971393
+    },
     {
       "msg": "Completed task <strong>\"ask claude how to improve system of the web\"</strong> on \"Current Website Update\"",
       "color": "#2563EB",
