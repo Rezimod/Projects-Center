@@ -365,76 +365,6 @@
       }
     },
     {
-      "id": 1772361382049,
-      "name": "Night Skywatcher",
-      "desc": "Sky watching app for astroman",
-      "type": "monthly",
-      "due": "2026-04-05",
-      "priority": "med",
-      "color": "#2563EB",
-      "icon": "🌃",
-      "progress": 50,
-      "tasks": [
-        {
-          "id": 1779131351642,
-          "name": "integrate with my website",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1779131347107,
-          "name": "create marketing plan for deployment",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1779131343101,
-          "name": "deploy",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1779131343588,
-          "name": "redisign it with my existing app. make it work.",
-          "done": false,
-          "completedAt": null
-        }
-      ],
-      "completedTasks": [
-        {
-          "id": 1779131349401,
-          "name": "cretate website",
-          "done": true,
-          "completedAt": "2026-05-18T19:09:02.485Z"
-        },
-        {
-          "id": 1779131349788,
-          "name": "add different features",
-          "done": true,
-          "completedAt": "2026-05-18T19:09:02.485Z"
-        },
-        {
-          "id": 1779131349733,
-          "name": "test everything",
-          "done": true,
-          "completedAt": "2026-05-18T19:09:02.485Z"
-        },
-        {
-          "id": 1779131343737,
-          "name": "ტელესკოპის რენდომ ჩვენება",
-          "done": true,
-          "completedAt": "2026-05-18T19:09:02.485Z"
-        }
-      ],
-      "notes": "",
-      "created": 1772361382049,
-      "reminder": {
-        "enabled": true,
-        "timing": "threedays",
-        "lastSent": "2026-06-25T10:42:07.921Z"
-      }
-    },
-    {
       "id": 1772312387968,
       "name": "Advance AI",
       "desc": "Ai",
@@ -729,6 +659,75 @@
         "enabled": false,
         "timing": "oneday",
         "lastSent": null
+      }
+    },
+    {
+      "id": 1772361382049,
+      "name": "Night Skywatcher",
+      "desc": "Sky watching app for astroman",
+      "type": "monthly",
+      "due": "2026-04-05",
+      "priority": "med",
+      "color": "#2563EB",
+      "icon": "🌃",
+      "progress": 100,
+      "tasks": [],
+      "completedTasks": [
+        {
+          "id": 1779131343588,
+          "name": "redisign it with my existing app. make it work.",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:47.469Z"
+        },
+        {
+          "id": 1779131343101,
+          "name": "deploy",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:47.023Z"
+        },
+        {
+          "id": 1779131347107,
+          "name": "create marketing plan for deployment",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:46.605Z"
+        },
+        {
+          "id": 1779131351642,
+          "name": "integrate with my website",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:45.996Z"
+        },
+        {
+          "id": 1779131349401,
+          "name": "cretate website",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131349788,
+          "name": "add different features",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131349733,
+          "name": "test everything",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131343737,
+          "name": "ტელესკოპის რენდომ ჩვენება",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        }
+      ],
+      "notes": "",
+      "created": 1772361382049,
+      "reminder": {
+        "enabled": true,
+        "timing": "threedays",
+        "lastSent": "2026-06-25T10:42:07.921Z"
       }
     },
     {
@@ -1229,6 +1228,26 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"redisign it with my existing app. make it work.\"</strong> on \"Night Skywatcher\"",
+      "color": "#2563EB",
+      "time": 1782389147471
+    },
+    {
+      "msg": "Completed task <strong>\"deploy\"</strong> on \"Night Skywatcher\"",
+      "color": "#2563EB",
+      "time": 1782389147026
+    },
+    {
+      "msg": "Completed task <strong>\"create marketing plan for deployment\"</strong> on \"Night Skywatcher\"",
+      "color": "#2563EB",
+      "time": 1782389146609
+    },
+    {
+      "msg": "Completed task <strong>\"integrate with my website\"</strong> on \"Night Skywatcher\"",
+      "color": "#2563EB",
+      "time": 1782389145998
+    },
+    {
       "msg": "Added task <strong>\"Paint Astroman outer walls — outer-space theme\"</strong> to \"Astroman\"",
       "color": "#7C3AED",
       "time": 1782388301001
@@ -1457,61 +1476,6 @@
       "msg": "Completed daily task <strong>\"ასტრომანის კვირის პოსტები\"</strong>",
       "color": "#67E8F9",
       "time": 1779728642477
-    },
-    {
-      "msg": "Completed daily task <strong>\"გერმანიაზე გარკვევა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1779728633600
-    },
-    {
-      "msg": "Completed daily task <strong>\"აწარმოეში დარეკვა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1779699670160
-    },
-    {
-      "msg": "Completed daily task <strong>\"მოპედის ყიდვა\"</strong>",
-      "color": "#67E8F9",
-      "time": 1779361450653
-    },
-    {
-      "msg": "Added task <strong>\"Block Sep 28 – Nov 2 for Colosseum Frontier Fall hackathon\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356663368
-    },
-    {
-      "msg": "Added task <strong>\"Apply for Alchemy Solana Infrastructure Fund\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356655880
-    },
-    {
-      "msg": "Added task <strong>\"Submit to Anthology Fund (Anthropic × Menlo Ventures)\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356648831
-    },
-    {
-      "msg": "Added task <strong>\"Draft Astroman beta launch email\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356641412
-    },
-    {
-      "msg": "Added task <strong>\"Ship leaderboard MVP\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356635149
-    },
-    {
-      "msg": "Added task <strong>\"Make /feed visible to logged-out visitors\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356628924
-    },
-    {
-      "msg": "Added task <strong>\"Make /field a top-level nav item\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356621895
-    },
-    {
-      "msg": "Added task <strong>\"Apply for Solana Mobile Builder Grants\"</strong> to \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779356615700
     }
   ]
 }
