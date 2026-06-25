@@ -320,52 +320,6 @@
       }
     },
     {
-      "id": 1772361692835,
-      "name": "Current Website Update",
-      "desc": "Update the www.astroman.ge",
-      "type": "weekly",
-      "due": "2026-04-15",
-      "priority": "med",
-      "color": "#2563EB",
-      "icon": "🌍",
-      "progress": 75,
-      "tasks": [
-        {
-          "id": 1779131342660,
-          "name": "ask claude how to improve system of the web",
-          "done": false,
-          "completedAt": null
-        }
-      ],
-      "completedTasks": [
-        {
-          "id": 1779131347003,
-          "name": "make product page more convertable",
-          "done": true,
-          "completedAt": "2026-06-25T12:05:53.198Z"
-        },
-        {
-          "id": 1779131344734,
-          "name": "add one more buit in ai",
-          "done": true,
-          "completedAt": "2026-06-25T12:05:52.806Z"
-        },
-        {
-          "id": 1779131350091,
-          "name": "add skywatcher page",
-          "done": true,
-          "completedAt": "2026-06-25T12:05:52.385Z"
-        }
-      ],
-      "notes": "",
-      "created": 1772361692835,
-      "reminder": {
-        "enabled": false,
-        "timing": "oneday",
-        "lastSent": null
-      }
-    },
-    {
       "id": 1772312387968,
       "name": "Advance AI",
       "desc": "Ai",
@@ -656,6 +610,51 @@
       ],
       "notes": "I am building Proof of Observation — Strava for astronomy on Solana\nfor telescope owners at Georgia's first astronomy store\nthat solves no way to verify, reward, or share real stargazing\nby gamified sky missions with camera proof, satellite-verified conditions (FarmHawk), offline mesh submission (Pollinet), and NFT achievement minting — built from Scriptonia-generated specs",
       "created": 1773086904820,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
+      "id": 1772361692835,
+      "name": "Current Website Update",
+      "desc": "Update the www.astroman.ge",
+      "type": "weekly",
+      "due": "2026-04-15",
+      "priority": "med",
+      "color": "#2563EB",
+      "icon": "🌍",
+      "progress": 100,
+      "tasks": [],
+      "completedTasks": [
+        {
+          "id": 1779131342660,
+          "name": "ask claude how to improve system of the web",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:54.506Z"
+        },
+        {
+          "id": 1779131347003,
+          "name": "make product page more convertable",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:53.198Z"
+        },
+        {
+          "id": 1779131344734,
+          "name": "add one more buit in ai",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:52.806Z"
+        },
+        {
+          "id": 1779131350091,
+          "name": "add skywatcher page",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:52.385Z"
+        }
+      ],
+      "notes": "",
+      "created": 1772361692835,
       "reminder": {
         "enabled": false,
         "timing": "oneday",
@@ -1229,6 +1228,11 @@
   },
   "activity": [
     {
+      "msg": "Completed task <strong>\"ask claude how to improve system of the web\"</strong> on \"Current Website Update\"",
+      "color": "#2563EB",
+      "time": 1782389154508
+    },
+    {
       "msg": "Completed task <strong>\"make product page more convertable\"</strong> on \"Current Website Update\"",
       "color": "#2563EB",
       "time": 1782389153199
@@ -1472,11 +1476,6 @@
       "msg": "Added task <strong>\"Apply to superteam earn for 5K\"</strong> to \"Stellar Continue\"",
       "color": "#2563EB",
       "time": 1779901994595
-    },
-    {
-      "msg": "Completed task <strong>\"Post Tether win on X\"</strong> on \"Stellar Continue\"",
-      "color": "#2563EB",
-      "time": 1779901965863
     }
   ]
 }
