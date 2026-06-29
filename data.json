@@ -628,6 +628,12 @@
       "progress": 0,
       "tasks": [
         {
+          "id": 1782750057558,
+          "name": "⚠️ Confirm with BoG: do they settle the FULL price (not just the 50% in points)? — whole plan depends on this",
+          "done": false,
+          "completedAt": null
+        },
+        {
           "id": 1782741611722,
           "name": "Confirm POS terminal has PLUS-points payment ENABLED (call BoG)",
           "done": false,
@@ -641,7 +647,7 @@
         },
         {
           "id": 1782741611724,
-          "name": "Stock up high-ticket telescopes + optics BEFORE Jul 1",
+          "name": "Restock Foreseen 800/50 (qty 9) + Foreseen 70mm (qty 13) — profit engines — before Jul 1",
           "done": false,
           "completedAt": null
         },
@@ -1515,6 +1521,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Updated <strong>PLUS Day</strong>: restock Foreseen 800/50 + 70mm; added \"confirm full settlement with BoG\"",
+      "color": "#FF7A00",
+      "time": 1782750057557
+    },
     {
       "msg": "Created project <strong>\"Astroman — PLUS Day (5 July)\"</strong> with 8 tasks (BoG half-price points event)",
       "color": "#FF7A00",
