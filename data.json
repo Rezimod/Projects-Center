@@ -535,6 +535,86 @@
         "timing": "threedays",
         "lastSent": null
       }
+    },
+    {
+      "id": 1782724085875,
+      "name": "Bikes out of customs",
+      "desc": "Location-locked (Tbilisi) — must clear before Borjomi on Jul 1",
+      "type": "weekly",
+      "due": "2026-06-30",
+      "priority": "high",
+      "color": "#3B6FF6",
+      "icon": "🏍️",
+      "progress": 0,
+      "tasks": [
+        {
+          "id": 1782724085876,
+          "name": "Confirm customs paperwork + fees",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085877,
+          "name": "Collect bikes from customs terminal",
+          "done": false,
+          "completedAt": null
+        }
+      ]
+    },
+    {
+      "id": 1782724085884,
+      "name": "Enterprise Georgia Grant",
+      "desc": "Loan→grant cashback chain. Kicks off Jul 1. Net: grant cashes back 50% of the loan after shipping digital products within 2 months.",
+      "type": "monthly",
+      "due": "2026-07-15",
+      "priority": "high",
+      "color": "#10B981",
+      "icon": "🇬🇪",
+      "progress": 0,
+      "tasks": [
+        {
+          "id": 1782724085885,
+          "name": "Kick off bank loan review — IN PERSON before Borjomi",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085886,
+          "name": "Bank forwards application to Enterprise Georgia",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085887,
+          "name": "Enterprise Georgia confirms eligibility",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085888,
+          "name": "Bank disburses loan",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085889,
+          "name": "Ship digital products within 2 months (spend full loan)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085890,
+          "name": "Apply to Enterprise grant",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085891,
+          "name": "Enterprise cashes back 50% of loan",
+          "done": false,
+          "completedAt": null
+        }
+      ]
     }
   ],
   "completedProjects": [
@@ -990,6 +1070,12 @@
         "text": "New optics",
         "done": false,
         "date": "2026-06-02"
+      },
+      {
+        "id": 1782724085894,
+        "text": "🏔️ Borjomi — remote work, 2 weeks+ (fully available)",
+        "done": false,
+        "date": "2026-07-01"
       }
     ],
     "completedDailyTasks": [
@@ -1368,6 +1454,21 @@
     }
   },
   "activity": [
+    {
+      "msg": "Added <strong>Borjomi (Jul 1, 2 weeks remote)</strong> to planner",
+      "color": "#7C3AED",
+      "time": 1782724085907
+    },
+    {
+      "msg": "Created project <strong>\"Enterprise Georgia Grant\"</strong> with 7 chain steps (kickoff Jul 1)",
+      "color": "#10B981",
+      "time": 1782724085906
+    },
+    {
+      "msg": "Created project <strong>\"Bikes out of customs\"</strong> (due Jun 30, location-locked)",
+      "color": "#3B6FF6",
+      "time": 1782724085905
+    },
     {
       "msg": "Created project <strong>\"ELEVEN.FOOTBALL\"</strong> with 20 tasks (World Cup hackathon, due Jul 17)",
       "color": "#16A34A",
