@@ -188,7 +188,7 @@
       "name": "Stellar Continue",
       "desc": "",
       "type": "monthly",
-      "due": "1992-05-20",
+      "due": "2026-07-31",
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
@@ -324,8 +324,8 @@
       "name": "Advance AI",
       "desc": "Ai",
       "type": "daily",
-      "due": "2026-04-15",
-      "priority": "high",
+      "due": "2026-09-01",
+      "priority": "low",
       "color": "#2563EB",
       "icon": "🦿",
       "progress": 44,
@@ -1454,6 +1454,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Fixed broken due dates: <strong>Stellar Continue</strong> (was 1992) → Jul 31, <strong>Advance AI</strong> → Sep 1 (paused, low pri)",
+      "color": "#F59E0B",
+      "time": 1782726310433
+    },
     {
       "msg": "Added <strong>Borjomi (Jul 1, 2 weeks remote)</strong> to planner",
       "color": "#7C3AED",
