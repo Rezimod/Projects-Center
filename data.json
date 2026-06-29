@@ -615,6 +615,67 @@
           "completedAt": null
         }
       ]
+    },
+    {
+      "id": 1782741611721,
+      "name": "Astroman — PLUS Day (5 July)",
+      "desc": "BoG PLUS birthday: Jul 5 (00:00–24:00). Customers pay with PLUS points = 50% off; Astroman receives FULL revenue (bank funds the discount). Biggest possible sales day. Prep BEFORE Borjomi (Jul 1).",
+      "type": "weekly",
+      "due": "2026-07-05",
+      "priority": "high",
+      "color": "#FF7A00",
+      "icon": "🎁",
+      "progress": 0,
+      "tasks": [
+        {
+          "id": 1782741611722,
+          "name": "Confirm POS terminal has PLUS-points payment ENABLED (call BoG)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611723,
+          "name": "Update Astroman info in PLUS partner portal (per BoG email)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611724,
+          "name": "Stock up high-ticket telescopes + optics BEFORE Jul 1",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611725,
+          "name": "Brief staff (Ana/Mariam) on PLUS POS flow + day plan",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611726,
+          "name": "FB teaser post — announce Jul 5 (publish ~Jul 1)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611727,
+          "name": "FB countdown posts Jul 2–4 (telescope hero)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611728,
+          "name": "FB day-of post (morning Jul 5)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611729,
+          "name": "Monitor sales remotely + thank-you recap post (Jul 5–6)",
+          "done": false,
+          "completedAt": null
+        }
+      ]
     }
   ],
   "completedProjects": [
@@ -1454,6 +1515,11 @@
     }
   },
   "activity": [
+    {
+      "msg": "Created project <strong>\"Astroman — PLUS Day (5 July)\"</strong> with 8 tasks (BoG half-price points event)",
+      "color": "#FF7A00",
+      "time": 1782741611720
+    },
     {
       "msg": "Fixed broken due dates: <strong>Stellar Continue</strong> (was 1992) → Jul 31, <strong>Advance AI</strong> → Sep 1 (paused, low pri)",
       "color": "#F59E0B",
