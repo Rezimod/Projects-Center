@@ -1,1815 +1,1815 @@
 {
- "projects": [
-  {
-   "id": 1780507294746,
-   "name": "Astroman",
-   "desc": "ივნისის ზრდის გეგმა 2026",
-   "type": "monthly",
-   "due": "2026-06-30",
-   "priority": "high",
-   "color": "#7C3AED",
-   "icon": "🔭",
-   "progress": 0,
-   "tasks": [
+  "projects": [
     {
-     "id": 1781173474577,
-     "name": "აქსესუარების შეკვეთა",
-     "done": false,
-     "completedAt": null
+      "id": 1780507294746,
+      "name": "Astroman",
+      "desc": "ივნისის ზრდის გეგმა 2026",
+      "type": "monthly",
+      "due": "2026-06-30",
+      "priority": "high",
+      "color": "#7C3AED",
+      "icon": "🔭",
+      "progress": 0,
+      "tasks": [
+        {
+          "id": 1781173474577,
+          "name": "აქსესუარების შეკვეთა",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173482349,
+          "name": "ტელესკოპის გზამკვლევი",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173483007,
+          "name": "ზაფხულის ვიტრინა",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173480037,
+          "name": "ვენერა–იუპიტერის პოსტი",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173477216,
+          "name": "3 ტელესკოპის პაკეტი",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173479135,
+          "name": "FORESEEN 70mm დემო",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173483554,
+          "name": "„ცა ივნისში“ პოსტი",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173477588,
+          "name": "იმპულსური მარაგი",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173481101,
+          "name": "Google რეკლამა",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173474272,
+          "name": "საჩუქრების თარო",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173483749,
+          "name": "ბრტყელსის პოსტი",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173482539,
+          "name": "B2B შეთავაზება",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173482202,
+          "name": "დაბურვვის მარაგი",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173475814,
+          "name": "დაბურვვის ლენდინგი",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173475519,
+          "name": "მის ბურთლოს მთვარე",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173476117,
+          "name": "ივნისის ანგარიში",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173483781,
+          "name": "კვირანდი მეტრიკები",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173480097,
+          "name": "20+ ტელესკოპი",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173481886,
+          "name": "კალათა → 180 GEL",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173480733,
+          "name": "100+ დაბურვვის რეგისტრაცია",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1781173474036,
+          "name": "1 B2B შეთანხმება",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782388301001,
+          "name": "Paint Astroman outer walls — outer-space theme",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782388301002,
+          "name": "Fix outdoor lights at Astroman",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782388301003,
+          "name": "Get flowers for Astroman entrance",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782388301004,
+          "name": "Assemble bikes; sell one for 3000 GEL, keep one",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782388301005,
+          "name": "Confirm telescope + levitating lamps order",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782388301006,
+          "name": "Source 5 new fresh products for Astroman",
+          "done": false,
+          "completedAt": null
+        }
+      ],
+      "completedTasks": [],
+      "notes": "ივნისი 2026 · ~14k GEL/თვე · მარჟა 61%\nტელესკოპები = მთავარი შემოსავალი · მიზანი 18–20k GEL\nაგვ. 12 დაბურვვა — მარაგი ახლავე",
+      "created": 1780507294746,
+      "reminder": {
+        "enabled": true,
+        "timing": "oneweek",
+        "lastSent": "2026-07-13T11:11:34.061Z"
+      }
     },
     {
-     "id": 1781173482349,
-     "name": "ტელესკოპის გზამკვლევი",
-     "done": false,
-     "completedAt": null
+      "id": 1779131427103,
+      "name": "Stellar Continue",
+      "desc": "",
+      "type": "monthly",
+      "due": "2026-07-31",
+      "priority": "med",
+      "color": "#2563EB",
+      "icon": "📌",
+      "progress": 68,
+      "tasks": [
+        {
+          "id": 1779356623283,
+          "name": "Apply for Solana Mobile Builder Grants",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1779356636094,
+          "name": "Ship leaderboard MVP",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1779356646274,
+          "name": "Draft Astroman beta launch email",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1779356652683,
+          "name": "Submit to Anthology Fund (Anthropic × Menlo Ventures)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1779356657772,
+          "name": "Apply for Alchemy Solana Infrastructure Fund",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1779356671971,
+          "name": "Block Sep 28 – Nov 2 for Colosseum Frontier Fall hackathon",
+          "done": false,
+          "completedAt": null
+        }
+      ],
+      "completedTasks": [
+        {
+          "id": 1779356609271,
+          "name": "Submit Anthropic Startup Program application",
+          "done": true,
+          "completedAt": "2026-06-24T15:42:08.725Z"
+        },
+        {
+          "id": 1780304528552,
+          "name": "Token and mainnet lunch",
+          "done": true,
+          "completedAt": "2026-06-21T14:13:27.793Z"
+        },
+        {
+          "id": 1779356638058,
+          "name": "Make /feed visible to logged-out visitors",
+          "done": true,
+          "completedAt": "2026-06-18T08:24:51.699Z"
+        },
+        {
+          "id": 1779356624162,
+          "name": "Make /field a top-level nav item",
+          "done": true,
+          "completedAt": "2026-06-18T08:24:44.590Z"
+        },
+        {
+          "id": 1781358103123,
+          "name": "Apply for Qvac Hackaton",
+          "done": true,
+          "completedAt": "2026-06-16T18:44:09.855Z"
+        },
+        {
+          "id": 1781358094751,
+          "name": "Apply for GITA",
+          "done": true,
+          "completedAt": "2026-06-13T13:41:44.921Z"
+        },
+        {
+          "id": 1779356588719,
+          "name": "Add Tether QVAC win to live site",
+          "done": true,
+          "completedAt": "2026-06-13T13:41:12.024Z"
+        },
+        {
+          "id": 1779902020824,
+          "name": "make autonomous X content creator",
+          "done": true,
+          "completedAt": "2026-06-11T10:26:07.838Z"
+        },
+        {
+          "id": 1779902008652,
+          "name": "win superteam 5K",
+          "done": true,
+          "completedAt": "2026-06-11T10:25:09.322Z"
+        },
+        {
+          "id": 1779901998287,
+          "name": "Apply to superteam earn for 5K",
+          "done": true,
+          "completedAt": "2026-06-01T09:01:34.098Z"
+        },
+        {
+          "id": 1779356600517,
+          "name": "Post Tether win on X",
+          "done": true,
+          "completedAt": "2026-05-27T17:12:45.862Z"
+        },
+        {
+          "id": 1779356609430,
+          "name": "Update pitch deck slide 6",
+          "done": true,
+          "completedAt": "2026-05-27T17:12:21.298Z"
+        },
+        {
+          "id": 1779355011799,
+          "name": "Apply to teather grant",
+          "done": true,
+          "completedAt": "2026-05-27T17:12:15.865Z"
+        }
+      ],
+      "notes": "",
+      "created": 1779131427103,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
     },
     {
-     "id": 1781173483007,
-     "name": "ზაფხულის ვიტრინა",
-     "done": false,
-     "completedAt": null
+      "id": 1772312387968,
+      "name": "Advance AI",
+      "desc": "Ai",
+      "type": "daily",
+      "due": "2026-09-01",
+      "priority": "low",
+      "color": "#2563EB",
+      "icon": "🦿",
+      "progress": 44,
+      "tasks": [
+        {
+          "id": 1779131345779,
+          "name": "soc medias",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1779131348977,
+          "name": "Ads manager &business suite",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1779131344212,
+          "name": "website",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1779131343740,
+          "name": "First ad",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1779131344152,
+          "name": "First Client",
+          "done": false,
+          "completedAt": null
+        }
+      ],
+      "completedTasks": [
+        {
+          "id": 1779131345841,
+          "name": "name",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131352402,
+          "name": "logo",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131350919,
+          "name": "business plan",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131347529,
+          "name": "marketing plan",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        }
+      ],
+      "notes": "",
+      "created": 1772312387968,
+      "reminder": {
+        "enabled": true,
+        "timing": "oneweek",
+        "lastSent": "2026-06-26T10:51:49.869Z"
+      }
     },
     {
-     "id": 1781173480037,
-     "name": "ვენერა–იუპიტერის პოსტი",
-     "done": false,
-     "completedAt": null
+      "id": 1782398971393,
+      "name": "ELEVEN.FOOTBALL",
+      "desc": "FEATURE-COMPLETE demo shipped: no-login $15 guest betting app, paid-only rooms, live-match joining, fair odds scoring, trustless on-chain settlement (all 3 tracks). Merged to main, repo PUBLIC. Left: record demo + submit by Jul 17.",
+      "type": "monthly",
+      "due": "2026-07-17",
+      "priority": "high",
+      "color": "#16A34A",
+      "icon": "⚽",
+      "progress": 85,
+      "tasks": [
+        {
+          "id": 1783852274549,
+          "name": "Build complete — wallet, paid rooms, live-join, fair scoring, trustless settlement (3 tracks)",
+          "done": true,
+          "completedAt": 1783852274549
+        },
+        {
+          "id": 1783852274550,
+          "name": "No-login $15 demo betting app live on devnet (funded faucet working)",
+          "done": true,
+          "completedAt": 1783852274549
+        },
+        {
+          "id": 1783852274551,
+          "name": "Merged compact-betting-ui → main + repo made PUBLIC (2026-07-12)",
+          "done": true,
+          "completedAt": 1783852274549
+        },
+        {
+          "id": 1783852274649,
+          "name": "🎬 Record the demo video (video-weighted judging = #1 win-lever)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783852274650,
+          "name": "🧾 Submit all 3 tracks by Jul 17 (packet written)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783852274651,
+          "name": "Real-match settle vs real TxOracle — gated on a finished WC match",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783852274652,
+          "name": "Public-launch prep: top up demo faucet + add Vercel KV for IP persistence",
+          "done": false,
+          "completedAt": null
+        }
+      ],
+      "completedTasks": [],
+      "notes": "22-day solo sprint, Jun 26 → Jul 17 (submit 2 days before Jul 19 deadline).\nV1 CUTS (agent rec, 2026-06-25): single-key settlement (not multisig), 4 event types (not 10), auto-reveal commit-reveal, free-play as the hero.\nGATE: do not commit the calendar until the Day-1 TxODDS auth test passes.\nWin on the mechanic + live match footage, not architectural completeness.",
+      "created": 1782398971393,
+      "reminder": {
+        "enabled": true,
+        "timing": "threedays",
+        "lastSent": null
+      }
     },
     {
-     "id": 1781173477216,
-     "name": "3 ტელესკოპის პაკეტი",
-     "done": false,
-     "completedAt": null
+      "id": 1782724085875,
+      "name": "Bikes out of customs",
+      "desc": "Location-locked (Tbilisi) — must clear before Borjomi on Jul 1",
+      "type": "weekly",
+      "due": "2026-06-30",
+      "priority": "high",
+      "color": "#3B6FF6",
+      "icon": "🏍️",
+      "progress": 0,
+      "tasks": [
+        {
+          "id": 1782724085876,
+          "name": "Confirm customs paperwork + fees",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085877,
+          "name": "Collect bikes from customs terminal",
+          "done": false,
+          "completedAt": null
+        }
+      ]
     },
     {
-     "id": 1781173479135,
-     "name": "FORESEEN 70mm დემო",
-     "done": false,
-     "completedAt": null
+      "id": 1782724085884,
+      "name": "Enterprise Georgia Grant",
+      "desc": "Loan→grant cashback chain. Kicks off Jul 1. Net: grant cashes back 50% of the loan after shipping digital products within 2 months.",
+      "type": "monthly",
+      "due": "2026-07-15",
+      "priority": "high",
+      "color": "#10B981",
+      "icon": "🇬🇪",
+      "progress": 0,
+      "tasks": [
+        {
+          "id": 1782724085885,
+          "name": "Kick off bank loan review — IN PERSON before Borjomi",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085886,
+          "name": "Bank forwards application to Enterprise Georgia",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085887,
+          "name": "Enterprise Georgia confirms eligibility",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085888,
+          "name": "Bank disburses loan",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085889,
+          "name": "Ship digital products within 2 months (spend full loan)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085890,
+          "name": "Apply to Enterprise grant",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782724085891,
+          "name": "Enterprise cashes back 50% of loan",
+          "done": false,
+          "completedAt": null
+        }
+      ]
     },
     {
-     "id": 1781173483554,
-     "name": "„ცა ივნისში“ პოსტი",
-     "done": false,
-     "completedAt": null
+      "id": 1782741611721,
+      "name": "Astroman — PLUS Day (5 July)",
+      "desc": "BoG PLUS birthday: Jul 5 (00:00–24:00). Customers pay with PLUS points = 50% off; Astroman receives FULL revenue (bank funds the discount). Biggest possible sales day. Prep BEFORE Borjomi (Jul 1).",
+      "type": "weekly",
+      "due": "2026-07-05",
+      "priority": "high",
+      "color": "#FF7A00",
+      "icon": "🎁",
+      "progress": 0,
+      "tasks": [
+        {
+          "id": 1782750057558,
+          "name": "⚠️ Confirm with BoG: do they settle the FULL price (not just the 50% in points)? — whole plan depends on this",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611722,
+          "name": "Confirm POS terminal has PLUS-points payment ENABLED (call BoG)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611723,
+          "name": "Update Astroman info in PLUS partner portal (per BoG email)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611724,
+          "name": "Restock Foreseen 800/50 (qty 9) + Foreseen 70mm (qty 13) — profit engines — before Jul 1",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611725,
+          "name": "Brief staff (Ana/Mariam) on PLUS POS flow + day plan",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611726,
+          "name": "FB teaser post — announce Jul 5 (publish ~Jul 1)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611727,
+          "name": "FB countdown posts Jul 2–4 (telescope hero)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611728,
+          "name": "FB day-of post (morning Jul 5)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1782741611729,
+          "name": "Monitor sales remotely + thank-you recap post (Jul 5–6)",
+          "done": false,
+          "completedAt": null
+        }
+      ]
     },
     {
-     "id": 1781173477588,
-     "name": "იმპულსური მარაგი",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173481101,
-     "name": "Google რეკლამა",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173474272,
-     "name": "საჩუქრების თარო",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173483749,
-     "name": "ბრტყელსის პოსტი",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173482539,
-     "name": "B2B შეთავაზება",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173482202,
-     "name": "დაბურვვის მარაგი",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173475814,
-     "name": "დაბურვვის ლენდინგი",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173475519,
-     "name": "მის ბურთლოს მთვარე",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173476117,
-     "name": "ივნისის ანგარიში",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173483781,
-     "name": "კვირანდი მეტრიკები",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173480097,
-     "name": "20+ ტელესკოპი",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173481886,
-     "name": "კალათა → 180 GEL",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173480733,
-     "name": "100+ დაბურვვის რეგისტრაცია",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1781173474036,
-     "name": "1 B2B შეთანხმება",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782388301001,
-     "name": "Paint Astroman outer walls — outer-space theme",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782388301002,
-     "name": "Fix outdoor lights at Astroman",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782388301003,
-     "name": "Get flowers for Astroman entrance",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782388301004,
-     "name": "Assemble bikes; sell one for 3000 GEL, keep one",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782388301005,
-     "name": "Confirm telescope + levitating lamps order",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782388301006,
-     "name": "Source 5 new fresh products for Astroman",
-     "done": false,
-     "completedAt": null
+      "id": 1783794415045,
+      "name": "Stellarr — X Growth Engine",
+      "desc": "Execute the X Growth & Marketing Playbook. 2 campaigns/1 account: ecosystem (EN) + stargazers (KA). Users = Astroman-cohort signups, not followers.",
+      "type": "monthly",
+      "due": "2026-08-12",
+      "priority": "high",
+      "color": "#1D9BF0",
+      "icon": "🚀",
+      "progress": 0,
+      "tasks": [
+        {
+          "id": 1783794415046,
+          "name": "Daily reply habit: 20–30 min/day on astronomy + Solana accounts (the real growth engine)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783794415047,
+          "name": "Write + pin the 5-tweet launch thread (observe→verify→earn→redeem)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783794415048,
+          "name": "Record 10-sec observe→earn Loop video (highest-leverage missing asset)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783794415049,
+          "name": "First Astroman→Stellarr Georgian cross-post (the only real user-acquisition lever)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783794415050,
+          "name": "Add utm_source=astroman tracking to the Stellarr link (measure real signups)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783794415051,
+          "name": "Build recurring weekly 'Tonight over Tbilisi' Sky Now card",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783794415052,
+          "name": "Post 5×/week per the 4-week calendar (2 Sky Now · 1 Build · 1 Loop/Moat · 1 Learn)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783794415053,
+          "name": "VERIFY credential claims (QVAC win / Solana grant / Superteam 2nd) BEFORE posting them",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783794415054,
+          "name": "Trim following list (96 following vs 44 followers looks needy)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1783794415055,
+          "name": "Weekly metrics review: Astroman-cohort signups + week-4 retention + reshares (not followers)",
+          "done": false,
+          "completedAt": null
+        }
+      ]
     }
-   ],
-   "completedTasks": [],
-   "notes": "ივნისი 2026 · ~14k GEL/თვე · მარჟა 61%\nტელესკოპები = მთავარი შემოსავალი · მიზანი 18–20k GEL\nაგვ. 12 დაბურვვა — მარაგი ახლავე",
-   "created": 1780507294746,
-   "reminder": {
-    "enabled": true,
-    "timing": "oneweek",
-    "lastSent": "2026-07-10T10:54:34.990Z"
-   }
-  },
-  {
-   "id": 1779131427103,
-   "name": "Stellar Continue",
-   "desc": "",
-   "type": "monthly",
-   "due": "2026-07-31",
-   "priority": "med",
-   "color": "#2563EB",
-   "icon": "📌",
-   "progress": 68,
-   "tasks": [
-    {
-     "id": 1779356623283,
-     "name": "Apply for Solana Mobile Builder Grants",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1779356636094,
-     "name": "Ship leaderboard MVP",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1779356646274,
-     "name": "Draft Astroman beta launch email",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1779356652683,
-     "name": "Submit to Anthology Fund (Anthropic × Menlo Ventures)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1779356657772,
-     "name": "Apply for Alchemy Solana Infrastructure Fund",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1779356671971,
-     "name": "Block Sep 28 – Nov 2 for Colosseum Frontier Fall hackathon",
-     "done": false,
-     "completedAt": null
-    }
-   ],
-   "completedTasks": [
-    {
-     "id": 1779356609271,
-     "name": "Submit Anthropic Startup Program application",
-     "done": true,
-     "completedAt": "2026-06-24T15:42:08.725Z"
-    },
-    {
-     "id": 1780304528552,
-     "name": "Token and mainnet lunch",
-     "done": true,
-     "completedAt": "2026-06-21T14:13:27.793Z"
-    },
-    {
-     "id": 1779356638058,
-     "name": "Make /feed visible to logged-out visitors",
-     "done": true,
-     "completedAt": "2026-06-18T08:24:51.699Z"
-    },
-    {
-     "id": 1779356624162,
-     "name": "Make /field a top-level nav item",
-     "done": true,
-     "completedAt": "2026-06-18T08:24:44.590Z"
-    },
-    {
-     "id": 1781358103123,
-     "name": "Apply for Qvac Hackaton",
-     "done": true,
-     "completedAt": "2026-06-16T18:44:09.855Z"
-    },
-    {
-     "id": 1781358094751,
-     "name": "Apply for GITA",
-     "done": true,
-     "completedAt": "2026-06-13T13:41:44.921Z"
-    },
-    {
-     "id": 1779356588719,
-     "name": "Add Tether QVAC win to live site",
-     "done": true,
-     "completedAt": "2026-06-13T13:41:12.024Z"
-    },
-    {
-     "id": 1779902020824,
-     "name": "make autonomous X content creator",
-     "done": true,
-     "completedAt": "2026-06-11T10:26:07.838Z"
-    },
-    {
-     "id": 1779902008652,
-     "name": "win superteam 5K",
-     "done": true,
-     "completedAt": "2026-06-11T10:25:09.322Z"
-    },
-    {
-     "id": 1779901998287,
-     "name": "Apply to superteam earn for 5K",
-     "done": true,
-     "completedAt": "2026-06-01T09:01:34.098Z"
-    },
-    {
-     "id": 1779356600517,
-     "name": "Post Tether win on X",
-     "done": true,
-     "completedAt": "2026-05-27T17:12:45.862Z"
-    },
-    {
-     "id": 1779356609430,
-     "name": "Update pitch deck slide 6",
-     "done": true,
-     "completedAt": "2026-05-27T17:12:21.298Z"
-    },
-    {
-     "id": 1779355011799,
-     "name": "Apply to teather grant",
-     "done": true,
-     "completedAt": "2026-05-27T17:12:15.865Z"
-    }
-   ],
-   "notes": "",
-   "created": 1779131427103,
-   "reminder": {
-    "enabled": false,
-    "timing": "oneday",
-    "lastSent": null
-   }
-  },
-  {
-   "id": 1772312387968,
-   "name": "Advance AI",
-   "desc": "Ai",
-   "type": "daily",
-   "due": "2026-09-01",
-   "priority": "low",
-   "color": "#2563EB",
-   "icon": "🦿",
-   "progress": 44,
-   "tasks": [
-    {
-     "id": 1779131345779,
-     "name": "soc medias",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1779131348977,
-     "name": "Ads manager &business suite",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1779131344212,
-     "name": "website",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1779131343740,
-     "name": "First ad",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1779131344152,
-     "name": "First Client",
-     "done": false,
-     "completedAt": null
-    }
-   ],
-   "completedTasks": [
-    {
-     "id": 1779131345841,
-     "name": "name",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131352402,
-     "name": "logo",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131350919,
-     "name": "business plan",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131347529,
-     "name": "marketing plan",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    }
-   ],
-   "notes": "",
-   "created": 1772312387968,
-   "reminder": {
-    "enabled": true,
-    "timing": "oneweek",
-    "lastSent": "2026-06-26T10:51:49.869Z"
-   }
-  },
-  {
-   "id": 1782398971393,
-   "name": "ELEVEN.FOOTBALL",
-   "desc": "FEATURE-COMPLETE demo shipped: no-login $15 guest betting app, paid-only rooms, live-match joining, fair odds scoring, trustless on-chain settlement (all 3 tracks). Merged to main, repo PUBLIC. Left: record demo + submit by Jul 17.",
-   "type": "monthly",
-   "due": "2026-07-17",
-   "priority": "high",
-   "color": "#16A34A",
-   "icon": "⚽",
-   "progress": 85,
-   "tasks": [
-    {
-     "id": 1783852274549,
-     "name": "Build complete — wallet, paid rooms, live-join, fair scoring, trustless settlement (3 tracks)",
-     "done": true,
-     "completedAt": 1783852274549
-    },
-    {
-     "id": 1783852274550,
-     "name": "No-login $15 demo betting app live on devnet (funded faucet working)",
-     "done": true,
-     "completedAt": 1783852274549
-    },
-    {
-     "id": 1783852274551,
-     "name": "Merged compact-betting-ui → main + repo made PUBLIC (2026-07-12)",
-     "done": true,
-     "completedAt": 1783852274549
-    },
-    {
-     "id": 1783852274649,
-     "name": "🎬 Record the demo video (video-weighted judging = #1 win-lever)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783852274650,
-     "name": "🧾 Submit all 3 tracks by Jul 17 (packet written)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783852274651,
-     "name": "Real-match settle vs real TxOracle — gated on a finished WC match",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783852274652,
-     "name": "Public-launch prep: top up demo faucet + add Vercel KV for IP persistence",
-     "done": false,
-     "completedAt": null
-    }
-   ],
-   "completedTasks": [],
-   "notes": "22-day solo sprint, Jun 26 → Jul 17 (submit 2 days before Jul 19 deadline).\nV1 CUTS (agent rec, 2026-06-25): single-key settlement (not multisig), 4 event types (not 10), auto-reveal commit-reveal, free-play as the hero.\nGATE: do not commit the calendar until the Day-1 TxODDS auth test passes.\nWin on the mechanic + live match footage, not architectural completeness.",
-   "created": 1782398971393,
-   "reminder": {
-    "enabled": true,
-    "timing": "threedays",
-    "lastSent": null
-   }
-  },
-  {
-   "id": 1782724085875,
-   "name": "Bikes out of customs",
-   "desc": "Location-locked (Tbilisi) — must clear before Borjomi on Jul 1",
-   "type": "weekly",
-   "due": "2026-06-30",
-   "priority": "high",
-   "color": "#3B6FF6",
-   "icon": "🏍️",
-   "progress": 0,
-   "tasks": [
-    {
-     "id": 1782724085876,
-     "name": "Confirm customs paperwork + fees",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782724085877,
-     "name": "Collect bikes from customs terminal",
-     "done": false,
-     "completedAt": null
-    }
-   ]
-  },
-  {
-   "id": 1782724085884,
-   "name": "Enterprise Georgia Grant",
-   "desc": "Loan→grant cashback chain. Kicks off Jul 1. Net: grant cashes back 50% of the loan after shipping digital products within 2 months.",
-   "type": "monthly",
-   "due": "2026-07-15",
-   "priority": "high",
-   "color": "#10B981",
-   "icon": "🇬🇪",
-   "progress": 0,
-   "tasks": [
-    {
-     "id": 1782724085885,
-     "name": "Kick off bank loan review — IN PERSON before Borjomi",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782724085886,
-     "name": "Bank forwards application to Enterprise Georgia",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782724085887,
-     "name": "Enterprise Georgia confirms eligibility",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782724085888,
-     "name": "Bank disburses loan",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782724085889,
-     "name": "Ship digital products within 2 months (spend full loan)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782724085890,
-     "name": "Apply to Enterprise grant",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782724085891,
-     "name": "Enterprise cashes back 50% of loan",
-     "done": false,
-     "completedAt": null
-    }
-   ]
-  },
-  {
-   "id": 1782741611721,
-   "name": "Astroman — PLUS Day (5 July)",
-   "desc": "BoG PLUS birthday: Jul 5 (00:00–24:00). Customers pay with PLUS points = 50% off; Astroman receives FULL revenue (bank funds the discount). Biggest possible sales day. Prep BEFORE Borjomi (Jul 1).",
-   "type": "weekly",
-   "due": "2026-07-05",
-   "priority": "high",
-   "color": "#FF7A00",
-   "icon": "🎁",
-   "progress": 0,
-   "tasks": [
-    {
-     "id": 1782750057558,
-     "name": "⚠️ Confirm with BoG: do they settle the FULL price (not just the 50% in points)? — whole plan depends on this",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782741611722,
-     "name": "Confirm POS terminal has PLUS-points payment ENABLED (call BoG)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782741611723,
-     "name": "Update Astroman info in PLUS partner portal (per BoG email)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782741611724,
-     "name": "Restock Foreseen 800/50 (qty 9) + Foreseen 70mm (qty 13) — profit engines — before Jul 1",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782741611725,
-     "name": "Brief staff (Ana/Mariam) on PLUS POS flow + day plan",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782741611726,
-     "name": "FB teaser post — announce Jul 5 (publish ~Jul 1)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782741611727,
-     "name": "FB countdown posts Jul 2–4 (telescope hero)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782741611728,
-     "name": "FB day-of post (morning Jul 5)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1782741611729,
-     "name": "Monitor sales remotely + thank-you recap post (Jul 5–6)",
-     "done": false,
-     "completedAt": null
-    }
-   ]
-  },
-  {
-   "id": 1783794415045,
-   "name": "Stellarr — X Growth Engine",
-   "desc": "Execute the X Growth & Marketing Playbook. 2 campaigns/1 account: ecosystem (EN) + stargazers (KA). Users = Astroman-cohort signups, not followers.",
-   "type": "monthly",
-   "due": "2026-08-12",
-   "priority": "high",
-   "color": "#1D9BF0",
-   "icon": "🚀",
-   "progress": 0,
-   "tasks": [
-    {
-     "id": 1783794415046,
-     "name": "Daily reply habit: 20–30 min/day on astronomy + Solana accounts (the real growth engine)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783794415047,
-     "name": "Write + pin the 5-tweet launch thread (observe→verify→earn→redeem)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783794415048,
-     "name": "Record 10-sec observe→earn Loop video (highest-leverage missing asset)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783794415049,
-     "name": "First Astroman→Stellarr Georgian cross-post (the only real user-acquisition lever)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783794415050,
-     "name": "Add utm_source=astroman tracking to the Stellarr link (measure real signups)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783794415051,
-     "name": "Build recurring weekly 'Tonight over Tbilisi' Sky Now card",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783794415052,
-     "name": "Post 5×/week per the 4-week calendar (2 Sky Now · 1 Build · 1 Loop/Moat · 1 Learn)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783794415053,
-     "name": "VERIFY credential claims (QVAC win / Solana grant / Superteam 2nd) BEFORE posting them",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783794415054,
-     "name": "Trim following list (96 following vs 44 followers looks needy)",
-     "done": false,
-     "completedAt": null
-    },
-    {
-     "id": 1783794415055,
-     "name": "Weekly metrics review: Astroman-cohort signups + week-4 retention + reshares (not followers)",
-     "done": false,
-     "completedAt": null
-    }
-   ]
-  }
- ],
- "completedProjects": [
-  {
-   "id": 1776084363616,
-   "name": "Stellar Continiues",
-   "desc": "",
-   "type": "monthly",
-   "due": "2026-06-20",
-   "priority": "high",
-   "color": "#2563EB",
-   "icon": "📌",
-   "progress": 100,
-   "tasks": [],
-   "completedTasks": [
-    {
-     "id": 1779131352037,
-     "name": "Work on Missions page",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131346537,
-     "name": "Finish Sky Page",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131343514,
-     "name": "finish learning page",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131350470,
-     "name": "finish marketplace",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131349973,
-     "name": "Finish Profile",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131344667,
-     "name": "fihisn home page",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131342762,
-     "name": "leaderboard",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131344285,
-     "name": "Full tests and Demo video",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131343516,
-     "name": "create new logo",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131345602,
-     "name": "use design sites to create design",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    }
-   ],
-   "notes": "",
-   "created": 1776084363616,
-   "reminder": {
-    "enabled": false,
-    "timing": "oneday",
-    "lastSent": null
-   }
-  },
-  {
-   "id": 1775333164116,
-   "name": "Stellar Week 1",
-   "desc": "",
-   "type": "monthly",
-   "due": "2026-05-11",
-   "priority": "high",
-   "color": "#2563EB",
-   "icon": "📌",
-   "progress": 100,
-   "tasks": [],
-   "completedTasks": [
-    {
-     "id": 1779131349707,
-     "name": "Register + set up infrastructure",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131347936,
-     "name": "Fork repo and build app shell (April 6-7)",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131343235,
-     "name": "Wallet connect + Solana foundation (April 8-10)",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131351064,
-     "name": "Sky Observatory dashboard (April 10-13)",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131348722,
-     "name": "AI Space Companion (April 13-17)",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131348531,
-     "name": "Missions + gamification (April 17-21)",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131352483,
-     "name": "Marketplace + payments (April 21-26)",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131346074,
-     "name": "Discovery Attestations NFT minting (April 26-29)",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131351173,
-     "name": "Traction sprint + beta testing (April 29 – May 4)",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    }
-   ],
-   "notes": "",
-   "created": 1775333164116,
-   "reminder": {
-    "enabled": true,
-    "timing": "oneweek",
-    "lastSent": null
-   }
-  },
-  {
-   "id": 1773086904820,
-   "name": "Weekend Coding Event",
-   "desc": "",
-   "type": "weekly",
-   "due": "2026-03-14",
-   "priority": "high",
-   "color": "#2563EB",
-   "icon": "📌",
-   "progress": 100,
-   "tasks": [],
-   "completedTasks": [
-    {
-     "id": 1779131351366,
-     "name": "create a plan",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131344920,
-     "name": "app idea, name, etc",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131347188,
-     "name": "people to meet",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131348713,
-     "name": "learn the plan",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131342565,
-     "name": "has to be a problem solving",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131345854,
-     "name": "replit.com",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131345953,
-     "name": "done",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    }
-   ],
-   "notes": "I am building Proof of Observation — Strava for astronomy on Solana\nfor telescope owners at Georgia's first astronomy store\nthat solves no way to verify, reward, or share real stargazing\nby gamified sky missions with camera proof, satellite-verified conditions (FarmHawk), offline mesh submission (Pollinet), and NFT achievement minting — built from Scriptonia-generated specs",
-   "created": 1773086904820,
-   "reminder": {
-    "enabled": false,
-    "timing": "oneday",
-    "lastSent": null
-   }
-  },
-  {
-   "id": 1772361692835,
-   "name": "Current Website Update",
-   "desc": "Update the www.astroman.ge",
-   "type": "weekly",
-   "due": "2026-04-15",
-   "priority": "med",
-   "color": "#2563EB",
-   "icon": "🌍",
-   "progress": 100,
-   "tasks": [],
-   "completedTasks": [
-    {
-     "id": 1779131342660,
-     "name": "ask claude how to improve system of the web",
-     "done": true,
-     "completedAt": "2026-06-25T12:05:54.506Z"
-    },
-    {
-     "id": 1779131347003,
-     "name": "make product page more convertable",
-     "done": true,
-     "completedAt": "2026-06-25T12:05:53.198Z"
-    },
-    {
-     "id": 1779131344734,
-     "name": "add one more buit in ai",
-     "done": true,
-     "completedAt": "2026-06-25T12:05:52.806Z"
-    },
-    {
-     "id": 1779131350091,
-     "name": "add skywatcher page",
-     "done": true,
-     "completedAt": "2026-06-25T12:05:52.385Z"
-    }
-   ],
-   "notes": "",
-   "created": 1772361692835,
-   "reminder": {
-    "enabled": false,
-    "timing": "oneday",
-    "lastSent": null
-   }
-  },
-  {
-   "id": 1772361382049,
-   "name": "Night Skywatcher",
-   "desc": "Sky watching app for astroman",
-   "type": "monthly",
-   "due": "2026-04-05",
-   "priority": "med",
-   "color": "#2563EB",
-   "icon": "🌃",
-   "progress": 100,
-   "tasks": [],
-   "completedTasks": [
-    {
-     "id": 1779131343588,
-     "name": "redisign it with my existing app. make it work.",
-     "done": true,
-     "completedAt": "2026-06-25T12:05:47.469Z"
-    },
-    {
-     "id": 1779131343101,
-     "name": "deploy",
-     "done": true,
-     "completedAt": "2026-06-25T12:05:47.023Z"
-    },
-    {
-     "id": 1779131347107,
-     "name": "create marketing plan for deployment",
-     "done": true,
-     "completedAt": "2026-06-25T12:05:46.605Z"
-    },
-    {
-     "id": 1779131351642,
-     "name": "integrate with my website",
-     "done": true,
-     "completedAt": "2026-06-25T12:05:45.996Z"
-    },
-    {
-     "id": 1779131349401,
-     "name": "cretate website",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131349788,
-     "name": "add different features",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131349733,
-     "name": "test everything",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131343737,
-     "name": "ტელესკოპის რენდომ ჩვენება",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    }
-   ],
-   "notes": "",
-   "created": 1772361382049,
-   "reminder": {
-    "enabled": true,
-    "timing": "threedays",
-    "lastSent": "2026-06-25T10:42:07.921Z"
-   }
-  },
-  {
-   "id": 1772361025657,
-   "name": "Astroman Loyal Club",
-   "desc": "Loyalty Club for astroman",
-   "type": "weekly",
-   "due": "2026-04-05",
-   "priority": "high",
-   "color": "#2563EB",
-   "icon": "💪",
-   "progress": 100,
-   "tasks": [],
-   "completedTasks": [
-    {
-     "id": 1779131345503,
-     "name": "admin page setup",
-     "done": true,
-     "completedAt": "2026-06-24T15:41:43.870Z"
-    },
-    {
-     "id": 1779131343162,
-     "name": "check if everything works",
-     "done": true,
-     "completedAt": "2026-06-24T15:41:42.898Z"
-    },
-    {
-     "id": 1779131349198,
-     "name": "Create deployment marketing plan",
-     "done": true,
-     "completedAt": "2026-06-24T15:41:41.500Z"
-    },
-    {
-     "id": 1779131351641,
-     "name": "make it perfect.",
-     "done": true,
-     "completedAt": "2026-06-24T15:41:40.874Z"
-    },
-    {
-     "id": 1779131346540,
-     "name": "Create website",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131346559,
-     "name": "build admin and dashboard page",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131352021,
-     "name": "Manual Upload feature to add",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131349250,
-     "name": "add forgot password option",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    },
-    {
-     "id": 1779131347280,
-     "name": "check matematics and new registration.",
-     "done": true,
-     "completedAt": "2026-05-18T19:09:02.485Z"
-    }
-   ],
-   "notes": "",
-   "created": 1772361025657,
-   "reminder": {
-    "enabled": true,
-    "timing": "threedays",
-    "lastSent": "2026-06-24T10:50:30.278Z"
-   }
-  }
- ],
- "planner": {
-  "dailyTasks": [
-   {
-    "id": 1779131451633,
-    "text": "კონიაკის მიწა",
-    "done": false,
-    "date": "2026-05-18"
-   },
-   {
-    "id": 1779131477799,
-    "text": "ასტრომანის გარე სივრცის და შიდა სივრცის შეცვლა",
-    "done": false,
-    "date": "2026-05-18"
-   },
-   {
-    "id": 1779131488602,
-    "text": "სექტემბრამდე ახალი ფართის პოვნა",
-    "done": false,
-    "date": "2026-05-18"
-   },
-   {
-    "id": 1779481700634,
-    "text": "Electric cars and scooters",
-    "done": false,
-    "date": "2026-05-22"
-   },
-   {
-    "id": 1779481730645,
-    "text": "Astroman upgrade",
-    "done": false,
-    "date": "2026-05-22"
-   },
-   {
-    "id": 1780304422950,
-    "text": "ასტრომანის გარე სივრცის შეღებვა",
-    "done": false,
-    "date": "2026-06-01"
-   },
-   {
-    "id": 1780409573399,
-    "text": "New optics",
-    "done": false,
-    "date": "2026-06-02"
-   },
-   {
-    "id": 1782724085894,
-    "text": "🏔️ Borjomi — remote work, 2 weeks+ (fully available)",
-    "done": false,
-    "date": "2026-07-01"
-   }
   ],
-  "completedDailyTasks": [
-   {
-    "id": 1780304399669,
-    "text": "კონიაკის მიწაზე დარეკვა",
-    "date": "2026-06-01",
-    "completedAt": "2026-06-24T15:41:08.519Z"
-   },
-   {
-    "id": 1780304386611,
-    "text": "ჩინეთში შეკვეთის გაკეთება",
-    "date": "2026-06-01",
-    "completedAt": "2026-06-24T15:41:06.702Z"
-   },
-   {
-    "id": 1780304370696,
-    "text": "გერმანიაზე გარკვევა",
-    "date": "2026-06-01",
-    "completedAt": "2026-06-24T15:41:03.809Z"
-   },
-   {
-    "id": 1779658259522,
-    "text": "სოლანას სიახლეები",
-    "date": "2026-05-24",
-    "completedAt": "2026-06-24T15:41:03.009Z"
-   },
-   {
-    "id": 1779131447185,
-    "text": "STellar continue, Qvac Grant apply",
-    "date": "2026-05-18",
-    "completedAt": "2026-06-11T10:24:53.517Z"
-   },
-   {
-    "id": 1780304366897,
-    "text": "პრობაციაზე მისვლა,",
-    "date": "2026-06-01",
-    "completedAt": "2026-06-03T08:32:21.043Z"
-   },
-   {
-    "id": 1780304412448,
-    "text": "გერმანიის შეკვეთის დაბინავებბა",
-    "date": "2026-06-01",
-    "completedAt": "2026-06-01T16:07:28.825Z"
-   },
-   {
-    "id": 1780304417067,
-    "text": "კონიაკის დალაგება",
-    "date": "2026-06-01",
-    "completedAt": "2026-06-01T16:07:25.965Z"
-   },
-   {
-    "id": 1780304380703,
-    "text": "პრიზის გადმორიცხვა",
-    "date": "2026-06-01",
-    "completedAt": "2026-06-01T16:07:22.663Z"
-   },
-   {
-    "id": 1776102294853,
-    "text": "ასტრომანის კვირის პოსტები",
-    "date": "2026-04-13",
-    "completedAt": "2026-05-25T17:04:02.476Z"
-   },
-   {
-    "id": 1779658253363,
-    "text": "გერმანიაზე გარკვევა",
-    "date": "2026-05-24",
-    "completedAt": "2026-05-25T17:03:53.599Z"
-   },
-   {
-    "id": 1779658248832,
-    "text": "აწარმოეში დარეკვა",
-    "date": "2026-05-24",
-    "completedAt": "2026-05-25T09:01:10.159Z"
-   },
-   {
-    "id": 1779131460714,
-    "text": "მოპედის ყიდვა",
-    "date": "2026-05-18",
-    "completedAt": "2026-05-21T11:04:10.652Z"
-   },
-   {
-    "id": 1776084479304,
-    "text": "Astroman Weekle Content Creation",
-    "date": "2026-04-13",
-    "completedAt": "2026-05-18T19:12:49.042Z"
-   },
-   {
-    "id": 1777277149433,
-    "text": "პრობაციაზე დარეკვა",
-    "date": "2026-04-27",
-    "completedAt": "2026-04-28T17:58:31.649Z"
-   },
-   {
-    "id": 1777277106957,
-    "text": "სასამართლოში დარეკვა",
-    "date": "2026-04-27",
-    "completedAt": "2026-04-28T17:58:30.326Z"
-   },
-   {
-    "id": 1777277111825,
-    "text": "პრავაზე გარკვევა",
-    "date": "2026-04-27",
-    "completedAt": "2026-04-28T17:58:29.765Z"
-   },
-   {
-    "id": 1777029105973,
-    "text": "ექატრა ჯი",
-    "date": "2026-04-24",
-    "completedAt": "2026-04-28T17:58:21.680Z"
-   },
-   {
-    "id": 1776185210366,
-    "text": "Astroman New Ad",
-    "date": "2026-04-14",
-    "completedAt": "2026-04-28T17:58:20.500Z"
-   },
-   {
-    "id": 1776102300829,
-    "text": "გერმანიიდან ტელესკოპების შეკვეთა",
-    "date": "2026-04-13",
-    "completedAt": "2026-04-28T17:58:18.135Z"
-   },
-   {
-    "id": 1777029102560,
-    "text": "რუკა",
-    "date": "2026-04-24",
-    "completedAt": "2026-04-27T08:04:58.243Z"
-   },
-   {
-    "id": 1776102285254,
-    "text": "Gwp გარკვევა",
-    "date": "2026-04-13",
-    "completedAt": "2026-04-14T16:46:27.583Z"
-   },
-   {
-    "id": 1776102289655,
-    "text": "ბიდეტი",
-    "date": "2026-04-13",
-    "completedAt": "2026-04-14T10:40:56.822Z"
-   },
-   {
-    "id": 1774858718157,
-    "text": "ასტრომანის ექსელი",
-    "date": "2026-03-30",
-    "completedAt": "2026-04-13T12:44:15.022Z"
-   },
-   {
-    "id": 1774730631315,
-    "text": "აწარმოეში გადარეკვა",
-    "date": "2026-03-28",
-    "completedAt": "2026-04-08T21:48:06.320Z"
-   },
-   {
-    "id": 1775472078650,
-    "text": "get missions takss from Kostya for me",
-    "date": "2026-04-06",
-    "completedAt": "2026-04-06T14:29:33.540Z"
-   },
-   {
-    "id": 1775472069114,
-    "text": "meeting with Kostya, make product blueprint",
-    "date": "2026-04-06",
-    "completedAt": "2026-04-06T14:29:31.976Z"
-   },
-   {
-    "id": 1775463080138,
-    "text": "meeting with kostya, write a plan and all that.",
-    "date": "2026-04-06",
-    "completedAt": "2026-04-06T14:29:28.204Z"
-   },
-   {
-    "id": 1774727264971,
-    "text": "ტერმინალის გააქტიურება",
-    "date": "2026-03-28",
-    "completedAt": "2026-04-06T08:11:30.378Z"
-   },
-   {
-    "id": 1774727269752,
-    "text": "დეველოპერის მოძებნა",
-    "date": "2026-03-28",
-    "completedAt": "2026-04-04T19:48:57.596Z"
-   },
-   {
-    "id": 1774727158111,
-    "text": "GWP-ს გარკვევა",
-    "date": "2026-03-28",
-    "completedAt": "2026-03-30T14:11:44.235Z"
-   },
-   {
-    "id": 1774730622136,
-    "text": "ორშაბათის იუსტიციის სახლში მისვლა დაგეგმვა",
-    "date": "2026-03-28",
-    "completedAt": "2026-03-30T14:00:03.011Z"
-   },
-   {
-    "id": 1774730609849,
-    "text": "start Phase Two for Sky astroman",
-    "date": "2026-03-28",
-    "completedAt": "2026-03-30T08:16:04.241Z"
-   },
-   {
-    "id": 1774729006626,
-    "text": "Go with boyt",
-    "date": "2026-03-28",
-    "completedAt": "2026-03-30T08:15:58.951Z"
-   },
-   {
-    "id": 1774729001978,
-    "text": "Meet builder",
-    "date": "2026-03-28",
-    "completedAt": "2026-03-30T08:15:57.792Z"
-   },
-   {
-    "id": 1774727253328,
-    "text": "ასტრომანზე გარკვევა",
-    "date": "2026-03-28",
-    "completedAt": "2026-03-30T08:15:49.978Z"
-   },
-   {
-    "id": 1774727244137,
-    "text": "სტელარზე მუშაობა",
-    "date": "2026-03-28",
-    "completedAt": "2026-03-30T08:15:48.500Z"
-   }
+  "completedProjects": [
+    {
+      "id": 1776084363616,
+      "name": "Stellar Continiues",
+      "desc": "",
+      "type": "monthly",
+      "due": "2026-06-20",
+      "priority": "high",
+      "color": "#2563EB",
+      "icon": "📌",
+      "progress": 100,
+      "tasks": [],
+      "completedTasks": [
+        {
+          "id": 1779131352037,
+          "name": "Work on Missions page",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131346537,
+          "name": "Finish Sky Page",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131343514,
+          "name": "finish learning page",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131350470,
+          "name": "finish marketplace",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131349973,
+          "name": "Finish Profile",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131344667,
+          "name": "fihisn home page",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131342762,
+          "name": "leaderboard",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131344285,
+          "name": "Full tests and Demo video",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131343516,
+          "name": "create new logo",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131345602,
+          "name": "use design sites to create design",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        }
+      ],
+      "notes": "",
+      "created": 1776084363616,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
+      "id": 1775333164116,
+      "name": "Stellar Week 1",
+      "desc": "",
+      "type": "monthly",
+      "due": "2026-05-11",
+      "priority": "high",
+      "color": "#2563EB",
+      "icon": "📌",
+      "progress": 100,
+      "tasks": [],
+      "completedTasks": [
+        {
+          "id": 1779131349707,
+          "name": "Register + set up infrastructure",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131347936,
+          "name": "Fork repo and build app shell (April 6-7)",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131343235,
+          "name": "Wallet connect + Solana foundation (April 8-10)",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131351064,
+          "name": "Sky Observatory dashboard (April 10-13)",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131348722,
+          "name": "AI Space Companion (April 13-17)",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131348531,
+          "name": "Missions + gamification (April 17-21)",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131352483,
+          "name": "Marketplace + payments (April 21-26)",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131346074,
+          "name": "Discovery Attestations NFT minting (April 26-29)",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131351173,
+          "name": "Traction sprint + beta testing (April 29 – May 4)",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        }
+      ],
+      "notes": "",
+      "created": 1775333164116,
+      "reminder": {
+        "enabled": true,
+        "timing": "oneweek",
+        "lastSent": null
+      }
+    },
+    {
+      "id": 1773086904820,
+      "name": "Weekend Coding Event",
+      "desc": "",
+      "type": "weekly",
+      "due": "2026-03-14",
+      "priority": "high",
+      "color": "#2563EB",
+      "icon": "📌",
+      "progress": 100,
+      "tasks": [],
+      "completedTasks": [
+        {
+          "id": 1779131351366,
+          "name": "create a plan",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131344920,
+          "name": "app idea, name, etc",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131347188,
+          "name": "people to meet",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131348713,
+          "name": "learn the plan",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131342565,
+          "name": "has to be a problem solving",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131345854,
+          "name": "replit.com",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131345953,
+          "name": "done",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        }
+      ],
+      "notes": "I am building Proof of Observation — Strava for astronomy on Solana\nfor telescope owners at Georgia's first astronomy store\nthat solves no way to verify, reward, or share real stargazing\nby gamified sky missions with camera proof, satellite-verified conditions (FarmHawk), offline mesh submission (Pollinet), and NFT achievement minting — built from Scriptonia-generated specs",
+      "created": 1773086904820,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
+      "id": 1772361692835,
+      "name": "Current Website Update",
+      "desc": "Update the www.astroman.ge",
+      "type": "weekly",
+      "due": "2026-04-15",
+      "priority": "med",
+      "color": "#2563EB",
+      "icon": "🌍",
+      "progress": 100,
+      "tasks": [],
+      "completedTasks": [
+        {
+          "id": 1779131342660,
+          "name": "ask claude how to improve system of the web",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:54.506Z"
+        },
+        {
+          "id": 1779131347003,
+          "name": "make product page more convertable",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:53.198Z"
+        },
+        {
+          "id": 1779131344734,
+          "name": "add one more buit in ai",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:52.806Z"
+        },
+        {
+          "id": 1779131350091,
+          "name": "add skywatcher page",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:52.385Z"
+        }
+      ],
+      "notes": "",
+      "created": 1772361692835,
+      "reminder": {
+        "enabled": false,
+        "timing": "oneday",
+        "lastSent": null
+      }
+    },
+    {
+      "id": 1772361382049,
+      "name": "Night Skywatcher",
+      "desc": "Sky watching app for astroman",
+      "type": "monthly",
+      "due": "2026-04-05",
+      "priority": "med",
+      "color": "#2563EB",
+      "icon": "🌃",
+      "progress": 100,
+      "tasks": [],
+      "completedTasks": [
+        {
+          "id": 1779131343588,
+          "name": "redisign it with my existing app. make it work.",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:47.469Z"
+        },
+        {
+          "id": 1779131343101,
+          "name": "deploy",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:47.023Z"
+        },
+        {
+          "id": 1779131347107,
+          "name": "create marketing plan for deployment",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:46.605Z"
+        },
+        {
+          "id": 1779131351642,
+          "name": "integrate with my website",
+          "done": true,
+          "completedAt": "2026-06-25T12:05:45.996Z"
+        },
+        {
+          "id": 1779131349401,
+          "name": "cretate website",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131349788,
+          "name": "add different features",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131349733,
+          "name": "test everything",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131343737,
+          "name": "ტელესკოპის რენდომ ჩვენება",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        }
+      ],
+      "notes": "",
+      "created": 1772361382049,
+      "reminder": {
+        "enabled": true,
+        "timing": "threedays",
+        "lastSent": "2026-06-25T10:42:07.921Z"
+      }
+    },
+    {
+      "id": 1772361025657,
+      "name": "Astroman Loyal Club",
+      "desc": "Loyalty Club for astroman",
+      "type": "weekly",
+      "due": "2026-04-05",
+      "priority": "high",
+      "color": "#2563EB",
+      "icon": "💪",
+      "progress": 100,
+      "tasks": [],
+      "completedTasks": [
+        {
+          "id": 1779131345503,
+          "name": "admin page setup",
+          "done": true,
+          "completedAt": "2026-06-24T15:41:43.870Z"
+        },
+        {
+          "id": 1779131343162,
+          "name": "check if everything works",
+          "done": true,
+          "completedAt": "2026-06-24T15:41:42.898Z"
+        },
+        {
+          "id": 1779131349198,
+          "name": "Create deployment marketing plan",
+          "done": true,
+          "completedAt": "2026-06-24T15:41:41.500Z"
+        },
+        {
+          "id": 1779131351641,
+          "name": "make it perfect.",
+          "done": true,
+          "completedAt": "2026-06-24T15:41:40.874Z"
+        },
+        {
+          "id": 1779131346540,
+          "name": "Create website",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131346559,
+          "name": "build admin and dashboard page",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131352021,
+          "name": "Manual Upload feature to add",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131349250,
+          "name": "add forgot password option",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        },
+        {
+          "id": 1779131347280,
+          "name": "check matematics and new registration.",
+          "done": true,
+          "completedAt": "2026-05-18T19:09:02.485Z"
+        }
+      ],
+      "notes": "",
+      "created": 1772361025657,
+      "reminder": {
+        "enabled": true,
+        "timing": "threedays",
+        "lastSent": "2026-06-24T10:50:30.278Z"
+      }
+    }
   ],
-  "weeklyTasks": [
-   {
-    "id": 1774879071332,
-    "text": "Create Bundles, Bundle posts and visuals",
-    "done": false,
-    "weekNum": 14,
-    "year": 2026
-   },
-   {
-    "id": 1774879091997,
-    "text": "1 საათი სწავლა, Ai tools, Chatbot, Automatinos",
-    "done": false,
-    "weekNum": 14,
-    "year": 2026
-   },
-   {
-    "id": 1774879140555,
-    "text": "სტელარის რებრენდინგი, და სოლანას კოლიზეუმზე მორგება",
-    "done": false,
-    "weekNum": 14,
-    "year": 2026
-   },
-   {
-    "id": 1774879179505,
-    "text": "ასტრომანის ლოიალობის კლუბის გაშვება",
-    "done": false,
-    "weekNum": 14,
-    "year": 2026
-   },
-   {
-    "id": 1774879353180,
-    "text": "დარეკვა მინიმუმ 5 სკოლასთან და შეთავაზების გაკეთება",
-    "done": false,
-    "weekNum": 14,
-    "year": 2026
-   },
-   {
-    "id": 1774880088495,
-    "text": "მოძებნა 3 სტუდენტის ან პიროვნების ვინც ჩაატარებს მინი ლექციებს, და ვორკშოფებს სკოლებში, შემდეგ სკოლებთან შეთანხმება",
-    "done": false,
-    "weekNum": 14,
-    "year": 2026
-   },
-   {
-    "id": 1774880736941,
-    "text": "დ ვიტამინი დილით საუზმისას, კარაქიანი პურის მერე",
-    "done": false,
-    "weekNum": 14,
-    "year": 2026
-   },
-   {
-    "id": 1774880753566,
-    "text": "ვიტამინები დღის 12-1 საათზე",
-    "done": false,
-    "weekNum": 14,
-    "year": 2026
-   },
-   {
-    "id": 1775332116381,
-    "text": "Astroman Scaling",
-    "done": false,
-    "weekNum": 14,
-    "year": 2026
-   },
-   {
-    "id": 1775336830812,
-    "text": "Orion Telescope Search",
-    "done": false,
-    "weekNum": 14,
-    "year": 2026
-   }
-  ],
-  "completedWeeklyTasks": [
-   {
-    "id": 1775463066240,
-    "text": "10 video sctips for Qeta",
-    "weekNum": 15,
-    "year": 2026,
-    "completedAt": "2026-04-06T14:30:04.514Z"
-   },
-   {
-    "id": 1775331831073,
-    "text": "Start working on Stellar",
-    "weekNum": 14,
-    "year": 2026,
-    "completedAt": "2026-04-06T14:30:01.157Z"
-   },
-   {
-    "id": 1775331924565,
-    "text": "Meeting with constantine",
-    "weekNum": 14,
-    "year": 2026,
-    "completedAt": "2026-04-06T14:30:00.087Z"
-   },
-   {
-    "id": 1774879270224,
-    "text": "კონიაკზე გამწოვის მოგვარება",
-    "weekNum": 14,
-    "year": 2026,
-    "completedAt": "2026-04-06T14:29:46.742Z"
-   },
-   {
-    "id": 1774879129464,
-    "text": "მოემზადე 4 აპრილის შეხვედრისთთვის",
-    "weekNum": 14,
-    "year": 2026,
-    "completedAt": "2026-04-06T14:29:39.568Z"
-   },
-   {
-    "id": 1774880726515,
-    "text": "ანტიბიოტიკი 6:30 ზე,",
-    "weekNum": 14,
-    "year": 2026,
-    "completedAt": "2026-04-03T19:27:51.688Z"
-   },
-   {
-    "id": 1774879149061,
-    "text": "გასაუბრება დეველოპერთან სამშაბათს 5 საათზე",
-    "weekNum": 14,
-    "year": 2026,
-    "completedAt": "2026-04-03T19:27:41.491Z"
-   },
-   {
-    "id": 1774879116001,
-    "text": "დააფიქსირე 1 ახალი შესაძლებლობა",
-    "weekNum": 14,
-    "year": 2026,
-    "completedAt": "2026-04-03T19:27:37.169Z"
-   }
-  ],
-  "monthlyGoals": [],
-  "dailyFocus": {
-   "mustDo": "",
-   "stretch": "",
-   "note": ""
+  "planner": {
+    "dailyTasks": [
+      {
+        "id": 1779131451633,
+        "text": "კონიაკის მიწა",
+        "done": false,
+        "date": "2026-05-18"
+      },
+      {
+        "id": 1779131477799,
+        "text": "ასტრომანის გარე სივრცის და შიდა სივრცის შეცვლა",
+        "done": false,
+        "date": "2026-05-18"
+      },
+      {
+        "id": 1779131488602,
+        "text": "სექტემბრამდე ახალი ფართის პოვნა",
+        "done": false,
+        "date": "2026-05-18"
+      },
+      {
+        "id": 1779481700634,
+        "text": "Electric cars and scooters",
+        "done": false,
+        "date": "2026-05-22"
+      },
+      {
+        "id": 1779481730645,
+        "text": "Astroman upgrade",
+        "done": false,
+        "date": "2026-05-22"
+      },
+      {
+        "id": 1780304422950,
+        "text": "ასტრომანის გარე სივრცის შეღებვა",
+        "done": false,
+        "date": "2026-06-01"
+      },
+      {
+        "id": 1780409573399,
+        "text": "New optics",
+        "done": false,
+        "date": "2026-06-02"
+      },
+      {
+        "id": 1782724085894,
+        "text": "🏔️ Borjomi — remote work, 2 weeks+ (fully available)",
+        "done": false,
+        "date": "2026-07-01"
+      }
+    ],
+    "completedDailyTasks": [
+      {
+        "id": 1780304399669,
+        "text": "კონიაკის მიწაზე დარეკვა",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-24T15:41:08.519Z"
+      },
+      {
+        "id": 1780304386611,
+        "text": "ჩინეთში შეკვეთის გაკეთება",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-24T15:41:06.702Z"
+      },
+      {
+        "id": 1780304370696,
+        "text": "გერმანიაზე გარკვევა",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-24T15:41:03.809Z"
+      },
+      {
+        "id": 1779658259522,
+        "text": "სოლანას სიახლეები",
+        "date": "2026-05-24",
+        "completedAt": "2026-06-24T15:41:03.009Z"
+      },
+      {
+        "id": 1779131447185,
+        "text": "STellar continue, Qvac Grant apply",
+        "date": "2026-05-18",
+        "completedAt": "2026-06-11T10:24:53.517Z"
+      },
+      {
+        "id": 1780304366897,
+        "text": "პრობაციაზე მისვლა,",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-03T08:32:21.043Z"
+      },
+      {
+        "id": 1780304412448,
+        "text": "გერმანიის შეკვეთის დაბინავებბა",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-01T16:07:28.825Z"
+      },
+      {
+        "id": 1780304417067,
+        "text": "კონიაკის დალაგება",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-01T16:07:25.965Z"
+      },
+      {
+        "id": 1780304380703,
+        "text": "პრიზის გადმორიცხვა",
+        "date": "2026-06-01",
+        "completedAt": "2026-06-01T16:07:22.663Z"
+      },
+      {
+        "id": 1776102294853,
+        "text": "ასტრომანის კვირის პოსტები",
+        "date": "2026-04-13",
+        "completedAt": "2026-05-25T17:04:02.476Z"
+      },
+      {
+        "id": 1779658253363,
+        "text": "გერმანიაზე გარკვევა",
+        "date": "2026-05-24",
+        "completedAt": "2026-05-25T17:03:53.599Z"
+      },
+      {
+        "id": 1779658248832,
+        "text": "აწარმოეში დარეკვა",
+        "date": "2026-05-24",
+        "completedAt": "2026-05-25T09:01:10.159Z"
+      },
+      {
+        "id": 1779131460714,
+        "text": "მოპედის ყიდვა",
+        "date": "2026-05-18",
+        "completedAt": "2026-05-21T11:04:10.652Z"
+      },
+      {
+        "id": 1776084479304,
+        "text": "Astroman Weekle Content Creation",
+        "date": "2026-04-13",
+        "completedAt": "2026-05-18T19:12:49.042Z"
+      },
+      {
+        "id": 1777277149433,
+        "text": "პრობაციაზე დარეკვა",
+        "date": "2026-04-27",
+        "completedAt": "2026-04-28T17:58:31.649Z"
+      },
+      {
+        "id": 1777277106957,
+        "text": "სასამართლოში დარეკვა",
+        "date": "2026-04-27",
+        "completedAt": "2026-04-28T17:58:30.326Z"
+      },
+      {
+        "id": 1777277111825,
+        "text": "პრავაზე გარკვევა",
+        "date": "2026-04-27",
+        "completedAt": "2026-04-28T17:58:29.765Z"
+      },
+      {
+        "id": 1777029105973,
+        "text": "ექატრა ჯი",
+        "date": "2026-04-24",
+        "completedAt": "2026-04-28T17:58:21.680Z"
+      },
+      {
+        "id": 1776185210366,
+        "text": "Astroman New Ad",
+        "date": "2026-04-14",
+        "completedAt": "2026-04-28T17:58:20.500Z"
+      },
+      {
+        "id": 1776102300829,
+        "text": "გერმანიიდან ტელესკოპების შეკვეთა",
+        "date": "2026-04-13",
+        "completedAt": "2026-04-28T17:58:18.135Z"
+      },
+      {
+        "id": 1777029102560,
+        "text": "რუკა",
+        "date": "2026-04-24",
+        "completedAt": "2026-04-27T08:04:58.243Z"
+      },
+      {
+        "id": 1776102285254,
+        "text": "Gwp გარკვევა",
+        "date": "2026-04-13",
+        "completedAt": "2026-04-14T16:46:27.583Z"
+      },
+      {
+        "id": 1776102289655,
+        "text": "ბიდეტი",
+        "date": "2026-04-13",
+        "completedAt": "2026-04-14T10:40:56.822Z"
+      },
+      {
+        "id": 1774858718157,
+        "text": "ასტრომანის ექსელი",
+        "date": "2026-03-30",
+        "completedAt": "2026-04-13T12:44:15.022Z"
+      },
+      {
+        "id": 1774730631315,
+        "text": "აწარმოეში გადარეკვა",
+        "date": "2026-03-28",
+        "completedAt": "2026-04-08T21:48:06.320Z"
+      },
+      {
+        "id": 1775472078650,
+        "text": "get missions takss from Kostya for me",
+        "date": "2026-04-06",
+        "completedAt": "2026-04-06T14:29:33.540Z"
+      },
+      {
+        "id": 1775472069114,
+        "text": "meeting with Kostya, make product blueprint",
+        "date": "2026-04-06",
+        "completedAt": "2026-04-06T14:29:31.976Z"
+      },
+      {
+        "id": 1775463080138,
+        "text": "meeting with kostya, write a plan and all that.",
+        "date": "2026-04-06",
+        "completedAt": "2026-04-06T14:29:28.204Z"
+      },
+      {
+        "id": 1774727264971,
+        "text": "ტერმინალის გააქტიურება",
+        "date": "2026-03-28",
+        "completedAt": "2026-04-06T08:11:30.378Z"
+      },
+      {
+        "id": 1774727269752,
+        "text": "დეველოპერის მოძებნა",
+        "date": "2026-03-28",
+        "completedAt": "2026-04-04T19:48:57.596Z"
+      },
+      {
+        "id": 1774727158111,
+        "text": "GWP-ს გარკვევა",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T14:11:44.235Z"
+      },
+      {
+        "id": 1774730622136,
+        "text": "ორშაბათის იუსტიციის სახლში მისვლა დაგეგმვა",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T14:00:03.011Z"
+      },
+      {
+        "id": 1774730609849,
+        "text": "start Phase Two for Sky astroman",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T08:16:04.241Z"
+      },
+      {
+        "id": 1774729006626,
+        "text": "Go with boyt",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T08:15:58.951Z"
+      },
+      {
+        "id": 1774729001978,
+        "text": "Meet builder",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T08:15:57.792Z"
+      },
+      {
+        "id": 1774727253328,
+        "text": "ასტრომანზე გარკვევა",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T08:15:49.978Z"
+      },
+      {
+        "id": 1774727244137,
+        "text": "სტელარზე მუშაობა",
+        "date": "2026-03-28",
+        "completedAt": "2026-03-30T08:15:48.500Z"
+      }
+    ],
+    "weeklyTasks": [
+      {
+        "id": 1774879071332,
+        "text": "Create Bundles, Bundle posts and visuals",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
+      },
+      {
+        "id": 1774879091997,
+        "text": "1 საათი სწავლა, Ai tools, Chatbot, Automatinos",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
+      },
+      {
+        "id": 1774879140555,
+        "text": "სტელარის რებრენდინგი, და სოლანას კოლიზეუმზე მორგება",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
+      },
+      {
+        "id": 1774879179505,
+        "text": "ასტრომანის ლოიალობის კლუბის გაშვება",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
+      },
+      {
+        "id": 1774879353180,
+        "text": "დარეკვა მინიმუმ 5 სკოლასთან და შეთავაზების გაკეთება",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
+      },
+      {
+        "id": 1774880088495,
+        "text": "მოძებნა 3 სტუდენტის ან პიროვნების ვინც ჩაატარებს მინი ლექციებს, და ვორკშოფებს სკოლებში, შემდეგ სკოლებთან შეთანხმება",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
+      },
+      {
+        "id": 1774880736941,
+        "text": "დ ვიტამინი დილით საუზმისას, კარაქიანი პურის მერე",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
+      },
+      {
+        "id": 1774880753566,
+        "text": "ვიტამინები დღის 12-1 საათზე",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
+      },
+      {
+        "id": 1775332116381,
+        "text": "Astroman Scaling",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
+      },
+      {
+        "id": 1775336830812,
+        "text": "Orion Telescope Search",
+        "done": false,
+        "weekNum": 14,
+        "year": 2026
+      }
+    ],
+    "completedWeeklyTasks": [
+      {
+        "id": 1775463066240,
+        "text": "10 video sctips for Qeta",
+        "weekNum": 15,
+        "year": 2026,
+        "completedAt": "2026-04-06T14:30:04.514Z"
+      },
+      {
+        "id": 1775331831073,
+        "text": "Start working on Stellar",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-06T14:30:01.157Z"
+      },
+      {
+        "id": 1775331924565,
+        "text": "Meeting with constantine",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-06T14:30:00.087Z"
+      },
+      {
+        "id": 1774879270224,
+        "text": "კონიაკზე გამწოვის მოგვარება",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-06T14:29:46.742Z"
+      },
+      {
+        "id": 1774879129464,
+        "text": "მოემზადე 4 აპრილის შეხვედრისთთვის",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-06T14:29:39.568Z"
+      },
+      {
+        "id": 1774880726515,
+        "text": "ანტიბიოტიკი 6:30 ზე,",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-03T19:27:51.688Z"
+      },
+      {
+        "id": 1774879149061,
+        "text": "გასაუბრება დეველოპერთან სამშაბათს 5 საათზე",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-03T19:27:41.491Z"
+      },
+      {
+        "id": 1774879116001,
+        "text": "დააფიქსირე 1 ახალი შესაძლებლობა",
+        "weekNum": 14,
+        "year": 2026,
+        "completedAt": "2026-04-03T19:27:37.169Z"
+      }
+    ],
+    "monthlyGoals": [],
+    "dailyFocus": {
+      "mustDo": "",
+      "stretch": "",
+      "note": ""
+    },
+    "weeklyPlan": {
+      "theme": "",
+      "win": "",
+      "risk": ""
+    },
+    "telegramSchedule": {
+      "timezone": "Asia/Tbilisi",
+      "dailyWeekday": "12:00",
+      "weeklyWeekday": "15:00"
+    },
+    "telegramLog": {
+      "dailyTaskDigestSentOn": "",
+      "weeklyTaskDigestSentOn": ""
+    }
   },
-  "weeklyPlan": {
-   "theme": "",
-   "win": "",
-   "risk": ""
-  },
-  "telegramSchedule": {
-   "timezone": "Asia/Tbilisi",
-   "dailyWeekday": "12:00",
-   "weeklyWeekday": "15:00"
-  },
-  "telegramLog": {
-   "dailyTaskDigestSentOn": "",
-   "weeklyTaskDigestSentOn": ""
-  }
- },
- "activity": [
-  {
-   "msg": "Updated <strong>ELEVEN.FOOTBALL</strong> → feature-complete, merged to main + repo public; left: record demo + submit",
-   "color": "#C6FF3A",
-   "time": 1783852274549
-  },
-  {
-   "msg": "Added <strong>Stellarr — X Growth Engine</strong> with 10 tasks from the X Growth Playbook",
-   "color": "#1D9BF0",
-   "time": 1783794415045
-  },
-  {
-   "msg": "Updated <strong>PLUS Day</strong>: restock Foreseen 800/50 + 70mm; added \"confirm full settlement with BoG\"",
-   "color": "#FF7A00",
-   "time": 1782750057557
-  },
-  {
-   "msg": "Created project <strong>\"Astroman — PLUS Day (5 July)\"</strong> with 8 tasks (BoG half-price points event)",
-   "color": "#FF7A00",
-   "time": 1782741611720
-  },
-  {
-   "msg": "Fixed broken due dates: <strong>Stellar Continue</strong> (was 1992) → Jul 31, <strong>Advance AI</strong> → Sep 1 (paused, low pri)",
-   "color": "#F59E0B",
-   "time": 1782726310433
-  },
-  {
-   "msg": "Added <strong>Borjomi (Jul 1, 2 weeks remote)</strong> to planner",
-   "color": "#7C3AED",
-   "time": 1782724085907
-  },
-  {
-   "msg": "Created project <strong>\"Enterprise Georgia Grant\"</strong> with 7 chain steps (kickoff Jul 1)",
-   "color": "#10B981",
-   "time": 1782724085906
-  },
-  {
-   "msg": "Created project <strong>\"Bikes out of customs\"</strong> (due Jun 30, location-locked)",
-   "color": "#3B6FF6",
-   "time": 1782724085905
-  },
-  {
-   "msg": "Created project <strong>\"ELEVEN.FOOTBALL\"</strong> with 20 tasks (World Cup hackathon, due Jul 17)",
-   "color": "#16A34A",
-   "time": 1782398971393
-  },
-  {
-   "msg": "Completed task <strong>\"ask claude how to improve system of the web\"</strong> on \"Current Website Update\"",
-   "color": "#2563EB",
-   "time": 1782389154508
-  },
-  {
-   "msg": "Completed task <strong>\"make product page more convertable\"</strong> on \"Current Website Update\"",
-   "color": "#2563EB",
-   "time": 1782389153199
-  },
-  {
-   "msg": "Completed task <strong>\"add one more buit in ai\"</strong> on \"Current Website Update\"",
-   "color": "#2563EB",
-   "time": 1782389152807
-  },
-  {
-   "msg": "Completed task <strong>\"add skywatcher page\"</strong> on \"Current Website Update\"",
-   "color": "#2563EB",
-   "time": 1782389152386
-  },
-  {
-   "msg": "Completed task <strong>\"redisign it with my existing app. make it work.\"</strong> on \"Night Skywatcher\"",
-   "color": "#2563EB",
-   "time": 1782389147471
-  },
-  {
-   "msg": "Completed task <strong>\"deploy\"</strong> on \"Night Skywatcher\"",
-   "color": "#2563EB",
-   "time": 1782389147026
-  },
-  {
-   "msg": "Completed task <strong>\"create marketing plan for deployment\"</strong> on \"Night Skywatcher\"",
-   "color": "#2563EB",
-   "time": 1782389146609
-  },
-  {
-   "msg": "Completed task <strong>\"integrate with my website\"</strong> on \"Night Skywatcher\"",
-   "color": "#2563EB",
-   "time": 1782389145998
-  },
-  {
-   "msg": "Added task <strong>\"Paint Astroman outer walls — outer-space theme\"</strong> to \"Astroman\"",
-   "color": "#7C3AED",
-   "time": 1782388301001
-  },
-  {
-   "msg": "Added task <strong>\"Fix outdoor lights at Astroman\"</strong> to \"Astroman\"",
-   "color": "#7C3AED",
-   "time": 1782388301001
-  },
-  {
-   "msg": "Added task <strong>\"Get flowers for Astroman entrance\"</strong> to \"Astroman\"",
-   "color": "#7C3AED",
-   "time": 1782388301001
-  },
-  {
-   "msg": "Added task <strong>\"Assemble bikes; sell one for 3000 GEL, keep one\"</strong> to \"Astroman\"",
-   "color": "#7C3AED",
-   "time": 1782388301001
-  },
-  {
-   "msg": "Added task <strong>\"Confirm telescope + levitating lamps order\"</strong> to \"Astroman\"",
-   "color": "#7C3AED",
-   "time": 1782388301001
-  },
-  {
-   "msg": "Added task <strong>\"Source 5 new fresh products for Astroman\"</strong> to \"Astroman\"",
-   "color": "#7C3AED",
-   "time": 1782388301001
-  },
-  {
-   "msg": "Anthology Fund application finalized & submit-ready on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1782388301001
-  },
-  {
-   "msg": "Completed task <strong>\"Submit Anthropic Startup Program application\"</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1782315728726
-  },
-  {
-   "msg": "Completed task <strong>\"admin page setup\"</strong> on \"Astroman Loyal Club\"",
-   "color": "#2563EB",
-   "time": 1782315703871
-  },
-  {
-   "msg": "Completed task <strong>\"check if everything works\"</strong> on \"Astroman Loyal Club\"",
-   "color": "#2563EB",
-   "time": 1782315702902
-  },
-  {
-   "msg": "Completed task <strong>\"Create deployment marketing plan\"</strong> on \"Astroman Loyal Club\"",
-   "color": "#2563EB",
-   "time": 1782315701501
-  },
-  {
-   "msg": "Completed task <strong>\"make it perfect.\"</strong> on \"Astroman Loyal Club\"",
-   "color": "#2563EB",
-   "time": 1782315700876
-  },
-  {
-   "msg": "Completed daily task <strong>\"კონიაკის მიწაზე დარეკვა\"</strong>",
-   "color": "#67E8F9",
-   "time": 1782315668522
-  },
-  {
-   "msg": "Completed daily task <strong>\"ჩინეთში შეკვეთის გაკეთება\"</strong>",
-   "color": "#67E8F9",
-   "time": 1782315666704
-  },
-  {
-   "msg": "Completed daily task <strong>\"გერმანიაზე გარკვევა\"</strong>",
-   "color": "#67E8F9",
-   "time": 1782315663814
-  },
-  {
-   "msg": "Completed daily task <strong>\"სოლანას სიახლეები\"</strong>",
-   "color": "#67E8F9",
-   "time": 1782315663011
-  },
-  {
-   "msg": "Completed task <strong>\"Token and mainnet lunch\"</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1782051207796
-  },
-  {
-   "msg": "Completed task <strong>\"Make /feed visible to logged-out visitors\"</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1781771091700
-  },
-  {
-   "msg": "Completed task <strong>\"Make /field a top-level nav item\"</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1781771084592
-  },
-  {
-   "msg": "Stage set to <strong>In Progress</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1781635479182
-  },
-  {
-   "msg": "Stage set to <strong>Review</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1781635477818
-  },
-  {
-   "msg": "Completed task <strong>\"Apply for Qvac Hackaton\"</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1781635449856
-  },
-  {
-   "msg": "Completed task <strong>\"Apply for GITA\"</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1781358104922
-  },
-  {
-   "msg": "Added task <strong>\"Apply for Qvac Hackaton\"</strong> to \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1781358101309
-  },
-  {
-   "msg": "Added task <strong>\"Apply for GITA\"</strong> to \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1781358094359
-  },
-  {
-   "msg": "Completed task <strong>\"Add Tether QVAC win to live site\"</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1781358072026
-  },
-  {
-   "msg": "Completed task <strong>\"make autonomous X content creator\"</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1781173567840
-  },
-  {
-   "msg": "Completed task <strong>\"win superteam 5K\"</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1781173509324
-  },
-  {
-   "msg": "Completed daily task <strong>\"STellar continue, Qvac Grant apply\"</strong>",
-   "color": "#67E8F9",
-   "time": 1781173493518
-  },
-  {
-   "msg": "<strong>Astroman</strong> — ამოცანების სახელები შემოკლებულია",
-   "color": "#7C3AED",
-   "time": 1780519356759
-  },
-  {
-   "msg": "<strong>Astroman</strong>-ის 21 ამოცანა თარგმნილია ქართულად (ივნისის ზრდის გეგმა)",
-   "color": "#7C3AED",
-   "time": 1780518784912
-  },
-  {
-   "msg": "Populated <strong>21 tasks</strong> on <strong>Astroman</strong> from June Growth Plan",
-   "color": "#7C3AED",
-   "time": 1780517102568
-  },
-  {
-   "msg": "Created project <strong>\"ASTROMAN\"</strong>",
-   "color": "#2563EB",
-   "time": 1780507294748
-  },
-  {
-   "msg": "Completed daily task <strong>\"პრობაციაზე მისვლა,\"</strong>",
-   "color": "#67E8F9",
-   "time": 1780475541045
-  },
-  {
-   "msg": "Completed daily task <strong>\"გერმანიის შეკვეთის დაბინავებბა\"</strong>",
-   "color": "#67E8F9",
-   "time": 1780330048826
-  },
-  {
-   "msg": "Completed daily task <strong>\"კონიაკის დალაგება\"</strong>",
-   "color": "#67E8F9",
-   "time": 1780330045967
-  },
-  {
-   "msg": "Completed daily task <strong>\"პრიზის გადმორიცხვა\"</strong>",
-   "color": "#67E8F9",
-   "time": 1780330042664
-  },
-  {
-   "msg": "Added task <strong>\"Token and mainnet lunch\"</strong> to \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1780304520365
-  },
-  {
-   "msg": "Completed task <strong>\"Apply to superteam earn for 5K\"</strong> on \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1780304494099
-  },
-  {
-   "msg": "Added task <strong>\"make autonomous X content creator\"</strong> to \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1779902012057
-  },
-  {
-   "msg": "Added task <strong>\"win superteam 5K\"</strong> to \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1779901999954
-  },
-  {
-   "msg": "Added task <strong>\"Apply to superteam earn for 5K\"</strong> to \"Stellar Continue\"",
-   "color": "#2563EB",
-   "time": 1779901994595
-  }
- ]
+  "activity": [
+    {
+      "msg": "Updated <strong>ELEVEN.FOOTBALL</strong> → feature-complete, merged to main + repo public; left: record demo + submit",
+      "color": "#C6FF3A",
+      "time": 1783852274549
+    },
+    {
+      "msg": "Added <strong>Stellarr — X Growth Engine</strong> with 10 tasks from the X Growth Playbook",
+      "color": "#1D9BF0",
+      "time": 1783794415045
+    },
+    {
+      "msg": "Updated <strong>PLUS Day</strong>: restock Foreseen 800/50 + 70mm; added \"confirm full settlement with BoG\"",
+      "color": "#FF7A00",
+      "time": 1782750057557
+    },
+    {
+      "msg": "Created project <strong>\"Astroman — PLUS Day (5 July)\"</strong> with 8 tasks (BoG half-price points event)",
+      "color": "#FF7A00",
+      "time": 1782741611720
+    },
+    {
+      "msg": "Fixed broken due dates: <strong>Stellar Continue</strong> (was 1992) → Jul 31, <strong>Advance AI</strong> → Sep 1 (paused, low pri)",
+      "color": "#F59E0B",
+      "time": 1782726310433
+    },
+    {
+      "msg": "Added <strong>Borjomi (Jul 1, 2 weeks remote)</strong> to planner",
+      "color": "#7C3AED",
+      "time": 1782724085907
+    },
+    {
+      "msg": "Created project <strong>\"Enterprise Georgia Grant\"</strong> with 7 chain steps (kickoff Jul 1)",
+      "color": "#10B981",
+      "time": 1782724085906
+    },
+    {
+      "msg": "Created project <strong>\"Bikes out of customs\"</strong> (due Jun 30, location-locked)",
+      "color": "#3B6FF6",
+      "time": 1782724085905
+    },
+    {
+      "msg": "Created project <strong>\"ELEVEN.FOOTBALL\"</strong> with 20 tasks (World Cup hackathon, due Jul 17)",
+      "color": "#16A34A",
+      "time": 1782398971393
+    },
+    {
+      "msg": "Completed task <strong>\"ask claude how to improve system of the web\"</strong> on \"Current Website Update\"",
+      "color": "#2563EB",
+      "time": 1782389154508
+    },
+    {
+      "msg": "Completed task <strong>\"make product page more convertable\"</strong> on \"Current Website Update\"",
+      "color": "#2563EB",
+      "time": 1782389153199
+    },
+    {
+      "msg": "Completed task <strong>\"add one more buit in ai\"</strong> on \"Current Website Update\"",
+      "color": "#2563EB",
+      "time": 1782389152807
+    },
+    {
+      "msg": "Completed task <strong>\"add skywatcher page\"</strong> on \"Current Website Update\"",
+      "color": "#2563EB",
+      "time": 1782389152386
+    },
+    {
+      "msg": "Completed task <strong>\"redisign it with my existing app. make it work.\"</strong> on \"Night Skywatcher\"",
+      "color": "#2563EB",
+      "time": 1782389147471
+    },
+    {
+      "msg": "Completed task <strong>\"deploy\"</strong> on \"Night Skywatcher\"",
+      "color": "#2563EB",
+      "time": 1782389147026
+    },
+    {
+      "msg": "Completed task <strong>\"create marketing plan for deployment\"</strong> on \"Night Skywatcher\"",
+      "color": "#2563EB",
+      "time": 1782389146609
+    },
+    {
+      "msg": "Completed task <strong>\"integrate with my website\"</strong> on \"Night Skywatcher\"",
+      "color": "#2563EB",
+      "time": 1782389145998
+    },
+    {
+      "msg": "Added task <strong>\"Paint Astroman outer walls — outer-space theme\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Added task <strong>\"Fix outdoor lights at Astroman\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Added task <strong>\"Get flowers for Astroman entrance\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Added task <strong>\"Assemble bikes; sell one for 3000 GEL, keep one\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Added task <strong>\"Confirm telescope + levitating lamps order\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Added task <strong>\"Source 5 new fresh products for Astroman\"</strong> to \"Astroman\"",
+      "color": "#7C3AED",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Anthology Fund application finalized & submit-ready on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1782388301001
+    },
+    {
+      "msg": "Completed task <strong>\"Submit Anthropic Startup Program application\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1782315728726
+    },
+    {
+      "msg": "Completed task <strong>\"admin page setup\"</strong> on \"Astroman Loyal Club\"",
+      "color": "#2563EB",
+      "time": 1782315703871
+    },
+    {
+      "msg": "Completed task <strong>\"check if everything works\"</strong> on \"Astroman Loyal Club\"",
+      "color": "#2563EB",
+      "time": 1782315702902
+    },
+    {
+      "msg": "Completed task <strong>\"Create deployment marketing plan\"</strong> on \"Astroman Loyal Club\"",
+      "color": "#2563EB",
+      "time": 1782315701501
+    },
+    {
+      "msg": "Completed task <strong>\"make it perfect.\"</strong> on \"Astroman Loyal Club\"",
+      "color": "#2563EB",
+      "time": 1782315700876
+    },
+    {
+      "msg": "Completed daily task <strong>\"კონიაკის მიწაზე დარეკვა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1782315668522
+    },
+    {
+      "msg": "Completed daily task <strong>\"ჩინეთში შეკვეთის გაკეთება\"</strong>",
+      "color": "#67E8F9",
+      "time": 1782315666704
+    },
+    {
+      "msg": "Completed daily task <strong>\"გერმანიაზე გარკვევა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1782315663814
+    },
+    {
+      "msg": "Completed daily task <strong>\"სოლანას სიახლეები\"</strong>",
+      "color": "#67E8F9",
+      "time": 1782315663011
+    },
+    {
+      "msg": "Completed task <strong>\"Token and mainnet lunch\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1782051207796
+    },
+    {
+      "msg": "Completed task <strong>\"Make /feed visible to logged-out visitors\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781771091700
+    },
+    {
+      "msg": "Completed task <strong>\"Make /field a top-level nav item\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781771084592
+    },
+    {
+      "msg": "Stage set to <strong>In Progress</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781635479182
+    },
+    {
+      "msg": "Stage set to <strong>Review</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781635477818
+    },
+    {
+      "msg": "Completed task <strong>\"Apply for Qvac Hackaton\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781635449856
+    },
+    {
+      "msg": "Completed task <strong>\"Apply for GITA\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781358104922
+    },
+    {
+      "msg": "Added task <strong>\"Apply for Qvac Hackaton\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781358101309
+    },
+    {
+      "msg": "Added task <strong>\"Apply for GITA\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781358094359
+    },
+    {
+      "msg": "Completed task <strong>\"Add Tether QVAC win to live site\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781358072026
+    },
+    {
+      "msg": "Completed task <strong>\"make autonomous X content creator\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781173567840
+    },
+    {
+      "msg": "Completed task <strong>\"win superteam 5K\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1781173509324
+    },
+    {
+      "msg": "Completed daily task <strong>\"STellar continue, Qvac Grant apply\"</strong>",
+      "color": "#67E8F9",
+      "time": 1781173493518
+    },
+    {
+      "msg": "<strong>Astroman</strong> — ამოცანების სახელები შემოკლებულია",
+      "color": "#7C3AED",
+      "time": 1780519356759
+    },
+    {
+      "msg": "<strong>Astroman</strong>-ის 21 ამოცანა თარგმნილია ქართულად (ივნისის ზრდის გეგმა)",
+      "color": "#7C3AED",
+      "time": 1780518784912
+    },
+    {
+      "msg": "Populated <strong>21 tasks</strong> on <strong>Astroman</strong> from June Growth Plan",
+      "color": "#7C3AED",
+      "time": 1780517102568
+    },
+    {
+      "msg": "Created project <strong>\"ASTROMAN\"</strong>",
+      "color": "#2563EB",
+      "time": 1780507294748
+    },
+    {
+      "msg": "Completed daily task <strong>\"პრობაციაზე მისვლა,\"</strong>",
+      "color": "#67E8F9",
+      "time": 1780475541045
+    },
+    {
+      "msg": "Completed daily task <strong>\"გერმანიის შეკვეთის დაბინავებბა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1780330048826
+    },
+    {
+      "msg": "Completed daily task <strong>\"კონიაკის დალაგება\"</strong>",
+      "color": "#67E8F9",
+      "time": 1780330045967
+    },
+    {
+      "msg": "Completed daily task <strong>\"პრიზის გადმორიცხვა\"</strong>",
+      "color": "#67E8F9",
+      "time": 1780330042664
+    },
+    {
+      "msg": "Added task <strong>\"Token and mainnet lunch\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1780304520365
+    },
+    {
+      "msg": "Completed task <strong>\"Apply to superteam earn for 5K\"</strong> on \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1780304494099
+    },
+    {
+      "msg": "Added task <strong>\"make autonomous X content creator\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779902012057
+    },
+    {
+      "msg": "Added task <strong>\"win superteam 5K\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779901999954
+    },
+    {
+      "msg": "Added task <strong>\"Apply to superteam earn for 5K\"</strong> to \"Stellar Continue\"",
+      "color": "#2563EB",
+      "time": 1779901994595
+    }
+  ]
 }
