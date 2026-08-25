@@ -180,7 +180,7 @@
       "reminder": {
         "enabled": true,
         "timing": "oneweek",
-        "lastSent": "2026-08-24T08:47:55.044Z"
+        "lastSent": "2026-08-25T08:41:31.939Z"
       }
     },
     {
@@ -455,7 +455,7 @@
       "reminder": {
         "enabled": true,
         "timing": "threedays",
-        "lastSent": "2026-08-24T08:47:55.044Z"
+        "lastSent": "2026-08-25T08:41:31.939Z"
       }
     },
     {
