@@ -486,57 +486,683 @@
     {
       "id": 1782724085884,
       "name": "Enterprise Georgia Grant",
-      "desc": "Loan→grant cashback chain. Kicks off Jul 1. Net: grant cashes back 50% of the loan after shipping digital products within 2 months.",
+      "desc": "Darkview Phase 1 — remote observatory MVP, audited expense claim and Enterprise Georgia digitalization grant under Business Universal. 120,000 GEL loan → ~44,175 GEL grant.",
       "type": "monthly",
-      "due": "2026-07-15",
+      "due": "2026-12-31",
       "priority": "high",
       "color": "#10B981",
       "icon": "🇬🇪",
       "progress": 0,
       "tasks": [
         {
-          "id": 1782724085885,
-          "name": "Kick off bank loan review — IN PERSON before Borjomi",
+          "id": 1787920788380,
+          "name": "LOAN · Bank forwards application to Enterprise Georgia",
           "done": false,
           "completedAt": null
         },
         {
-          "id": 1782724085886,
-          "name": "Bank forwards application to Enterprise Georgia",
+          "id": 1787920788381,
+          "name": "LOAN · Enterprise Georgia confirms eligibility",
           "done": false,
           "completedAt": null
         },
         {
-          "id": 1782724085887,
-          "name": "Enterprise Georgia confirms eligibility",
+          "id": 1787920788382,
+          "name": "LOAN · Bank disburses loan",
           "done": false,
           "completedAt": null
         },
         {
-          "id": 1782724085888,
-          "name": "Bank disburses loan",
+          "id": 1787920788383,
+          "name": "GATE · Send B1–B6 to the bank in writing: amortisation schedule, is 2,800 gross or net of subsidy, fixed or floating rate, subsidy % and its legal basis, 0% early repayment and whether it shortens the term, full covenant list",
           "done": false,
           "completedAt": null
         },
         {
-          "id": 1782724085889,
-          "name": "Ship digital products within 2 months (spend full loan)",
+          "id": 1787920788384,
+          "name": "GATE · Send E1–E8 to Enterprise Georgia in writing: signed approved expense schedule, is the base gross or net of VAT, report deadline after disbursement, green + digitalization together, accepted audit firms, is iOS specifically in scope, job/turnover obligations, NACE 93.29.0 registration",
           "done": false,
           "completedAt": null
         },
         {
-          "id": 1782724085890,
-          "name": "Apply to Enterprise grant",
+          "id": 1787920788385,
+          "name": "GATE · Send A1–A4 to the accountant in writing: capitalise the software or expense it, transfer-pricing position, IE rolling 12-month turnover vs the 100,000 VAT threshold, is Astroman LLC VAT-registered",
           "done": false,
           "completedAt": null
         },
         {
-          "id": 1782724085891,
-          "name": "Enterprise cashes back 50% of loan",
+          "id": 1787920788386,
+          "name": "GATE · Download and read the digitalization eligible-expense annex (გაციფრულების მიმართულებით დასაშვები ხარჯები)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788387,
+          "name": "GATE · Download and read the audit criteria annex (აუდირებული დასკვნის კრიტერიუმები)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788388,
+          "name": "GATE · Signed approved expense schedule (E1) received and read",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788389,
+          "name": "GATE · Decision 1 — who pays the 2,800 GEL per month. Option A recommended: Astroman retail services the loan, full 120,000 goes to the project",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788390,
+          "name": "GATE · Decision 2 — speed or defensibility. Scenario B is the safe default: 78,000 developer over 8 weeks. Scenario A is not recommended. Option D (real subcontractors) is best if the people exist",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788391,
+          "name": "GATE · Decision 3 — claim the green component or not. Only if the paperwork is trivial and E4 comes back clean",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788392,
+          "name": "GATE · Confirm in writing that Astroman retail can absorb 2,800 GEL per month for at least nine months",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788393,
+          "name": "GATE · Adjust the §06 budget to match the answers actually received",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788394,
+          "name": "GATE · Confirm the installation site — dacha terrace or Tbilisi rooftop. Pick it before ordering anything; the power design has to match the green story",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788395,
+          "name": "GATE · Written permission from the property owner or building management for the installation",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788396,
+          "name": "GATE · Record Decisions 1, 2 and 3 in writing in 00_Approvals_Loan / 21_Enterprise_Georgia_Correspondence",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788397,
+          "name": "DAY 1 · FINANCE — Confirm funds received; confirm the eligible-spend start date in writing",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788398,
+          "name": "DAY 1 · FINANCE — Save loan and disbursement documents; record the 240 GEL release commission",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788399,
+          "name": "DAY 1 · AUDIT — Engage the SARAS-monitored audit firm and request their evidence checklist in writing",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788400,
+          "name": "DAY 1 · AUDIT — Ask the auditor in writing what would cause them to disallow a related-party service expense",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788401,
+          "name": "DAY 1 · TAX — Request three agency quotes for the identical six-deliverable scope",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788402,
+          "name": "DAY 1 · TAX — Accountant confirms capitalisation (A1), transfer pricing (A2), VAT position (A3, A4)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788403,
+          "name": "DAY 1 · LEGAL — Sign the developer services agreement using the §08 milestone structure",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788404,
+          "name": "DAY 1 · MOBILE — Start the Apple D-U-N-S application and Google Play console setup (5–30 days + 1–4 weeks review)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788405,
+          "name": "DAY 1 · PAYMENTS — Start Bank of Georgia merchant onboarding; expect it to complete week 4–5, not week 1",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788406,
+          "name": "DAY 1 · BUILD — Create the official private repository; add charter, readme, architecture",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788407,
+          "name": "DAY 1 · BUILD — Create PRE_EXISTING_ASSETS.md and record every reused brand asset",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788408,
+          "name": "DAY 1 · AUDIT — Create audit master folders 00–21, including 17_Market_Value_Evidence, 18_Tax_Opinions, 19_Customs_Import, 20_Auditor_Correspondence, 21_Enterprise_Georgia_Correspondence",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788409,
+          "name": "DAY 1 · OPS — Arrange the equipment insurance quote",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788410,
+          "name": "DAY 1 · PROCURE — Place Order 1: imported optics and camera, longest lead time, goes first",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788411,
+          "name": "DAY 1 · PROCURE — Place Order 2: telescope, power supply, mini-PC, cables",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788412,
+          "name": "DAY 1 · PROCURE — Every line: invoice to Astroman LLC with tax ID, payment by company transfer from the loan account, customs declaration in the company name, delivery evidence and a serial-number photograph",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788413,
+          "name": "DAY 1 · PROCURE — Confirm the telescope provenance decision: fresh external purchase, or excluded from the claim",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788414,
+          "name": "DAY 1 · BUILD — Start required subscriptions on the company account; prepay 12 months of hosting",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788415,
+          "name": "DAY 1 · BUILD — Register the domain, configure DNS and SSL",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788416,
+          "name": "DAY 1 · BUILD — Create the first production deployment",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788417,
+          "name": "DAY 1 · SITE — Survey the installation site: compass bearings of every obstruction, written down",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788418,
+          "name": "W1 · Design system and public homepage",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788419,
+          "name": "W1 · Auth and database schema",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788420,
+          "name": "W1 · Mission simulator, labelled SIMULATED OBSERVATORY",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788421,
+          "name": "W1 · CI, tests, deployment pipeline",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788422,
+          "name": "W1 · Georgian i18n structure in place from the start",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788423,
+          "name": "W1 · TAX — Market-value evidence pack complete: three dated agency quotes, scope-to-hours estimate, CV and portfolio with the ASCOM/INDI scarcity argument, published Georgian rate references → 17_Market_Value_Evidence",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788424,
+          "name": "W1 · AUDIT — All invoices and order confirmations archived",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788425,
+          "name": "W1 · Weekly engineering report #1",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788426,
+          "name": "W2 · Assemble the 6SE; align the finder",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788427,
+          "name": "W2 · Install CPWI and ASCOM Platform",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788428,
+          "name": "W2 · Manual alignment; save the PointXP model",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788429,
+          "name": "W2 · GoTo a bright object; verify pointing",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788430,
+          "name": "W2 · 30+ minute unattended tracking test",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788431,
+          "name": "W2 · Park, save and reload alignment test",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788432,
+          "name": "W2 · Verify secure remote access to the mini-PC via VPN",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788433,
+          "name": "W2 · M1 FOUNDATION — verify, sign the acceptance act, then invoice 24,000 GEL, then transfer. Never invoice before the act is signed",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788434,
+          "name": "W2 · Weekly engineering report #2",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788435,
+          "name": "W3 · Install the ZWO driver; direct USB camera test before any hub",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788436,
+          "name": "W3 · SharpCap live preview",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788437,
+          "name": "W3 · Install and calibrate the focus motor",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788438,
+          "name": "W3 · Test reducer and T2 spacing; also test native f/10",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788439,
+          "name": "W3 · Real Moon or planet capture",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788440,
+          "name": "W3 · Add the powered hub only after the direct test passes",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788441,
+          "name": "W3 · Observatory Agent mount adapter: GoTo, Park, status",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788442,
+          "name": "W3 · Command and session security: idempotency, expiry, ownership",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788443,
+          "name": "W3 · Decide on SharpCap Pro — required or not",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788444,
+          "name": "W3 · Weekly engineering report #3",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788445,
+          "name": "W4 · Website → target → mission → real GoTo → tracking",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788446,
+          "name": "W4 · OBS or FFmpeg stream bridge, viewport only",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788447,
+          "name": "W4 · Live page; the customer never sees CPWI or SharpCap",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788448,
+          "name": "W4 · Capture and Collection",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788449,
+          "name": "W4 · Target whitelist and altitude safety envelope",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788450,
+          "name": "W4 · Error states and real event logs",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788451,
+          "name": "W4 · AUDIT — Begin archiving every successful run as audit evidence, from Week 4 not Week 7",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788452,
+          "name": "W4 · M2 HARDWARE INTEGRATION — verify, sign, invoice 27,000 GEL, transfer",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788453,
+          "name": "W4 · Weekly engineering report #4",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788454,
+          "name": "W5 · BOG integration against sandbox, then production. Never fake a production payment success",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788455,
+          "name": "W5 · Atomic slot reservation",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788456,
+          "name": "W5 · Payment hold, success and failure handling",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788457,
+          "name": "W5 · User dashboard and upcoming missions",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788458,
+          "name": "W5 · Weekly engineering report #5",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788459,
+          "name": "W6 · Expo app core: sign in, home, missions, live, collection, profile",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788460,
+          "name": "W6 · Android internal build produced and installed",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788461,
+          "name": "W6 · Measure real camera and focuser clearance at high altitude",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788462,
+          "name": "W6 · Configure MAX_ALT_SAFE, horizon mask, Sun avoidance",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788463,
+          "name": "W6 · Decide: enclosure proceeds or is cut. If the core mission path is not green by end of Week 6, drop it entirely",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788464,
+          "name": "W6 · Weekly engineering report #6",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788465,
+          "name": "W7 · Loyalty points ledger and tiers — only if E1 confirms it is in the approved scope",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788466,
+          "name": "W7 · Failure drills: internet loss, mini-PC reboot, CPWI restart, camera unplug",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788467,
+          "name": "W7 · Failure drills: wrong user, expired command, session expiry, weather hold",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788468,
+          "name": "W7 · Failure drills: payment failure and unavailable target",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788469,
+          "name": "W7 · Reboot recovery and emergency Park",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788470,
+          "name": "W7 · Weekly engineering report #7",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788471,
+          "name": "W8 · Feature freeze — no new major features",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788472,
+          "name": "W8 · UI polish, responsive QA, accessibility, performance",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788473,
+          "name": "W8 · Georgian copy review across web and mobile",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788474,
+          "name": "W8 · Final Playwright suite green",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788475,
+          "name": "W8 · Release tag v1.0.0-audit",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788476,
+          "name": "W8 · Evidence manifest and acceptance matrix",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788477,
+          "name": "W8 · Rehearse the daytime demo twice",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788478,
+          "name": "W8 · Run a mock audit; fix blockers only",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788479,
+          "name": "W8 · M3 PRODUCT COMPLETION — final acceptance, invoice 27,000 GEL, transfer",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788480,
+          "name": "AUDIT · 15–20 archived evidence runs with matching mission IDs, event logs and captures",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788481,
+          "name": "AUDIT · Primary evidence is the weather-independent daytime demo on a terrestrial target: login → target → server command → agent validation → real slew → real ASI585 feed in the browser → capture → collection → logs",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788482,
+          "name": "AUDIT · Every claimed expense has an invoice, a company bank transfer and delivery or acceptance evidence, filed",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788483,
+          "name": "AUDIT · Accountant's written positions on capitalisation, transfer pricing and VAT are on file, dated before the first invoice",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788484,
+          "name": "AUDIT · Audit fieldwork completed",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788485,
+          "name": "AUDIT · SARAS-monitored report issued without qualification on the digitalization expenses",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788486,
+          "name": "GRANT · Submit the grant package the week the audit report is issued",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788487,
+          "name": "GRANT · Keep Phase 2 purchases strictly out of the Phase 1 evidence",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788488,
+          "name": "GRANT · Continue normal monthly payments throughout agency processing",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1787920788489,
+          "name": "GRANT · On receipt, apply the grant to principal under the 0% early-repayment rule — worth 10,295–17,665 GEL depending on the real rate",
           "done": false,
           "completedAt": null
         }
-      ]
+      ],
+      "completedTasks": [],
+      "notes": "Source: Darkview_Phase1_Master_Plan_v2.pdf (§02 stop gate, §06 budget, §08 milestones, §11 task lists, §12 audit strategy, §14 definition of done) + Darkview_Build_Plan.pdf §14.\n\nMONEY (Scenario B, Decision 1 = A)\nLoan principal 120,000 GEL · digitalization-eligible 87,300 · hardware 19,300 · green 3,500 · compliance 6,240 · buffer 7,160.\nExpected grant 43,650 + 525 green = 44,175 GEL on a gross-of-VAT basis, 37,000 if E2 says net. The 50,000 target needs Scenario C or Option D.\nMilestones: M1 24,000 (end wk 2) · M2 27,000 (end wk 4) · M3 27,000 (end wk 8) = 78,000.\nDebt service before the grant arrives: 19,600 GEL over seven months.\n\nTHE RULE ON EVERY INVOICE\nscope annex → deliverable complete → acceptance act signed → invoice issued → bank transfer executed → evidence archived. Matching dates, never out of order.\n\nDEFINITION OF DONE (all eight)\n1 mission works repeatedly on real hardware · 2 every claimed expense evidenced and filed · 3 market-value pack exists · 4 accountant's written positions issued · 5 fifteen+ archived runs · 6 daytime demo rehearsed twice · 7 audit report issued unqualified · 8 grant application submitted.\nA qualified report on a 100,000 GEL claim is worth less than a clean one on 87,300.",
+      "reminder": {
+        "enabled": true,
+        "timing": "oneweek",
+        "lastSent": null
+      },
+      "updatedAt": 1787920788380
     },
     {
       "id": 1782741611721,
