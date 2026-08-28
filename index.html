@@ -245,6 +245,7 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 .sb-sync{display:flex;align-items:center;gap:7px;padding:7px 9px;font-family:var(--mono);font-size:10px;color:var(--sb-t3);cursor:pointer;border-radius:var(--r-sm);border:none;background:none;width:100%;transition:background .12s;text-align:left;}
 .sb-sync:hover{background:var(--sb-hover);}
 .sb-sync.ok{color:#4ADE80;}
+.sb-sync.warn{color:#FBBF24;}
 .sb-sync.err{color:#F87171;}
 .sb-sync-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}
 .sb-btn{display:flex;align-items:center;gap:9px;padding:8px 9px;border-radius:var(--r-sm);cursor:pointer;transition:background .12s;color:var(--sb-t2);font-size:13px;font-weight:500;border:none;background:none;width:100%;}
@@ -308,6 +309,8 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 .save-banner-txt{flex:1;line-height:1.35;font-size:12.5px;color:var(--text);}
 .save-banner-txt b{display:block;font-weight:700;margin-bottom:2px;}
 .save-banner-txt span{display:block;font-size:11.5px;color:var(--text3);}
+.save-banner-x{flex-shrink:0;border:none;background:none;color:var(--text3);cursor:pointer;font-size:13px;line-height:1;padding:4px;border-radius:6px;}
+.save-banner-x:hover{background:var(--bg3);color:var(--text);}
 @media(max-width:900px){.save-banner{left:12px;right:12px;bottom:80px;max-width:none;}}
 .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
 .kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px 18px;box-shadow:var(--shadow);}
@@ -649,6 +652,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
 .sync-chip{display:flex;align-items:center;gap:5px;padding:6px 11px;border-radius:999px;background:color-mix(in srgb, var(--bg2) 76%, transparent);border:1px solid var(--border);font-family:var(--mono);font-size:10px;color:var(--text3);cursor:pointer;white-space:nowrap;transition:all .15s;flex-shrink:0;}
 .sync-chip:hover{background:var(--bg3);}
 .sync-chip.ok{color:#16A34A;border-color:rgba(22,163,74,.3);background:rgba(22,163,74,.07);}
+.sync-chip.warn{color:var(--amber);border-color:rgba(217,119,6,.28);background:rgba(217,119,6,.07);}
 .sync-chip.err{color:var(--red);border-color:rgba(220,38,38,.3);background:rgba(220,38,38,.07);}
 .sc-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;}
 @media(max-width:768px){.sync-chip-label{display:none;}}
@@ -954,8 +958,8 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
       </div>
       <div class="field">
         <div class="fl">Personal Access Token</div>
-        <input class="fi" id="s-gh-token" type="password" placeholder="github_pat_..." autocomplete="off"/>
-        <div class="fi-hint">Go to <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">github.com/settings/personal-access-tokens</a> → fine-grained token → <strong>Only select repositories: Projects-Center</strong> → Repository permissions → <strong>Contents: Read and write</strong>. Set the longest expiry you are comfortable with; saving stops the day it expires and the app will warn you.</div>
+        <input class="fi" id="s-gh-token" type="password" placeholder="ghp_..." autocomplete="off"/>
+        <div class="fi-hint">To never deal with expiry again: <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens/new</a> → Expiration <strong>No expiration</strong> → tick <strong>public_repo</strong> only (this repo is public, so that is the whole access it needs) → Generate → paste here.<br>Prefer a scoped token instead? <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">Fine-grained</a> → only Projects-Center → Contents: Read and write. Those expire after at most a year, and saving stops that day.</div>
       </div>
       <div class="field">
         <div class="fl">Repository (owner/repo-name)</div>
@@ -1335,7 +1339,7 @@ function splitLegacyProjectTasks(rawTasks = []) {
   const completed = [];
   rawTasks.forEach(t => {
     const norm = normalizeProjectTask(t, { done: !!t.done });
-    if (norm.done) completed.push({ ...norm, completedAt: norm.completedAt || new Date().toISOString() });
+    if (norm.done) completed.push(norm);
     else active.push({ ...norm, done: false });
   });
   return { active, completed };
@@ -1351,9 +1355,11 @@ function normalizeProject(p) {
   let tasks, completedTasks;
   if (rawCompleted.length) {
     tasks = rawTasks.filter(t => !t.done).map(t => normalizeProjectTask(t, { done: false }));
+    // No invented timestamps here: normalising must be deterministic, or every
+    // sync sees a "change" and pushes a commit forever.
     completedTasks = [...rawCompleted, ...rawTasks.filter(t => t.done)].map(t =>
       normalizeProjectTask(t, { done: true })
-    ).map(t => ({ ...t, completedAt: t.completedAt || new Date().toISOString() }));
+    );
   } else {
     const split = splitLegacyProjectTasks(rawTasks);
     tasks = split.active;
@@ -1901,18 +1907,28 @@ function safeRerender() {
 // ── GitHub I/O ──
 async function ghGet() {
   if (!ghRepo()) return null;
-  const headers = { Accept: 'application/vnd.github.v3+json' };
-  if (ghToken()) headers.Authorization = `Bearer ${ghToken()}`;
-  try {
-    const res = await fetch(`https://api.github.com/repos/${ghRepo()}/contents/data.json?t=${Date.now()}`, { headers, cache: 'no-store' });
-    if (res.status === 404) { SYNC.error = null; _dataSha = null; return {}; }
-    if (res.status === 401) { SYNC.error = 'auth'; return null; }
-    if (res.status === 403) { SYNC.error = 'rate'; return null; }
-    if (!res.ok)            { SYNC.error = 'net';  return null; }
+  const url = `https://api.github.com/repos/${ghRepo()}/contents/data.json?t=${Date.now()}`;
+  const plain = { Accept: 'application/vnd.github.v3+json' };
+  const get = headers => fetch(url, { headers, cache: 'no-store' });
+  const read = async res => {
     const file = await res.json();
     _dataSha = file.sha;
-    SYNC.error = null;
     return JSON.parse(fromB64(file.content));
+  };
+  try {
+    let res = await get(ghToken() ? { ...plain, Authorization: `Bearer ${ghToken()}` } : plain);
+    // A dead token makes GitHub reject the request even on a public repo. Reading
+    // must not depend on saving working, so retry anonymously and keep loading.
+    if (res.status === 401 && ghToken()) {
+      SYNC.error = 'auth';
+      res = await get(plain);
+      return res.ok ? read(res) : null;
+    }
+    if (res.status === 404) { SYNC.error = null; _dataSha = null; return {}; }
+    if (res.status === 403) { SYNC.error = 'rate'; return null; }
+    if (!res.ok)            { SYNC.error = 'net';  return null; }
+    SYNC.error = null;
+    return read(res);
   } catch (e) {
     SYNC.error = 'net';
     return null;
@@ -1968,9 +1984,10 @@ async function syncNow({ manual = false } = {}) {
     dataSource = 'github';
     if (stateSig(merged) !== stateSig(local)) adoptState(merged);
 
-    if (!ghToken()) {
-      setSyncStatus('warn', 'Read-only — not saving');
-      if (manual) toast('Pulled from GitHub. Add a token in Settings to save.', '#D97706');
+    // No token, or one GitHub refused: reading still works, saving does not.
+    if (!ghToken() || SYNC.error === 'auth') {
+      setSyncStatus('warn', `Read-only · ${hhmmNow()}`);
+      if (manual) toast(ghToken() ? 'Loaded from GitHub. Reconnect in Settings to save again.' : 'Loaded from GitHub. Add a token in Settings to save.', '#D97706');
       return;
     }
     if (stateSig(merged) === stateSig(remote) && !isDirty()) {
@@ -1997,7 +2014,7 @@ async function syncNow({ manual = false } = {}) {
 function pullFromGitHub() { return syncNow({ manual: true }); }
 
 function setSyncStatus(type, msg) {
-  const cls = type === 'warn' ? 'err' : type;
+  const cls = type;
   const btn = document.getElementById('sync-status');
   const lbl = document.getElementById('sync-label');
   if (btn && lbl) { lbl.textContent = msg; btn.className = 'sb-sync' + (cls ? ' ' + cls : ''); }
@@ -2006,7 +2023,11 @@ function setSyncStatus(type, msg) {
   if (chip && chipLbl) { chipLbl.textContent = msg; chip.className = 'sync-chip' + (cls ? ' ' + cls : ''); }
 }
 
-// ── Persistent banner whenever saving is not actually working ──
+// ── One banner, dismissible for a day, whenever saving is not actually working ──
+function snoozeSaveBanner() {
+  localStorage.setItem('pc_banner_snooze', String(Date.now() + 86400000));
+  renderSyncState();
+}
 function renderSyncState() {
   const el = document.getElementById('save-banner');
   if (!el) return;
@@ -2016,13 +2037,16 @@ function renderSyncState() {
   } else if (!ghToken()) {
     s = { cls:'warn', title:'Not saving to the cloud', sub:'Changes stay in this browser only. Connect GitHub to sync across devices.', btn:'Connect', fn:'openSetup()' };
   } else if (SYNC.error === 'auth') {
-    s = { cls:'err', title:'GitHub token expired', sub:'Reconnect to resume saving. Your changes are safe on this device.', btn:'Reconnect', fn:'openSetup()' };
+    s = { cls:'warn', title:'Saving is off — token rejected', sub:'Everything still loads. Reconnect to save again; your changes are safe here.', btn:'Reconnect', fn:'openSetup()' };
   } else if (isDirty() && (SYNC.error || Date.now() - (SYNC.dirtySince || 0) > 10000)) {
     s = { cls:'warn', title:'Unsaved changes', sub:'Not pushed to GitHub yet — retrying automatically.', btn:'Retry', fn:'syncNow({manual:true})' };
   }
-  if (!s) { el.className = 'save-banner'; el.innerHTML = ''; return; }
+  const snoozed = Date.now() < Number(localStorage.getItem('pc_banner_snooze') || 0);
+  if (!s || snoozed) { el.className = 'save-banner'; el.innerHTML = ''; return; }
   el.className = 'save-banner show ' + s.cls;
-  el.innerHTML = `<div class="save-banner-dot"></div><div class="save-banner-txt"><b>${s.title}</b><span>${s.sub}</span></div><button class="btn btn-sm btn-primary" onclick="${s.fn}">${s.btn}</button>`;
+  el.innerHTML = `<div class="save-banner-dot"></div><div class="save-banner-txt"><b>${s.title}</b><span>${s.sub}</span></div>`
+    + `<button class="btn btn-sm btn-primary" onclick="${s.fn}">${s.btn}</button>`
+    + `<button class="save-banner-x" onclick="snoozeSaveBanner()" title="Hide for a day">✕</button>`;
 }
 
 // Re-sync when the tab comes back, when the network returns, and on a timer
@@ -2321,6 +2345,7 @@ async function saveSetup() {
   persistPlannerLocal();
   closeSetup();
   toast('Settings saved ✓', '#16A34A');
+  localStorage.removeItem('pc_banner_snooze');
   SYNC.error = null;
   save();
   await syncNow({ manual: true });

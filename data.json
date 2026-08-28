@@ -492,26 +492,8 @@
       "priority": "high",
       "color": "#10B981",
       "icon": "🇬🇪",
-      "progress": 0,
+      "progress": 4,
       "tasks": [
-        {
-          "id": 1787920788380,
-          "name": "LOAN · Bank forwards application to Enterprise Georgia",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1787920788381,
-          "name": "LOAN · Enterprise Georgia confirms eligibility",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1787920788382,
-          "name": "LOAN · Bank disburses loan",
-          "done": false,
-          "completedAt": null
-        },
         {
           "id": 1787920788383,
           "name": "GATE · Send B1–B6 to the bank in writing: amortisation schedule, is 2,800 gross or net of subsidy, fixed or floating rate, subsidy % and its legal basis, 0% early repayment and whether it shortens the term, full covenant list",
@@ -1155,14 +1137,45 @@
           "completedAt": null
         }
       ],
-      "completedTasks": [],
+      "completedTasks": [
+        {
+          "id": 1787924680122,
+          "name": "Kick off bank loan review — IN PERSON before Borjomi",
+          "done": true,
+          "completedAt": null
+        },
+        {
+          "id": 1787924680123,
+          "name": "Bank forwards application to Enterprise Georgia",
+          "done": true,
+          "completedAt": null
+        },
+        {
+          "id": 1787924680124,
+          "name": "Enterprise Georgia confirms eligibility",
+          "done": true,
+          "completedAt": null
+        },
+        {
+          "id": 1787924680125,
+          "name": "Bank disburses loan",
+          "done": true,
+          "completedAt": null
+        },
+        {
+          "id": 1787924680126,
+          "name": "Apply to Enterprise grant",
+          "done": true,
+          "completedAt": null
+        }
+      ],
       "notes": "Source: Darkview_Phase1_Master_Plan_v2.pdf (§02 stop gate, §06 budget, §08 milestones, §11 task lists, §12 audit strategy, §14 definition of done) + Darkview_Build_Plan.pdf §14.\n\nMONEY (Scenario B, Decision 1 = A)\nLoan principal 120,000 GEL · digitalization-eligible 87,300 · hardware 19,300 · green 3,500 · compliance 6,240 · buffer 7,160.\nExpected grant 43,650 + 525 green = 44,175 GEL on a gross-of-VAT basis, 37,000 if E2 says net. The 50,000 target needs Scenario C or Option D.\nMilestones: M1 24,000 (end wk 2) · M2 27,000 (end wk 4) · M3 27,000 (end wk 8) = 78,000.\nDebt service before the grant arrives: 19,600 GEL over seven months.\n\nTHE RULE ON EVERY INVOICE\nscope annex → deliverable complete → acceptance act signed → invoice issued → bank transfer executed → evidence archived. Matching dates, never out of order.\n\nDEFINITION OF DONE (all eight)\n1 mission works repeatedly on real hardware · 2 every claimed expense evidenced and filed · 3 market-value pack exists · 4 accountant's written positions issued · 5 fifteen+ archived runs · 6 daytime demo rehearsed twice · 7 audit report issued unqualified · 8 grant application submitted.\nA qualified report on a 100,000 GEL claim is worth less than a clean one on 87,300.",
       "reminder": {
         "enabled": true,
         "timing": "oneweek",
         "lastSent": null
       },
-      "updatedAt": 1787920788380
+      "updatedAt": 1787924679222
     },
     {
       "id": 1782741611721,
