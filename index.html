@@ -299,6 +299,16 @@ body{font-family:var(--font);font-size:14px;background:transparent;color:var(--t
 .sync-banner-text{flex:1;font-size:13px;color:var(--amber);}
 .sync-banner-text strong{font-weight:700;display:block;margin-bottom:2px;}
 .sync-banner-text span{font-size:12px;opacity:.85;}
+.save-banner{position:fixed;left:16px;bottom:16px;z-index:400;display:none;align-items:center;gap:11px;max-width:min(430px,calc(100vw - 32px));padding:12px 14px;border-radius:14px;background:var(--surface);border:1px solid var(--border);box-shadow:0 14px 34px rgba(0,0,0,.24);}
+.save-banner.show{display:flex;}
+.save-banner.warn{border-color:rgba(217,119,6,.45);}
+.save-banner.err{border-color:rgba(220,38,38,.45);}
+.save-banner-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;background:var(--amber);}
+.save-banner.err .save-banner-dot{background:#DC2626;}
+.save-banner-txt{flex:1;line-height:1.35;font-size:12.5px;color:var(--text);}
+.save-banner-txt b{display:block;font-weight:700;margin-bottom:2px;}
+.save-banner-txt span{display:block;font-size:11.5px;color:var(--text3);}
+@media(max-width:900px){.save-banner{left:12px;right:12px;bottom:80px;max-width:none;}}
 .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
 .kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px 18px;box-shadow:var(--shadow);}
 .kpi-label{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:7px;}
@@ -944,8 +954,8 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
       </div>
       <div class="field">
         <div class="fl">Personal Access Token</div>
-        <input class="fi" id="s-gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off"/>
-        <div class="fi-hint">Go to <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens</a> → Generate new token (classic) → check <strong>repo</strong> scope → copy it</div>
+        <input class="fi" id="s-gh-token" type="password" placeholder="github_pat_..." autocomplete="off"/>
+        <div class="fi-hint">Go to <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">github.com/settings/personal-access-tokens</a> → fine-grained token → <strong>Only select repositories: Projects-Center</strong> → Repository permissions → <strong>Contents: Read and write</strong>. Set the longest expiry you are comfortable with; saving stops the day it expires and the app will warn you.</div>
       </div>
       <div class="field">
         <div class="fl">Repository (owner/repo-name)</div>
@@ -978,17 +988,38 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
         <div class="fi-hint">Message <a href="https://t.me/userinfobot" target="_blank">@userinfobot</a> to find your ID</div>
       </div>
       <div class="field">
-        <div class="fl">Weekday Telegram Schedule (Tbilisi)</div>
-        <div class="fi" style="line-height:1.7">
-          <strong>12:00</strong> Daily tasks and focus brief<br>
-          <strong>15:00</strong> Weekly tasks and weekly compass
+        <div class="fl">Weekday Schedule (Tbilisi)</div>
+        <div style="display:flex;gap:10px">
+          <div style="flex:1">
+            <input class="fi" id="s-sched-daily" type="time" value="12:00"/>
+            <div class="fi-hint">Daily tasks + focus brief</div>
+          </div>
+          <div style="flex:1">
+            <input class="fi" id="s-sched-weekly" type="time" value="15:00"/>
+            <div class="fi-hint">Weekly tasks + weekly compass</div>
+          </div>
         </div>
-        <div class="fi-hint">These run from GitHub Actions on weekdays, so they send even when the app is closed.</div>
+        <div class="fi-hint">GitHub Actions sends these on weekdays even when the app is closed. The same times drive the browser reminders below.</div>
       </div>
       <div style="display:flex;gap:8px">
         <button class="btn btn-ghost" onclick="testTelegramSetup()" style="flex:1;justify-content:center">🔔 Test Notification</button>
         <button class="btn btn-ghost" onclick="sendDigestNow()" style="flex:1;justify-content:center">📨 Send Digest Now</button>
       </div>
+      <div class="setup-divider"></div>
+      <div class="setup-sect-hd">
+        <div class="setup-sect-icon" style="background:#FEF3C7">🔔</div>
+        <div>
+          <div class="setup-sect-title">Browser Reminders</div>
+          <div class="setup-sect-sub">Desktop notifications on this device</div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="fi" style="line-height:1.6">
+          <span id="notify-state">Off</span>
+        </div>
+        <div class="fi-hint">Nudges you about projects nearing their due date, overdue projects, and daily/weekly tasks still open at the scheduled time. Needs the app open in a tab (or installed to your home screen).</div>
+      </div>
+      <button class="btn btn-ghost" id="notify-btn" onclick="enableNotifications()" style="width:100%;justify-content:center">Enable</button>
       <div class="setup-divider"></div>
       <div class="setup-sect-hd">
         <div class="setup-sect-icon" style="background:#F0FDF4">📊</div>
@@ -1103,6 +1134,7 @@ html[data-theme="light"] .station-date{color:#0C0D1A;}
     <div class="content" id="content"></div>
   </div>
 </div>
+<div class="save-banner" id="save-banner"></div>
 <nav class="mobile-tabbar" id="mobileTabbar">
   <button class="mobile-tab active" id="mt-dashboard" onclick="goView('dashboard')"><span class="mobile-tab-icon">⌂</span><span>Home</span></button>
   <button class="mobile-tab" id="mt-todo-daily" onclick="goView('todo-daily')"><span class="mobile-tab-icon">✓</span><span>Daily</span><span class="mobile-tab-badge" id="mt-badge-daily"></span></button>
@@ -1150,9 +1182,9 @@ let deleteId = null;
 let newType = 'daily';
 let newColor = '#2563EB';
 let activityLog = Array.isArray(safeParse('pc_activity', [])) ? safeParse('pc_activity', []) : [];
+let tombstones = Array.isArray(safeParse('pc_tombstones', [])) ? safeParse('pc_tombstones', []) : [];
 let _dataSha = null;
 let _saveTimer = null;
-let _isSaving = false;
 const DEFAULT_PLANNER = () => ({
   dailyTasks: [],
   completedDailyTasks: [],
@@ -1195,7 +1227,7 @@ function getWeekLabel() {
 function initDailyTasks() {
   const stored = planner.dailyTasks?.length ? planner.dailyTasks : (Array.isArray(safeParse('dailyTasks', [])) ? safeParse('dailyTasks', []) : []);
   const storedDate = localStorage.getItem('dailyTasksDate') || '';
-  const today = new Date().toISOString().split('T')[0];
+  const today = todayKey();
   const doneToday = stored.filter(t => t.done).map(t => ({ id: t.id || Date.now() + Math.random(), text: t.text || '', date: t.date || today, completedAt: t.completedAt || new Date().toISOString() }));
   planner.completedDailyTasks = mergeTaskList(planner.completedDailyTasks || [], doneToday, t => `${t.date || ''}:${(t.text || '').trim().toLowerCase()}`);
   if (storedDate !== today) {
@@ -1341,6 +1373,7 @@ function normalizeProject(p) {
     completedTasks,
     notes: p.notes || '',
     created: p.created || p.id || Date.now(),
+    updatedAt: Number(p.updatedAt) || Number(p.created) || Number(p.id) || 0,
     reminder: {
       enabled: !!p.reminder?.enabled,
       timing: p.reminder?.timing || 'oneday',
@@ -1371,14 +1404,6 @@ function rebalanceProjects() {
 }
 function getProjectById(id) {
   return D.find(x => x.id === id) || completedProjects.find(x => x.id === id) || null;
-}
-function mergeProjects(primary = [], secondary = []) {
-  const map = new Map();
-  [...secondary, ...primary].forEach(project => {
-    const normalized = normalizeProject(project);
-    map.set(normalized.id, normalized);
-  });
-  return Array.from(map.values()).sort((a, b) => (b.created || 0) - (a.created || 0));
 }
 function mergeTaskList(primary = [], secondary = [], keyBuilder) {
   const map = new Map();
@@ -1438,46 +1463,20 @@ async function loadBundledData() {
     return null;
   }
 }
-async function hydrateBundledProjects(reason = 'initial') {
+// Bundled data.json is a first-run seed only. Once this browser holds data, the
+// GitHub API is the single remote source and it goes through mergeState().
+async function hydrateBundledProjects() {
+  if (D.length || completedProjects.length || plannerHasContent()) { dataSource = 'local'; return false; }
   const bundled = await loadBundledData();
   if (!bundled) return false;
-  if (D.length) {
-    const mergedProjects = mergeProjects(D, bundled.projects || []);
-    const mergedCompletedProjects = mergeProjects(completedProjects, bundled.completedProjects || []);
-    const { active, completed } = splitProjects([...(mergedProjects || []), ...(mergedCompletedProjects || [])]);
-    const mergedPlanner = mergePlanner(planner, bundled.planner || {});
-    const projectChanged = JSON.stringify(active) !== JSON.stringify(D) || JSON.stringify(completed) !== JSON.stringify(completedProjects);
-    const plannerChanged = JSON.stringify(mergedPlanner) !== JSON.stringify(planner);
-    if (projectChanged || plannerChanged) {
-      D = active;
-      completedProjects = completed;
-      planner = mergedPlanner;
-      syncPlannerRefs();
-      localStorage.setItem('pc_v3', JSON.stringify(D));
-      localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
-      persistPlannerLocal();
-      updateSidebar();
-      renderContent();
-      dataSource = 'merged';
-      return true;
-    }
-    dataSource = 'local';
-    return false;
-  }
   if (!bundled.projects.length && !bundled.completedProjects.length) return false;
-  const changed = JSON.stringify(bundled.projects) !== JSON.stringify(D) || JSON.stringify(bundled.completedProjects) !== JSON.stringify(completedProjects);
-  if (!changed) {
-    dataSource = 'bundled';
-    return false;
-  }
   D = bundled.projects;
   completedProjects = bundled.completedProjects || [];
   planner = bundled.planner;
   syncPlannerRefs();
-  dataSource = reason === 'initial' ? 'bundled' : 'merged';
-  localStorage.setItem('pc_v3', JSON.stringify(D));
-  localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
-  persistPlannerLocal();
+  dataSource = 'bundled';
+  writeLocal();
+  initSnapshot();
   updateSidebar();
   renderContent();
   return true;
@@ -1506,13 +1505,20 @@ function getDataInsights() {
   const withReminders = D.filter(p => p.reminder?.enabled).length;
   const dueSoon = D.filter(p => {
     if (!p.due || p.progress >= 100) return false;
-    const diff = Math.ceil((new Date(p.due) - new Date()) / 86400000);
-    return diff >= 0 && diff <= 7;
+    const diff = daysUntilDue(p.due);
+    return diff !== null && diff >= 0 && diff <= 7;
   }).length;
   return { missingDue, missingDesc, withNotes, withReminders, dueSoon };
 }
-function todayKey() {
-  return new Date().toISOString().split('T')[0];
+function todayKey(d = new Date()) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+// Whole calendar days from today to the due date: 0 = today, 1 = tomorrow, -1 = yesterday
+function daysUntilDue(due) {
+  const [y, m, d] = String(due || '').split('-').map(Number);
+  if (!y || !m || !d) return null;
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  return Math.round((new Date(y, m - 1, d) - today) / 86400000);
 }
 function currentWeekMeta() {
   const now = new Date();
@@ -1531,7 +1537,9 @@ function currentCompletedWeeklyTasks() {
 function addDailyTask() {
   const inp = document.getElementById('daily-task-inp');
   const text = inp?.value.trim(); if (!text) return;
-  planner.dailyTasks.push({ id: Date.now(), text, done: false, date: new Date().toISOString().split('T')[0] });
+  const t = { id: Date.now(), text, done: false, date: todayKey() };
+  untomb(K.daily(t));
+  planner.dailyTasks.push(t);
   syncPlannerRefs();
   saveDailyTasks(); inp.value = ''; renderContent();
 }
@@ -1539,7 +1547,9 @@ function toggleDailyTask(id) {
   const i = planner.dailyTasks.findIndex(x => x.id === id);
   if (i > -1) {
     const t = planner.dailyTasks.splice(i, 1)[0];
-    planner.completedDailyTasks.unshift({ id: t.id, text: t.text, date: t.date || todayKey(), completedAt: new Date().toISOString() });
+    const c = { id: t.id, text: t.text, date: t.date || todayKey(), completedAt: new Date().toISOString() };
+    tomb(K.daily(t)); untomb(K.dailyC(c));
+    planner.completedDailyTasks.unshift(c);
     syncPlannerRefs();
     saveDailyTasks();
     logActivity(`Completed daily task <strong>"${t.text}"</strong>`, '#67E8F9');
@@ -1547,12 +1557,14 @@ function toggleDailyTask(id) {
   }
   renderContent();
 }
-function delDailyTask(id) { planner.dailyTasks = planner.dailyTasks.filter(x => x.id !== id); syncPlannerRefs(); saveDailyTasks(); renderContent(); }
+function delDailyTask(id) { const t = planner.dailyTasks.find(x => x.id === id); if (t) tomb(K.daily(t)); planner.dailyTasks = planner.dailyTasks.filter(x => x.id !== id); syncPlannerRefs(); saveDailyTasks(); renderContent(); }
 function restoreCompletedDailyTask(id) {
   const i = planner.completedDailyTasks.findIndex(x => x.id === id);
   if (i > -1) {
     const t = planner.completedDailyTasks.splice(i, 1)[0];
-    planner.dailyTasks.unshift({ id: t.id, text: t.text, done: false, date: todayKey() });
+    const back = { id: t.id, text: t.text, done: false, date: todayKey() };
+    tomb(K.dailyC(t)); untomb(K.daily(back));
+    planner.dailyTasks.unshift(back);
     syncPlannerRefs();
     saveDailyTasks();
     logActivity(`Restored daily task <strong>"${t.text}"</strong>`, '#2563EB');
@@ -1566,7 +1578,9 @@ function addWeeklyTask() {
   const inp = document.getElementById('weekly-task-inp');
   const text = inp?.value.trim(); if (!text) return;
   const now = new Date();
-  planner.weeklyTasks.push({ id: Date.now(), text, done: false, weekNum: isoWeek(now), year: now.getFullYear() });
+  const t = { id: Date.now(), text, done: false, weekNum: isoWeek(now), year: now.getFullYear() };
+  untomb(K.weekly(t));
+  planner.weeklyTasks.push(t);
   syncPlannerRefs();
   saveWeeklyTasks(); inp.value = ''; renderContent();
 }
@@ -1575,7 +1589,9 @@ function toggleWeeklyTask(id) {
   if (i > -1) {
     const t = planner.weeklyTasks.splice(i, 1)[0];
     const { weekNum, year } = currentWeekMeta();
-    planner.completedWeeklyTasks.unshift({ id: t.id, text: t.text, weekNum: t.weekNum || weekNum, year: t.year || year, completedAt: new Date().toISOString() });
+    const c = { id: t.id, text: t.text, weekNum: t.weekNum || weekNum, year: t.year || year, completedAt: new Date().toISOString() };
+    tomb(K.weekly(t)); untomb(K.weeklyC(c));
+    planner.completedWeeklyTasks.unshift(c);
     syncPlannerRefs();
     saveWeeklyTasks();
     logActivity(`Completed weekly task <strong>"${t.text}"</strong>`, '#A78BFA');
@@ -1583,13 +1599,15 @@ function toggleWeeklyTask(id) {
   }
   renderContent();
 }
-function delWeeklyTask(id) { planner.weeklyTasks = planner.weeklyTasks.filter(x => x.id !== id); syncPlannerRefs(); saveWeeklyTasks(); renderContent(); }
+function delWeeklyTask(id) { const t = planner.weeklyTasks.find(x => x.id === id); if (t) tomb(K.weekly(t)); planner.weeklyTasks = planner.weeklyTasks.filter(x => x.id !== id); syncPlannerRefs(); saveWeeklyTasks(); renderContent(); }
 function restoreCompletedWeeklyTask(id) {
   const i = planner.completedWeeklyTasks.findIndex(x => x.id === id);
   if (i > -1) {
     const t = planner.completedWeeklyTasks.splice(i, 1)[0];
     const { weekNum, year } = currentWeekMeta();
-    planner.weeklyTasks.unshift({ id: t.id, text: t.text, done: false, weekNum, year });
+    const back = { id: t.id, text: t.text, done: false, weekNum, year };
+    tomb(K.weeklyC(t)); untomb(K.weekly(back));
+    planner.weeklyTasks.unshift(back);
     syncPlannerRefs();
     saveWeeklyTasks();
     logActivity(`Restored weekly task <strong>"${t.text}"</strong>`, '#7C9BFF');
@@ -1600,7 +1618,9 @@ function restoreCompletedWeeklyTask(id) {
 function addMonthlyGoal() {
   const inp = document.getElementById('monthly-goal-inp');
   const text = inp?.value.trim(); if (!text) return;
-  planner.monthlyGoals.push({ id: Date.now(), text, done: false, monthKey: plannerMonthKey() });
+  const g = { id: Date.now(), text, done: false, monthKey: plannerMonthKey() };
+  untomb(K.monthly(g));
+  planner.monthlyGoals.push(g);
   syncPlannerRefs();
   saveMonthlyGoals();
   inp.value = '';
@@ -1612,6 +1632,8 @@ function toggleMonthlyGoal(id) {
   renderContent();
 }
 function delMonthlyGoal(id) {
+  const g = planner.monthlyGoals.find(x => x.id === id);
+  if (g) tomb(K.monthly(g));
   planner.monthlyGoals = planner.monthlyGoals.filter(x => x.id !== id);
   syncPlannerRefs();
   saveMonthlyGoals();
@@ -1706,135 +1728,322 @@ document.documentElement.setAttribute('data-theme', theme);
 updateThemeUI();
 
 // ══════════════════════════════════════════════════════════
-//  GITHUB SYNC LAYER — fixed SHA conflict + auto-refresh
+//  SYNC LAYER — local-first: a pull merges, it never clobbers
 // ══════════════════════════════════════════════════════════
 function ghToken()       { return localStorage.getItem('gh_token'); }
 function ghRepo()        { return localStorage.getItem('gh_repo') || 'Rezimod/Projects-Center'; }
 function tgToken()       { return localStorage.getItem('tg_token'); }
 function tgChat()        { return localStorage.getItem('tg_chat_id'); }
-function isGHReadable(){ return !!ghRepo(); }
+function isGHReadable()  { return !!ghRepo(); }
 function isGHConfigured(){ return !!(ghToken() && ghRepo()); }
 
 function toB64(str)  { return btoa(unescape(encodeURIComponent(str))); }
 function fromB64(str){ return decodeURIComponent(escape(atob(str.replace(/\n/g,'')))); }
+function hhmmNow()   { return new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' }); }
 
-async function ghLoad() {
-  if (!isGHReadable()) return null;
+const SYNC = { busy: false, pending: false, error: null, dirtySince: 0 };
+
+// ── Dirty = local edits that have not reached GitHub yet ──
+function isDirty()   { return localStorage.getItem('pc_dirty') === '1'; }
+function markDirty() {
+  if (!isDirty()) { localStorage.setItem('pc_dirty', '1'); SYNC.dirtySince = Date.now(); }
+  renderSyncState();
+}
+function clearDirty(){ localStorage.removeItem('pc_dirty'); SYNC.dirtySince = 0; renderSyncState(); }
+
+// ── Tombstones: deletions must survive a merge ──
+const K = {
+  project:  id => `p:${id}`,
+  daily:    t  => `d:${t.date || ''}:${(t.text || '').trim().toLowerCase()}`,
+  dailyC:   t  => `dc:${t.date || ''}:${(t.text || '').trim().toLowerCase()}`,
+  weekly:   t  => `w:${t.year || ''}:${t.weekNum || ''}:${(t.text || '').trim().toLowerCase()}`,
+  weeklyC:  t  => `wc:${t.year || ''}:${t.weekNum || ''}:${(t.text || '').trim().toLowerCase()}`,
+  monthly:  g  => `m:${g.monthKey || ''}:${(g.text || '').trim().toLowerCase()}`
+};
+function pruneTombstones() {
+  const cutoff = Date.now() - 90 * 86400000;
+  tombstones = tombstones.filter(t => t && t.k && (t.at || 0) > cutoff);
+}
+function tomb(key) {
+  if (!key) return;
+  const hit = tombstones.find(t => t.k === key);
+  if (hit) hit.at = Date.now(); else tombstones.push({ k: key, at: Date.now() });
+  pruneTombstones();
+  localStorage.setItem('pc_tombstones', JSON.stringify(tombstones));
+}
+function untomb(key) {
+  if (!key) return;
+  tombstones = tombstones.filter(t => t.k !== key);
+  localStorage.setItem('pc_tombstones', JSON.stringify(tombstones));
+}
+function killed(key, itemTime) {
+  const hit = tombstones.find(t => t.k === key);
+  if (!hit) return false;
+  return (hit.at || 0) >= (Number(itemTime) || 0);
+}
+function absorbTombstones(remote = []) {
+  (Array.isArray(remote) ? remote : []).forEach(t => {
+    if (!t || !t.k) return;
+    const hit = tombstones.find(x => x.k === t.k);
+    if (!hit) tombstones.push({ k: t.k, at: t.at || 0 });
+    else if ((t.at || 0) > (hit.at || 0)) hit.at = t.at;
+  });
+  pruneTombstones();
+}
+
+// ── Per-project change stamps drive who wins a merge ──
+let _snap = new Map();
+function projSig(p) { const { updatedAt, ...rest } = p; return JSON.stringify(rest); }
+function initSnapshot() { _snap = new Map([...D, ...completedProjects].map(p => [p.id, projSig(p)])); }
+function stampChanges() {
+  const now = Date.now();
+  [...D, ...completedProjects].forEach(p => {
+    const sig = projSig(p);
+    if (_snap.get(p.id) !== sig) { p.updatedAt = now; _snap.set(p.id, sig); }
+  });
+}
+
+// ── Merge ──
+function mergeProjectLists(localList, remoteList) {
+  const map = new Map();
+  remoteList.forEach(p => map.set(p.id, p));
+  localList.forEach(p => {
+    const r = map.get(p.id);
+    if (!r) { map.set(p.id, p); return; }
+    const winner = (p.updatedAt || 0) >= (r.updatedAt || 0) ? p : r;
+    // reminder.lastSent is written by the Actions bot — always keep the newest
+    const stamps = [p.reminder?.lastSent, r.reminder?.lastSent].filter(Boolean).sort();
+    map.set(p.id, { ...winner, reminder: { ...winner.reminder, lastSent: stamps.length ? stamps[stamps.length - 1] : null } });
+  });
+  return Array.from(map.values()).filter(p => !killed(K.project(p.id), p.updatedAt));
+}
+function mergePlannerSafe(localPlanner, remotePlanner) {
+  const m = mergePlanner(localPlanner, remotePlanner);
+  m.dailyTasks           = m.dailyTasks.filter(t => !killed(K.daily(t)));
+  m.completedDailyTasks  = m.completedDailyTasks.filter(t => !killed(K.dailyC(t)));
+  m.weeklyTasks          = m.weeklyTasks.filter(t => !killed(K.weekly(t)));
+  m.completedWeeklyTasks = m.completedWeeklyTasks.filter(t => !killed(K.weeklyC(t)));
+  m.monthlyGoals         = m.monthlyGoals.filter(g => !killed(K.monthly(g)));
+  const later = (a, b) => ((a || '') > (b || '') ? a : b) || '';
+  m.telegramLog = {
+    dailyTaskDigestSentOn:  later(localPlanner?.telegramLog?.dailyTaskDigestSentOn,  remotePlanner?.telegramLog?.dailyTaskDigestSentOn),
+    weeklyTaskDigestSentOn: later(localPlanner?.telegramLog?.weeklyTaskDigestSentOn, remotePlanner?.telegramLog?.weeklyTaskDigestSentOn)
+  };
+  return m;
+}
+function mergeActivity(a = [], b = []) {
+  const map = new Map();
+  [...b, ...a].forEach(x => { if (x && x.msg) map.set(`${x.time}:${x.msg}`, x); });
+  return Array.from(map.values()).sort((x, y) => (y.time || 0) - (x.time || 0)).slice(0, 50);
+}
+function mergeState(local, remote) {
+  absorbTombstones(remote.tombstones);
+  const lp = [...(local.projects || []), ...(local.completedProjects || [])].map(normalizeProject);
+  const rp = [...(remote.projects || []), ...(remote.completedProjects || [])].map(normalizeProject);
+  const { active, completed } = splitProjects(mergeProjectLists(lp, rp));
+  return {
+    projects: active,
+    completedProjects: completed,
+    planner: mergePlannerSafe(local.planner, remote.planner || {}),
+    activity: mergeActivity(local.activity, remote.activity),
+    tombstones,
+    updatedAt: Date.now()
+  };
+}
+function currentPayload() {
+  return { projects: D, completedProjects, planner, activity: activityLog.slice(0, 50), tombstones, updatedAt: Date.now() };
+}
+// Comparison signature — ignores timestamps that change on every call
+function stateSig(s) {
+  return JSON.stringify({
+    p: [...(s.projects || []), ...(s.completedProjects || [])]
+         .map(normalizeProject)
+         .sort((a, b) => a.id - b.id)
+         .map(x => { const { updatedAt, ...rest } = x; return rest; }),
+    pl: normalizePlanner(s.planner || {}),
+    t: (s.tombstones || []).map(x => x.k).sort()
+  });
+}
+function writeLocal() {
   try {
-    const headers = { Accept: 'application/vnd.github.v3+json' };
-    if (ghToken()) headers.Authorization = `Bearer ${ghToken()}`;
-    const res = await fetch(
-      `https://api.github.com/repos/${ghRepo()}/contents/data.json`,
-      { headers }
-    );
-    if (res.status === 404) return {};           // file doesn't exist yet
-    if (res.status === 401) { setSyncStatus('err','Auth error — check token'); return null; }
-    if (!res.ok) throw new Error(res.status);
+    localStorage.setItem('pc_v3', JSON.stringify(D));
+    localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
+    localStorage.setItem('pc_activity', JSON.stringify(activityLog.slice(0, 50)));
+    localStorage.setItem('pc_tombstones', JSON.stringify(tombstones));
+    persistPlannerLocal();
+    return true;
+  } catch (e) {
+    SYNC.error = 'storage';
+    renderSyncState();
+    return false;
+  }
+}
+function adoptState(m) {
+  D = m.projects;
+  completedProjects = m.completedProjects;
+  planner = m.planner;
+  activityLog = m.activity;
+  syncPlannerRefs();
+  rebalanceProjects();
+  writeLocal();
+  initSnapshot();
+  safeRerender();
+}
+// Never redraw over a modal or an input the user is typing in
+function safeRerender() {
+  const el = document.activeElement;
+  const typing = el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName);
+  if (typing || document.querySelector('.overlay.open')) return;
+  updateSidebar();
+  renderContent();
+}
+
+// ── GitHub I/O ──
+async function ghGet() {
+  if (!ghRepo()) return null;
+  const headers = { Accept: 'application/vnd.github.v3+json' };
+  if (ghToken()) headers.Authorization = `Bearer ${ghToken()}`;
+  try {
+    const res = await fetch(`https://api.github.com/repos/${ghRepo()}/contents/data.json?t=${Date.now()}`, { headers, cache: 'no-store' });
+    if (res.status === 404) { SYNC.error = null; _dataSha = null; return {}; }
+    if (res.status === 401) { SYNC.error = 'auth'; return null; }
+    if (res.status === 403) { SYNC.error = 'rate'; return null; }
+    if (!res.ok)            { SYNC.error = 'net';  return null; }
     const file = await res.json();
-    _dataSha = file.sha;                         // always update SHA on load
+    _dataSha = file.sha;
+    SYNC.error = null;
     return JSON.parse(fromB64(file.content));
-  } catch(e) {
-    setSyncStatus('err', 'Load failed');
+  } catch (e) {
+    SYNC.error = 'net';
     return null;
   }
 }
-
-async function ghSave(data, _retry = false) {
-  if (!isGHConfigured() || _isSaving) return;
-  _isSaving = true;
-  document.querySelectorAll('.btn-primary').forEach(b => b.classList.add('is-saving'));
-  setSyncStatus('', 'Saving…');
+async function ghPut(payload, retry = false) {
+  if (!isGHConfigured()) return false;
+  const body = { message: 'chore: sync projects', content: toB64(JSON.stringify(payload, null, 2)) };
+  if (_dataSha) body.sha = _dataSha;
   try {
-    const body = { message: 'chore: sync projects', content: toB64(JSON.stringify(data, null, 2)) };
-    if (_dataSha) body.sha = _dataSha;
+    const res = await fetch(`https://api.github.com/repos/${ghRepo()}/contents/data.json`, {
+      method: 'PUT',
+      headers: { Authorization: `Bearer ${ghToken()}`, 'Content-Type': 'application/json', Accept: 'application/vnd.github.v3+json' },
+      body: JSON.stringify(body)
+    });
+    if ((res.status === 409 || res.status === 422) && !retry) {
+      const fresh = await ghGet();               // refresh sha, re-merge, retry once
+      if (fresh === null) return false;
+      const remerged = mergeState(currentPayload(), fresh);
+      adoptState(remerged);
+      return ghPut(remerged, true);
+    }
+    if (res.status === 401) { SYNC.error = 'auth'; return false; }
+    if (!res.ok)            { SYNC.error = 'net';  return false; }
+    const r = await res.json();
+    _dataSha = r.content.sha;
+    SYNC.error = null;
+    return true;
+  } catch (e) {
+    SYNC.error = 'net';
+    return false;
+  }
+}
 
-    const res = await fetch(
-      `https://api.github.com/repos/${ghRepo()}/contents/data.json`,
-      { method: 'PUT', headers: { Authorization: `Bearer ${ghToken()}`, 'Content-Type': 'application/json', Accept: 'application/vnd.github.v3+json' }, body: JSON.stringify(body) }
-    );
-
-    if ((res.status === 409 || res.status === 422) && !_retry) {
-      // SHA is stale — re-fetch current SHA and retry once
-      _isSaving = false;
-      const fresh = await ghLoad();
-      if (fresh !== null) await ghSave(data, true);
+// ── The one entry point: pull, merge, push ──
+async function syncNow({ manual = false } = {}) {
+  if (!ghRepo()) { setSyncStatus('', 'Not connected'); renderSyncState(); return; }
+  if (SYNC.busy) { SYNC.pending = true; return; }
+  SYNC.busy = true;
+  setSyncStatus('', isDirty() ? 'Saving…' : 'Syncing…');
+  try {
+    const remote = await ghGet();
+    if (remote === null) {
+      const msg = SYNC.error === 'auth' ? 'Token expired — reconnect'
+                : SYNC.error === 'rate' ? 'GitHub rate limit — retrying later'
+                : 'Offline — saved on this device';
+      setSyncStatus('err', msg);
+      if (manual) toast(msg, '#DC2626');
       return;
     }
-    if (res.ok) {
-      const r = await res.json();
-      _dataSha = r.content.sha;
-      const t = new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
-      setSyncStatus('ok', `Synced · ${t}`);
-    } else {
-      setSyncStatus('err', `Save failed (${res.status})`);
+    const local  = currentPayload();
+    const merged = mergeState(local, remote);
+    dataSource = 'github';
+    if (stateSig(merged) !== stateSig(local)) adoptState(merged);
+
+    if (!ghToken()) {
+      setSyncStatus('warn', 'Read-only — not saving');
+      if (manual) toast('Pulled from GitHub. Add a token in Settings to save.', '#D97706');
+      return;
     }
-  } catch(e) {
-    setSyncStatus('err', 'Offline — saved locally');
-    toast('GitHub sync failed — changes saved on this device', '#D97706');
+    if (stateSig(merged) === stateSig(remote) && !isDirty()) {
+      clearDirty();
+      setSyncStatus('ok', `Synced · ${hhmmNow()}`);
+      if (manual) toast('Up to date', '#16A34A');
+      return;
+    }
+    const ok = await ghPut(merged);
+    if (ok) {
+      clearDirty();
+      setSyncStatus('ok', `Saved · ${hhmmNow()}`);
+      if (manual) toast('Saved to GitHub', '#16A34A');
+    } else {
+      setSyncStatus('err', SYNC.error === 'auth' ? 'Token expired — reconnect' : 'Save failed — will retry');
+      if (manual) toast(SYNC.error === 'auth' ? 'GitHub token expired — reconnect in Settings' : 'Save failed — will retry automatically', '#DC2626');
+    }
+  } finally {
+    SYNC.busy = false;
+    renderSyncState();
+    if (SYNC.pending) { SYNC.pending = false; setTimeout(() => syncNow(), 400); }
   }
-  _isSaving = false;
-  document.querySelectorAll('.btn-primary.is-saving').forEach(b => b.classList.remove('is-saving'));
 }
+function pullFromGitHub() { return syncNow({ manual: true }); }
 
 function setSyncStatus(type, msg) {
+  const cls = type === 'warn' ? 'err' : type;
   const btn = document.getElementById('sync-status');
   const lbl = document.getElementById('sync-label');
-  if (btn && lbl) { lbl.textContent = msg; btn.className = 'sb-sync' + (type ? ' ' + type : ''); }
+  if (btn && lbl) { lbl.textContent = msg; btn.className = 'sb-sync' + (cls ? ' ' + cls : ''); }
   const chip = document.getElementById('topbar-sync-chip');
   const chipLbl = document.getElementById('topbar-sync-label');
-  if (chip && chipLbl) { chipLbl.textContent = msg; chip.className = 'sync-chip' + (type ? ' ' + type : ''); }
+  if (chip && chipLbl) { chipLbl.textContent = msg; chip.className = 'sync-chip' + (cls ? ' ' + cls : ''); }
 }
 
-// Manual pull — call when user clicks sync button or on tab focus
-async function pullFromGitHub() {
-  if (!isGHReadable()) { openSetup(); return; }
-  setSyncStatus('', 'Pulling…');
-  const data = await ghLoad();
-  if (data && (data.projects || data.completedProjects)) {
-    const { active, completed } = splitProjects([
-      ...(Array.isArray(data.projects) ? data.projects : []),
-      ...(Array.isArray(data.completedProjects) ? data.completedProjects : [])
-    ]);
-    D = active;
-    completedProjects = completed;
-    planner = normalizePlanner(data.planner || planner);
-    syncPlannerRefs();
-    activityLog = data.activity || activityLog;
-    dataSource = 'github';
-    localStorage.setItem('pc_v3', JSON.stringify(D));
-    localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
-    localStorage.setItem('pc_activity', JSON.stringify(activityLog));
-    persistPlannerLocal();
-    updateSidebar();
-    renderContent();
-    const t = new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
-    setSyncStatus('ok', `Synced · ${t}`);
-    toast('Data refreshed', '#16A34A');
-  } else if (data !== null) {
-    setSyncStatus('ok', 'Connected');
+// ── Persistent banner whenever saving is not actually working ──
+function renderSyncState() {
+  const el = document.getElementById('save-banner');
+  if (!el) return;
+  let s = null;
+  if (SYNC.error === 'storage') {
+    s = { cls:'err', title:'This browser is blocking storage', sub:'Private mode or a full disk — changes cannot be kept here.', btn:'Retry', fn:'syncNow({manual:true})' };
+  } else if (!ghToken()) {
+    s = { cls:'warn', title:'Not saving to the cloud', sub:'Changes stay in this browser only. Connect GitHub to sync across devices.', btn:'Connect', fn:'openSetup()' };
+  } else if (SYNC.error === 'auth') {
+    s = { cls:'err', title:'GitHub token expired', sub:'Reconnect to resume saving. Your changes are safe on this device.', btn:'Reconnect', fn:'openSetup()' };
+  } else if (isDirty() && (SYNC.error || Date.now() - (SYNC.dirtySince || 0) > 10000)) {
+    s = { cls:'warn', title:'Unsaved changes', sub:'Not pushed to GitHub yet — retrying automatically.', btn:'Retry', fn:'syncNow({manual:true})' };
   }
+  if (!s) { el.className = 'save-banner'; el.innerHTML = ''; return; }
+  el.className = 'save-banner show ' + s.cls;
+  el.innerHTML = `<div class="save-banner-dot"></div><div class="save-banner-txt"><b>${s.title}</b><span>${s.sub}</span></div><button class="btn btn-sm btn-primary" onclick="${s.fn}">${s.btn}</button>`;
 }
 
-// Auto-pull when app comes back into focus (switching from Mac to phone)
-document.addEventListener('visibilitychange', () => {
-  if (!document.hidden && isGHReadable()) pullFromGitHub();
+// Re-sync when the tab comes back, when the network returns, and on a timer
+document.addEventListener('visibilitychange', () => { if (!document.hidden && ghRepo()) syncNow(); });
+window.addEventListener('online', () => { if (ghRepo()) syncNow(); });
+setInterval(() => { if (!document.hidden && ghRepo() && (isDirty() || SYNC.error)) syncNow(); }, 60000);
+setInterval(() => { if (!document.hidden && ghRepo()) syncNow(); }, 600000);
+setInterval(renderSyncState, 5000);
+window.addEventListener('beforeunload', e => {
+  if (isDirty() && isGHConfigured()) { e.preventDefault(); e.returnValue = ''; }
 });
-
-// Poll every 10 minutes so repo changes appear without manual refresh
-setInterval(() => {
-  if (!document.hidden && isGHReadable()) pullFromGitHub();
-}, 600000);
 
 // Save: localStorage immediately, GitHub debounced 700ms
 function save() {
   rebalanceProjects();
+  stampChanges();
   if (dataSource === 'empty') dataSource = 'local';
-  localStorage.setItem('pc_v3', JSON.stringify(D));
-  localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
-  localStorage.setItem('pc_activity', JSON.stringify(activityLog.slice(0, 50)));
-  persistPlannerLocal();
+  markDirty();
+  writeLocal();
   clearTimeout(_saveTimer);
-  _saveTimer = setTimeout(() => ghSave({ projects: D, completedProjects, planner, activity: activityLog.slice(0, 50) }), 700);
+  _saveTimer = setTimeout(() => syncNow(), 700);
 }
 
 function logActivity(msg, color = '#2563EB') {
@@ -1845,53 +2054,34 @@ function logActivity(msg, color = '#2563EB') {
 // ── Init ──
 async function initApp() {
   try {
-  initDailyTasks();
-  initWeeklyTasks();
-  D = D.map(normalizeProject);
-  completedProjects = completedProjects.map(normalizeProject);
-  await hydrateBundledProjects('initial');
-  if (isGHReadable()) {
-    if (localStorage.getItem('autoPullOnOpen') !== '0') {
+    initDailyTasks();
+    initWeeklyTasks();
+    D = D.map(normalizeProject);
+    completedProjects = completedProjects.map(normalizeProject);
+    rebalanceProjects();
+    initSnapshot();
+    if (isDirty()) SYNC.dirtySince = 0;     // dirty across a reload — surface it immediately
+    await hydrateBundledProjects();
+    if (ghRepo() && localStorage.getItem('autoPullOnOpen') !== '0') {
       setSyncStatus('', 'Loading…');
-      const data = await ghLoad();
-      if (data && (data.projects || data.completedProjects)) {
-        const { active, completed } = splitProjects([
-          ...(Array.isArray(data.projects) ? data.projects : []),
-          ...(Array.isArray(data.completedProjects) ? data.completedProjects : [])
-        ]);
-        D = active;
-        completedProjects = completed;
-        planner = normalizePlanner(data.planner || planner);
-        syncPlannerRefs();
-        activityLog = data.activity || activityLog;
-        dataSource = 'github';
-        localStorage.setItem('pc_v3', JSON.stringify(D));
-        localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
-        persistPlannerLocal();
-        const t = new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
-        setSyncStatus('ok', ghToken() ? `Synced · ${t}` : `Read-only sync · ${t}`);
-      } else if (data !== null) {
-        // File doesn't exist in repo yet — push local data up
-        if (ghToken()) await ghSave({ projects: D, completedProjects, planner, activity: activityLog });
-      }
+      await syncNow();
     } else {
-      setSyncStatus('ok', ghToken() ? 'Connected (manual)' : 'Read-only repo');
+      setSyncStatus('ok', ghToken() ? 'Connected (manual sync)' : 'Not saving — no token');
+      if (!ghRepo() && !D.length && !completedProjects.length && !localStorage.getItem('setup_seen')) {
+        localStorage.setItem('setup_seen', '1');
+        setTimeout(() => openSetup(), 600);
+      }
     }
-  } else {
-    setSyncStatus('', 'Not connected');
-    if (!D.length && !completedProjects.length && !localStorage.getItem('setup_seen')) {
-      localStorage.setItem('setup_seen', '1');
-      setTimeout(() => openSetup(), 600);
-    }
-  }
-  updateSidebar();
-  renderContent();
-  checkRemindersOnLoad();
+    updateSidebar();
+    renderContent();
+    renderSyncState();
+    initReminders();
   } catch (err) {
     console.error('[Projects Center]', err);
     toast('Could not load workspace — using local data', '#DC2626');
     updateSidebar();
     renderContent();
+    renderSyncState();
   } finally {
     hideAppLoader();
   }
@@ -1915,28 +2105,129 @@ function sendTelegram(text) {
   img.src = `https://api.telegram.org/bot${tok}/sendMessage?chat_id=${encodeURIComponent(cid)}&text=${encodeURIComponent(text)}&parse_mode=HTML`;
 }
 
-function checkRemindersOnLoad() {
-  if (isGHConfigured()) return;
-  if (!tgToken() || !tgChat()) return;
-  const today = new Date().toDateString();
-  let sent = JSON.parse(localStorage.getItem('r_sent') || '{}');
-  Object.keys(sent).forEach(k => { if (!k.startsWith(today)) delete sent[k]; });
-  const now = new Date();
+// ══════════════════════════════════════════════════════════
+//  REMINDERS — browser notifications + Telegram
+// ══════════════════════════════════════════════════════════
+const REMINDER_DAYS = { today: 0, oneday: 1, threedays: 3, oneweek: 7 };
+
+function notifySupported() { return typeof Notification !== 'undefined'; }
+function notifyOn() { return notifySupported() && Notification.permission === 'granted' && localStorage.getItem('pc_notify') !== '0'; }
+
+async function enableNotifications() {
+  if (!notifySupported()) { toast('This browser cannot show notifications', '#DC2626'); return; }
+  if (Notification.permission === 'denied') { toast('Notifications are blocked in browser settings', '#DC2626'); return; }
+  const perm = Notification.permission === 'granted' ? 'granted' : await Notification.requestPermission();
+  if (perm === 'granted') {
+    localStorage.setItem('pc_notify', '1');
+    notify('Reminders are on', 'You will be nudged about due projects and open tasks.', 'pc-test');
+    toast('Notifications enabled', '#16A34A');
+    reminderTick();
+  } else {
+    toast('Notification permission denied', '#DC2626');
+  }
+  updateNotifyUI();
+}
+function disableNotifications() {
+  localStorage.setItem('pc_notify', '0');
+  toast('Browser reminders paused', '#D97706');
+  updateNotifyUI();
+}
+function updateNotifyUI() {
+  const el = document.getElementById('notify-state');
+  const btn = document.getElementById('notify-btn');
+  if (!el || !btn) return;
+  if (!notifySupported())                    { el.textContent = 'Not supported in this browser'; btn.textContent = 'Unavailable'; btn.disabled = true; return; }
+  if (Notification.permission === 'denied')  { el.textContent = 'Blocked — allow notifications for this site in browser settings'; btn.textContent = 'Blocked'; btn.disabled = true; return; }
+  btn.disabled = false;
+  if (notifyOn()) { el.textContent = 'On — due projects and open tasks will nudge you'; btn.textContent = 'Turn off'; btn.setAttribute('onclick', 'disableNotifications()'); }
+  else            { el.textContent = 'Off — no browser reminders on this device'; btn.textContent = 'Enable'; btn.setAttribute('onclick', 'enableNotifications()'); }
+}
+function notify(title, body, tag) {
+  if (!notifyOn()) return false;
+  try {
+    const n = new Notification(title, { body, tag, requireInteraction: false });
+    n.onclick = () => { window.focus(); n.close(); };
+    return true;
+  } catch (e) { return false; }
+}
+
+// ── fire-once bookkeeping ──
+function firedMap() { const v = safeParse('pc_fired', {}); return (v && typeof v === 'object') ? v : {}; }
+function hasFired(key) { return !!firedMap()[key]; }
+function markFired(key) {
+  const f = firedMap();
+  const cutoff = Date.now() - 21 * 86400000;
+  Object.keys(f).forEach(k => { if ((f[k] || 0) < cutoff) delete f[k]; });
+  f[key] = Date.now();
+  localStorage.setItem('pc_fired', JSON.stringify(f));
+}
+
+function dueLabel(daysLeft) {
+  if (daysLeft < 0)   return `Overdue by ${Math.abs(daysLeft)} day${Math.abs(daysLeft) !== 1 ? 's' : ''}`;
+  if (daysLeft === 0) return 'Due today';
+  return `Due in ${daysLeft} day${daysLeft !== 1 ? 's' : ''}`;
+}
+
+function reminderTick() {
+  const now   = new Date();
+  const today = todayKey();
+  const clock = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+  const tgReady = !!(tgToken() && tgChat());
+  let touched = false;
+
+  // 1 ─ project due dates
   D.forEach(p => {
     if (!p.reminder?.enabled || !p.due || p.progress >= 100) return;
-    const daysLeft = Math.ceil((new Date(p.due + 'T23:59:00') - now) / 86400000);
-    const threshold = { today:0, oneday:1, threedays:3, oneweek:7 }[p.reminder.timing ?? 'oneday'] ?? 1;
-    if (daysLeft > threshold) return;
-    const key = today + '_' + p.id;
-    if (sent[key]) return;
-    let msg;
-    if (daysLeft < 0)      msg = `⚠️ <b>Overdue!</b>\n📌 "${p.name}" — was due ${Math.abs(daysLeft)}d ago · ${p.progress}% done`;
-    else if (daysLeft === 0) msg = `📅 <b>Due today!</b>\n📌 "${p.name}" · ${p.progress}% done`;
-    else                   msg = `⏰ <b>Reminder</b>\n📌 "${p.name}" — due in ${daysLeft}d · ${p.progress}% done`;
-    sendTelegram(msg);
-    sent[key] = 1;
+    const daysLeft  = daysUntilDue(p.due);
+    const threshold = REMINDER_DAYS[p.reminder.timing ?? 'oneday'] ?? 1;
+    if (daysLeft === null || daysLeft > threshold) return;
+
+    const key = `proj:${p.id}:${today}`;
+    if (!hasFired(key)) {
+      notify(`${p.icon || '📌'} ${p.name}`, `${dueLabel(daysLeft)} · ${p.progress}% done`, `pc-proj-${p.id}`);
+      markFired(key);
+    }
+    // Telegram — skipped when the GitHub Actions bot already sent today
+    const botSentToday = p.reminder.lastSent && new Date(p.reminder.lastSent).toDateString() === now.toDateString();
+    if (tgReady && !botSentToday) {
+      const head = daysLeft < 0 ? '⚠️ <b>Overdue!</b>' : daysLeft === 0 ? '📅 <b>Due today!</b>' : '⏰ <b>Reminder</b>';
+      sendTelegram(`${head}\n📌 "${p.name}" — ${dueLabel(daysLeft).toLowerCase()} · ${p.progress}% done`);
+      p.reminder.lastSent = now.toISOString();
+      touched = true;
+    }
   });
-  localStorage.setItem('r_sent', JSON.stringify(sent));
+
+  // 2 ─ daily tasks still open at the scheduled hour
+  const dailyAt = planner.telegramSchedule?.dailyWeekday || '12:00';
+  if (clock >= dailyAt && dailyTasks.length && !hasFired(`daily:${today}`)) {
+    const extra = planner.dailyFocus?.mustDo ? ` · Must do: ${planner.dailyFocus.mustDo}` : '';
+    notify('Daily tasks', `${dailyTasks.length} still open${extra}`, 'pc-daily');
+    markFired(`daily:${today}`);
+  }
+
+  // 3 ─ weekly tasks, Monday at the scheduled hour
+  const weeklyAt = planner.telegramSchedule?.weeklyWeekday || '15:00';
+  const weekKey  = `weekly:${now.getFullYear()}-W${isoWeek(now)}`;
+  if (now.getDay() === 1 && clock >= weeklyAt && weeklyTasks.length && !hasFired(weekKey)) {
+    const extra = planner.weeklyPlan?.theme ? ` · Theme: ${planner.weeklyPlan.theme}` : '';
+    notify('Weekly tasks', `${weeklyTasks.length} still open this week${extra}`, 'pc-weekly');
+    markFired(weekKey);
+  }
+
+  // 4 ─ overdue roll-up, once a day
+  const overdue = D.filter(p => p.due && p.progress < 100 && daysUntilDue(p.due) < 0);
+  if (overdue.length && !hasFired(`overdue:${today}`)) {
+    notify(`${overdue.length} overdue project${overdue.length !== 1 ? 's' : ''}`, overdue.slice(0, 4).map(p => p.name).join(', '), 'pc-overdue');
+    markFired(`overdue:${today}`);
+  }
+
+  if (touched) save();
+}
+
+function initReminders() {
+  updateNotifyUI();
+  reminderTick();
+  setInterval(reminderTick, 60000);
 }
 
 // ── Daily digest (browser-side, fires when app is open) ──────────────────────
@@ -2001,6 +2292,9 @@ function openSetup() {
   document.getElementById('s-dig-daily').checked   = ds.includeDailyTasks  !== false;
   document.getElementById('s-dig-weekly').checked  = ds.includeWeeklyTasks !== false;
   document.getElementById('s-dig-overdue').checked = ds.includeOverdue     !== false;
+  document.getElementById('s-sched-daily').value  = planner.telegramSchedule?.dailyWeekday  || '12:00';
+  document.getElementById('s-sched-weekly').value = planner.telegramSchedule?.weeklyWeekday || '15:00';
+  updateNotifyUI();
   document.getElementById('setupOverlay').classList.add('open');
 }
 function closeSetup() { document.getElementById('setupOverlay').classList.remove('open'); }
@@ -2020,34 +2314,16 @@ async function saveSetup() {
     includeWeeklyTasks: document.getElementById('s-dig-weekly').checked,
     includeOverdue:     document.getElementById('s-dig-overdue').checked
   }));
+  const sd = document.getElementById('s-sched-daily').value;
+  const sw = document.getElementById('s-sched-weekly').value;
+  if (sd) planner.telegramSchedule.dailyWeekday  = sd;
+  if (sw) planner.telegramSchedule.weeklyWeekday = sw;
+  persistPlannerLocal();
   closeSetup();
   toast('Settings saved ✓', '#16A34A');
-  if (gt && gr) {
-    setSyncStatus('', 'Connecting…');
-    const data = await ghLoad();
-    if (data !== null) {
-      if (data.projects || data.completedProjects) {
-        const { active, completed } = splitProjects([
-          ...(Array.isArray(data.projects) ? data.projects : []),
-          ...(Array.isArray(data.completedProjects) ? data.completedProjects : [])
-        ]);
-        D = active;
-        completedProjects = completed;
-        planner = normalizePlanner(data.planner || planner);
-        syncPlannerRefs();
-        activityLog = data.activity || activityLog;
-        dataSource = 'github';
-        localStorage.setItem('pc_v3', JSON.stringify(D));
-        localStorage.setItem('pc_v3_completed', JSON.stringify(completedProjects));
-        persistPlannerLocal();
-      } else {
-        await ghSave({ projects: D, completedProjects, planner, activity: activityLog });
-      }
-      setSyncStatus('ok', 'Connected');
-      updateSidebar(); renderContent();
-      toast('GitHub sync connected ✓', '#16A34A');
-    }
-  }
+  SYNC.error = null;
+  save();
+  await syncNow({ manual: true });
 }
 
 function testTelegramSetup() {
@@ -2098,7 +2374,7 @@ function relTime(ts) {
 function pctColor(p) { return p>=75?'#16A34A':p>=40?'#D97706':'#DC2626'; }
 function dueInfo(due) {
   if(!due) return null;
-  const d=new Date(due), diff=Math.ceil((d-new Date())/86400000);
+  const d=new Date(due), diff=daysUntilDue(due);
   const fmt=d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
   if(diff<0)  return{cls:'due-late', txt:`Overdue · ${fmt}`};
   if(diff===0)return{cls:'due-soon', txt:'Due today'};
@@ -2462,8 +2738,8 @@ function renderDashboard() {
     <div class="sync-banner">
       <span style="font-size:22px">🔗</span>
       <div class="sync-banner-text">
-        <strong>Read-only repo sync is active</strong>
-        <span>Your repo data loads automatically. Add a GitHub token in Settings & Sync to enable saving from this browser.</span>
+        <strong>Nothing you do here is being saved to GitHub</strong>
+        <span>Repo data still loads, and your edits are kept in this browser — but they will not reach your other devices, and clearing site data loses them. Add a token in Settings &amp; Sync to turn saving on.</span>
       </div>
       <button class="btn btn-sm" style="background:var(--amber);color:white;border:none;flex-shrink:0" onclick="openSetup()">Add token →</button>
     </div>` : '';
@@ -2866,7 +3142,7 @@ function saveProject() {
 }
 function openDel(id){ deleteId=id; const p=getProjectById(id); document.getElementById('del-desc').textContent=`"${p?.name}" and all its data will be removed.`; document.getElementById('delOverlay').classList.add('open'); }
 function closeDel(){ document.getElementById('delOverlay').classList.remove('open'); deleteId=null; }
-function doDelete(){ const p=getProjectById(deleteId); const name=p?.name||'project'; D=D.filter(x=>x.id!==deleteId); completedProjects=completedProjects.filter(x=>x.id!==deleteId); save(); closeDel(); logActivity(`Deleted project <strong>"${name}"</strong>`,'#DC2626'); if(activeProject===deleteId)activeProject=null; goView('dashboard'); toast('Project deleted','#DC2626'); }
+function doDelete(){ const p=getProjectById(deleteId); const name=p?.name||'project'; tomb(K.project(deleteId)); D=D.filter(x=>x.id!==deleteId); completedProjects=completedProjects.filter(x=>x.id!==deleteId); _snap.delete(deleteId); save(); closeDel(); logActivity(`Deleted project <strong>"${name}"</strong>`,'#DC2626'); if(activeProject===deleteId)activeProject=null; goView('dashboard'); toast('Project deleted','#DC2626'); }
 
 // Close overlays on backdrop click
 document.getElementById('addOverlay').addEventListener('click',e=>{if(e.target===e.currentTarget)closeAdd();});

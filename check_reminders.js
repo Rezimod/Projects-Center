@@ -30,7 +30,9 @@ try {
 const projects = data.projects || [];
 const planner  = data.planner || {};
 planner.dailyTasks = Array.isArray(planner.dailyTasks) ? planner.dailyTasks : [];
+planner.completedDailyTasks = Array.isArray(planner.completedDailyTasks) ? planner.completedDailyTasks : [];
 planner.weeklyTasks = Array.isArray(planner.weeklyTasks) ? planner.weeklyTasks : [];
+planner.completedWeeklyTasks = Array.isArray(planner.completedWeeklyTasks) ? planner.completedWeeklyTasks : [];
 planner.monthlyGoals = Array.isArray(planner.monthlyGoals) ? planner.monthlyGoals : [];
 planner.dailyFocus = planner.dailyFocus || {};
 planner.weeklyPlan = planner.weeklyPlan || {};
@@ -62,6 +64,15 @@ function tzParts(date = new Date(), timeZone = TZ) {
     dateKey: `${parts.year}-${parts.month}-${parts.day}`,
     timeKey: `${parts.hour}:${parts.minute}`
   };
+}
+
+// Whole calendar days from today (in TZ) to the due date: 0 = today, 1 = tomorrow.
+// Actions runs in UTC, so "today" has to come from the configured timezone.
+function daysUntilDue(due) {
+  const [y, m, d] = String(due || '').split('-').map(Number);
+  if (!y || !m || !d) return null;
+  const [ty, tm, td] = tzParts(now).dateKey.split('-').map(Number);
+  return Math.round((Date.UTC(y, m - 1, d) - Date.UTC(ty, tm - 1, td)) / 86400000);
 }
 
 function isWeekdayInTbilisi(date = new Date()) {
@@ -141,14 +152,15 @@ async function main() {
     const dailyTime = planner.telegramSchedule.dailyWeekday || '12:00';
     const weeklyTime = planner.telegramSchedule.weeklyWeekday || '15:00';
 
-    if (tb.timeKey === dailyTime && planner.telegramLog.dailyTaskDigestSentOn !== tb.dateKey) {
+    // Actions cron fires late by minutes, so send at or after the slot, once per day
+    if (tb.timeKey >= dailyTime && planner.telegramLog.dailyTaskDigestSentOn !== tb.dateKey) {
       await sendTelegram(buildDailyTaskDigest());
       planner.telegramLog.dailyTaskDigestSentOn = tb.dateKey;
       changed = true;
       console.log(`[digest] Sent weekday daily brief at ${tb.timeKey} ${TZ}`);
     }
 
-    if (tb.timeKey === weeklyTime && planner.telegramLog.weeklyTaskDigestSentOn !== tb.dateKey) {
+    if (tb.timeKey >= weeklyTime && planner.telegramLog.weeklyTaskDigestSentOn !== tb.dateKey) {
       await sendTelegram(buildWeeklyTaskDigest());
       planner.telegramLog.weeklyTaskDigestSentOn = tb.dateKey;
       changed = true;
@@ -160,11 +172,10 @@ async function main() {
   for (const p of projects) {
     if (!p.reminder?.enabled || !p.due || p.progress >= 100) continue;
 
-    const due      = new Date(p.due + 'T23:59:00');
-    const daysLeft = Math.ceil((due - now) / 86400000);
+    const daysLeft = daysUntilDue(p.due);
     const threshold = TIMING[p.reminder.timing ?? 'oneday'] ?? 1;
 
-    if (daysLeft > threshold) continue;
+    if (daysLeft === null || daysLeft > threshold) continue;
 
     const lastSent = p.reminder.lastSent ? new Date(p.reminder.lastSent) : null;
     if (lastSent && lastSent.toDateString() === todayStr) continue;
