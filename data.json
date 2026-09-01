@@ -398,14 +398,15 @@
     {
       "id": 1782398971393,
       "name": "ELEVEN.FOOTBALL",
-      "desc": "FEATURE-COMPLETE demo shipped: no-login $15 guest betting app, paid-only rooms, live-match joining, fair odds scoring, trustless on-chain settlement (all 3 tracks). Merged to main, repo PUBLIC. Left: record demo + submit by Jul 17.",
+      "desc": "CLOSED 2026-09-01 — did not win TxODDS/Superteam World Cup hackathon. 22-day solo sprint delivered feature-complete Solana prediction market. Submitted all 3 tracks by Jul 17. Repo: Rezimod/eleven (public).",
       "type": "monthly",
       "due": "2026-07-17",
       "priority": "high",
       "color": "#16A34A",
       "icon": "⚽",
-      "progress": 85,
-      "tasks": [
+      "progress": 100,
+      "tasks": [],
+      "completedTasks": [
         {
           "id": 1783852274549,
           "name": "Build complete — wallet, paid rooms, live-join, fair scoring, trustless settlement (3 tracks)",
@@ -426,34 +427,15 @@
         },
         {
           "id": 1783852274649,
-          "name": "🎬 Record the demo video (video-weighted judging = #1 win-lever)",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1783852274650,
-          "name": "🧾 Submit all 3 tracks by Jul 17 (packet written)",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1783852274651,
-          "name": "Real-match settle vs real TxOracle — gated on a finished WC match",
-          "done": false,
-          "completedAt": null
-        },
-        {
-          "id": 1783852274652,
-          "name": "Public-launch prep: top up demo faucet + add Vercel KV for IP persistence",
-          "done": false,
-          "completedAt": null
+          "name": "Submitted all 3 tracks by Jul 17",
+          "done": true,
+          "completedAt": 1756742400000
         }
       ],
-      "completedTasks": [],
-      "notes": "22-day solo sprint, Jun 26 → Jul 17 (submit 2 days before Jul 19 deadline).\nV1 CUTS (agent rec, 2026-06-25): single-key settlement (not multisig), 4 event types (not 10), auto-reveal commit-reveal, free-play as the hero.\nGATE: do not commit the calendar until the Day-1 TxODDS auth test passes.\nWin on the mechanic + live match footage, not architectural completeness.",
+      "notes": "22-day solo sprint, Jun 26 → Jul 17. Did not win. Valuable tech delivered — trustless Solana prediction market, commit-reveal settlement, live match feed. Closed 2026-09-01.",
       "created": 1782398971393,
       "reminder": {
-        "enabled": true,
+        "enabled": false,
         "timing": "threedays",
         "lastSent": "2026-09-01T09:45:06.467Z"
       }
@@ -485,14 +467,14 @@
     },
     {
       "id": 1782724085884,
-      "name": "Enterprise Georgia Grant",
-      "desc": "Darkview Phase 1 — remote observatory MVP, audited expense claim and Enterprise Georgia digitalization grant under Business Universal. 120,000 GEL loan → ~44,175 GEL grant.",
+      "name": "Enterprise Georgia Grant — Online Observatory",
+      "desc": "ACTIVE 2026-09-01. 120,000 GEL loan disbursed. Project: Online Observatory — website + app + telescope control software. Users book live sessions, telescope streams Saturn/Moon/planets. 2 devs share ~98,000 GEL. Rezi builds in parallel with Claude Code. Auditor → 50% cashback (~49,000–60,000 GEL).",
       "type": "monthly",
       "due": "2026-12-31",
       "priority": "high",
       "color": "#10B981",
       "icon": "🇬🇪",
-      "progress": 4,
+      "progress": 12,
       "tasks": [
         {
           "id": 1787920788383,
@@ -1169,7 +1151,7 @@
           "completedAt": null
         }
       ],
-      "notes": "Source: Darkview_Phase1_Master_Plan_v2.pdf (§02 stop gate, §06 budget, §08 milestones, §11 task lists, §12 audit strategy, §14 definition of done) + Darkview_Build_Plan.pdf §14.\n\nMONEY (Scenario B, Decision 1 = A)\nLoan principal 120,000 GEL · digitalization-eligible 87,300 · hardware 19,300 · green 3,500 · compliance 6,240 · buffer 7,160.\nExpected grant 43,650 + 525 green = 44,175 GEL on a gross-of-VAT basis, 37,000 if E2 says net. The 50,000 target needs Scenario C or Option D.\nMilestones: M1 24,000 (end wk 2) · M2 27,000 (end wk 4) · M3 27,000 (end wk 8) = 78,000.\nDebt service before the grant arrives: 19,600 GEL over seven months.\n\nTHE RULE ON EVERY INVOICE\nscope annex → deliverable complete → acceptance act signed → invoice issued → bank transfer executed → evidence archived. Matching dates, never out of order.\n\nDEFINITION OF DONE (all eight)\n1 mission works repeatedly on real hardware · 2 every claimed expense evidenced and filed · 3 market-value pack exists · 4 accountant's written positions issued · 5 fifteen+ archived runs · 6 daytime demo rehearsed twice · 7 audit report issued unqualified · 8 grant application submitted.\nA qualified report on a 100,000 GEL claim is worth less than a clean one on 87,300.",
+      "notes": "CONFIRMED TERMS (2026-09-01): Loan 120,000 GEL · 7% annual interest · ~2,300 GEL/month (700 interest + 1,600 principal) · Developer spend ~98,000 GEL (2 devs) · Rezi builds in parallel with Claude Code · Target grant cashback: 50% of eligible developer spend = ~49,000–60,000 GEL. Full project plan/files from Rezi incoming.\n\nSource: Darkview_Phase1_Master_Plan_v2.pdf (§02 stop gate, §06 budget, §08 milestones, §11 task lists, §12 audit strategy, §14 definition of done) + Darkview_Build_Plan.pdf §14.\n\nTHE RULE ON EVERY INVOICE\nscope annex → deliverable complete → acceptance act signed → invoice issued → bank transfer executed → evidence archived. Matching dates, never out of order.\n\nDEFINITION OF DONE (all eight)\n1 mission works repeatedly on real hardware · 2 every claimed expense evidenced and filed · 3 market-value pack exists · 4 accountant's written positions issued · 5 fifteen+ archived runs · 6 daytime demo rehearsed twice · 7 audit report issued unqualified · 8 grant application submitted.",
       "reminder": {
         "enabled": true,
         "timing": "oneweek",
