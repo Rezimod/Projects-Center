@@ -172,6 +172,30 @@
           "name": "Source 5 new fresh products for Astroman",
           "done": false,
           "completedAt": null
+        },
+        {
+          "id": 1790575725839,
+          "name": "[SAT Oct 3] September revenue analysis — pull + summarise from sheet",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725840,
+          "name": "[SAT Oct 3] Batch create 7 social posts for next 2 weeks — Rezi approves",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725841,
+          "name": "[SAT Oct 3] Business suite backlog sweep — reply all pending enquiries",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725842,
+          "name": "[SAT Oct 3] October telescope focus: top 3 models to push",
+          "done": false,
+          "completedAt": null
         }
       ],
       "completedTasks": [],
@@ -188,7 +212,7 @@
       "name": "Stellar Continue",
       "desc": "",
       "type": "monthly",
-      "due": "2026-07-31",
+      "due": "2026-10-04",
       "priority": "med",
       "color": "#2563EB",
       "icon": "📌",
@@ -227,6 +251,30 @@
         {
           "id": 1779356671971,
           "name": "Block Sep 28 – Nov 2 for Colosseum Frontier Fall hackathon",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725820,
+          "name": "[MON Sep 28] Deploy sidera branch → stellarr.club production",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725821,
+          "name": "[MON Sep 28] Send Sidera beta invite wave — top 50 Astroman September buyers",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725822,
+          "name": "[WED Sep 30] Declare Sidera beta live — write proof doc for Superteam M2",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725823,
+          "name": "[WED Sep 30] Draft + send Superteam Milestone 2 delivery report",
           "done": false,
           "completedAt": null
         }
@@ -1115,6 +1163,54 @@
         {
           "id": 1787920788489,
           "name": "GRANT · On receipt, apply the grant to principal under the 0% early-repayment rule — worth 10,295–17,665 GEL depending on the real rate",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725829,
+          "name": "[TUE Sep 29] Clone George + Beka repos; run dev:stack locally",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725830,
+          "name": "[TUE Sep 29] Walk Georges product end-to-end — map built vs missing vs backlog",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725831,
+          "name": "[TUE Sep 29] Write priority brief to Beka: 3 critical endpoints George needs",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725832,
+          "name": "[THU Oct 1] Observatory homepage: hero + telescope status widget + Book CTA",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725833,
+          "name": "[THU Oct 1] /status page: telescope health, weather, next available slot",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725834,
+          "name": "[FRI Oct 2] Booking flow /app/book: slot picker + target selection",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725835,
+          "name": "[FRI Oct 2] File 3 Beka platform requests as GitHub issues (agent drafts)",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": 1790575725836,
+          "name": "[FRI Oct 2] Define demo-ready milestone for Enterprise Georgia auditor",
           "done": false,
           "completedAt": null
         }
