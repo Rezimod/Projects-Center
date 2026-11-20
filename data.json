@@ -204,7 +204,7 @@
       "reminder": {
         "enabled": true,
         "timing": "oneweek",
-        "lastSent": "2026-11-19T14:07:34.689Z"
+        "lastSent": "2026-11-20T13:50:03.788Z"
       }
     },
     {
@@ -440,7 +440,7 @@
       "reminder": {
         "enabled": true,
         "timing": "oneweek",
-        "lastSent": "2026-11-19T14:07:34.689Z"
+        "lastSent": "2026-11-20T13:50:03.788Z"
       }
     },
     {
@@ -2228,8 +2228,8 @@
       "weeklyWeekday": "15:00"
     },
     "telegramLog": {
-      "dailyTaskDigestSentOn": "2026-11-19",
-      "weeklyTaskDigestSentOn": "2026-11-19"
+      "dailyTaskDigestSentOn": "2026-11-20",
+      "weeklyTaskDigestSentOn": "2026-11-20"
     }
   },
   "activity": [
